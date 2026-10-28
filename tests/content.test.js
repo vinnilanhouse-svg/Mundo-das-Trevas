@@ -95,9 +95,7 @@ test("guia de Imbuídos permanece separado das entradas H5", () => {
   assert.ok(legacy.every((section) => section.edition.includes("não é 5E")));
   const pending = sources.filter((source) => source.status === "pendente");
   assert.deepEqual(pending.map((source) => source.system).sort(), [
-    "aparicao",
     "cacador",
-    "changeling",
     "mago",
   ]);
 });
@@ -120,4 +118,52 @@ test("Changeling mantém as 19 Artes e os 95 truques por nível", () => {
       ["1", "2", "3", "4", "5"],
     );
   }
+});
+
+test("livros recebidos no ZIP têm referências ativas e artes W20 completas por nível", () => {
+  assert.equal(sourcesById.get("c20-core").status, "lido");
+  assert.equal(sourcesById.get("c20-core").pages, 482);
+  assert.equal(sourcesById.get("w20-core").status, "lido");
+  assert.equal(sourcesById.get("w20-core").pages, 517);
+  const wraith = content.find((system) => system.id === "aparicao");
+  const groups = new Set(
+    wraith.sections
+      .filter(
+        (section) =>
+          section.group.startsWith("Arcanoi — ") &&
+          section.group !== "Arcanoi — fundamentos",
+      )
+      .map((section) => section.group),
+  );
+  assert.equal(groups.size, 16);
+  for (const group of groups) {
+    const entries = wraith.sections.filter(
+      (section) => section.group === group,
+    );
+    assert.equal(entries.length, 6);
+    assert.deepEqual(
+      entries
+        .filter((section) => /^[1-5] ·/.test(section.title))
+        .map((section) => section.title[0]),
+      ["1", "2", "3", "4", "5"],
+    );
+    assert.ok(
+      entries.some((section) => section.title === "Artes Iniciadas — índice"),
+    );
+  }
+  const skills = Object.fromEntries(
+    wraith.sheet.groups.map((group) => [
+      group.title,
+      group.fields.map((field) => field.label),
+    ]),
+  );
+  assert.ok(skills.Talentos.includes("Persuasão"));
+  assert.ok(!skills.Talentos.includes("Esquiva"));
+  assert.ok(skills.Perícias.includes("Furto"));
+  assert.ok(!skills.Perícias.includes("Reparos"));
+  assert.ok(skills.Conhecimentos.includes("Acadêmicos"));
+  assert.ok(skills.Conhecimentos.includes("Tecnologia"));
+  assert.ok(
+    wraith.sections.every((section) => section.sourceId === "w20-core"),
+  );
 });

@@ -9,7 +9,7 @@ import "@fontsource/dm-sans/latin-500.css";
 import "@fontsource/dm-sans/latin-600.css";
 import "./styles.css";
 
-const CONTENT_KEY = "arquivo-trevas-content-v2";
+const CONTENT_KEY = "arquivo-trevas-content-v3";
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const paths = {
   grid: "M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z",
@@ -282,7 +282,7 @@ function App() {
           <button className="about-link" onClick={() => navigate("about")}>
             <Icon name="info" size={17} /> Sobre o projeto
           </button>
-          <span className="version">ACERVO INDEPENDENTE · V.0.2</span>
+          <span className="version">ACERVO INDEPENDENTE · V.0.3</span>
         </div>
       </aside>
       <div className="workspace">
@@ -728,7 +728,7 @@ function ContentEditor({
       const imported = JSON.parse(await file.text());
       if (!validContent(imported))
         throw new Error(
-          "Formato inválido. Use um acervo v2 exportado pelo editor, com áreas e fontes.",
+          "Formato inválido. Use um acervo exportado pelo editor, com áreas e fontes.",
         );
       if (
         !imported.some((entry) =>

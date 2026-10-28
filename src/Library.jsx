@@ -378,7 +378,11 @@ function CharacterSheet({ system }) {
   const [values, setValues] = useState(() => {
     try {
       const data = JSON.parse(localStorage.getItem(storageKey));
-      return isValidSheetValues(system, data) ? data : emptySheet(system);
+      if (!data || typeof data !== "object" || Array.isArray(data))
+        return emptySheet(system);
+      // Newly documented fields start empty; existing values and legacy keys stay recoverable.
+      const merged = { ...emptySheet(system), ...data };
+      return isValidSheetValues(system, merged) ? merged : emptySheet(system);
     } catch {
       return emptySheet(system);
     }
@@ -443,17 +447,16 @@ function CharacterSheet({ system }) {
         data.format !== "arquivo-trevas-sheet-v1" ||
         data.systemId !== system.id ||
         data.edition !== system.editionLabel ||
-        !isValidSheetValues(system, data.values)
+        !data.values ||
+        typeof data.values !== "object" ||
+        Array.isArray(data.values) ||
+        !isValidSheetValues(system, { ...emptySheet(system), ...data.values })
       )
         throw Error("Formato inválido ou ficha de outro sistema/edição.");
       if (!window.confirm("Substituir a ficha deste sistema neste navegador?"))
         return;
       pending.current = true;
-      setValues(
-        Object.fromEntries(
-          Object.keys(emptySheet(system)).map((key) => [key, data.values[key]]),
-        ),
-      );
+      setValues({ ...emptySheet(system), ...data.values });
     } catch (err) {
       setMessage(
         err instanceof SyntaxError

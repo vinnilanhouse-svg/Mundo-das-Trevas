@@ -40,7 +40,7 @@
     "title": "Base de ficha C20 — 2 partes",
     "type": "estrutura de ficha",
     "status": "lido",
-    "note": "Apenas campos impressos; valores e anotações preenchidos foram descartados.",
+    "note": "Estrutura da ficha anexada, sem valores preenchidos; complementada pelos campos do livro C20.",
     "system": "changeling",
     "pages": 2
   },
@@ -154,12 +154,12 @@
   },
   {
     "id": "c20-core",
-    "title": "Changeling — The Dreaming — 20th Anniversary Edition.pdf",
+    "title": "Changeling: The Dreaming — 20th Anniversary Edition",
     "type": "livro básico",
-    "status": "pendente",
-    "note": "Arquivo acima do limite de transferência de 32 MB.",
+    "status": "lido",
+    "note": "Livro completo em inglês recebido no ZIP compactado. Entradas em português são resumos; páginas indicam a posição no PDF.",
     "system": "changeling",
-    "pages": null
+    "pages": 482
   },
   {
     "id": "h5-core",
@@ -181,11 +181,11 @@
   },
   {
     "id": "w20-core",
-    "title": "Aparição O Oblívio 20 ed com paginas corretas.pdf",
+    "title": "Aparição: O Oblívio — Edição de 20º Aniversário",
     "type": "livro básico",
-    "status": "pendente",
-    "note": "Arquivo acima do limite de transferência de 32 MB.",
+    "status": "lido",
+    "note": "Livro completo recebido no ZIP compactado, em tradução comunitária. Terminologia portuguesa segue esse arquivo; páginas indicam a posição no PDF.",
     "system": "aparicao",
-    "pages": null
+    "pages": 517
   }
 ]

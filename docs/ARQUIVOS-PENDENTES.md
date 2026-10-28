@@ -1,31 +1,39 @@
-# PDFs que precisam ser divididos ou compactados
+# PDFs recebidos e pendentes
 
-A ferramenta de leitura aceita arquivos de **até 32 MB cada**. Dos 35 PDFs enviados, 28 puderam ser transferidos e sete ultrapassaram esse limite. Dividir por capítulos é uma boa opção, mantendo as páginas em ordem e identificando cada parte.
+A ferramenta aceita transferências de **até 32 MB por arquivo**. Arquivos maiores podem ser divididos por capítulos, mantendo a ordem e identificando cada parte.
 
-## Necessários para completar o acervo
+## Já recebidos no ZIP
 
-| Sistema        | Arquivo que não pôde ser transferido                       | O que enviar                                                                                                  |
-| -------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Changeling 20A | `Changeling - The Dreaming - 20th Anniversary Edition.pdf` | O básico dividido em partes de até 32 MB.                                                                     |
-| Caçador 5E     | `H5 - Caçador a Revanche.pdf`                              | O básico dividido em partes de até 32 MB.                                                                     |
-| Mago 20A       | `Mago 20.pdf` **e** `Mago 20_compressed.pdf`               | Apenas uma das versões, dividida em partes de até 32 MB. A versão compactada enviada também excedeu o limite. |
-| Aparição 20A   | `Aparição O Oblívio  20 ed  com paginas corretas.pdf`      | O básico dividido em partes de até 32 MB.                                                                     |
+O arquivo `ilovepdf_compressed.zip` foi aberto e os dois PDFs estão legíveis:
 
-## Não precisam ser reenviados
+| Livro          | PDF recebido                                                          | Páginas |
+| -------------- | --------------------------------------------------------------------- | ------: |
+| Aparição 20A   | `Aparição O Oblívio  20 ed  com paginas corretas_compressed.pdf`      |     517 |
+| Changeling 20A | `Changeling - The Dreaming - 20th Anniversary Edition_compressed.pdf` |     482 |
 
-Estes dois originais excederam o limite, mas suas versões compactadas já puderam ser lidas:
+Esses dois livros **não precisam ser reenviados**. O acervo foi ampliado, as fontes passaram para consultadas e as páginas indicam a posição no PDF. Aparição usa a tradução comunitária recebida; Changeling foi consultado no original em inglês, com resumos em português.
 
-- `V5 - Módulo Básico (Galápagos) (_230221_175846.pdf` — usada a versão `_compressed.pdf`.
-- `Westhaven_by_Night_11.0.pdf` — usada a versão `_compressed.pdf`.
+## Ainda necessários
 
-Os documentos 1–7, `Changeling Artes.pdf`, `TRUNFOS.pdf`, o guia legado de Caçador e as bases de fichas menores também puderam ser transferidos. `Doc 2.pdf` e páginas digitalizadas do guia de Caçador exigiram OCR; fontes amadoras ou sem edição confirmada estão identificadas no acervo.
+| Sistema    | Arquivo pendente                          | O que enviar                                                                                                    |
+| ---------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Caçador 5E | `H5 - Caçador a Revanche.pdf`             | Uma versão compactada ou partes de até 32 MB.                                                                   |
+| Mago 20A   | `Mago 20.pdf` ou `Mago 20_compressed.pdf` | Basta uma versão compactada ou dividida em partes de até 32 MB. Ambas as versões anteriores excederam o limite. |
 
-## Tratamento dos outros anexos
+Os livros de Mago e Caçador não estão no ZIP recebido. As referências de ficha e TRUNFOS já disponíveis continuam no site, com sua cobertura identificada.
 
-Fichas preenchidas foram consideradas somente por seus rótulos e estrutura. Nomes, pontuações, equipamentos, antecedentes escolhidos e histórias dos personagens não foram publicados. PDFs inteiros e imagens dos anexos não foram adicionados ao site.
+## Outros arquivos já acessíveis
 
-`Build Assembly.pdf` descreve a montagem de um embaralhador de cartas e não foi usado como material de regras do Mundo das Trevas. Versões repetidas de fichas não geram sistemas adicionais.
+- Vampiro 5E: a versão `_compressed.pdf` do Módulo Básico foi consultada.
+- Westhaven 11.0: a versão `_compressed.pdf` foi consultada.
+- Documentos 1–7, `Changeling Artes.pdf`, `TRUNFOS.pdf`, guia legado de Caçador e bases de ficha menores foram transferidos na primeira remessa.
 
-## Próxima extração
+`Doc 2.pdf` e páginas digitalizadas do guia de Caçador exigiram OCR. Fontes amadoras, adicionais ou sem edição confirmada mantêm a identificação de origem. Todo Changeling permanece organizado como 20A conforme a escolha da mesa.
 
-Com os livros acessíveis, será possível completar lore, opções de criação, efeitos por nível, tabelas e regras atualmente pendentes, além de conferir as traduções e diferenças entre a ficha legada de Aparição e o livro 20A. As entradas atuais conservam a referência exata à fonte já consultada.
+## Tratamento das fichas e anexos
+
+Fichas preenchidas foram usadas somente por seus rótulos e estrutura. Nomes, pontuações, equipamento, antecedentes escolhidos e histórias dos personagens não foram publicados. PDFs inteiros e imagens dos anexos não são adicionados ao site ou ao repositório.
+
+A ficha de Aparição foi atualizada para as Habilidades do livro 20A, corrigindo diferenças da base legada. Fichas locais já preenchidas conservam seus valores existentes; novos campos começam vazios. Campos antigos permanecem recuperáveis na exportação JSON.
+
+`Build Assembly.pdf` trata da montagem de um embaralhador de cartas e não foi usado como fonte de regras. Versões repetidas de fichas não criam sistemas adicionais.

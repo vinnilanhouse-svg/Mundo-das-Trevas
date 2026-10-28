@@ -5,12 +5,12 @@ Acervo em português para cinco sistemas do Mundo das Trevas, em React + Vite, p
 | Sistema                  | Edição principal | Entradas |
 | ------------------------ | ---------------- | -------: |
 | Vampiro: A Máscara       | 5E               |      127 |
-| Changeling: O Sonhar     | 20A              |      182 |
+| Changeling: O Sonhar     | 20A              |      260 |
 | Caçador: A Revanche      | 5E               |       54 |
 | Mago: A Ascensão         | 20A              |       24 |
-| Aparição: O Esquecimento | 20A              |       18 |
+| Aparição: O Esquecimento | 20A              |      247 |
 
-As **405 entradas** incluem resumos, índices de referência, campos de ficha e explicações de cobertura. Não representam 405 regras completas: Mago e Aparição, em especial, aguardam livros que excederam o limite de transferência.
+As **712 entradas** incluem resumos, índices de referência, campos de ficha e explicações de cobertura. Não representam 712 regras completas: há resumos e índices, além de pontos pendentes em Mago e Caçador por falta dos respectivos livros completos.
 
 ## Rodar e validar
 
@@ -27,7 +27,7 @@ npm run build
 npm run preview
 ```
 
-`npm test` verifica sistemas/edições, áreas, referências e limites de páginas, campos vazios das fichas e separação do guia antigo de Caçador. O build separa aplicação, acervo e dependências para permitir cache independente.
+`npm test` verifica sistemas/edições, áreas, referências e limites de páginas, campos vazios das fichas e separação do guia antigo de Caçador e cobertura dos livros recebidos no ZIP. O build separa aplicação, acervo e dependências para permitir cache independente.
 
 ## Navegação
 
@@ -44,10 +44,10 @@ Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As refer
 ## Documentos e cobertura
 
 - **Vampiro:** Módulo Básico 5E, base de ficha e Westhaven 11.0. A compilação Westhaven é identificada como material de fã; suas opções não são todas do básico.
-- **Changeling:** Livro das Artes, documentos 1–7 e estrutura de ficha C20. Inclui 19 Artes, seis Alçadas e 95 truques, por Arte e nível. Livro básico completo pendente.
+- **Changeling:** básico C20 completo (482 páginas), Livro das Artes, documentos 1–7 e base de ficha. O acervo reúne 18 Artes do básico e Fabulomancia como referência adicional, seis Alçadas e 95 truques. Há criação, regras, habilidades, Casas, geografia e índices de Qualidades/Defeitos com fontes do livro.
 - **Caçador:** estrutura da ficha H5, TRUNFOS e guia legado dos Imbuídos, separados. Livro H5 completo pendente.
 - **Mago:** estrutura da ficha M20, com grupos de Habilidades e nove Esferas. Lore e efeitos completos não foram extraídos do livro inacessível.
-- **Aparição:** estrutura de ficha legada. O livro 20A é necessário para confirmar regras e diferenças de edição.
+- **Aparição:** livro 20A completo (517 páginas, tradução comunitária). Inclui lore, criação, habilidades corrigidas, Antecedentes, Legiões, Sombra, 16 Arcanoi, 80 artes Comuns e índices das artes Iniciadas. A ficha digital foi conferida com o livro.
 
 Os PDFs, extrações brutas e imagens dos personagens não fazem parte do repositório nem do site. Valores, escolhas e histórias das fichas preenchidas não foram incorporados ao acervo. A estrutura dos formulários foi montada a partir dos rótulos impressos.
 
@@ -87,11 +87,11 @@ A ficha local não é enviada ao site público e não faz parte da exportação 
 
 Chaves de armazenamento:
 
-- `arquivo-trevas-content-v2`: rascunho do acervo.
+- `arquivo-trevas-content-v3`: rascunho do acervo atualizado com os novos livros.
 - `arquivo-trevas-favorites-v1`: favoritos.
 - `arquivo-trevas-sheet-v1-<sistema>`: ficha local.
 
-A chave antiga `arquivo-trevas-content-v1` não é apagada, mas não substitui os documentos desta versão. Para voltar ao acervo publicado, remova apenas `arquivo-trevas-content-v2` no armazenamento do navegador. Isso não remove fichas ou favoritos.
+As chaves antigas `arquivo-trevas-content-v1` e `arquivo-trevas-content-v2` não são apagadas, mas não substituem os documentos desta versão. Para voltar ao acervo publicado, remova apenas `arquivo-trevas-content-v3` no armazenamento do navegador. Isso não remove fichas ou favoritos. Fichas antigas recebem novos campos vazios, preservando os valores existentes e chaves legadas para exportação.
 
 ## Publicar na Vercel
 
