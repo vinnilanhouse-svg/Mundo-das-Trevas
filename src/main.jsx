@@ -52,12 +52,6 @@ function Sigil({ kind = "vampire", className = "" }) {
         <circle cx="32" cy="10" r="2" />
       </>
     ),
-    wolf: (
-      <>
-        <path d="m15 14 6 19-3 8 14 15 14-15-3-8 6-19-14 12h-6Z" />
-        <path d="m22 36 7 3-3 6m16-9-7 3 3 6m-12 3 6 4 6-4M32 28v7" />
-      </>
-    ),
     mage: (
       <>
         <circle cx="32" cy="32" r="23" />
@@ -80,29 +74,6 @@ function Sigil({ kind = "vampire", className = "" }) {
       <>
         <circle cx="32" cy="32" r="19" />
         <path d="M32 5v17m0 20v17M5 32h17m20 0h17M25 32h14m-7-7v14" />
-      </>
-    ),
-    demon: (
-      <>
-        <path d="M18 8c-8 16-2 26 14 26S54 24 46 8M17 24l5 21 10 11 10-11 5-21M24 37l5 3m11-3-5 3m-7 7h8M32 19v13" />
-      </>
-    ),
-    mummy: (
-      <>
-        <path d="M22 22h20v24L32 57 22 46ZM16 25l16-17 16 17M22 30l20 7m-20 1 20 7m-20-1 12 8M26 25h12" />
-      </>
-    ),
-    kindred: (
-      <>
-        <circle cx="32" cy="32" r="23" />
-        <path d="M32 9c-20 14 20 32 0 46M18 32h28M32 18v28" />
-        <circle cx="24" cy="22" r="2" />
-        <circle cx="40" cy="42" r="2" />
-      </>
-    ),
-    orpheus: (
-      <>
-        <path d="M19 15v22a13 13 0 0 0 26 0V15M14 14h10m16 0h10M32 9v46M25 23v14m14-14v14M22 55h20" />
       </>
     ),
   };
@@ -165,9 +136,15 @@ function load(key, fallback, validator = () => true) {
     return fallback;
   }
 }
+// Keep drafts for the supported systems when an older catalog is cached/imported.
+function selectSystems(content) {
+  return initialContent.map(
+    (system) => content.find((entry) => entry.id === system.id) || system,
+  );
+}
 function App() {
   const [systems, setSystems] = useState(() =>
-    load(CONTENT_KEY, initialContent, validContent),
+    selectSystems(load(CONTENT_KEY, initialContent, validContent)),
   );
   const [favorites, setFavorites] = useState(() =>
     load(
@@ -818,11 +795,20 @@ function ContentEditor({ systems, selectedId, onSave, onClose, notify }) {
       return;
     }
     try {
-      const data = JSON.parse(await file.text());
-      if (!validContent(data))
+      const imported = JSON.parse(await file.text());
+      if (!validContent(imported))
         throw new Error(
           "Formato inválido. Use o modelo exportado pelo editor.",
         );
+      if (
+        !imported.some((entry) =>
+          initialContent.some((system) => system.id === entry.id),
+        )
+      )
+        throw new Error(
+          "O arquivo não contém nenhum dos cinco sistemas deste acervo.",
+        );
+      const data = selectSystems(imported);
       onSave(data);
       setSystemId(data[0].id);
       setSectionId(data[0].sections[0].id);

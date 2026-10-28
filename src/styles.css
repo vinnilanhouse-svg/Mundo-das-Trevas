@@ -194,10 +194,6 @@ a svg {
   --color: #bd7488;
   --tint: #432331;
 }
-.wolf {
-  --color: #98a67c;
-  --tint: #293329;
-}
 .mage {
   --color: #a18bbd;
   --tint: #31263f;
@@ -213,22 +209,6 @@ a svg {
 .hunter {
   --color: #c18e72;
   --tint: #3e2c24;
-}
-.demon {
-  --color: #b96d66;
-  --tint: #422522;
-}
-.mummy {
-  --color: #baac7a;
-  --tint: #373321;
-}
-.kindred {
-  --color: #7aa79e;
-  --tint: #223b36;
-}
-.orpheus {
-  --color: #a8a5b8;
-  --tint: #302f3c;
 }
 .sidebar-bottom {
   margin-top: auto;

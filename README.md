@@ -20,7 +20,7 @@ npm run preview
 
 ## O que já funciona
 
-- Catálogo de dez sistemas, com apresentação e símbolos geométricos próprios.
+- Catálogo de cinco sistemas: Vampiro, Changeling, Caçador, Mago e Aparição, com apresentação e símbolos geométricos próprios.
 - Busca por nome ou tema, filtro por edição e favoritos locais.
 - Página de cada sistema com visão geral, criação de personagem, regras, poderes, cenário e referências.
 - Layout responsivo e navegação por teclado.
@@ -37,11 +37,11 @@ O acervo inteiro fica em **`src/content.json`**. Cada sistema tem:
 
 - `id`: identificador único, em letras minúsculas, números e hífens; usado no endereço.
 - `name`, `subtitle`, `original`, `description`, `year`, `theme`: apresentação.
-- `kind`: aparência do cartão (`vampire`, `wolf`, `mage`, `ghost`, `fae`, `hunter`, `demon`, `mummy`, `kindred`, `orpheus`).
+- `kind`: aparência do cartão (`vampire`, `mage`, `ghost`, `fae`, `hunter`).
 - `editions`: edições que aparecem no filtro.
 - `sections`: seções com `id`, `title`, `intro`, `body`, `edition` e `source` (livro/página).
 
-Adicione seções com IDs únicos dentro do sistema. Novos sistemas aparecem automaticamente no catálogo e na navegação. As seções aceitam texto simples e quebras de linha; HTML e Markdown não são interpretados.
+Adicione seções com IDs únicos dentro do sistema. O catálogo usa os cinco sistemas definidos neste arquivo. Ao carregar rascunhos antigos ou importar JSON, o site conserva apenas esses sistemas, preservando seus textos editados; sistemas ausentes recebem o conteúdo padrão. As seções aceitam texto simples e quebras de linha; HTML e Markdown não são interpretados.
 
 ### Usar o editor do site
 
