@@ -1,0 +1,612 @@
+[
+  {
+    "id": "vampiro",
+    "name": "Vampiro",
+    "subtitle": "A Máscara",
+    "original": "Vampire: The Masquerade",
+    "description": "Sangue, segredos e a eterna disputa pelo poder.",
+    "kind": "vampire",
+    "year": "1991",
+    "editions": ["Clássica", "20º aniversário", "5ª edição"],
+    "theme": "Política e horror pessoal",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  },
+  {
+    "id": "lobisomem",
+    "name": "Lobisomem",
+    "subtitle": "O Apocalipse",
+    "original": "Werewolf: The Apocalypse",
+    "description": "Entre a fúria e o dever, o último grito de Gaia.",
+    "kind": "wolf",
+    "year": "1992",
+    "editions": ["Clássica", "20º aniversário", "5ª edição"],
+    "theme": "Espíritos e sobrevivência",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  },
+  {
+    "id": "mago",
+    "name": "Mago",
+    "subtitle": "A Ascensão",
+    "original": "Mage: The Ascension",
+    "description": "A realidade é uma história. Quem tem o poder de reescrevê-la?",
+    "kind": "mage",
+    "year": "1993",
+    "editions": ["Clássica", "20º aniversário"],
+    "theme": "Magia e realidade",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  },
+  {
+    "id": "aparicao",
+    "name": "Aparição",
+    "subtitle": "O Esquecimento",
+    "original": "Wraith: The Oblivion",
+    "description": "Nem toda história termina com o último suspiro.",
+    "kind": "ghost",
+    "year": "1994",
+    "editions": ["Clássica", "20º aniversário"],
+    "theme": "Memória e além-vida",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  },
+  {
+    "id": "changeling",
+    "name": "Changeling",
+    "subtitle": "O Sonhar",
+    "original": "Changeling: The Dreaming",
+    "description": "O impossível ainda vive entre os sonhos e o desencanto.",
+    "kind": "fae",
+    "year": "1995",
+    "editions": ["Clássica", "20º aniversário"],
+    "theme": "Sonhos e identidade",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  },
+  {
+    "id": "cacador",
+    "name": "Caçador",
+    "subtitle": "A Revanche",
+    "original": "Hunter: The Reckoning",
+    "description": "Quando a escuridão olha de volta, alguém precisa agir.",
+    "kind": "hunter",
+    "year": "1999",
+    "editions": ["Clássica", "5ª edição"],
+    "theme": "Investigação e sacrifício",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  },
+  {
+    "id": "demonio",
+    "name": "Demônio",
+    "subtitle": "A Queda",
+    "original": "Demon: The Fallen",
+    "description": "A eternidade carrega o peso de uma antiga rebelião.",
+    "kind": "demon",
+    "year": "2002",
+    "editions": ["Clássica"],
+    "theme": "Fé e redenção",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  },
+  {
+    "id": "mumia",
+    "name": "Múmia",
+    "subtitle": "A Ressurreição",
+    "original": "Mummy: The Resurrection",
+    "description": "Morrer foi apenas o começo de uma longa jornada.",
+    "kind": "mummy",
+    "year": "2001",
+    "editions": ["Clássica"],
+    "theme": "Renascimento e equilíbrio",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  },
+  {
+    "id": "kindred",
+    "name": "Kindred",
+    "subtitle": "of the East",
+    "original": "Kindred of the East",
+    "description": "Uma segunda existência entre a fome e a iluminação.",
+    "kind": "kindred",
+    "year": "1998",
+    "editions": ["Clássica"],
+    "theme": "Espírito e transformação",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  },
+  {
+    "id": "orpheus",
+    "name": "Orpheus",
+    "subtitle": "Além do véu",
+    "original": "Orpheus",
+    "description": "Há negócios que nem a morte consegue encerrar.",
+    "kind": "orpheus",
+    "year": "2003",
+    "editions": ["Clássica"],
+    "theme": "Mistério e conspiração",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Visão geral",
+        "intro": "Conheça a proposta, os temas e os conflitos deste jogo.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "2",
+        "title": "Criação de personagem",
+        "intro": "Um espaço para organizar conceitos, características e etapas de criação.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "3",
+        "title": "Regras e mecânicas",
+        "intro": "Consulte as mecânicas da edição selecionada e suas referências.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "4",
+        "title": "Poderes e habilidades",
+        "intro": "Organize capacidades sobrenaturais, requisitos e efeitos.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "5",
+        "title": "Cenário e facções",
+        "intro": "Conheça os grupos, os lugares e as disputas do cenário.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      },
+      {
+        "id": "6",
+        "title": "Referências",
+        "intro": "Registre os livros, as páginas e as fontes utilizadas.",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae arcu vel augue tincidunt consequat. Nulla facilisi. Sed at sapien a magna dignissim ultrices. Este é um texto provisório: o conteúdo será substituído pelos documentos e referências da sua mesa.",
+        "edition": "A definir",
+        "source": "Conteúdo demonstrativo · referência pendente"
+      }
+    ]
+  }
+]
