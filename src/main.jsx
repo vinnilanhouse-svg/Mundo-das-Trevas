@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import initialContent from "./content.json";
+import { SystemLibrary, SystemLabel, validateLibrary } from "./Library.jsx";
 import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
 import "@fontsource/dm-sans/latin-400.css";
@@ -8,7 +9,7 @@ import "@fontsource/dm-sans/latin-500.css";
 import "@fontsource/dm-sans/latin-600.css";
 import "./styles.css";
 
-const CONTENT_KEY = "arquivo-trevas-content-v1";
+const CONTENT_KEY = "arquivo-trevas-content-v2";
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const paths = {
   grid: "M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z",
@@ -92,42 +93,7 @@ function Sigil({ kind = "vampire", className = "" }) {
     </svg>
   );
 }
-function validContent(value) {
-  return (
-    Array.isArray(value) &&
-    value.length > 0 &&
-    value.length <= 100 &&
-    new Set(value.map((s) => s?.id)).size === value.length &&
-    value.every(
-      (s) =>
-        s &&
-        typeof s.id === "string" &&
-        /^[a-z0-9-]+$/.test(s.id) &&
-        [
-          "name",
-          "subtitle",
-          "original",
-          "description",
-          "kind",
-          "year",
-          "theme",
-        ].every((k) => typeof s[k] === "string") &&
-        Array.isArray(s.editions) &&
-        s.editions.length > 0 &&
-        s.editions.every((e) => typeof e === "string") &&
-        Array.isArray(s.sections) &&
-        s.sections.length > 0 &&
-        new Set(s.sections.map((a) => a?.id)).size === s.sections.length &&
-        s.sections.every(
-          (a) =>
-            a &&
-            ["id", "title", "intro", "body", "edition", "source"].every(
-              (k) => typeof a[k] === "string",
-            ),
-        ),
-    )
-  );
-}
+const validContent = validateLibrary;
 function load(key, fallback, validator = () => true) {
   try {
     const data = JSON.parse(localStorage.getItem(key));
@@ -159,14 +125,28 @@ function App() {
   const [view, setView] = useState("all");
   const [menu, setMenu] = useState(false);
   const [editor, setEditor] = useState(false);
+  const [editorSectionId, setEditorSectionId] = useState(null);
   const [toast, setToast] = useState("");
   const [storageError, setStorageError] = useState(false);
   const searchRef = useRef(null);
   useEffect(() => {
+    let previousHash = location.hash;
     const onHash = () => {
+      const sameArea =
+        previousHash.split("/").slice(0, 4).join("/") ===
+        location.hash.split("/").slice(0, 4).join("/");
+      previousHash = location.hash;
       setRoute(location.hash);
       setMenu(false);
-      window.scrollTo(0, 0);
+      if (sameArea && location.hash.split("/")[4]) {
+        requestAnimationFrame(() =>
+          document
+            .querySelector(".library-article")
+            ?.scrollIntoView({ block: "start" }),
+        );
+      } else {
+        window.scrollTo(0, 0);
+      }
     };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
@@ -193,11 +173,13 @@ function App() {
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [editor]);
-  const selectedId = route.startsWith("#/sistema/") ? route.slice(10) : null;
+  const selectedId = route.startsWith("#/sistema/")
+    ? route.split("/")[2]
+    : null;
   const selected = systems.find((s) => s.id === selectedId);
   useEffect(() => {
     document.title = selected
-      ? `${selected.name}: ${selected.subtitle} — Arquivo das Trevas`
+      ? `${selected.name} ${selected.editionLabel}: ${selected.subtitle} — Arquivo das Trevas`
       : "Arquivo das Trevas — Acervo de sistemas";
   }, [selected]);
   function navigate(nextView) {
@@ -230,9 +212,9 @@ function App() {
     (s) =>
       (view !== "favorites" || favorites.includes(s.id)) &&
       (edition === "Todas as edições" || s.editions.includes(edition)) &&
-      normalize(`${s.name} ${s.subtitle} ${s.original} ${s.theme}`).includes(
-        normalize(query),
-      ),
+      normalize(
+        `${s.name} ${s.editionLabel} ${s.subtitle} ${s.original} ${s.theme}`,
+      ).includes(normalize(query)),
   );
   return (
     <div className="app-shell">
@@ -283,7 +265,7 @@ function App() {
               key={s.id}
             >
               <span className={`system-dot ${s.kind}`} />
-              {s.name}
+              <SystemLabel system={s} />
               <Icon name="arrow" size={14} />
             </a>
           ))}
@@ -300,7 +282,7 @@ function App() {
           <button className="about-link" onClick={() => navigate("about")}>
             <Icon name="info" size={17} /> Sobre o projeto
           </button>
-          <span className="version">ACERVO INDEPENDENTE · V.0.1</span>
+          <span className="version">ACERVO INDEPENDENTE · V.0.2</span>
         </div>
       </aside>
       <div className="workspace">
@@ -317,7 +299,7 @@ function App() {
             <span className="slash">/</span>
             <strong>
               {selected
-                ? selected.name
+                ? `${selected.name} ${selected.editionLabel}`
                 : view === "about"
                   ? "Sobre o projeto"
                   : view === "favorites"
@@ -354,12 +336,16 @@ function App() {
               </button>
             </div>
           ) : selected ? (
-            <SystemDetail
+            <SystemLibrary
               key={selected.id}
               system={selected}
+              route={route}
               favorite={favorites.includes(selected.id)}
-              toggleFavorite={() => toggleFavorite(selected.id)}
-              onEdit={() => setEditor(true)}
+              onFavorite={() => toggleFavorite(selected.id)}
+              onEdit={(id) => {
+                setEditorSectionId(id);
+                setEditor(true);
+              }}
             />
           ) : view === "about" ? (
             <About onEdit={() => setEditor(true)} />
@@ -386,7 +372,13 @@ function App() {
                       para explorar
                     </span>
                     <span className="meta-divider" />
-                    <span>Um só Mundo das Trevas</span>
+                    <span>
+                      {systems.reduce(
+                        (count, s) => count + s.sections.length,
+                        0,
+                      )}{" "}
+                      entradas no acervo
+                    </span>
                   </div>
                 </div>
                 <div className="hero-art" aria-hidden="true">
@@ -496,7 +488,9 @@ function App() {
                           <span />
                         </div>
                         <div className="card-name">
-                          <h3>{s.name}</h3>
+                          <h3>
+                            <SystemLabel system={s} />
+                          </h3>
                           <span>{s.subtitle}</span>
                         </div>
                         <p>{s.description}</p>
@@ -548,8 +542,9 @@ function App() {
                 <div>
                   <h3>O arquivo está apenas começando.</h3>
                   <p>
-                    Esta é uma base em construção. Em breve, suas referências
-                    vão ocupar estas páginas.
+                    Consulte as referências de cada sistema e os materiais
+                    pendentes. Os textos podem ser ampliados pelo editor do
+                    acervo.
                   </p>
                 </div>
                 <button className="text-button" onClick={() => setEditor(true)}>
@@ -573,6 +568,7 @@ function App() {
         <ContentEditor
           systems={systems}
           selectedId={selected?.id}
+          selectedSectionId={editorSectionId}
           onSave={saveContent}
           onClose={() => setEditor(false)}
           notify={setToast}
@@ -584,83 +580,6 @@ function App() {
           {toast}
         </div>
       )}
-    </div>
-  );
-}
-function SystemDetail({ system: s, favorite, toggleFavorite, onEdit }) {
-  const [sectionId, setSectionId] = useState(s.sections[0].id);
-  const section = s.sections.find((a) => a.id === sectionId) || s.sections[0];
-  return (
-    <div className={`detail-page ${s.kind}`}>
-      <a href="#" className="back-link">
-        <Icon name="back" size={17} /> Voltar ao acervo
-      </a>
-      <section className="detail-hero">
-        <div>
-          <div className="eyebrow">WORLD OF DARKNESS / DESDE {s.year}</div>
-          <h1>
-            {s.name}
-            <span>{s.subtitle}</span>
-          </h1>
-          <p>{s.description}</p>
-          <div className="detail-editions">
-            {s.editions.map((e) => (
-              <span key={e}>{e}</span>
-            ))}
-          </div>
-        </div>
-        <Sigil kind={s.kind} />
-      </section>
-      <div className="detail-tools">
-        <span>
-          <Icon name="book" size={17} />
-          {s.sections.length} seções no arquivo
-        </span>
-        <button className="text-button" onClick={toggleFavorite}>
-          <Icon name="star" size={17} />
-          {favorite ? "Remover dos favoritos" : "Salvar nos favoritos"}
-        </button>
-      </div>
-      <div className="notice">
-        <Icon name="info" size={18} />
-        <span>
-          <strong>Conteúdo demonstrativo.</strong> Os textos abaixo são
-          provisórios. As regras e referências de cada edição serão adicionadas
-          depois.
-        </span>
-      </div>
-      <div className="reading-layout">
-        <nav className="reading-nav" aria-label="Seções do sistema">
-          <div className="eyebrow muted">NESTE ARQUIVO</div>
-          {s.sections.map((a, i) => (
-            <button
-              className={a.id === section.id ? "active" : ""}
-              key={a.id}
-              onClick={() => setSectionId(a.id)}
-            >
-              <span>{String(i + 1).padStart(2, "0")}</span>
-              {a.title}
-            </button>
-          ))}
-        </nav>
-        <article className="reading-content">
-          <div className="eyebrow">{s.original}</div>
-          <h2>{section.title}</h2>
-          <p className="reading-intro">{section.intro}</p>
-          <div className="article-meta">
-            <span>Edição: {section.edition}</span>
-            <span>Texto provisório</span>
-          </div>
-          <div className="article-body">{section.body}</div>
-          <div className="source">
-            <Icon name="book" size={17} />
-            {section.source}
-          </div>
-          <button className="button" onClick={onEdit}>
-            <Icon name="edit" size={16} /> Editar informações
-          </button>
-        </article>
-      </div>
     </div>
   );
 }
@@ -683,8 +602,9 @@ function About({ onEdit }) {
           <Icon name="book" />
           <h2>Um acervo em construção</h2>
           <p>
-            As descrições de apresentação são introdutórias. O conteúdo das
-            seções é Lorem ipsum e não deve ser usado como referência de regras.
+            O acervo reúne resumos, índices e estruturas de ficha dos documentos
+            enviados. Cada entrada indica sua fonte, edição e limitações.
+            Materiais ainda inacessíveis ficam identificados como pendentes.
           </p>
         </section>
         <section>
@@ -709,10 +629,20 @@ function About({ onEdit }) {
     </div>
   );
 }
-function ContentEditor({ systems, selectedId, onSave, onClose, notify }) {
+function ContentEditor({
+  systems,
+  selectedId,
+  selectedSectionId,
+  onSave,
+  onClose,
+  notify,
+}) {
   const [systemId, setSystemId] = useState(selectedId || systems[0].id);
   const system = systems.find((s) => s.id === systemId) || systems[0];
-  const [sectionId, setSectionId] = useState(system.sections[0].id);
+  const [sectionId, setSectionId] = useState(
+    system.sections.find((s) => s.id === selectedSectionId)?.id ||
+      system.sections[0].id,
+  );
   const section =
     system.sections.find((a) => a.id === sectionId) || system.sections[0];
   const [draft, setDraft] = useState({ ...section });
@@ -798,7 +728,7 @@ function ContentEditor({ systems, selectedId, onSave, onClose, notify }) {
       const imported = JSON.parse(await file.text());
       if (!validContent(imported))
         throw new Error(
-          "Formato inválido. Use o modelo exportado pelo editor.",
+          "Formato inválido. Use um acervo v2 exportado pelo editor, com áreas e fontes.",
         );
       if (
         !imported.some((entry) =>
@@ -888,7 +818,7 @@ function ContentEditor({ systems, selectedId, onSave, onClose, notify }) {
             >
               {systems.map((s) => (
                 <option value={s.id} key={s.id}>
-                  {s.name}: {s.subtitle}
+                  {s.name} {s.editionLabel}: {s.subtitle}
                 </option>
               ))}
             </select>
@@ -907,13 +837,36 @@ function ContentEditor({ systems, selectedId, onSave, onClose, notify }) {
             >
               {system.sections.map((a) => (
                 <option key={a.id} value={a.id}>
-                  {a.title}
+                  {a.group} — {a.title}
                 </option>
               ))}
             </select>
           </label>
         </div>
         <form onSubmit={save}>
+          <div className="editor-selectors">
+            <label>
+              Área
+              <select
+                aria-label="Área"
+                value={draft.category}
+                onChange={(e) => update("category", e.target.value)}
+              >
+                <option value="lore">Lore</option>
+                <option value="mechanics">Mecânica</option>
+                <option value="sheet">Ficha</option>
+              </select>
+            </label>
+            <label>
+              Categoria interna
+              <input
+                required
+                maxLength={160}
+                value={draft.group}
+                onChange={(e) => update("group", e.target.value)}
+              />
+            </label>
+          </div>
           <label>
             Título
             <input
@@ -981,7 +934,7 @@ function ContentEditor({ systems, selectedId, onSave, onClose, notify }) {
                 ? "Alterações não salvas"
                 : saved
                   ? "Seção salva neste navegador"
-                  : "Edite uma seção para começar"}
+                  : "Edite uma entrada para começar"}
             </span>
             <button className="button button-primary" type="submit">
               <Icon name={saved && !dirty ? "check" : "edit"} size={16} />{" "}

@@ -1,0 +1,191 @@
+[
+  {
+    "id": "v5",
+    "title": "Vampiro 5E — Módulo Básico (Galápagos)",
+    "type": "livro básico",
+    "status": "lido",
+    "note": "Texto extraído da versão compactada; páginas citadas pela posição no PDF.",
+    "system": "vampiro",
+    "pages": 435
+  },
+  {
+    "id": "westhaven",
+    "title": "Westhaven by Night 11.0",
+    "type": "compilação de fã",
+    "status": "lido",
+    "note": "Reúne livros e materiais de origens diversas. Não equivale a um suplemento oficial; opções exigem validação da mesa.",
+    "system": "vampiro",
+    "pages": 356
+  },
+  {
+    "id": "v5-sheet",
+    "title": "Base de ficha de Vampiro 5E",
+    "type": "estrutura de ficha",
+    "status": "lido",
+    "note": "Somente rótulos e organização. Nenhum personagem preenchido foi incorporado.",
+    "system": "vampiro",
+    "pages": 2
+  },
+  {
+    "id": "c20-arts",
+    "title": "Changeling Artes — Livro das Artes",
+    "type": "resumo de fã / tradução amadora",
+    "status": "lido",
+    "note": "O próprio documento se identifica como resumo de C20 e avisa sobre possíveis erros de tradução.",
+    "system": "changeling",
+    "pages": 51
+  },
+  {
+    "id": "c20-sheet",
+    "title": "Base de ficha C20 — 2 partes",
+    "type": "estrutura de ficha",
+    "status": "lido",
+    "note": "Apenas campos impressos; valores e anotações preenchidos foram descartados.",
+    "system": "changeling",
+    "pages": 2
+  },
+  {
+    "id": "c-kith",
+    "title": "doc 1.pdf — Kith",
+    "type": "trecho de edição não confirmada",
+    "status": "lido",
+    "note": "Texto legado: números de regras não são tratados como regras C20.",
+    "system": "changeling",
+    "pages": 27
+  },
+  {
+    "id": "c-kith-ocr",
+    "title": "Doc 2.pdf — Os Kith",
+    "type": "trecho digitalizado / OCR",
+    "status": "lido",
+    "note": "OCR em português; edição do trecho não identificada.",
+    "system": "changeling",
+    "pages": 10
+  },
+  {
+    "id": "c-houses",
+    "title": "doc 3.pdf — Casas",
+    "type": "trecho de edição não confirmada",
+    "status": "lido",
+    "note": "Contexto e opções legadas separados da mecânica C20.",
+    "system": "changeling",
+    "pages": 5
+  },
+  {
+    "id": "c-courts",
+    "title": "doc 4.pdf — Sociedade e Cortes",
+    "type": "trecho de edição não confirmada",
+    "status": "lido",
+    "note": "Contexto de sociedade e códigos das Cortes.",
+    "system": "changeling",
+    "pages": 4
+  },
+  {
+    "id": "c-legacies",
+    "title": "doc 5.pdf — Legados",
+    "type": "trecho de edição não confirmada",
+    "status": "lido",
+    "note": "Catálogo legado; não converte automaticamente seus custos ou regras para C20.",
+    "system": "changeling",
+    "pages": 8
+  },
+  {
+    "id": "c-backgrounds",
+    "title": "doc 6.pdf — Antecedentes",
+    "type": "trecho de edição não confirmada",
+    "status": "lido",
+    "note": "Definições qualitativas preservadas; valores dependem da edição.",
+    "system": "changeling",
+    "pages": 5
+  },
+  {
+    "id": "c-merits",
+    "title": "doc 7.pdf — Qualidades e Defeitos",
+    "type": "trecho de edição não confirmada",
+    "status": "lido",
+    "note": "Opções legadas com custos de sua própria fonte, não custos confirmados de C20.",
+    "system": "changeling",
+    "pages": 19
+  },
+  {
+    "id": "h5-edges",
+    "title": "TRUNFOS.pdf",
+    "type": "referência de mesa",
+    "status": "lido",
+    "note": "Contém distinções de trunfos e opções expandidas; origem editorial de cada opção não confirmada.",
+    "system": "cacador",
+    "pages": 9
+  },
+  {
+    "id": "h5-sheet",
+    "title": "Base de ficha de Caçador 5E",
+    "type": "estrutura de ficha",
+    "status": "lido",
+    "note": "Campos de ambas as páginas; ignora valores, nomes, equipamentos e escolhas preenchidas.",
+    "system": "cacador",
+    "pages": 2
+  },
+  {
+    "id": "hunter-legacy",
+    "title": "Caçador — O Guia da Revanche",
+    "type": "guia de fã da edição original",
+    "status": "lido",
+    "note": "Imbuídos, Virtudes e poderes da edição original. Não pertence ao sistema de Caçador 5E.",
+    "system": "cacador",
+    "pages": 33
+  },
+  {
+    "id": "m20-sheet",
+    "title": "Base de ficha Mago 20A",
+    "type": "estrutura de ficha",
+    "status": "lido",
+    "note": "Cabeçalho identifica a edição de 20º aniversário. Somente rótulos, sem dados do personagem.",
+    "system": "mago",
+    "pages": 2
+  },
+  {
+    "id": "w-sheet",
+    "title": "Base de ficha Aparição: O Esquecimento",
+    "type": "estrutura de ficha legada",
+    "status": "lido",
+    "note": "Não identifica a edição 20A. Campos são apresentados como base legada, sem importar valores preenchidos.",
+    "system": "aparicao",
+    "pages": 2
+  },
+  {
+    "id": "c20-core",
+    "title": "Changeling — The Dreaming — 20th Anniversary Edition.pdf",
+    "type": "livro básico",
+    "status": "pendente",
+    "note": "Arquivo acima do limite de transferência de 32 MB.",
+    "system": "changeling",
+    "pages": null
+  },
+  {
+    "id": "h5-core",
+    "title": "H5 — Caçador a Revanche.pdf",
+    "type": "livro básico",
+    "status": "pendente",
+    "note": "Arquivo acima do limite de transferência de 32 MB.",
+    "system": "cacador",
+    "pages": null
+  },
+  {
+    "id": "m20-core",
+    "title": "Mago 20.pdf / Mago 20_compressed.pdf",
+    "type": "livro básico",
+    "status": "pendente",
+    "note": "As duas versões excedem 32 MB. Basta reenviar uma versão dividida.",
+    "system": "mago",
+    "pages": null
+  },
+  {
+    "id": "w20-core",
+    "title": "Aparição O Oblívio 20 ed com paginas corretas.pdf",
+    "type": "livro básico",
+    "status": "pendente",
+    "note": "Arquivo acima do limite de transferência de 32 MB.",
+    "system": "aparicao",
+    "pages": null
+  }
+]
