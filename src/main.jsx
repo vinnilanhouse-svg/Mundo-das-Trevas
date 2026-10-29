@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import initialContent from "./content.json";
 import { SystemLibrary, SystemLabel } from "./Library.jsx";
 import { CemeteryAtmosphere } from "./CemeteryAtmosphere.jsx";
+import { ForestAtmosphere } from "./ForestAtmosphere.jsx";
 import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
 import "@fontsource/dm-sans/latin-400.css";
@@ -10,6 +11,7 @@ import "@fontsource/dm-sans/latin-500.css";
 import "@fontsource/dm-sans/latin-600.css";
 import "./styles.css";
 import "./cemetery.css";
+import "./forest.css";
 
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const paths = {
@@ -190,9 +192,10 @@ function App() {
   );
   return (
     <div
-      className={`app-shell${selectedId === "aparicao" ? " theme-aparicao" : ""}`}
+      className={`app-shell${selectedId === "aparicao" ? " theme-aparicao" : selectedId === "changeling" ? " theme-changeling" : ""}`}
     >
       {selectedId === "aparicao" && <CemeteryAtmosphere />}
+      {selectedId === "changeling" && <ForestAtmosphere />}
       {menu && (
         <button
           className="sidebar-scrim"
