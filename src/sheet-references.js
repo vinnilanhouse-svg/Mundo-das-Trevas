@@ -1,4 +1,11 @@
+import documents from "./documents.json" with { type: "json" };
 import { articleHref, groupHref } from "./library-routes.js";
+import {
+  sheetReferencePolicy,
+  topicTarget,
+  groupTarget,
+} from "./sheet-reference-policy.js";
+
 export const normalizeReferenceTerm = (text = "") =>
   text
     .normalize("NFD")
@@ -9,401 +16,141 @@ export const normalizeReferenceTerm = (text = "") =>
     .trim();
 
 export function createSheetReferences(system) {
-  const titles = new Map(),
-    groups = new Map(),
-    fieldGroups = new Map();
-  const ordered = [...system.sections].sort(
-    (a, b) =>
-      (a.category === "mechanics" ? 0 : a.category === "lore" ? 1 : 2) -
-      (b.category === "mechanics" ? 0 : b.category === "lore" ? 1 : 2),
-  );
-  for (const article of ordered) {
-    const key = normalizeReferenceTerm(article.title);
-    if (!titles.has(key)) titles.set(key, article);
-    const gkey = `${article.category}:${normalizeReferenceTerm(article.group)}`;
-    if (!groups.has(gkey)) groups.set(gkey, article.group);
+  const policy = sheetReferencePolicy[system.id];
+  const ordered = system.sections;
+  const topics = new Map();
+  const groups = new Set();
+  for (const article of system.sections) {
+    const key = `${article.category}:${normalizeReferenceTerm(article.title)}`;
+    if (!topics.has(key)) topics.set(key, []);
+    topics.get(key).push(article);
+    groups.add(`${article.category}:${article.group}`);
   }
-  for (const group of system.sheet.groups)
-    for (const field of group.fields) fieldGroups.set(field.id, group.title);
-  const topic = (title) => {
-    const article = titles.get(normalizeReferenceTerm(title));
-    return article
-      ? {
-          href: articleHref(system.id, article),
-          title: article.title,
-          kind: "article",
-          id: article.id,
-        }
-      : null;
+  const fieldGroups = new Map(
+    system.sheet.groups.flatMap((group) =>
+      group.fields.map((field) => [field.id, group]),
+    ),
+  );
+  const resolve = (target) => {
+    if (!target) return null;
+    if (target.type === "article") {
+      const candidates =
+        topics.get(
+          `${target.category}:${normalizeReferenceTerm(target.title)}`,
+        ) || [];
+      const matches = target.group
+        ? candidates.filter((article) => article.group === target.group)
+        : candidates;
+      if (matches.length !== 1) return null;
+      const article = matches[0];
+      return {
+        href: articleHref(system.id, article),
+        title: article.title,
+        kind: "article",
+        id: article.id,
+      };
+    }
+    if (target.type === "group") {
+      if (!groups.has(`${target.category}:${target.group}`)) return null;
+      return {
+        href: groupHref(system.id, target.category, target.group),
+        title: target.group,
+        kind: "group",
+        group: target.group,
+        category: target.category,
+      };
+    }
+    if (target.type === "document") {
+      const document = documents.find(
+        (d) => d.sourceId === target.sourceId && d.system === system.id,
+      );
+      if (
+        !document ||
+        !Number.isInteger(target.page) ||
+        target.page < 1 ||
+        target.page > document.pages
+      )
+        return null;
+      return {
+        href: `#/sistema/${system.id}/documentos/${target.sourceId}/${target.page}`,
+        title: target.title,
+        kind: "document",
+        sourceId: target.sourceId,
+        page: target.page,
+      };
+    }
+    return null;
   };
-  const category = (name, area = "mechanics") => {
-    const group = groups.get(`${area}:${normalizeReferenceTerm(name)}`);
-    return group
-      ? {
-          href: groupHref(system.id, area, group),
-          title: group,
-          kind: "group",
-          group,
-          category: area,
-        }
-      : null;
-  };
-  const first = (...items) => items.find(Boolean) || null;
-  const creation = first(
-    topic("Roteiro de criação"),
-    topic("Roteiro de criação C20"),
-    topic("Roteiro W20"),
-    category("Criação de personagem"),
-    category("Regras H5"),
-    topic("Criação: Atributos e Habilidades"),
-  );
-  const identity = first(
-    topic("Identidade"),
-    topic("Identidade e conceito"),
-    topic("Identidade feérica"),
-    topic("Identidade e história"),
-    topic("Como preencher a base H5"),
-    creation,
-  );
-  const experience = first(
-    topic("Experiência e progressão"),
-    topic("Custos de experiência"),
-    topic("Desenvolvimento da personagem"),
-    category("Experiência"),
-  );
-  const health = first(
-    topic("Vitalidade e dano"),
-    topic("Vitalidade real e quimérica"),
-    topic("Vitalidade e tipos de dano"),
-    topic("Corpus e tipos de dano"),
-    topic("Dano Superficial e Agravado"),
-    category("Dano e combate"),
-  );
-  const willpower = first(
-    topic("Força de Vontade"),
-    topic("Pathos e Força de Vontade"),
-    topic("Gastar Força de Vontade"),
-    topic("Temperamentos e Aspecto"),
-  );
-  const backgrounds = first(
-    category("Antecedentes"),
-    category("Antecedentes H5"),
-    topic("Antecedentes e outras características"),
-  );
-  const merits = first(
-    category("Qualidades e Defeitos"),
-    category("Qualidades e Defeitos H5"),
-    topic("Vantagens e Defeitos"),
-    category("Apêndices — texto do livro"),
-  );
-  const powers = first(
-    category("Artes"),
-    category("Esferas"),
-    category("Disciplinas"),
-    topic("Arcanoi"),
-    topic("Trunfos, Distinções e criação"),
-  );
-  const focus = first(
-    topic("Paradigma, prática e instrumentos"),
-    topic("Como conjurar um Efeito"),
-  );
-  const resources = first(
-    category("Recursos e condições"),
-    category("Trilhas"),
-    topic("Quintessência e Paradoxo"),
-    category("Sangue e humanidade"),
-    category("Regras H5"),
-  );
-  const aliases = new Map();
-  const add = (terms, reference) => {
-    for (const term of terms)
-      aliases.set(normalizeReferenceTerm(term), reference);
-  };
-  add(
-    [
-      "Identidade",
-      "Personagem",
-      "História e anotações",
-      "História e notas",
-      "Anotações",
-      "Vida",
-      "Morte",
-      "Arrependimento",
-      "Nome",
-      "Jogador",
-      "Crônica",
-      "Conceito",
-      "Equipamento e história",
-    ],
-    identity,
-  );
-  add(
-    [
-      "Experiência",
-      "Experiência disponível",
-      "Experiência total",
-      "Vantagens e trajetória",
-    ],
-    experience,
-  );
-  add(
-    [
-      "Vitalidade",
-      "Vitalidade máxima",
-      "Vitalidade real",
-      "Vitalidade quimérica",
-      "Dano e condições",
-      "Dano superficial / agravado",
-      "Máculas e condições",
-      "Condições e dano",
-    ],
-    health,
-  );
-  add(
-    [
-      "Força de Vontade máxima",
-      "Força de Vontade permanente",
-      "Força de Vontade temporária",
-      "Força de Vontade",
-    ],
-    willpower,
-  );
-  add(
-    [
-      "Antecedentes",
-      "Antecedentes e níveis",
-      "Antecedentes e outras características",
-    ],
-    backgrounds,
-  );
-  add(
-    ["Qualidades e Defeitos", "Qualidades e custos", "Defeitos e custos"],
-    merits,
-  );
-  add(
-    [
-      "Disciplinas e níveis",
-      "Poderes e fontes",
-      "Artes, níveis e truques",
-      "Vantagens e poderes",
-      "Vantagens",
-    ],
-    powers,
-  );
-  add(["Rituais e fórmulas"], first(category("Rituais e alquimia"), powers));
-  add(
-    [
-      "Esferas opcionais",
-      "Esfera opcional adotada, graduação e Esfera substituída",
-    ],
-    category("Esferas opcionais"),
-  );
-  add(
-    [
-      "Foco",
-      "Foco e opções de mesa",
-      "Prática e anotações",
-      "Paradigma",
-      "Práticas",
-      "Instrumentos",
-      "Prática, instrumentos e efeitos",
-    ],
-    focus,
-  );
-  add(
-    [
-      "Recursos mágicos",
-      "Trilhas",
-      "Sangue e condição",
-      "Temperamentos — reservas",
-      "Vantagens e Temperamentos",
-    ],
-    resources,
-  );
-  add(["Quintessência", "Paradoxo"], topic("Quintessência e Paradoxo"));
-  add(["Fome"], topic("Fome e testes de Despertar"));
-  add(["Potência de Sangue", "Geração"], topic("Potência de Sangue e Geração"));
-  add(
-    [
-      "Humanidade",
-      "Convicções",
-      "Pilares",
-      "Convicções e vínculos",
-      "Convicções e relacionamentos",
-    ],
-    first(
-      topic("Humanidade, Convicções e Pilares"),
-      topic("Ambição, Desejo e Pilares"),
-      identity,
-    ),
-  );
-  add(
-    ["Coterie e relacionamentos", "Relações da célula"],
-    first(
-      topic("Domínio da coterie"),
-      topic("Mapa de Relacionamentos"),
-      identity,
-    ),
-  );
-  add(["Predador"], category("Tipos de predador"));
-  add(["Clã"], category("Clãs", "lore"));
-  add(["Credo"], category("Credos", "lore"));
-  add(
-    ["Ímpeto", "Ímpeto e Redenção", "Redenção"],
-    first(category("Ímpetos e Redenção"), identity),
-  );
-  add(
-    ["Aflição", "Aflição e Redenção", "Aflição ativa e condição de Redenção"],
-    topic("Aflição e Redenção"),
-  );
-  add(
-    [
-      "Célula",
-      "Estado da célula",
-      "Célula, vantagens e história",
-      "Caçada",
-      "Pilares e caçada",
-    ],
-    first(
-      topic("Mapa de Relacionamentos"),
-      category("Cenário e Caçada", "lore"),
-      identity,
-    ),
-  );
-  add(
-    ["Desespero", "Desespero, riscos e condições"],
-    topic("Desespero da célula"),
-  );
-  add(["Perigo"], topic("Perigo da célula"));
-  add(
-    ["Trunfos", "Trunfos e Distinções", "Distinções e requisitos"],
-    topic("Trunfos, Distinções e criação"),
-  );
-  add(
-    ["Aspecto", "Glamour permanente", "Glamour temporário"],
-    first(
-      topic("Glamour: Rêverie, Revelry e outras fontes"),
-      topic("Temperamentos e Aspecto"),
-    ),
-  );
-  add(
-    ["Banalidade permanente", "Banalidade temporária"],
-    topic("Banalidade e seus gatilhos"),
-  );
-  add(["Pesadelos"], topic("Pesadelos e Desencadear"));
-  add(
-    ["Kith", "Direitos Inatos", "Fraquezas", "Direitos Inatos e Fraquezas"],
-    category("Kith", "lore"),
-  );
-  add(["Casa"], category("Casas", "lore"));
-  add(["Corte", "Legado Seelie", "Legado Unseelie"], category("Legados"));
-  add(
-    ["Antítese", "Limiar de Inspiração / Extermínio"],
-    first(category("Recursos e condições"), resources),
-  );
-  add(
-    ["Afiliação", "Facção", "Essência"],
-    topic("Afiliação, Facção e Essência"),
-  );
-  add(
-    ["Natureza", "Comportamento"],
-    first(
-      topic("Natureza, Comportamento e Sombra"),
-      category("Arquétipos · texto integral", "lore"),
-      identity,
-    ),
-  );
-  add(
-    ["Outras características"],
-    first(topic("Antecedentes e outras características"), identity),
-  );
-  add(["Paixões e intensidades"], topic("Paixões"));
-  add(["Grilhões e níveis"], topic("Grilhões"));
-  add(
-    [
-      "Arcanoi e níveis",
-      "Arcanoi e recursos",
-      "Aprendizado de Arcanoi",
-      "Artes Comuns conhecidas",
-      "Artes Iniciadas conhecidas e instrução",
-    ],
-    topic("Arcanoi"),
-  );
-  add(["Pathos"], topic("Pathos e Força de Vontade"));
-  add(
-    [
-      "Sombra",
-      "Sombra e história",
-      "Identidade da Sombra",
-      "Arquétipo da Sombra",
-      "Sombra e condições",
-      "Anotações da Sombra",
-    ],
-    first(topic("Criação da Sombra"), category("Sombra e Pesadelos")),
-  );
-  add(
-    ["Angústia", "Angústia permanente", "Angústia temporária"],
-    topic("Angústia permanente e temporária"),
-  );
-  add(["Espinhos e custos", "Espinhos e condições"], topic("Espinhos"));
-  add(
-    ["Equipamento"],
-    first(
-      topic("Equipamento de investigação e comunicação"),
-      category("Variantes e referências"),
-      identity,
-    ),
-  );
-  for (const name of ["Talentos", "Perícias", "Conhecimentos"]) {
-    add([name], first(category(`Habilidades — ${name}`), topic(name)));
-  }
-  add(
-    ["Atributos"],
-    first(
-      category("Atributos"),
-      category("Atributos e especialidades · texto integral"),
-      topic("Criação: Atributos e Habilidades"),
-      creation,
-    ),
-  );
-  add(
-    ["Habilidades"],
-    first(
-      topic("Habilidades e limites iniciais"),
-      topic("Criação: Atributos e Habilidades"),
-      topic("Atributos e habilidades"),
-      creation,
-    ),
-  );
-  add(
-    ["Vitalidade e Força de Vontade", "Vitalidade, Força de Vontade e Aflição"],
-    health,
-  );
-  const term = (name, context) =>
-    first(
-      aliases.get(normalizeReferenceTerm(name)),
-      topic(name),
-      category(name),
-      context
-        ? first(
-            topic(context),
-            category(context),
-            aliases.get(normalizeReferenceTerm(context)),
-          )
-        : null,
-    );
-  const field = (definition, blockTitle, sectionTitle) => {
-    const original = fieldGroups.get(definition.id);
-    return first(
-      term(definition.label),
-      term(original),
-      term(blockTitle),
-      term(sectionTitle),
-      identity,
+  const attributeGroup = (group) => {
+    if (system.id === "changeling")
+      return resolve({
+        type: "document",
+        sourceId: "c20-core",
+        page: group === "Atributos físicos" ? 160 : 161,
+        title: `${group} — C20`,
+      });
+    return resolve(
+      system.id === "cacador" ? groupTarget(group) : topicTarget(group),
     );
   };
-  const heading = (title, context) =>
-    first(term(title), term(context), creation, identity);
+  const skillDomain = (group) =>
+    group.startsWith("Habilidades ") ? group : `Habilidades — ${group}`;
+  const skillGroup = (group) =>
+    system.id === "mago"
+      ? resolve(groupTarget(`${group} · texto integral`))
+      : resolve(groupTarget(skillDomain(group)));
+  const field = (definition) => {
+    const group = fieldGroups.get(definition.id);
+    // Unmapped or newly introduced fields never inherit an unrelated destination.
+    if (!group || !policy) return null;
+    if (Object.hasOwn(policy.fields, definition.id))
+      return resolve(policy.fields[definition.id]);
+    if (group.title === "Esferas" || group.title === "Alçadas")
+      return resolve(topicTarget(definition.label, "mechanics", group.title));
+    if (group.title.startsWith("Atributos "))
+      return system.id === "cacador"
+        ? resolve(topicTarget(definition.label, "mechanics", group.title))
+        : attributeGroup(group.title);
+    if (
+      ["Talentos", "Perícias", "Conhecimentos"].includes(group.title) ||
+      group.title.startsWith("Habilidades ")
+    ) {
+      if (system.id === "mago") return skillGroup(group.title);
+      return (
+        resolve(
+          topicTarget(definition.label, "mechanics", skillDomain(group.title)),
+        ) || skillGroup(group.title)
+      );
+    }
+    return resolve(policy.groups[group.title]);
+  };
+  const heading = (title) =>
+    resolve(
+      policy && Object.hasOwn(policy.headings, title)
+        ? policy.headings[title]
+        : policy?.groups[title],
+    );
+  const blockReference = (title, fields) => {
+    if (!fields.length) return null;
+    if (fields.length === 1) return field(fields[0]);
+    const groups = [
+      ...new Set(fields.map((f) => fieldGroups.get(f.id)?.title)),
+    ];
+    if (groups.length !== 1) return null;
+    const original = groups[0];
+    if (original?.startsWith("Atributos ")) return attributeGroup(original);
+    if (
+      ["Talentos", "Perícias", "Conhecimentos"].includes(original) ||
+      original?.startsWith("Habilidades ")
+    )
+      return skillGroup(original);
+    if (["Esferas", "Alçadas"].includes(original))
+      return resolve(groupTarget(original));
+    const references = fields.map(field);
+    if (references.every((ref) => ref && ref.href === references[0]?.href))
+      return references[0];
+    return null;
+  };
   const families = ordered
     .filter((a) => a.powerFamily || (a.power && a.power.level === null))
     .map((article) => ({
@@ -440,13 +187,5 @@ export function createSheetReferences(system) {
     }
     return [...found.values()].slice(0, 8);
   };
-  const blockReference = (title, fields, sectionTitle) =>
-    first(
-      term(title),
-      term(fieldGroups.get(fields[0]?.id)),
-      term(sectionTitle),
-      creation,
-      identity,
-    );
   return { field, heading, inNotes, blockReference };
 }

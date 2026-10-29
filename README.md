@@ -61,7 +61,7 @@ O aviso de boas-vindas aparece uma vez por navegador, com registro local em `arq
 
 Os nomes e títulos visíveis das fichas levam aos tópicos ou às categorias correspondentes do próprio sistema. Exemplo: **Mago → Correspondência** abre sua explicação e seus cinco níveis; **Changeling → Artes** abre a categoria com as 19 Artes. Os campos continuam editáveis e os valores salvos são preservados ao consultar e voltar. Nomes de poderes reconhecidos nas anotações de Artes, Disciplinas, Trunfos e Arcanoi também recebem atalhos, sem alterar o texto digitado. A impressão mantém o formato de ficha, sem os ícones e atalhos adicionais.
 
-As categorias aceitam links diretos como `#/sistema/changeling/mecanica/categoria/Artes`. `src/sheet-references.js` associa os campos aos conteúdos existentes; `src/library-routes.js` monta os endereços e valida a categoria. Quando não há verbete individual, a referência aponta para a categoria ou orientação relacionada, sem criar explicações inexistentes.
+As categorias aceitam links diretos como `#/sistema/changeling/mecanica/categoria/Artes`. `src/sheet-reference-policy.js` define os destinos revisados por sistema e campo; `src/sheet-references.js` resolve os nomes dentro do grupo correto, sem aliases globais ou redirecionamento genérico para Identidade/Criação. Quando necessário, a conexão abre a página exata de um PDF já disponível. Campos sem destino específico validado ficam sem link. `src/library-routes.js` monta os endereços e valida a categoria. A [revisão das conexões](docs/REVISAO-CONEXOES-FICHAS.md) lista os 354 campos e seus destinos.
 
 ## Documentos e cobertura
 
