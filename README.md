@@ -7,10 +7,10 @@ Acervo em português para cinco sistemas do Mundo das Trevas, em React + Vite, p
 | Vampiro: A Máscara       | 5E               |      702 |
 | Changeling: O Sonhar     | 20A              |      260 |
 | Caçador: A Revanche      | 5E               |      186 |
-| Mago: A Ascensão         | 20A              |       24 |
+| Mago: A Ascensão         | 20A              |      715 |
 | Aparição: O Esquecimento | 20A              |      327 |
 
-Além do leitor integral de **13 documentos e 2.207 páginas**, as **1.499 entradas** por assunto incluem resumos, extratos operacionais, índices de referência e campos de ficha e explicações de cobertura. Não representam 1.499 regras completas: há resumos e índices, além de pontos pendentes em Mago por falta do livro completo.
+Além do leitor integral de **25 documentos e 2.806 páginas**, as **2.190 entradas** por assunto incluem resumos, extratos operacionais, índices de referência e campos de ficha e explicações de cobertura. Incluem páginas literais, explicações e índices. Mago continua parcial: faltam as páginas 400–489 do livro, embora os doze arquivos enviados tenham sido recebidos.
 
 ## Rodar e validar
 
@@ -37,11 +37,13 @@ Na home, o cartão abre uma página do sistema. Nela, o visitante escolhe:
 - **Mecânica:** atributos, habilidades, antecedentes, poderes e regras, agrupados por assunto.
 - **Ficha:** formulário vazio preenchível e referências aos campos da base anexada.
 
+Em **Mago 20A → Mecânica**, os tópicos **Esferas** e **Esferas opcionais** abrem os nomes; cada nome mostra o que os níveis 1–5 permitem fazer e leva às explicações e ao texto literal das páginas citadas. Graduações são permissões para construir Efeitos; custos e duração dependem da conjuração. As variantes opcionais substituem suas correspondentes quando adotadas pela mesa.
+
 Em **Aparição 20A → Mecânica**, o diretório dos 16 Arcanoi abre por padrão. Cada cartão oferece links para os cinco níveis e suas artes Comuns/Iniciadas; abrir o nome do Arcanos mostra os dez efeitos agrupados por nível, e cada poder leva ao sistema e à fonte. O botão **Consultar os 16 Arcanoi** retorna ao diretório.
 
 Os cartões em **Escolha um tópico** são botões: abrem a categoria, filtram o índice e exibem links para cada entrada. Funcionam por clique e teclado, com opção de voltar a todas as categorias.
 
-Cada área tem busca em títulos e textos, filtro de categoria, índice de tópicos e links diretos. Exemplo: `#/sistema/changeling/mecanica`. Fontes indicam **a posição da página no PDF**, que pode diferir da página impressa.
+Cada área tem busca em títulos e textos, filtro de categoria, índice de tópicos e links diretos. Exemplo: `#/sistema/changeling/mecanica`. Fontes indicam **a posição da página no PDF**, que pode diferir da página impressa. Nas partes de Mago, as referências, a seleção de página e o leitor também mostram a numeração correspondente do livro. As capas podem não apresentar número impresso.
 
 Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As referências preservam a origem dos trechos cuja mecânica ainda exige conferência no C20 completo. Caçador usa exclusivamente o último básico H5 otimizado enviado pelo usuário; o guia da Biblioteca Élfica e a referência anterior TRUNFOS foram removidos do acervo e da bibliografia.
 
@@ -50,10 +52,10 @@ Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As refer
 - **Vampiro:** Módulo Básico 5E, base de ficha e Westhaven 11.0. A compilação Westhaven é identificada como material de fã; suas opções não são todas do básico.
 - **Changeling:** básico C20 completo (482 páginas), Livro das Artes, documentos 1–7 e base de ficha. O acervo reúne 18 Artes do básico e Fabulomancia como referência adicional, seis Alçadas e 95 truques. Há criação, regras, habilidades, Casas, geografia e índices de Qualidades/Defeitos com fontes do livro.
 - **Caçador:** básico H5 otimizado consultado por OCR (288 páginas). São 186 entradas: cenário, cinco Credos, sete Ímpetos, criação, nove Atributos, 27 Habilidades, Antecedentes, Qualidades/Defeitos, regras, equipamento, ameaças e organizações; 12 Trunfos e 49 Distinções têm efeitos individuais. Ficha vazia baseada no básico; Perigo e Desespero são coletivos e Aflição é condição.
-- **Mago:** estrutura da ficha M20, com grupos de Habilidades e nove Esferas. Lore e efeitos completos não foram extraídos do livro inacessível.
+- **Mago:** doze partes recebidas em português, com 599 páginas integrais e 715 entradas. As nove Esferas e as variantes opcionais Ciência Dimensional, Dados e Utilidade Primordial têm cinco graduações cada (60 explicações). Inclui lore, criação, Habilidades, Antecedentes, conjuração, Paradoxo, Silêncio, foco e ficha vazia. Há uma lacuna real entre as páginas 399 e 490; nenhum texto foi presumido para 400–489.
 - **Aparição:** livro 20A completo (517 páginas, tradução comunitária). Inclui lore, criação, habilidades corrigidas, Antecedentes, Legiões, Sombra, 16 Arcanoi, 80 artes Comuns e 80 artes Iniciadas com efeitos individuais. A ficha digital foi conferida com o livro.
 
-Por solicitação do usuário, os 13 PDFs de conteúdo disponíveis e suas transcrições completas agora fazem parte do site. Fichas preenchidas, valores, escolhas e histórias dos personagens continuam excluídos. A estrutura dos formulários foi montada a partir dos rótulos impressos.
+Por solicitação do usuário, os 25 PDFs de conteúdo disponíveis e suas transcrições completas agora fazem parte do site. Fichas preenchidas, valores, escolhas e histórias dos personagens continuam excluídos. A estrutura dos formulários foi montada a partir dos rótulos impressos.
 
 ## Leitura integral
 
@@ -63,14 +65,15 @@ Por solicitação do usuário, os 13 PDFs de conteúdo disponíveis e suas trans
 | Changeling 20A |          9 |     611 |
 | Caçador 5E     |          1 |     288 |
 | Aparição 20A   |          1 |     517 |
+| Mago 20A       |         12 |     599 |
 
 A página do sistema oferece **Textos integrais dos PDFs**. O leitor permite buscar no documento inteiro, escolher qualquer página, navegar pelo sumário digital quando presente e abrir a página original. Tópicos de fontes em português oferecem **Ler texto literal da fonte**, ligado às páginas citadas. Os 143 tópicos com fonte C20 em inglês oferecem **Ler citação em português**: um trecho traduzido do assunto, com página e opção de comparar o original. As traduções estão identificadas como não oficiais; o leitor integral preserva o idioma do arquivo. Exemplo de rota: `#/sistema/cacador/documentos/h5-core/92`.
 
 `src/documents.json` contém os metadados, os sumários, as contagens e os hashes dos originais. `public/documents/` contém um JSON de texto por documento e seu PDF original. Os arquivos são servidos estaticamente pela Vercel; são carregados quando consultados, sem baixar os livros ao abrir a home. As fontes e os hashes são verificados por `tests/documents.test.js`.
 
-O texto do leitor integral não é resumido nem traduzido: C20 integral permanece em inglês. As citações selecionadas dos tópicos são traduzidas em `src/translated-citations.json`, que mantém também o trecho original e a página. `tests/citations.test.js` verifica a cobertura de todos os tópicos com fonte inglesa e confirma que cada original existe na página citada. Essa camada de citações traduzidas não é uma tradução integral do livro. Em Aparição, códigos da fonte do PDF que representavam letras latinas foram decodificados para Unicode legível. Caçador e Doc 2 usam OCR; páginas esparsas de outros documentos também receberam OCR complementar. Cada página indica seu método. A transcrição pode perder diagramação ou reconhecer símbolos e números incorretamente; o original preserva tabelas, imagens e páginas sem texto recuperável. Não se afirma que o OCR foi revisado palavra por palavra.
+O texto do leitor integral não é resumido nem traduzido: C20 integral permanece em inglês. As citações selecionadas dos tópicos são traduzidas em `src/translated-citations.json`, que mantém também o trecho original e a página. `tests/citations.test.js` verifica a cobertura de todos os tópicos com fonte inglesa e confirma que cada original existe na página citada. Essa camada de citações traduzidas não é uma tradução integral do livro. Em Aparição, códigos da fonte do PDF que representavam letras latinas foram decodificados para Unicode legível. Caçador e Doc 2 usam OCR; páginas esparsas de outros documentos também receberam OCR complementar. Cada página indica seu método. A transcrição pode perder diagramação ou reconhecer símbolos e números incorretamente; o original preserva tabelas, imagens e páginas sem texto recuperável. Não se afirma que o OCR foi revisado palavra por palavra. As partes de Mago têm texto selecionável em português, preservado integralmente; algumas páginas da tradução recebida apresentam colunas sobrepostas ou linhas misturadas. As explicações por graduação são separadas da transcrição e permitem conferir o PDF original.
 
-Os ativos somam aproximadamente 158 MB, principalmente PDFs. Cada PDF é o arquivo recebido, verificado por SHA-256. Não foram incluídos arquivos de fichas preenchidas, duplicatas, `Build Assembly.pdf`, materiais antigos de Caçador ou um livro fictício de Mago.
+Os ativos somam aproximadamente 347 MB, principalmente PDFs. Cada PDF é o arquivo recebido, verificado por SHA-256. Não foram incluídos arquivos de fichas preenchidas, duplicatas, `Build Assembly.pdf`, materiais antigos de Caçador ou páginas não recebidas de Mago.
 
 Veja [os arquivos que precisam ser reenviados](docs/ARQUIVOS-PENDENTES.md).
 

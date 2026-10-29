@@ -490,6 +490,14 @@ function PowerProgression({ system, article, base }) {
           tradição; elas não são recebidas automaticamente com a arte Comum.
         </p>
       )}
+      {system.id === "mago" && (
+        <p>
+          Cada graduação amplia os Efeitos que a Esfera permite construir.
+          Arete, foco, sucessos e outras Esferas podem ser necessários. As
+          alternativas opcionais substituem suas correspondentes quando adotadas
+          pela mesa; não são Esferas adicionais obrigatórias.
+        </p>
+      )}
       {levels.map((level) => (
         <details
           key={level ?? "none"}
@@ -551,7 +559,9 @@ function SourceList({ system }) {
               s.status === "pendente" ? "status-pending" : "status-read"
             }
           >
-            {s.status === "pendente" ? "Pendente: dividir PDF" : "Consultado"}
+            {s.status === "pendente"
+              ? s.pendingLabel || "Pendente: dividir PDF"
+              : "Consultado"}
           </span>
         </div>
       ))}

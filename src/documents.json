@@ -4803,5 +4803,3204 @@
     "outline": [],
     "ocrPages": 3,
     "emptyPages": 19
+  },
+  {
+    "sourceId": "m20-part-0",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 0–49 (arquivo sem número)",
+    "pages": 50,
+    "printedStart": 0,
+    "printedEnd": 49,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-0-b8fe9266b0d5.json",
+    "pdfUrl": "/documents/m20-part-0-611bb7086b04.pdf",
+    "originalSha256": "611bb7086b048599c66899aeb18d4966c1fe3b231c1ea8a41cf55c40424bf93c",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 0",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 1",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 2",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 3",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 4",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 5",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 6",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 7",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 8",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 9",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 10",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 11",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 12",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 13",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 14",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 15",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 16",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 17",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 18",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 19",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 20",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 21",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 22",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 23",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 24",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 25",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 26",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 27",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 28",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 29",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 30",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 31",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 32",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 33",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 34",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 35",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 36",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 37",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 38",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 39",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 40",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 41",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 42",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 43",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 44",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 45",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 46",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 47",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 48",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 49",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 2
+  },
+  {
+    "sourceId": "m20-part-1",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 50–99 (arquivo (1))",
+    "pages": 50,
+    "printedStart": 50,
+    "printedEnd": 99,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-1-852846c63eea.json",
+    "pdfUrl": "/documents/m20-part-1-57bb31536ddc.pdf",
+    "originalSha256": "57bb31536ddc1987503bfbcb7a88e28ce27945a6eef05c16488e0a05631a02c5",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 50",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 51",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 52",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 53",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 54",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 55",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 56",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 57",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 58",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 59",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 60",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 61",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 62",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 63",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 64",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 65",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 66",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 67",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 68",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 69",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 70",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 71",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 72",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 73",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 74",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 75",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 76",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 77",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 78",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 79",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 80",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 81",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 82",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 83",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 84",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 85",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 86",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 87",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 88",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 89",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 90",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 91",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 92",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 93",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 94",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 95",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 96",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 97",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 98",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 99",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 2
+  },
+  {
+    "sourceId": "m20-part-2",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 100–149 (arquivo (2))",
+    "pages": 50,
+    "printedStart": 100,
+    "printedEnd": 149,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-2-23165d087e4b.json",
+    "pdfUrl": "/documents/m20-part-2-b7b78f720e5e.pdf",
+    "originalSha256": "b7b78f720e5e87014a013768832d065c9f214e768bda7e8929b6cad14394b78b",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 100",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 101",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 102",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 103",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 104",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 105",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 106",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 107",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 108",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 109",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 110",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 111",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 112",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 113",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 114",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 115",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 116",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 117",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 118",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 119",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 120",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 121",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 122",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 123",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 124",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 125",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 126",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 127",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 128",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 129",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 130",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 131",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 132",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 133",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 134",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 135",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 136",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 137",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 138",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 139",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 140",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 141",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 142",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 143",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 144",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 145",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 146",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 147",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 148",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 149",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 3
+  },
+  {
+    "sourceId": "m20-part-3",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 150–199 (arquivo (3))",
+    "pages": 50,
+    "printedStart": 150,
+    "printedEnd": 199,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-3-78de232488e7.json",
+    "pdfUrl": "/documents/m20-part-3-e2c50f44cc0b.pdf",
+    "originalSha256": "e2c50f44cc0b9e9d0a51f0bb32ef966d4028a8dd7d0ea871d39603d042dc9cd3",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 150",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 151",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 152",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 153",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 154",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 155",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 156",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 157",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 158",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 159",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 160",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 161",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 162",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 163",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 164",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 165",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 166",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 167",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 168",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 169",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 170",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 171",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 172",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 173",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 174",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 175",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 176",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 177",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 178",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 179",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 180",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 181",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 182",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 183",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 184",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 185",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 186",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 187",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 188",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 189",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 190",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 191",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 192",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 193",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 194",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 195",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 196",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 197",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 198",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 199",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "m20-part-4",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 200–249 (arquivo (4))",
+    "pages": 50,
+    "printedStart": 200,
+    "printedEnd": 249,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-4-cadfcc5883ad.json",
+    "pdfUrl": "/documents/m20-part-4-1781d4be91bd.pdf",
+    "originalSha256": "1781d4be91bdc184bcda97ecca8196d7c21a4f94257ed8f8ae0190c16e3a498f",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 200",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 201",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 202",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 203",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 204",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 205",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 206",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 207",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 208",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 209",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 210",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 211",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 212",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 213",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 214",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 215",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 216",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 217",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 218",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 219",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 220",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 221",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 222",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 223",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 224",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 225",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 226",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 227",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 228",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 229",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 230",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 231",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 232",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 233",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 234",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 235",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 236",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 237",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 238",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 239",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 240",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 241",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 242",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 243",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 244",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 245",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 246",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 247",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 248",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 249",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 1
+  },
+  {
+    "sourceId": "m20-part-5",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 250–299 (arquivo (5))",
+    "pages": 50,
+    "printedStart": 250,
+    "printedEnd": 299,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-5-992cf3c11028.json",
+    "pdfUrl": "/documents/m20-part-5-3a711c124a73.pdf",
+    "originalSha256": "3a711c124a73b07dba8eae89571a4832adcf17d3ed6f29f2721128f6605a40d4",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 250",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 251",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 252",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 253",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 254",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 255",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 256",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 257",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 258",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 259",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 260",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 261",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 262",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 263",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 264",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 265",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 266",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 267",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 268",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 269",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 270",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 271",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 272",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 273",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 274",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 275",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 276",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 277",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 278",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 279",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 280",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 281",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 282",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 283",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 284",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 285",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 286",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 287",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 288",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 289",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 290",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 291",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 292",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 293",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 294",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 295",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 296",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 297",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 298",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 299",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "m20-part-7",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 300–349 (arquivo (7))",
+    "pages": 50,
+    "printedStart": 300,
+    "printedEnd": 349,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-7-8636a7d06304.json",
+    "pdfUrl": "/documents/m20-part-7-7752c5cd34d6.pdf",
+    "originalSha256": "7752c5cd34d6cbc4eeac8a34b2ab96ffe5c66257dda29d10c2ed7f934d05c5f8",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 300",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 301",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 302",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 303",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 304",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 305",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 306",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 307",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 308",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 309",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 310",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 311",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 312",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 313",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 314",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 315",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 316",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 317",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 318",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 319",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 320",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 321",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 322",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 323",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 324",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 325",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 326",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 327",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 328",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 329",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 330",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 331",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 332",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 333",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 334",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 335",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 336",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 337",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 338",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 339",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 340",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 341",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 342",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 343",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 344",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 345",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 346",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 347",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 348",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 349",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 1
+  },
+  {
+    "sourceId": "m20-part-6",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 350–399 (arquivo (6))",
+    "pages": 50,
+    "printedStart": 350,
+    "printedEnd": 399,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-6-c26c38e13e04.json",
+    "pdfUrl": "/documents/m20-part-6-b2fae8bdf444.pdf",
+    "originalSha256": "b2fae8bdf444cde0c43479da59477da45a466a800c8e0e419027207c61f092a5",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 350",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 351",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 352",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 353",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 354",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 355",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 356",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 357",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 358",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 359",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 360",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 361",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 362",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 363",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 364",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 365",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 366",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 367",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 368",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 369",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 370",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 371",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 372",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 373",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 374",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 375",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 376",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 377",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 378",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 379",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 380",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 381",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 382",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 383",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 384",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 385",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 386",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 387",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 388",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 389",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 390",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 391",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 392",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 393",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 394",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 395",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 396",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 397",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 398",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 399",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 4
+  },
+  {
+    "sourceId": "m20-part-8",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 490–539 (arquivo (8))",
+    "pages": 50,
+    "printedStart": 490,
+    "printedEnd": 539,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-8-8bd7be14656d.json",
+    "pdfUrl": "/documents/m20-part-8-7d9b85f2473b.pdf",
+    "originalSha256": "7d9b85f2473b419106763635dbc84d018c9e1b0786ecd0407e7a419c27507da1",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 490",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 491",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 492",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 493",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 494",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 495",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 496",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 497",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 498",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 499",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 500",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 501",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 502",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 503",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 504",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 505",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 506",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 507",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 508",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 509",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 510",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 511",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 512",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 513",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 514",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 515",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 516",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 517",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 518",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 519",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 520",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 521",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 522",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 523",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 524",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 525",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 526",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 527",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 528",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 529",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 530",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 531",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 532",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 533",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 534",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 535",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 536",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 537",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 538",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 539",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 1
+  },
+  {
+    "sourceId": "m20-part-9",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 540–589 (arquivo (9))",
+    "pages": 50,
+    "printedStart": 540,
+    "printedEnd": 589,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-9-db6e80f61315.json",
+    "pdfUrl": "/documents/m20-part-9-acb93a1378ef.pdf",
+    "originalSha256": "acb93a1378efe0742b51843c9c3ee64fc7661ccdf8eea9976080acf94cfd39a2",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 540",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 541",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 542",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 543",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 544",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 545",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 546",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 547",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 548",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 549",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 550",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 551",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 552",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 553",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 554",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 555",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 556",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 557",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 558",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 559",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 560",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 561",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 562",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 563",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 564",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 565",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 566",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 567",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 568",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 569",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 570",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 571",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 572",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 573",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 574",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 575",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 576",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 577",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 578",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 579",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 580",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 581",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 582",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 583",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 584",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 585",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 586",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 587",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 588",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 589",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "m20-part-10",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 590–639 (arquivo (10))",
+    "pages": 50,
+    "printedStart": 590,
+    "printedEnd": 639,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-10-2f8baa82d519.json",
+    "pdfUrl": "/documents/m20-part-10-1cc4c0a835b0.pdf",
+    "originalSha256": "1cc4c0a835b0007f84bd3f399e9c2225d4645096b927bae8743d1316c6c7c2e1",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 590",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 591",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 592",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 593",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 594",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 595",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 596",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 597",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 598",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 599",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 600",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 601",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 602",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 603",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 604",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 605",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 606",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 607",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 608",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 609",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 610",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 611",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 612",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 613",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 614",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 615",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 616",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 617",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 618",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 619",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 620",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 621",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 622",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 623",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 624",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 625",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 626",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 627",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 628",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 629",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 630",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 631",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 632",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 633",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 634",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 635",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 636",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 637",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 638",
+        "page": 49
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 639",
+        "page": 50
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "m20-part-11",
+    "system": "mago",
+    "title": "Mago 20A — páginas do livro 640–688 (arquivo (11))",
+    "pages": 49,
+    "printedStart": 640,
+    "printedEnd": 688,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/m20-part-11-07b58b8b7d61.json",
+    "pdfUrl": "/documents/m20-part-11-371899dc87a2.pdf",
+    "originalSha256": "371899dc87a2582a11cdba9fb594c7bbe82a9712e09204503d05ea3262050d8e",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Livro p. 640",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 641",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 642",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 643",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 644",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 645",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 646",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 647",
+        "page": 8
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 648",
+        "page": 9
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 649",
+        "page": 10
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 650",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 651",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 652",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 653",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 654",
+        "page": 15
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 655",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 656",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 657",
+        "page": 18
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 658",
+        "page": 19
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 659",
+        "page": 20
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 660",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 661",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 662",
+        "page": 23
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 663",
+        "page": 24
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 664",
+        "page": 25
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 665",
+        "page": 26
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 666",
+        "page": 27
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 667",
+        "page": 28
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 668",
+        "page": 29
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 669",
+        "page": 30
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 670",
+        "page": 31
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 671",
+        "page": 32
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 672",
+        "page": 33
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 673",
+        "page": 34
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 674",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 675",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 676",
+        "page": 37
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 677",
+        "page": 38
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 678",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 679",
+        "page": 40
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 680",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 681",
+        "page": 42
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 682",
+        "page": 43
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 683",
+        "page": 44
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 684",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 685",
+        "page": 46
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 686",
+        "page": 47
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 687",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "Livro p. 688",
+        "page": 49
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 0
   }
 ]

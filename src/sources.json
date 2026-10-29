@@ -145,12 +145,13 @@
   },
   {
     "id": "m20-core",
-    "title": "Mago 20.pdf / Mago 20_compressed.pdf",
+    "title": "Mago: A Ascensão — Edição de 20º Aniversário (partes recebidas)",
     "type": "livro básico",
     "status": "pendente",
-    "note": "As duas versões excedem 32 MB. Basta reenviar uma versão dividida.",
+    "note": "12 partes consultadas, 599 páginas disponíveis. Os doze arquivos foram recebidos, mas faltam as páginas do livro 400–489: há um salto entre os arquivos recebidos. O conjunto tem 599 páginas, não 689.",
     "system": "mago",
-    "pages": null
+    "pages": 599,
+    "pendingLabel": "Pendente: páginas 400–489"
   },
   {
     "id": "w20-core",
@@ -160,5 +161,113 @@
     "note": "Livro completo recebido no ZIP compactado, em tradução comunitária. Terminologia portuguesa segue esse arquivo; páginas indicam a posição no PDF.",
     "system": "aparicao",
     "pages": 517
+  },
+  {
+    "id": "m20-part-0",
+    "title": "Mago 20A — páginas do livro 0–49 (arquivo sem número)",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (optimized).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 0–49 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-1",
+    "title": "Mago 20A — páginas do livro 50–99 (arquivo (1))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (1) (optimized).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 50–99 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-2",
+    "title": "Mago 20A — páginas do livro 100–149 (arquivo (2))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (2) (optimized).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 100–149 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-3",
+    "title": "Mago 20A — páginas do livro 150–199 (arquivo (3))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (3) (optimized).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 150–199 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-4",
+    "title": "Mago 20A — páginas do livro 200–249 (arquivo (4))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (4) (optimized).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 200–249 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-5",
+    "title": "Mago 20A — páginas do livro 250–299 (arquivo (5))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (5).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 250–299 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-7",
+    "title": "Mago 20A — páginas do livro 300–349 (arquivo (7))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (7).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 300–349 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-6",
+    "title": "Mago 20A — páginas do livro 350–399 (arquivo (6))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (6) (optimized).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 350–399 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-8",
+    "title": "Mago 20A — páginas do livro 490–539 (arquivo (8))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (8).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 490–539 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-9",
+    "title": "Mago 20A — páginas do livro 540–589 (arquivo (9))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (9).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 540–589 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-10",
+    "title": "Mago 20A — páginas do livro 590–639 (arquivo (10))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 50,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (10).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 50 e correspondem às páginas 590–639 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
+  },
+  {
+    "id": "m20-part-11",
+    "title": "Mago 20A — páginas do livro 640–688 (arquivo (11))",
+    "type": "parte do livro básico — tradução recebida",
+    "status": "lido",
+    "system": "mago",
+    "pages": 49,
+    "note": "Arquivo recebido: Mago 20 (reduced).pdf (11) (optimized).pdf. Texto em português, sem dados importados de personagens. As páginas PDF vão de 1 a 49 e correspondem às páginas 640–688 do livro. A extração pode reproduzir sobreposição de colunas e erros da diagramação recebida; o original acompanha a leitura."
   }
 ]

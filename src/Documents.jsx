@@ -4,6 +4,7 @@ import {
   loadDocument,
   citedPages,
   searchPages,
+  bookPageLabel,
 } from "./document-data.js";
 import translatedCitations from "./translated-citations.json";
 
@@ -50,6 +51,8 @@ function PageText({ document, page }) {
       <div className="document-page-heading">
         <h3>
           Página {page.number} de {document.pages}
+          {bookPageLabel(document, page.number) &&
+            ` · ${bookPageLabel(document, page.number)}`}
         </h3>
         <a
           href={`${document.pdfUrl}#page=${page.number}`}
@@ -177,6 +180,8 @@ function Reader({ system, document, route, available }) {
           ? "Texto original em inglês"
           : "Texto em português"}
         . A numeração indica a posição no PDF.
+        {Number.isInteger(document.printedStart) &&
+          " A referência ao livro acompanha a numeração da parte recebida; capas e folhas de abertura podem não ter número impresso."}
       </p>
       <div className="document-controls">
         <label>
@@ -208,6 +213,8 @@ function Reader({ system, document, route, available }) {
             {Array.from({ length: document.pages }, (_, index) => (
               <option key={index + 1} value={index + 1}>
                 {index + 1}
+                {bookPageLabel(document, index + 1) &&
+                  ` · ${bookPageLabel(document, index + 1)}`}
               </option>
             ))}
           </select>
@@ -256,7 +263,11 @@ function Reader({ system, document, route, available }) {
               <p role="status">{results.length} páginas encontradas</p>
               {results.slice(0, shown).map((result) => (
                 <a key={result.number} href={`${base}/${result.number}`}>
-                  <strong>Página {result.number}</strong>
+                  <strong>
+                    Página {result.number}
+                    {bookPageLabel(document, result.number) &&
+                      ` · ${bookPageLabel(document, result.number)}`}
+                  </strong>
                   <span>{result.excerpt}</span>
                 </a>
               ))}
@@ -415,6 +426,8 @@ function CitedText({ article, document, system }) {
           {(pages.length ? pages : [1]).map((number) => (
             <option key={number} value={number}>
               {number}
+              {bookPageLabel(document, number) &&
+                ` · ${bookPageLabel(document, number)}`}
             </option>
           ))}
         </select>

@@ -255,12 +255,12 @@ test("livros recebidos no ZIP têm referências ativas e artes W20 completas por
   );
 });
 
-test("poderes têm efeitos individuais, nível e fonte; sistemas pendentes não são inventados", () => {
+test("poderes têm efeitos individuais, nível e fontes consultadas", () => {
   const expected = {
     vampiro: 575,
     changeling: 95,
     cacador: 61,
-    mago: 0,
+    mago: 60,
     aparicao: 160,
   };
   for (const system of content) {
@@ -281,11 +281,52 @@ test("poderes têm efeitos individuais, nível e fonte; sistemas pendentes não 
     }
   }
   assert.equal(sourcesById.get("h5-core").status, "lido");
-  assert.ok(
-    content
-      .find((system) => system.id === "mago")
-      .sections.every((section) => !section.power),
+});
+
+test("M20 distingue nove Esferas e três variantes, com cinco graduações cada", () => {
+  const mage = content.find((system) => system.id === "mago");
+  const powers = mage.sections.filter((section) => section.power);
+  const families = [...new Set(powers.map((section) => section.power.family))];
+  assert.equal(families.length, 12);
+  for (const family of families) {
+    const levels = powers.filter((section) => section.power.family === family);
+    assert.deepEqual(
+      levels.map((section) => section.power.level),
+      [1, 2, 3, 4, 5],
+    );
+    assert.equal(new Set(levels.map((section) => section.body)).size, 5);
+    assert.ok(levels.every((section) => section.sourceId === "m20-part-8"));
+  }
+  assert.equal(
+    powers.filter((section) => section.power.branch === "Esfera").length,
+    45,
   );
+  assert.deepEqual(
+    [
+      ...new Set(
+        powers
+          .filter((section) => section.power.branch === "Esfera opcional")
+          .map((section) => section.power.family),
+      ),
+    ],
+    ["Ciência Dimensional", "Dados", "Utilidade Primordial"],
+  );
+  const correspondence = powers.find(
+    (section) => section.power.family === "Correspondência",
+  );
+  assert.equal(correspondence.pages, "24");
+  assert.equal(correspondence.printedPages, "513");
+  assert.match(mage.coverage, /400–489/);
+  assert.equal(sourcesById.get("m20-core").status, "pendente");
+  const fields = mage.sheet.groups.flatMap((group) => group.fields);
+  assert.ok(
+    fields.some(
+      (field) =>
+        field.id === "conhecimentos-academicos" &&
+        field.label.includes("Erudição"),
+    ),
+  );
+  assert.ok(fields.some((field) => field.id === "foco-paradigma"));
 });
 
 test("progressões distinguem alternativas de V5, duas trilhas de W20 e os cinco níveis de Talecraft", () => {

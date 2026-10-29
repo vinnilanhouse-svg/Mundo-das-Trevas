@@ -2,6 +2,12 @@ import documents from "./documents.json" with { type: "json" };
 
 export { documents };
 
+export function bookPageLabel(document, number) {
+  if (!Number.isInteger(document.printedStart)) return "";
+  const printed = document.printedStart + number - 1;
+  return printed === 0 ? "abertura do livro" : `livro p. ${printed}`;
+}
+
 export const normalizeText = (text) =>
   text
     .normalize("NFD")

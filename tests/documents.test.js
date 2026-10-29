@@ -7,6 +7,7 @@ import {
   citedPages,
   searchPages,
   loadDocument,
+  bookPageLabel,
 } from "../src/document-data.js";
 
 const sources = JSON.parse(
@@ -15,11 +16,11 @@ const sources = JSON.parse(
 const asset = (url) =>
   readFileSync(new URL(`../public${url}`, import.meta.url));
 
-test("13 documentos preservam todas as 2.207 páginas e seus PDFs originais", () => {
-  assert.equal(documents.length, 13);
+test("25 documentos preservam todas as 2.806 páginas e seus PDFs originais", () => {
+  assert.equal(documents.length, 25);
   assert.equal(
     documents.reduce((total, document) => total + document.pages, 0),
-    2207,
+    2806,
   );
   assert.equal(
     new Set(documents.map((document) => document.sourceId)).size,
@@ -64,14 +65,13 @@ test("13 documentos preservam todas as 2.207 páginas e seus PDFs originais", ()
   }
 });
 
-test("Caçador só publica o último básico e Mago continua sem livro inventado", () => {
+test("Caçador só publica o último básico", () => {
   assert.deepEqual(
     documents
       .filter((document) => document.system === "cacador")
       .map((document) => document.sourceId),
     ["h5-core"],
   );
-  assert.ok(!documents.some((document) => document.system === "mago"));
   const hunter = documents.find((document) => document.sourceId === "h5-core");
   assert.equal(hunter.method, "ocr");
   const data = JSON.parse(asset(hunter.textUrl));
@@ -80,6 +80,46 @@ test("Caçador só publica o último básico e Mago continua sem livro inventado
     data.pages[128].text,
     /rerrolar Dados de Desespero|rertolar Dados de Desespero/,
   );
+});
+
+test("Mago preserva as 599 páginas recebidas e não inventa as páginas 400–489", () => {
+  const mage = documents.filter((document) => document.system === "mago");
+  assert.equal(mage.length, 12);
+  const printed = mage.flatMap((document) =>
+    Array.from(
+      { length: document.pages },
+      (_, index) => document.printedStart + index,
+    ),
+  );
+  assert.equal(printed.length, 599);
+  assert.equal(new Set(printed).size, 599);
+  assert.deepEqual(
+    Array.from({ length: 689 }, (_, index) => index).filter(
+      (number) => !printed.includes(number),
+    ),
+    Array.from({ length: 90 }, (_, index) => index + 400),
+  );
+  const content = JSON.parse(
+    readFileSync(new URL("../src/content.json", import.meta.url)),
+  );
+  const sections = content.find((system) => system.id === "mago").sections;
+  for (const document of mage) {
+    const data = JSON.parse(asset(document.textUrl));
+    for (const page of data.pages) {
+      const entry = sections.find(
+        (section) =>
+          section.sourceId === document.sourceId &&
+          section.pages === String(page.number) &&
+          section.group.endsWith("· texto integral"),
+      );
+      assert.ok(entry);
+      if (page.text.trim()) assert.equal(entry.body, page.text);
+    }
+  }
+  const spheres = mage.find((document) => document.sourceId === "m20-part-8");
+  assert.equal(bookPageLabel(spheres, 24), "livro p. 513");
+  assert.equal(bookPageLabel(mage[0], 1), "abertura do livro");
+  assert.equal(bookPageLabel(documents[0], 1), "");
 });
 
 test("referências aceitam intervalos, páginas avulsas e limites do documento", () => {
