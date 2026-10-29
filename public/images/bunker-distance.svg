@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" fill="none">
+<defs>
+<linearGradient id="wall" x2="0" y2="1"><stop stop-color="#46433d"/><stop offset=".55" stop-color="#6b5b45"/><stop offset="1" stop-color="#343733"/></linearGradient>
+<linearGradient id="floor" x2="0" y2="1"><stop stop-color="#3b3a32"/><stop offset="1" stop-color="#171f1e"/></linearGradient>
+<linearGradient id="steel" x2="1" y2=".4"><stop stop-color="#333b38"/><stop offset=".45" stop-color="#53574b"/><stop offset="1" stop-color="#2d3330"/></linearGradient>
+<linearGradient id="lamp" x2="0" y2="1"><stop stop-color="#ffb24b" stop-opacity=".34"/><stop offset="1" stop-color="#ec8c2d" stop-opacity="0"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#ffd18a" stop-opacity=".45"/><stop offset="1" stop-color="#f5a24c" stop-opacity="0"/></radialGradient>
+<pattern id="stripe" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(40)"><path fill="#dc963c" d="M0 0h14v28H0z"/><path fill="#30332b" d="M14 0h14v28H14z"/></pattern>
+<pattern id="concrete" width="130" height="95" patternUnits="userSpaceOnUse"><path d="M8 9h3m49 21h2m45-20h4M27 70h3m62 12h4M115 50h3" stroke="#c3b493" opacity=".16"/><path d="M38 19h3m40 32h5M8 81h4m94-69h3" stroke="#171f1d" opacity=".2"/></pattern>
+</defs>
+<path fill="url(#wall)" d="M0 0h1800v1100H0z"/>
+<path fill="url(#concrete)" d="M0 0h1800v1100H0z"/>
+<!-- Poured concrete slabs and ceiling beams. -->
+<g stroke="#2b302c" stroke-width="4" opacity=".65"><path d="M0 292h1800M0 558h1800M270 0v750M770 0v750M1520 0v750"/></g>
+<path d="M0 0h1800v105L1110 192 0 110Z" fill="#303833"/>
+<path d="M0 0h130l1140 140-57 37ZM1620 0h105l-510 177-105-17Z" fill="#232d29"/>
+<path d="M0 745h1800v355H0z" fill="url(#floor)"/>
+<path d="M0 745h1800" stroke="#a19b7c" stroke-width="4" opacity=".45"/>
+<g stroke="#78735a" stroke-width="2" opacity=".3"><path d="m1100 745-530 355m600-355 590 355M0 863h1800M0 1010h1800"/></g>
+<!-- Ducts, conduit and caged amber overhead lamps. -->
+<path d="M0 177h889q40 0 40 40v80h440" stroke="#232c28" stroke-width="32"/><path d="M0 169h889q48 0 48 48v80h432" stroke="#75745c" stroke-width="5"/>
+<g stroke="#99917a" stroke-width="2" opacity=".5"><path d="M140 155v42m150-42v42m150-42v42m150-42v42m150-42v42m174 46h44m-17 50h42"/></g>
+<ellipse cx="1280" cy="242" rx="350" ry="300" fill="url(#glow)"/>
+<path d="m1184 190-204 574h610l-208-574Z" fill="url(#lamp)"/>
+<path d="M1160 168h250v29h-250z" fill="#222b26" stroke="#858267" stroke-width="3"/><path d="M1181 178h208v10h-208z" fill="#ffd38a"/>
+<path d="M1188 169v29m35-29v29m35-29v29m35-29v29m35-29v29m35-29v29" stroke="#3b3f32" stroke-width="3"/>
+<!-- Reinforced blast door, hinges and mechanical wheel. -->
+<g transform="translate(1265 727)">
+<path d="M-182 0v-410q0-30 30-30h302q30 0 30 30V0Z" fill="#282f29" stroke="#a49c7a" stroke-width="4"/>
+<path d="M-160-8v-391q0-25 25-25h269q24 0 24 25V-8Z" fill="url(#stripe)"/>
+<path d="M-143-19v-371q0-18 18-18h240q20 0 20 18v371Z" fill="url(#steel)" stroke="#202a25" stroke-width="6"/>
+<path d="M-121-35v-350H111v350Z" stroke="#93957a" stroke-width="2"/>
+<path d="M-104-354H93v67h-197z" fill="#24332b" stroke="#777e63"/>
+<path d="M-78-334h146m-146 14H38" stroke="#a6ab82" stroke-width="3" opacity=".6"/>
+<path d="M-99-240h180m-180 170h180M-154-325h30v37h-30m0 173h30v37h-30" stroke="#262e28" stroke-width="11"/>
+<circle cx="6" cy="-185" r="64" fill="#303a30" stroke="#b1a879" stroke-width="8"/>
+<circle cx="6" cy="-185" r="51" stroke="#242e27" stroke-width="3"/>
+<path d="M6-245v120m-60-60H66m-103-43 86 86m0-86-86 86" stroke="#aaa27a" stroke-width="7"/>
+<circle cx="6" cy="-185" r="13" fill="#c6ad77" stroke="#3c4330" stroke-width="3"/>
+<path d="M-193 0h387v15h-387Z" fill="#80795a"/>
+</g>
+<!-- A board of field maps, pinned evidence and connected sightings. -->
+<g transform="translate(500 365)">
+<path d="M-248-85h476v299h-476z" fill="#28362b" stroke="#89816a" stroke-width="10"/>
+<path d="M-228-65h270v221h-270z" fill="#b9b18d"/>
+<g stroke="#75896b" opacity=".8"><path d="M-220-15 5 120m-210 17L6-54m-200 56 210 40m-181-100 32 214M-87-61l-36 200M-38-60l-7 215"/><path d="m-207 92 60-29 62 47 77-41m-207-113 61 38 101-31" stroke-width="6"/></g>
+<path d="M75-45h125V60H75zM92 89h106v85H92z" fill="#cbbfa0"/>
+<path d="m84-30 101 70M99 105h80m-80 15h53m-53 15h75" stroke="#716c52" stroke-width="3"/>
+<path d="M-141 28 132 9-45 102 146 128" stroke="#c56744" stroke-width="2"/>
+<g fill="#c56945"><circle cx="-141" cy="28" r="5"/><circle cx="132" cy="9" r="5"/><circle cx="-45" cy="102" r="5"/><circle cx="146" cy="128" r="5"/></g>
+</g>
+<!-- Supply lockers and field equipment. -->
+<g transform="translate(1590 720)"><path d="M-30-335h216V0H-30Z" fill="#374034" stroke="#7b8065" stroke-width="3"/><path d="M78-334V0" stroke="#1d2c24" stroke-width="5"/><path d="M-10-311h68v287h-68zM97-311h67v287H97z" stroke="#747b5e"/><path d="M4-292h40m-40 10h40m-40 10h40m67-20h40m-40 10h40m-40 10h40" stroke="#202d25" stroke-width="4"/><path d="M46-167v33m67-33v33" stroke="#d1ad73" stroke-width="5"/></g>
+<g transform="translate(780 749)"><path d="M-140-69h260v21h-260z" fill="#68674d"/><path d="M-128-48V96m233-144V96" stroke="#25332a" stroke-width="13"/><path d="M-90-142H15v70H-90z" fill="#26352a" stroke="#979372" stroke-width="2"/><path d="M-78-130h57v23h-57z" fill="#bd8f47"/><circle cx="-5" cy="-115" r="9" fill="#b5a67d"/><path d="M-76-92h80m-99-50-23-83" stroke="#7c8a67" stroke-width="3"/><path d="M52-122h36v50H52z" fill="#b5a880"/><path d="m55-114 28 32m-28 0 28-32" stroke="#5b7259" stroke-width="4"/></g>
+</svg>

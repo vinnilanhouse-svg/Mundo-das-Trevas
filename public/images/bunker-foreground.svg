@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" fill="none"><defs><linearGradient id="case" x2="0" y2="1"><stop stop-color="#4c4b38"/><stop offset="1" stop-color="#273028"/></linearGradient></defs>
+<!-- Near crates and a heavy column create a second plane. -->
+<path d="M0 0h95v1100H0z" fill="#27322c"/><path d="M94 0h18v1100H94z" fill="#6e6c4b" opacity=".5"/>
+<path d="M0 10h1800v22H0z" fill="#202a25"/><path d="M32 2q-22 90 20 147t0 134" stroke="#1d2922" stroke-width="14"/>
+<g transform="translate(160 1010)"><path d="M-100-165h311V0h-311z" fill="url(#case)" stroke="#818061" stroke-width="3"/><path d="M-110-174h331v35h-331z" fill="#555641" stroke="#888566" stroke-width="2"/><path d="M-72-174V0m249-174V0" stroke="#242f26" stroke-width="15"/><path d="M13-149v-42h60v42m-151 24h17v25h-17m242-25h17v25h-17" stroke="#b2985e" stroke-width="5"/><path d="M4-83h77v41H4z" fill="#bba773"/><path d="M23-62h38m-19-12v24" stroke="#526146" stroke-width="7"/></g>
+<g transform="translate(1530 1020)"><path d="M-122-214h286V0h-286z" fill="url(#case)" stroke="#8d8660" stroke-width="3"/><path d="M-132-224h306v35h-306z" fill="#626043"/><path d="M-88-223V0m211-223V0" stroke="#273329" stroke-width="17"/><path d="M-36-159h118v75H-36z" fill="#8b8053"/><path d="M-20-138h85m-85 16h64m-64 16h75" stroke="#393f2b" stroke-width="4"/></g>
+<path d="M1660 0h140v1100h-140z" fill="#263029" opacity=".85"/><path d="M1649 0h12v1100h-12" fill="#7c7350" opacity=".6"/>
+<path d="M60 1100q210-174 342-87t274-14" stroke="#101f19" stroke-width="16"/>
+</svg>

@@ -4,6 +4,7 @@ import initialContent from "./content.json";
 import { SystemLibrary, SystemLabel } from "./Library.jsx";
 import { CemeteryAtmosphere } from "./CemeteryAtmosphere.jsx";
 import { ForestAtmosphere } from "./ForestAtmosphere.jsx";
+import { BunkerAtmosphere } from "./BunkerAtmosphere.jsx";
 import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
 import "@fontsource/dm-sans/latin-400.css";
@@ -12,8 +13,14 @@ import "@fontsource/dm-sans/latin-600.css";
 import "./styles.css";
 import "./cemetery.css";
 import "./forest.css";
+import "./bunker.css";
 
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
+const SYSTEM_THEMES = {
+  aparicao: "theme-aparicao",
+  changeling: "theme-changeling",
+  cacador: "theme-cacador",
+};
 const paths = {
   grid: "M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z",
   book: "M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1m0-15c3-2 6-2 9-1v15c-3-1-6-1-9 1V5Z",
@@ -191,11 +198,10 @@ function App() {
       ).includes(normalize(query)),
   );
   return (
-    <div
-      className={`app-shell${selectedId === "aparicao" ? " theme-aparicao" : selectedId === "changeling" ? " theme-changeling" : ""}`}
-    >
+    <div className={`app-shell ${SYSTEM_THEMES[selectedId] || ""}`}>
       {selectedId === "aparicao" && <CemeteryAtmosphere />}
       {selectedId === "changeling" && <ForestAtmosphere />}
+      {selectedId === "cacador" && <BunkerAtmosphere />}
       {menu && (
         <button
           className="sidebar-scrim"
