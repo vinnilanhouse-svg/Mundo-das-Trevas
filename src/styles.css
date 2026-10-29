@@ -2439,3 +2439,104 @@ main {
     font-size: 24px;
   }
 }
+.arcanoi-home-link {
+  margin: 0 0 16px;
+}
+.arcanoi-directory {
+  margin: 28px 0;
+}
+.arcanoi-directory > h3 {
+  font:
+    500 29px "Cormorant Garamond",
+    Georgia,
+    serif;
+  color: #e5c8e6;
+  margin-bottom: 12px;
+}
+.arcanoi-directory > p {
+  color: #bba2c7;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+.arcanoi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+.arcanoi-card {
+  min-width: 0;
+  border: 1px solid #51365d;
+  border-radius: 6px;
+  padding: 20px;
+  background: #1b1421;
+}
+.arcanoi-card h4 {
+  font:
+    500 27px "Cormorant Garamond",
+    Georgia,
+    serif;
+  margin: 0 0 10px;
+  color: #e5c8e6;
+}
+.arcanoi-card h4 a:hover {
+  text-decoration: underline;
+}
+.arcanoi-card > p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #c0a6cc;
+  min-height: 68px;
+}
+.arcanoi-card > span {
+  display: block;
+  font-size: 10px;
+  color: #a48ab1;
+  margin: 15px 0;
+}
+.arcanoi-card ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.arcanoi-card li {
+  border-top: 1px solid #3e2a49;
+  padding: 12px 0;
+}
+.arcanoi-card li > strong {
+  display: block;
+  font-size: 12px;
+  color: #d6b4db;
+  margin-bottom: 9px;
+}
+.arcanoi-card li > a {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  color: #d1afd7;
+  font-size: 11px;
+  line-height: 1.8;
+  padding: 4px 0;
+  overflow-wrap: anywhere;
+}
+.arcanoi-card li > a:hover {
+  color: #fff0ff;
+  text-decoration: underline;
+}
+.arcanoi-card li small {
+  font-size: 9px;
+  color: #a086ad;
+  min-width: 44px;
+}
+.arcanoi-card > .text-button {
+  margin-top: 12px;
+  font-size: 11px;
+}
+@media (max-width: 1200px) {
+  .arcanoi-grid {
+    grid-template-columns: 1fr;
+  }
+  .arcanoi-card > p {
+    min-height: 0;
+  }
+}

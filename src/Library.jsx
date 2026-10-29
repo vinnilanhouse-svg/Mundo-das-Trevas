@@ -161,7 +161,13 @@ export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
         `${s.title} ${s.body} ${s.group} ${s.edition} ${s.power?.rules || ""}`,
       ).includes(normalize(query)),
   );
-  const article = sections.find((s) => s.id === sectionSlug);
+  const arcanoiDirectory =
+    system.id === "aparicao"
+      ? system.sections.find((s) => s.id === "mechanics-arcanoi-arcanoi")
+      : null;
+  const article =
+    sections.find((s) => s.id === sectionSlug) ||
+    (!sectionSlug && category?.key === "mechanics" ? arcanoiDirectory : null);
   useEffect(() => {
     setQuery("");
     setGroup("all");
@@ -240,6 +246,14 @@ export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
             {category.name} — <SystemLabel system={system} />
           </h2>
           {category.key === "sheet" && <CharacterSheet system={system} />}
+          {category.key === "mechanics" && arcanoiDirectory && (
+            <a
+              className="button arcanoi-home-link"
+              href={`${base}/mecanica/${arcanoiDirectory.id}`}
+            >
+              Consultar os 16 Arcanoi →
+            </a>
+          )}
           <div className="library-filters">
             <label>
               Buscar nesta área
@@ -348,6 +362,9 @@ export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
                     <span>{article.status}</span>
                   </div>
                   <div className="article-body">{article.body}</div>
+                  {arcanoiDirectory && article.id === arcanoiDirectory.id && (
+                    <ArcanoiDirectory system={system} base={base} />
+                  )}
                   {article.power && <PowerDetails power={article.power} />}
                   <PowerProgression
                     system={system}
@@ -397,6 +414,66 @@ export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
     </div>
   );
 }
+function ArcanoiDirectory({ system, base }) {
+  const families = system.sections.filter(
+    (s) => s.group === "Arcanoi — fundamentos" && s.powerFamily,
+  );
+  return (
+    <section
+      className="arcanoi-directory"
+      aria-label="Diretório dos 16 Arcanoi"
+    >
+      <h3>Escolha um Arcanos</h3>
+      <p>
+        Abra um Arcanos para comparar seus cinco níveis. Em cada nível você
+        encontra a arte Comum, a arte Iniciada e o efeito de cada uma. A entrada
+        individual traz o sistema, as condições e a fonte.
+      </p>
+      <div className="arcanoi-grid">
+        {families.map((family) => {
+          const powers = system.sections.filter(
+            (s) => s.power && s.power.family === family.powerFamily,
+          );
+          return (
+            <article className="arcanoi-card" key={family.id}>
+              <h4>
+                <a href={`${base}/mecanica/${family.id}`}>{family.title} →</a>
+              </h4>
+              <p>{family.body.split("\n\n")[0]}</p>
+              <span>
+                {powers.filter((p) => p.power.branch === "Comum").length} artes
+                Comuns ·{" "}
+                {powers.filter((p) => p.power.branch === "Iniciada").length}{" "}
+                Iniciadas
+              </span>
+              <ol aria-label={`Níveis de ${family.title}`}>
+                {[1, 2, 3, 4, 5].map((level) => (
+                  <li key={level}>
+                    <strong>Nível {level}</strong>
+                    {powers
+                      .filter((p) => p.power.level === level)
+                      .map((power) => (
+                        <a href={`${base}/mecanica/${power.id}`} key={power.id}>
+                          <small>{power.power.branch}</small>
+                          {power.title
+                            .replace(/^[1-5] · /, "")
+                            .replace(" (Iniciada)", "")}
+                        </a>
+                      ))}
+                  </li>
+                ))}
+              </ol>
+              <a className="text-button" href={`${base}/mecanica/${family.id}`}>
+                Ver explicação dos cinco níveis →
+              </a>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function PowerDetails({ power }) {
   const rows = [
     ["Nível", power.level ?? "Sem escala numérica"],
@@ -458,6 +535,13 @@ function PowerProgression({ system, article, base }) {
           nível.
         </p>
       )}
+      {system.id === "aparicao" && (
+        <p>
+          Cada nível tem uma arte Comum e uma arte Iniciada, com efeitos
+          diferentes. O acesso às artes Iniciadas depende do aprendizado e da
+          tradição; elas não são recebidas automaticamente com a arte Comum.
+        </p>
+      )}
       {levels.map((level) => (
         <details
           key={level ?? "none"}
@@ -474,7 +558,10 @@ function PowerProgression({ system, article, base }) {
                 <div className="power-choice" key={s.id}>
                   <a href={`${base}/mecanica/${s.id}`}>{s.title}</a>
                   <span className="power-branch">
-                    {s.power.branch} · {s.edition}
+                    {system.id === "aparicao"
+                      ? `Arte ${s.power.branch}`
+                      : s.power.branch}{" "}
+                    · {s.edition}
                   </span>
                   <p>{s.power.effect}</p>
                 </div>

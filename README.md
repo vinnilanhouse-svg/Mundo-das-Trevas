@@ -37,6 +37,8 @@ Na home, o cartão abre uma página do sistema. Nela, o visitante escolhe:
 - **Mecânica:** atributos, habilidades, antecedentes, poderes e regras, agrupados por assunto.
 - **Ficha:** formulário vazio preenchível e referências aos campos da base anexada.
 
+Em **Aparição 20A → Mecânica**, o diretório dos 16 Arcanoi abre por padrão. Cada cartão oferece links para os cinco níveis e suas artes Comuns/Iniciadas; abrir o nome do Arcanos mostra os dez efeitos agrupados por nível, e cada poder leva ao sistema e à fonte. O botão **Consultar os 16 Arcanoi** retorna ao diretório.
+
 Cada área tem busca em títulos e textos, filtro de categoria, índice de tópicos e links diretos. Exemplo: `#/sistema/changeling/mecanica`. Fontes indicam **a posição da página no PDF**, que pode diferir da página impressa.
 
 Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As referências preservam a origem dos trechos cuja mecânica ainda exige conferência no C20 completo. O guia dos Imbuídos fica identificado como **original/legado**, sem ser apresentado como regra H5.
