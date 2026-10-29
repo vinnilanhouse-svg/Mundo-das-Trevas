@@ -2,11 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import initialContent from "./content.json";
 import { SystemLibrary, SystemLabel } from "./Library.jsx";
-import { CemeteryAtmosphere } from "./CemeteryAtmosphere.jsx";
-import { ForestAtmosphere } from "./ForestAtmosphere.jsx";
-import { BunkerAtmosphere } from "./BunkerAtmosphere.jsx";
-import { CastleAtmosphere } from "./CastleAtmosphere.jsx";
-import { ArcaneAtmosphere } from "./ArcaneAtmosphere.jsx";
+import { PortalAtmosphere } from "./PortalAtmosphere.jsx";
 import { WelcomeNotice, ContactPage } from "./Community.jsx";
 import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
@@ -14,13 +10,9 @@ import "@fontsource/dm-sans/latin-400.css";
 import "@fontsource/dm-sans/latin-500.css";
 import "@fontsource/dm-sans/latin-600.css";
 import "./styles.css";
-import "./cemetery.css";
-import "./forest.css";
-import "./bunker.css";
-import "./castle.css";
-import "./arcane.css";
 import "./sheets.css";
 import "./community.css";
+import "./portals.css";
 
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const SYSTEM_THEMES = {
@@ -44,6 +36,9 @@ const paths = {
   back: "M19 12H5m6-6-6 6 6 6",
   check: "m5 12 4 4L19 6",
   mail: "M3 5h18v14H3z M3 5l9 7 9-7",
+  sheet: "M6 3h9l4 4v14H6z M14 3v5h5 M9 12h7m-7 4h7",
+  mechanics:
+    "M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6 2.1-2.1 M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0",
 };
 function Icon({ name, size = 20, ...props }) {
   return (
@@ -211,13 +206,112 @@ function App() {
       ).includes(normalize(query)),
   );
   return (
-    <div className={`app-shell ${SYSTEM_THEMES[selectedId] || ""}`}>
+    <div
+      className={`app-shell portal-theme ${SYSTEM_THEMES[selectedId] || ""}`}
+    >
       <WelcomeNotice />
-      {selectedId === "aparicao" && <CemeteryAtmosphere />}
-      {selectedId === "changeling" && <ForestAtmosphere />}
-      {selectedId === "cacador" && <BunkerAtmosphere />}
-      {selectedId === "vampiro" && <CastleAtmosphere />}
-      {selectedId === "mago" && <ArcaneAtmosphere />}
+      <PortalAtmosphere systemId={selected?.id} />
+      <a
+        className="skip-link"
+        href="#main-content"
+        onClick={(event) => {
+          event.preventDefault();
+          const content = document.getElementById("main-content");
+          content?.focus();
+          content?.scrollIntoView({ block: "start" });
+        }}
+      >
+        Pular para o conteúdo
+      </a>
+      <header className="portal-header">
+        <a
+          className="brand portal-brand"
+          href="#"
+          onClick={() => navigate("all")}
+        >
+          <span className="brand-mark">
+            <Sigil />
+          </span>
+          <span>
+            Arquivo<span className="brand-bottom">das Trevas</span>
+          </span>
+        </a>
+        <nav className="portal-navigation" aria-label="Navegação principal">
+          <button
+            className={
+              !selected && !contactOpen && view === "all" ? "current" : ""
+            }
+            onClick={() => navigate("all")}
+          >
+            Início
+          </button>
+          <button
+            onClick={() => {
+              navigate("all");
+              requestAnimationFrame(() =>
+                document
+                  .getElementById("portais")
+                  ?.scrollIntoView({ block: "start" }),
+              );
+            }}
+          >
+            Sistemas
+          </button>
+          <details className="portal-document-menu">
+            <summary>Documentos</summary>
+            <div>
+              <span>ESCOLHA UM SISTEMA</span>
+              {systems.map((system) => (
+                <a
+                  key={system.id}
+                  href={`#/sistema/${system.id}/documentos`}
+                  onClick={(event) =>
+                    event.currentTarget
+                      .closest("details")
+                      .removeAttribute("open")
+                  }
+                >
+                  <SystemLabel system={system} />
+                  <Icon name="arrow" size={15} />
+                </a>
+              ))}
+            </div>
+          </details>
+          <a href="#/contato" className={contactOpen ? "current" : ""}>
+            Contato
+          </a>
+        </nav>
+        <label className="portal-search">
+          <Icon name="search" size={18} />
+          <input
+            ref={searchRef}
+            value={query}
+            onChange={(event) => {
+              setQuery(event.target.value);
+              if (selected || contactOpen || view !== "all") navigate("all");
+            }}
+            placeholder="Buscar no acervo…"
+            aria-label="Buscar um sistema ou tema"
+          />
+          <kbd>Ctrl K</kbd>
+        </label>
+        <button
+          className={`icon-button portal-favorites ${view === "favorites" && !selected ? "is-favorite" : ""}`}
+          onClick={() => navigate("favorites")}
+          aria-label="Ver favoritos"
+          title="Seus favoritos"
+        >
+          <Icon name="star" />
+        </button>
+        <button
+          className="mobile-menu icon-button"
+          aria-label="Abrir navegação"
+          aria-expanded={menu}
+          onClick={() => setMenu(true)}
+        >
+          <Icon name="menu" />
+        </button>
+      </header>
       {menu && (
         <button
           className="sidebar-scrim"
@@ -225,7 +319,17 @@ function App() {
           onClick={() => setMenu(false)}
         />
       )}
-      <aside className={`sidebar ${menu ? "is-open" : ""}`}>
+      <aside
+        className={`sidebar ${menu ? "is-open" : ""}`}
+        aria-label="Menu de navegação"
+      >
+        <button
+          className="drawer-close icon-button"
+          aria-label="Fechar navegação"
+          onClick={() => setMenu(false)}
+        >
+          <Icon name="close" />
+        </button>
         <a className="brand" href="#" onClick={() => navigate("all")}>
           <span className="brand-mark">
             <Sigil />
@@ -299,36 +403,7 @@ function App() {
         </div>
       </aside>
       <div className="workspace">
-        <header className="topbar">
-          <div className="breadcrumb">
-            <button
-              className="mobile-menu icon-button"
-              aria-label="Abrir navegação"
-              onClick={() => setMenu(true)}
-            >
-              <Icon name="menu" />
-            </button>
-            <span>Mundo das Trevas</span>
-            <span className="slash">/</span>
-            <strong>
-              {selected
-                ? `${selected.name} ${selected.editionLabel}`
-                : contactOpen
-                  ? "Contato"
-                  : view === "about"
-                    ? "Sobre o projeto"
-                    : view === "favorites"
-                      ? "Favoritos"
-                      : "Acervo de sistemas"}
-            </strong>
-          </div>
-          <div className="topbar-actions">
-            <span className="draft-indicator">
-              <i /> Em construção
-            </span>
-          </div>
-        </header>
-        <main id="main-content">
+        <main id="main-content" tabIndex={-1}>
           {storageError && (
             <div className="notice" role="alert">
               O armazenamento do navegador está indisponível. Seus favoritos
@@ -358,105 +433,82 @@ function App() {
             <About />
           ) : (
             <>
-              <section className="hero">
+              <section className="hero portal-hero">
                 <div className="hero-copy">
                   <div className="eyebrow">
-                    <span /> BEM-VINDO AO OUTRO LADO
+                    <span /> UM ACERVO PARA QUEM ATRAVESSA A NOITE
                   </div>
                   <h1>
-                    Conhecimento nas
-                    <br />
-                    sombras do mundo<span>.</span>
+                    Cinco caminhos.
+                    <br className="mobile-hero-break" /> Um Mundo das Trevas.
                   </h1>
                   <p>
-                    Um universo de histórias. Incontáveis formas de jogar.
-                    <br className="desktop-break" /> Explore os sistemas e
-                    encontre o próximo capítulo da sua crônica.
+                    Histórias, regras e segredos do outro lado da realidade.
+                    Escolha seu caminho. Sua próxima crônica começa aqui.
                   </p>
                   <div className="hero-meta">
                     <span>
-                      <Icon name="book" size={16} /> {systems.length} sistemas
+                      <Icon name="book" size={15} /> {systems.length} sistemas
                       para explorar
                     </span>
                     <span className="meta-divider" />
                     <span>
-                      {systems.reduce(
-                        (count, s) => count + s.sections.length,
-                        0,
-                      )}{" "}
-                      entradas no acervo
+                      {systems
+                        .reduce(
+                          (count, system) => count + system.sections.length,
+                          0,
+                        )
+                        .toLocaleString("pt-BR")}{" "}
+                      referências para sua mesa
                     </span>
                   </div>
                 </div>
-                <div className="hero-art" aria-hidden="true">
-                  <div className="orbit orbit-one" />
-                  <div className="orbit orbit-two" />
-                  <div className="orbit orbit-three" />
-                  <div className="art-cross cross-one" />
-                  <div className="art-cross cross-two" />
-                  <svg viewBox="0 0 300 300">
-                    <path d="M150 20 263 85v130l-113 65L37 215V85Z M150 20v260 M37 85l226 130 M37 215 263 85 M150 60l78 135H72Z M150 240 72 105h156Z" />
-                    <circle cx="150" cy="150" r="101" />
-                    <circle cx="150" cy="150" r="45" />
-                  </svg>
-                  <span className="art-caption">
-                    ENTRE O VISÍVEL E O OCULTO
+              </section>
+              <div className="portal-collection-toolbar" id="portais">
+                <div className="collection-heading">
+                  <div>
+                    <div className="eyebrow muted">ESCOLHA SEU PORTAL</div>
+                    <h2>
+                      {view === "favorites"
+                        ? "Seus arquivos favoritos"
+                        : "Do outro lado"}
+                      <span>
+                        {" "}
+                        /{" "}
+                        {String(
+                          view === "favorites"
+                            ? systems.filter((s) => favorites.includes(s.id))
+                                .length
+                            : systems.length,
+                        ).padStart(2, "0")}
+                      </span>
+                    </h2>
+                  </div>
+                  <span className="collection-note">
+                    Escolha por onde entrar.
                   </span>
                 </div>
-              </section>
-              <div className="collection-heading">
-                <div>
-                  <div className="eyebrow muted">
-                    O CONHECIMENTO É O PRIMEIRO PASSO
-                  </div>
-                  <h2>
-                    {view === "favorites"
-                      ? "Seus arquivos favoritos"
-                      : "Explore o acervo"}
-                    <span>
-                      {" "}
-                      /{" "}
-                      {String(
-                        view === "favorites"
-                          ? systems.filter((s) => favorites.includes(s.id))
-                              .length
-                          : systems.length,
-                      ).padStart(2, "0")}
-                    </span>
-                  </h2>
-                </div>
-                <span className="collection-note">
-                  Escolha por onde entrar.
-                </span>
+                <section className="filters" aria-label="Filtrar sistemas">
+                  <span className="filter-caption">
+                    Cinco perspectivas sobre o mesmo mundo.
+                  </span>
+                  <label className="edition-select">
+                    <Icon name="book" size={17} />
+                    <select
+                      value={edition}
+                      onChange={(e) => setEdition(e.target.value)}
+                      aria-label="Filtrar por edição"
+                    >
+                      {[
+                        "Todas as edições",
+                        ...new Set(systems.flatMap((s) => s.editions)),
+                      ].map((e) => (
+                        <option key={e}>{e}</option>
+                      ))}
+                    </select>
+                  </label>
+                </section>
               </div>
-              <section className="filters" aria-label="Filtrar sistemas">
-                <label className="search-field">
-                  <Icon name="search" size={19} />
-                  <input
-                    ref={searchRef}
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Buscar um sistema ou tema…"
-                    aria-label="Buscar um sistema ou tema"
-                  />
-                  <kbd>⌘ K</kbd>
-                </label>
-                <label className="edition-select">
-                  <Icon name="book" size={17} />
-                  <select
-                    value={edition}
-                    onChange={(e) => setEdition(e.target.value)}
-                    aria-label="Filtrar por edição"
-                  >
-                    {[
-                      "Todas as edições",
-                      ...new Set(systems.flatMap((s) => s.editions)),
-                    ].map((e) => (
-                      <option key={e}>{e}</option>
-                    ))}
-                  </select>
-                </label>
-              </section>
               <div className="results-label" aria-live="polite">
                 <span>
                   {filtered.length}{" "}
@@ -489,28 +541,31 @@ function App() {
                         </button>
                       </div>
                       <a className="card-link" href={`#/sistema/${s.id}`}>
-                        <div className="card-symbol">
-                          <span />
-                          <Sigil kind={s.kind} />
-                          <span />
-                        </div>
-                        <div className="card-name">
-                          <h3>
-                            <SystemLabel system={s} />
-                          </h3>
-                          <span>{s.subtitle}</span>
-                        </div>
-                        <p>{s.description}</p>
-                        <div className="card-tags">
-                          <span>{s.theme}</span>
-                          <span>
-                            {s.editions.length}{" "}
-                            {s.editions.length === 1 ? "edição" : "edições"}
+                        <img
+                          className="portal-card-image"
+                          src={`/images/portals/${s.id}.webp`}
+                          alt=""
+                          width="840"
+                          height="1260"
+                          loading={i < 2 ? "eager" : "lazy"}
+                          decoding="async"
+                        />
+                        <div className="portal-card-content">
+                          <Sigil kind={s.kind} className="portal-card-sigil" />
+                          <div className="card-name">
+                            <h3>{s.name}</h3>
+                            <span className="portal-edition">
+                              {s.editionLabel}
+                            </span>
+                            <span className="portal-subtitle">
+                              {s.subtitle}
+                            </span>
+                          </div>
+                          <p>{s.description}</p>
+                          <span className="portal-enter">
+                            <Icon name="arrow" size={20} />
+                            <span>Explorar sistema</span>
                           </span>
-                        </div>
-                        <div className="card-footer">
-                          <span>Explorar sistema</span>
-                          <Icon name="arrow" size={18} />
                         </div>
                       </a>
                     </article>
@@ -544,6 +599,57 @@ function App() {
                   </button>
                 </div>
               )}
+              <section
+                className="portal-shortcuts"
+                aria-label="Explorar por assunto"
+              >
+                {[
+                  {
+                    name: "Lore",
+                    slug: "lore",
+                    icon: "book",
+                    description:
+                      "Histórias, facções e os segredos de cada mundo.",
+                  },
+                  {
+                    name: "Mecânica",
+                    slug: "mecanica",
+                    icon: "mechanics",
+                    description: "Regras, poderes e testes para a sua crônica.",
+                  },
+                  {
+                    name: "Ficha",
+                    slug: "ficha",
+                    icon: "sheet",
+                    description: "Personagens, atributos e próximos capítulos.",
+                  },
+                ].map((area) => (
+                  <details
+                    className={`portal-shortcut shortcut-${area.slug}`}
+                    key={area.slug}
+                  >
+                    <summary>
+                      <Icon name={area.icon} size={35} />
+                      <span>
+                        <strong>{area.name}</strong>
+                        <span>{area.description}</span>
+                      </span>
+                      <Icon name="arrow" />
+                    </summary>
+                    <div className="shortcut-systems">
+                      {systems.map((system) => (
+                        <a
+                          key={system.id}
+                          href={`#/sistema/${system.id}/${area.slug}`}
+                        >
+                          <SystemLabel system={system} />
+                          <Icon name="arrow" size={14} />
+                        </a>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </section>
             </>
           )}
           <footer className="footer">
@@ -555,6 +661,13 @@ function App() {
               Projeto de fãs · Sem vínculo oficial com World of Darkness
               {" · "}
               <a href="#/contato">Contato</a>
+              {" · "}
+              <button
+                className="footer-about"
+                onClick={() => navigate("about")}
+              >
+                Sobre o projeto
+              </button>
             </span>
           </footer>
         </main>
