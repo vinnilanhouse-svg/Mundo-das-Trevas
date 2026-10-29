@@ -15,6 +15,7 @@ import "./sheets.css";
 import "./community.css";
 import "./portals.css";
 import "./sheet-themes.css";
+import "./changeling-stained.css";
 
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const SYSTEM_THEMES = {

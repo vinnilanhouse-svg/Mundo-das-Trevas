@@ -172,7 +172,14 @@ export function SheetPages({ system, values, onChange }) {
               {String(layout.pages.length).padStart(2, "0")}
             </span>
             <span>FICHA DE PERSONAGEM · {system.editionLabel}</span>
-            <h3>{system.name}</h3>
+            <h3>
+              {system.name}
+              {system.id === "changeling" && (
+                <small className="sheet-title-edition">
+                  {system.editionLabel}
+                </small>
+              )}
+            </h3>
             <p>
               {system.subtitle} <span>·</span> {page.title}
             </p>
@@ -247,6 +254,9 @@ export function SheetPages({ system, values, onChange }) {
               </div>
             </section>
           ))}
+          {system.id === "changeling" && (
+            <div className="sheet-stained-footer" aria-hidden="true" />
+          )}
           <footer className="sheet-paper-footer">
             <span>
               {system.name} {system.editionLabel} · {page.title}

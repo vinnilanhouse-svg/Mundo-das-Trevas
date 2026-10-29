@@ -1,0 +1,379 @@
+/* Vitral do Sonhar: a live form inside jewel glass and gilded Art Nouveau borders. */
+@media screen {
+  .sheet-pages-changeling {
+    --sheet-surface: #fbf2dc;
+    --sheet-panel: #fff8e9;
+    --sheet-ink: #233b3c;
+    --sheet-muted: #66604c;
+    --sheet-ui-accent: #75501e;
+    --sheet-rule: #967134;
+    --sheet-rule-soft: #a182425c;
+    --sheet-input: #fffaf0;
+    --sheet-focus: #fffdf6;
+    --glass-gold: #b38b40;
+    --glass-jewel: #205c51;
+    --sheet-scene: url("/images/sheets/changeling-glass-header.webp");
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper {
+    padding: 30px 46px 20px;
+    border: 2px solid #af8232;
+    border-radius: 7px;
+    background:
+      url("/images/sheets/changeling-glass-rail.svg") left top / 28px 84px
+        repeat-y,
+      url("/images/sheets/changeling-glass-rail.svg") right top / 28px 84px
+        repeat-y,
+      radial-gradient(ellipse at center, #fff9e9, #f5e8c9);
+    box-shadow:
+      0 24px 70px #0007,
+      inset 0 0 0 5px #153f3a;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper::before {
+    inset: 7px;
+    border: 1px solid #f3d58c;
+    border-radius: 3px;
+    z-index: -1;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper-header {
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    padding: 0 30px 52px;
+    border: 2px solid #a07a34;
+    border-radius: 4px 4px 24px 24px;
+    margin-bottom: 30px;
+    background: #0b4550;
+    box-shadow:
+      0 2px 0 #f6db99,
+      0 4px 0 #b28a42;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-header-scene {
+    background-image: var(--sheet-scene);
+    background-position: center;
+    background-size: 100% 100%;
+    opacity: 1;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper-header::after {
+    background: none;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-emblem {
+    display: none;
+  }
+  .portal-theme
+    .sheet-pages-changeling
+    .sheet-paper-header
+    > span:not(.sheet-folio) {
+    color: #5d5949;
+    letter-spacing: 0.15em;
+    font-size: 8px;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper-header > .sheet-folio {
+    background: #123c42e8;
+    color: #f7dea3;
+    border: 1px solid #c59c52;
+    border-radius: 3px;
+    padding: 5px 8px;
+    right: 12px;
+    top: 12px;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper-header h3 {
+    color: #1c3d41;
+    font-size: clamp(42px, 4.6vw, 68px);
+    font-weight: 500;
+    font-variant: small-caps;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    margin: 6px 0 7px;
+    text-shadow: 0 1px #fff8e2;
+  }
+  .sheet-title-edition {
+    display: inline-block;
+    font: inherit;
+    font-size: 0.75em;
+    margin-left: 0.2em;
+    color: #97722f;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper-header p {
+    color: #384947;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    line-height: 1.7;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper-header p span {
+    color: #9a732e;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-section {
+    margin-top: 25px;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-section > h4 {
+    position: relative;
+    gap: 12px;
+    margin-bottom: 19px;
+    color: #223e40;
+    font-size: 25px;
+    font-weight: 600;
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-section > h4 > a {
+    display: inline-block;
+    padding: 4px 22px;
+    border: 1px solid #aa853d;
+    border-radius: 100px;
+    background: linear-gradient(#fff9e8, #f3e5bf);
+    box-shadow:
+      inset 0 0 0 2px #fff6dc,
+      0 1px 0 #b38b40;
+    text-decoration: none;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-section > h4::before,
+  .portal-theme .sheet-pages-changeling .sheet-section > h4::after {
+    height: 8px;
+    border-block: 1px solid #b38b40;
+    background: linear-gradient(90deg, transparent, #c6a45690), #174e4a;
+    box-shadow: 0 2px 0 #e3c87c;
+    opacity: 1;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-column:nth-child(1) {
+    --glass-jewel: #1e5a49;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-column:nth-child(2) {
+    --glass-jewel: #7b2b3b;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-column:nth-child(3) {
+    --glass-jewel: #533369;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-column:nth-child(4) {
+    --glass-jewel: #225367;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-column:nth-child(5) {
+    --glass-jewel: #805e27;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper .sheet-group {
+    padding: 13px 13px 15px;
+    border: 1px solid #9d7937;
+    border-radius: 20px 20px 13px 13px;
+    background: linear-gradient(125deg, #fff9e9, #f5e9cc);
+    box-shadow:
+      inset 0 0 0 2px #fff7dd,
+      inset 0 0 0 3px #cdb16e80,
+      0 2px 0 #b18a3f66;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper .sheet-group legend {
+    width: calc(100% - 10px);
+    max-width: calc(100% - 10px);
+    margin: 0 5px;
+    padding: 5px 9px;
+    border: 1px solid #c49c4b;
+    border-radius: 24px;
+    background: linear-gradient(#ffffff10, transparent), var(--glass-jewel);
+    box-shadow: inset 0 0 0 2px #f0cb7133;
+    color: #fff3d4;
+    text-align: center;
+    font:
+      500 18px/1.3 "Cormorant Garamond",
+      Georgia,
+      serif;
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper .sheet-group legend a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .portal-theme
+    .sheet-pages-changeling
+    .sheet-paper
+    .sheet-group
+    legend
+    .sheet-reference-link
+    svg {
+    color: #efd18b;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper .sheet-field-text {
+    border: 0;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper .sheet-field-text input {
+    border: 1px solid #b298605c;
+    border-radius: 5px;
+    background: linear-gradient(#fffcf5, #f8efd9);
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper .sheet-field > label {
+    color: #294143;
+  }
+  .portal-theme
+    .sheet-pages-changeling
+    .sheet-paper
+    .sheet-field-notes
+    textarea {
+    background:
+      repeating-linear-gradient(transparent 0 24px, #b4985b55 24px 25px),
+      #fff9e9;
+    border-color: #ad8d4e;
+    border-radius: 6px;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper .sheet-marks button {
+    background: #fffaf0;
+    border-color: #8c6931;
+    box-shadow: inset 0 1px 1px #b3985d33;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper .sheet-marks .is-marked {
+    background: var(--glass-jewel);
+    border-color: var(--glass-jewel);
+    box-shadow: inset 0 0 0 2px #f5dfa7;
+  }
+  .portal-theme
+    .sheet-pages-changeling
+    .sheet-paper
+    .sheet-rating
+    input[type="number"] {
+    border-color: #a7854566;
+    background: #fff9ea;
+    color: #243b3e;
+    border-radius: 4px;
+  }
+  .portal-theme
+    .sheet-pages-changeling
+    .sheet-paper
+    :is(input, textarea):focus-visible {
+    outline-color: var(--glass-jewel);
+    background-color: #fffdf5;
+  }
+  .portal-theme
+    .sheet-pages-changeling
+    .sheet-paper
+    .sheet-reference-link:hover {
+    color: #725115;
+  }
+  .portal-theme
+    .sheet-pages-changeling
+    .sheet-paper
+    legend
+    .sheet-reference-link:hover {
+    color: #fff6c9;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-reference-chips a {
+    background: #f5e9c8;
+    color: #294c4c;
+    border-color: #b69349;
+  }
+  .sheet-stained-footer {
+    height: 98px;
+    margin-top: 28px;
+    border: 1px solid #a9802e;
+    border-radius: 10px 10px 4px 4px;
+    background:
+      url("/images/sheets/changeling-glass-rosette.svg") center / 98px 98px
+        no-repeat,
+      linear-gradient(
+        90deg,
+        #092e45bb,
+        transparent 45%,
+        transparent 55%,
+        #092e45bb
+      ),
+      url("/images/sheets/changeling-glass-rail.svg") center / 40px 120px repeat;
+    box-shadow:
+      inset 0 0 0 3px #d1ad5b,
+      inset 0 0 0 5px #173c38;
+  }
+  .portal-theme .sheet-pages-changeling .sheet-paper-footer {
+    border-color: #ae8a40;
+    color: #6b5b37;
+    font-size: 9px;
+  }
+  @container (max-width: 700px) {
+    .portal-theme .sheet-pages-changeling .sheet-header-scene {
+      background-size: cover;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper {
+      padding: 25px 36px 18px;
+      background-size:
+        22px 66px,
+        22px 66px,
+        auto;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper-header {
+      height: 265px;
+      padding: 0 12px 43px;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper-header h3 {
+      font-size: 48px;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper .sheet-group {
+      padding: 10px;
+    }
+  }
+  @container (max-width: 540px) {
+    .portal-theme .sheet-pages-changeling .sheet-paper {
+      padding: 20px 23px 15px;
+      background-size:
+        15px 45px,
+        15px 45px,
+        auto;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper::before {
+      inset: 4px;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper-header {
+      height: 225px;
+      padding: 0 8px 36px;
+      margin-bottom: 25px;
+      border-radius: 3px 3px 16px 16px;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper-header h3 {
+      font-size: clamp(29px, 8vw, 38px);
+      margin: 5px 0 6px;
+    }
+    .portal-theme
+      .sheet-pages-changeling
+      .sheet-paper-header
+      > span:not(.sheet-folio) {
+      font-size: 6px;
+      letter-spacing: 0.08em;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper-header > .sheet-folio {
+      top: 7px;
+      right: 7px;
+      padding: 3px 5px;
+      font-size: 7px;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper-header p {
+      font-size: 7px;
+      letter-spacing: 0.13em;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-section > h4 {
+      font-size: 22px;
+      gap: 7px;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-section > h4 > a {
+      padding: 5px 12px;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-section > h4::before,
+    .portal-theme .sheet-pages-changeling .sheet-section > h4::after {
+      min-width: 4px;
+      height: 5px;
+    }
+    .portal-theme .sheet-pages-changeling .sheet-paper .sheet-group legend {
+      font-size: 19px;
+      padding: 6px 8px;
+    }
+    .sheet-stained-footer {
+      height: 70px;
+      background-size:
+        70px 70px,
+        auto,
+        34px 100px;
+    }
+  }
+}
+@media print {
+  .sheet-stained-footer,
+  .sheet-title-edition {
+    display: none !important;
+  }
+}
