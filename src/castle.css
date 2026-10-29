@@ -1,0 +1,490 @@
+/* Vampiro: original Gothic castle scenery, isolated from the other systems. */
+.theme-vampiro {
+  --bg: #230b0e;
+  --panel: #2b1018;
+  --line: #74313e;
+  --muted: #c09da2;
+  --rose: #f28d96;
+  --accent: #de5266;
+  --color: #c6a7ac;
+  --tint: #4b3034;
+  color: #f0dfe5;
+  background: var(--bg);
+  isolation: isolate;
+}
+.theme-vampiro .vampire {
+  --color: #ed7887;
+  --tint: #5e152a;
+}
+.castle-atmosphere {
+  position: fixed;
+  inset: 0 0 0 250px;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #523539;
+  contain: strict;
+}
+.castle-distance,
+.castle-foreground {
+  position: absolute;
+  inset: -20px -20px -150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 62% center;
+}
+.castle-distance {
+  background-image: url("/images/castle-distance.svg");
+  transform: translate3d(0, var(--castle-far, 0px), 0);
+}
+.castle-foreground {
+  background-image: url("/images/castle-foreground.svg");
+  transform: translate3d(0, var(--castle-near, 0px), 0);
+}
+.castle-mist {
+  position: absolute;
+  inset: 0 -15%;
+  background:
+    radial-gradient(ellipse at 75% 76%, #b789a52e, transparent 48%),
+    radial-gradient(ellipse at 18% 92%, #a67c9c33, transparent 44%);
+  animation: castle-mist 28s ease-in-out infinite alternate;
+}
+.castle-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #180c18a1, transparent 65%, #160b1633),
+    linear-gradient(0deg, #130a17c7, transparent 70%);
+}
+@keyframes castle-mist {
+  from {
+    transform: translate3d(-3%, 0, 0);
+    opacity: 0.55;
+  }
+  to {
+    transform: translate3d(3%, -2%, 0);
+    opacity: 0.9;
+  }
+}
+.theme-vampiro .workspace {
+  position: relative;
+  z-index: 1;
+}
+.theme-vampiro .sidebar {
+  background: #1c090d;
+  border-color: #5d1d2c;
+}
+.theme-vampiro .topbar {
+  background: #230a0feb;
+  border-color: #8b283c80;
+}
+.theme-vampiro .brand-mark,
+.theme-vampiro .tiny-star {
+  color: #c6a7ac;
+}
+.theme-vampiro :is(.sidebar-label, .version, .slash) {
+  color: #b48a90;
+}
+.theme-vampiro
+  :is(
+    .main-nav button,
+    .system-nav a,
+    .about-link,
+    .sidebar-note,
+    .breadcrumb,
+    .draft-indicator
+  ) {
+  color: #c8a9ae;
+}
+.theme-vampiro
+  :is(.system-nav a.selected, .system-nav a:hover, .main-nav button:hover) {
+  background: #492f33;
+  color: #f2e7e9;
+}
+.theme-vampiro .main-nav button > span {
+  background: #492e32;
+  color: #dfc8cc;
+}
+.theme-vampiro .breadcrumb strong {
+  color: #e8d8da;
+}
+.theme-vampiro .draft-indicator i {
+  background: #c09ca2;
+  box-shadow: 0 0 10px #cba0a744;
+}
+.theme-vampiro .back-link {
+  color: #d9c3c7;
+  text-shadow: 0 1px 6px #221214;
+}
+.theme-vampiro .library-hero {
+  min-height: 360px;
+  padding: 40px;
+  border-color: #ce304d80;
+  border-radius: 3px 3px 18px 3px;
+  background: linear-gradient(
+    90deg,
+    #24090ef2,
+    #400d1abd 40%,
+    #3b0d1829 74%,
+    #4010180a
+  );
+  box-shadow:
+    inset 3px 0 #c52d44,
+    0 20px 60px #18040855;
+  position: relative;
+}
+.theme-vampiro .library-hero > div {
+  max-width: 600px;
+}
+.theme-vampiro .library-hero h1 {
+  font-size: clamp(72px, 7vw, 104px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: #ffe0dc;
+  text-shadow: 0 2px 28px #34091d;
+  margin: 22px 0;
+}
+.theme-vampiro .library-hero h1 > span {
+  color: #df94a8;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  margin-top: 18px;
+}
+.theme-vampiro .library-hero p {
+  max-width: 390px;
+  color: #d3bbbf;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.theme-vampiro .edition-badge {
+  border-color: #c19ba170;
+  color: #e1cccf;
+  background: #38242780;
+}
+.theme-vampiro .library-hero h1 .edition-badge {
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  vertical-align: 0.35em;
+  margin-left: 6px;
+  color: #f1bfca;
+  border-color: #b85470;
+  background: #531b32a8;
+}
+.theme-vampiro
+  :is(
+    .eyebrow,
+    .text-button,
+    .detail-tools,
+    .library-heading,
+    .library-index h3,
+    .topic-summary strong
+  ) {
+  color: #d3b5ba;
+}
+.theme-vampiro
+  :is(
+    .notice,
+    .area-card,
+    .source-list,
+    .character-sheet,
+    .arcanoi-card,
+    .power-details,
+    .power-progression,
+    .document-outline,
+    .source-transcription,
+    .document-link,
+    .document-results > a
+  ) {
+  background: #2b1b1eeb;
+  border-color: #945e6773;
+}
+.theme-vampiro .notice {
+  color: #d3b9bd;
+  line-height: 1.8;
+}
+.theme-vampiro .area-grid {
+  gap: 18px;
+}
+.theme-vampiro .area-card {
+  border-radius: 3px 3px 12px 3px;
+  padding: 28px 25px;
+  box-shadow:
+    inset 0 1px #eacdd10a,
+    0 8px 30px #1c0e1026;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+  border-top: 2px solid #bd2a45;
+  background: #2a1018f0;
+}
+.theme-vampiro .area-card:hover {
+  background: #482034f5;
+  border-color: #d66c8c;
+  transform: translateY(-3px);
+}
+.theme-vampiro
+  :is(
+    .area-card h2,
+    .library-article h2,
+    .arcanoi-directory > h3,
+    .arcanoi-card h4,
+    .document-catalog h2,
+    .document-reader h2,
+    .character-sheet > summary,
+    .power-details h3,
+    .power-progression h3
+  ) {
+  color: #f0e4e6;
+}
+.theme-vampiro
+  :is(
+    .area-card h2 > span,
+    .area-card .eyebrow,
+    .area-card small,
+    .sheet-group legend,
+    .source-transcription > summary,
+    .document-outline summary
+  ) {
+  color: #d1afb4;
+}
+.theme-vampiro
+  :is(
+    .area-card p,
+    .library-article .article-body,
+    .reading-intro,
+    .arcanoi-card > p,
+    .arcanoi-directory > p,
+    .power-progression > p,
+    .power-choice p,
+    .power-details dd,
+    .sheet-notice,
+    .document-catalog > p,
+    .document-reader > p
+  ) {
+  color: #dbc6c9;
+}
+.theme-vampiro :is(.button, .topic-summary > button, .topic-summary > a) {
+  background: #3b2529f2;
+  border-color: #9b636c80;
+  color: #e5cfd2;
+}
+.theme-vampiro
+  :is(.button:hover, .topic-summary > button:hover, .topic-summary > a:hover) {
+  background: #503338;
+  border-color: #c69ba2;
+}
+.theme-vampiro
+  :is(
+    .area-tabs,
+    .library-index h3,
+    .arcanoi-card li,
+    .sheet-group,
+    .power-progression details,
+    .power-choice,
+    .source-row
+  ) {
+  border-color: #8c5a6273;
+}
+.theme-vampiro
+  :is(
+    .area-tabs a,
+    .library-index a,
+    .library-index a small,
+    .source,
+    .source small,
+    .source-row p,
+    .source-row small,
+    .source-row a,
+    .topic-summary span,
+    .document-link span,
+    .document-method,
+    .document-outline small,
+    .document-results span,
+    .arcanoi-card > span,
+    .arcanoi-card li small,
+    .sheet-message,
+    .power-branch
+  ) {
+  color: #c9aaaf;
+}
+.theme-vampiro
+  :is(
+    .area-tabs a[aria-current="page"],
+    .area-tabs a:hover,
+    .library-index a[aria-current="page"],
+    .library-index a:hover
+  ) {
+  color: #f4e7e9;
+  background: #492f33;
+  border-color: #c99ea5;
+  box-shadow: none;
+}
+.theme-vampiro .library-layout {
+  background: #2b1b1eed;
+  padding: 24px;
+  border: 1px solid #8e5a6266;
+  border-radius: 3px;
+}
+.theme-vampiro .library-index {
+  scrollbar-color: #a97980 transparent;
+}
+.theme-vampiro
+  :is(
+    .library-filters label,
+    .power-filters label,
+    .document-controls label,
+    .document-search,
+    .source-transcription label,
+    .sheet-group label,
+    .power-details dt,
+    .arcanoi-card li > strong,
+    .arcanoi-card li > a
+  ) {
+  color: #dfc7cb;
+}
+.theme-vampiro :is(input, select, textarea, .document-text) {
+  background: #271719f5;
+  border-color: #905c64;
+  color: #ecdcde;
+}
+.theme-vampiro input::placeholder {
+  color: #ba949a;
+}
+.theme-vampiro :is(.article-meta span, .status-read, .status-pending) {
+  background: #482e32;
+  color: #e5ccd0;
+  border-color: #9d666f;
+}
+.theme-vampiro
+  :is(
+    .detail-tools > span,
+    .results-label,
+    .article-meta,
+    .source-transcription > p,
+    .source-list > p,
+    .power-note,
+    .power-citation
+  ) {
+  color: #caacb1;
+}
+.theme-vampiro
+  :is(
+    .notice strong,
+    .source-list > summary,
+    .source-row strong,
+    .power-rules summary,
+    .power-choice > a,
+    .power-progression > details > summary,
+    .footer-diamond
+  ) {
+  color: #e6ced2;
+}
+.theme-vampiro .footer {
+  color: #cdb1b5;
+  border-color: #9e677066;
+  background: #2a1b1db3;
+  padding: 20px;
+}
+.theme-vampiro ::selection {
+  background: #8b5961;
+  color: #fff;
+}
+@media (max-width: 1200px) {
+  .castle-atmosphere {
+    left: 220px;
+  }
+}
+@media (max-width: 760px) {
+  .castle-atmosphere {
+    left: 0;
+  }
+  .castle-distance,
+  .castle-foreground {
+    background-position: 68% center;
+  }
+  .theme-vampiro .library-hero {
+    min-height: 340px;
+    padding: 28px 22px;
+    background: linear-gradient(90deg, #24090eed, #290b15cf 65%, #2b0c1799);
+  }
+  .theme-vampiro .library-hero h1 {
+    font-size: clamp(56px, 11vw, 76px);
+  }
+  .theme-vampiro .library-hero .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .theme-vampiro .library-hero p {
+    font-size: 13px;
+  }
+  .theme-vampiro .library-hero h1 .edition-badge {
+    font-size: 13px;
+  }
+  .theme-vampiro .library-layout {
+    padding: 16px;
+  }
+  .castle-distance,
+  .castle-foreground {
+    background-position: 64% center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .castle-mist {
+    animation: none;
+  }
+  .castle-distance,
+  .castle-foreground {
+    transform: none;
+  }
+  .theme-vampiro .area-card {
+    transition: none;
+  }
+  .theme-vampiro .area-card:hover {
+    transform: none;
+  }
+}
+@media print {
+  .castle-atmosphere {
+    display: none !important;
+  }
+  .theme-vampiro {
+    background: white;
+    color: black;
+  }
+  .theme-vampiro .character-sheet,
+  .theme-vampiro .character-sheet :is(input, select, textarea) {
+    background: white !important;
+    color: black !important;
+  }
+  .theme-vampiro
+    :is(
+      .sheet-notice,
+      .sheet-group legend,
+      .sheet-group label,
+      .document-text
+    ) {
+    color: black !important;
+  }
+  .theme-vampiro .document-text {
+    background: white !important;
+    border-color: #ccc;
+  }
+}
+.theme-vampiro .library-hero .eyebrow {
+  color: #ff9fa7;
+}
+.theme-vampiro .power-progression > details {
+  background: #28111f;
+}
+.theme-vampiro :is(.power-details dl > div, .power-rules) {
+  border-color: #74405680;
+}
+.theme-vampiro :is(.document-reader a, .source-transcription a) {
+  color: #e9a9bc;
+}
+.theme-vampiro
+  :is(.system-nav a.selected, .system-nav a:hover, .main-nav button:hover) {
+  background: #591627;
+  color: #ffe5e5;
+}
