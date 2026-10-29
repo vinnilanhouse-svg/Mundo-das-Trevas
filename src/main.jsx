@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import initialContent from "./content.json";
-import { SystemLibrary, SystemLabel, validateLibrary } from "./Library.jsx";
+import { SystemLibrary, SystemLabel } from "./Library.jsx";
 import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
 import "@fontsource/dm-sans/latin-400.css";
@@ -9,7 +9,6 @@ import "@fontsource/dm-sans/latin-500.css";
 import "@fontsource/dm-sans/latin-600.css";
 import "./styles.css";
 
-const CONTENT_KEY = "arquivo-trevas-content-v4";
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const paths = {
   grid: "M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z",
@@ -17,7 +16,6 @@ const paths = {
   search: "M21 21l-5-5 M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z",
   arrow: "M5 12h14m-6-6 6 6-6 6",
   star: "m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z",
-  edit: "m15 5 4 4M4 20l4-1L21 6l-4-4L4 15v5Z",
   close: "m6 6 12 12M6 18 18 6",
   info: "M12 11v6m0-10v.1M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z",
   download: "M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5",
@@ -93,7 +91,6 @@ function Sigil({ kind = "vampire", className = "" }) {
     </svg>
   );
 }
-const validContent = validateLibrary;
 function load(key, fallback, validator = () => true) {
   try {
     const data = JSON.parse(localStorage.getItem(key));
@@ -102,16 +99,8 @@ function load(key, fallback, validator = () => true) {
     return fallback;
   }
 }
-// Keep drafts for the supported systems when an older catalog is cached/imported.
-function selectSystems(content) {
-  return initialContent.map(
-    (system) => content.find((entry) => entry.id === system.id) || system,
-  );
-}
 function App() {
-  const [systems, setSystems] = useState(() =>
-    selectSystems(load(CONTENT_KEY, initialContent, validContent)),
-  );
+  const systems = initialContent;
   const [favorites, setFavorites] = useState(() =>
     load(
       FAVORITES_KEY,
@@ -124,9 +113,6 @@ function App() {
   const [edition, setEdition] = useState("Todas as edições");
   const [view, setView] = useState("all");
   const [menu, setMenu] = useState(false);
-  const [editor, setEditor] = useState(false);
-  const [editorSectionId, setEditorSectionId] = useState(null);
-  const [toast, setToast] = useState("");
   const [storageError, setStorageError] = useState(false);
   const searchRef = useRef(null);
   useEffect(() => {
@@ -159,20 +145,15 @@ function App() {
     }
   }, [favorites]);
   useEffect(() => {
-    if (!toast) return;
-    const timer = setTimeout(() => setToast(""), 4500);
-    return () => clearTimeout(timer);
-  }, [toast]);
-  useEffect(() => {
     const handler = (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === "k" && !editor) {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
         e.preventDefault();
         searchRef.current?.focus();
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [editor]);
+  }, []);
   const selectedId = route.startsWith("#/sistema/")
     ? route.split("/")[2]
     : null;
@@ -191,20 +172,6 @@ function App() {
     setFavorites((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
     );
-  }
-  function saveContent(next) {
-    let persisted = true;
-    try {
-      localStorage.setItem(CONTENT_KEY, JSON.stringify(next));
-    } catch {
-      setToast(
-        "Não foi possível salvar. Exporte uma cópia antes de fechar a página.",
-      );
-      setStorageError(true);
-      persisted = false;
-    }
-    setSystems(next);
-    return persisted;
   }
   const normalize = (s) =>
     s
@@ -319,8 +286,8 @@ function App() {
         <main id="main-content">
           {storageError && (
             <div className="notice" role="alert">
-              O armazenamento do navegador está indisponível. Exporte suas
-              alterações para não perdê-las.
+              O armazenamento do navegador está indisponível. Seus favoritos
+              podem não ser mantidos ao fechar a página.
             </div>
           )}
           {selectedId && !selected ? (
@@ -339,13 +306,9 @@ function App() {
               route={route}
               favorite={favorites.includes(selected.id)}
               onFavorite={() => toggleFavorite(selected.id)}
-              onEdit={(id) => {
-                setEditorSectionId(id);
-                setEditor(true);
-              }}
             />
           ) : view === "about" ? (
-            <About onEdit={() => setEditor(true)} />
+            <About />
           ) : (
             <>
               <section className="hero">
@@ -534,20 +497,6 @@ function App() {
                   </button>
                 </div>
               )}
-              <div className="contribution-banner">
-                <span className="banner-symbol">✧</span>
-                <div>
-                  <h3>O arquivo está apenas começando.</h3>
-                  <p>
-                    Consulte as referências de cada sistema e os materiais
-                    pendentes. Os textos podem ser ampliados pelo editor do
-                    acervo.
-                  </p>
-                </div>
-                <button className="text-button" onClick={() => setEditor(true)}>
-                  Adicionar conteúdo <Icon name="arrow" size={17} />
-                </button>
-              </div>
             </>
           )}
           <footer className="footer">
@@ -561,26 +510,10 @@ function App() {
           </footer>
         </main>
       </div>
-      {editor && (
-        <ContentEditor
-          systems={systems}
-          selectedId={selected?.id}
-          selectedSectionId={editorSectionId}
-          onSave={saveContent}
-          onClose={() => setEditor(false)}
-          notify={setToast}
-        />
-      )}
-      {toast && (
-        <div className="toast" role="status">
-          <Icon name="info" size={18} />
-          {toast}
-        </div>
-      )}
     </div>
   );
 }
-function About({ onEdit }) {
+function About() {
   return (
     <div className="about-page">
       <div className="eyebrow">DE FÃS PARA FÃS</div>
@@ -605,18 +538,14 @@ function About({ onEdit }) {
           </p>
         </section>
         <section>
-          <Icon name="edit" />
-          <h2>Pronto para receber conteúdo</h2>
+          <Icon name="book" />
+          <h2>Referências para sua mesa</h2>
           <p>
-            Use o editor para preparar textos. As alterações ficam neste
-            navegador; exporte o JSON e adicione-o ao projeto para publicar na
-            Vercel.
+            Explore lore, regras e poderes por sistema e edição. Use as fichas
+            para anotar seus personagens e guardar uma cópia no seu navegador.
           </p>
         </section>
       </div>
-      <button className="button" onClick={onEdit}>
-        Abrir editor <Icon name="arrow" size={17} />
-      </button>
       <p className="legal-copy">
         Projeto não oficial, sem afiliação com a Paradox Interactive ou suas
         editoras. World of Darkness e os nomes dos jogos pertencem aos
@@ -626,351 +555,6 @@ function About({ onEdit }) {
     </div>
   );
 }
-function ContentEditor({
-  systems,
-  selectedId,
-  selectedSectionId,
-  onSave,
-  onClose,
-  notify,
-}) {
-  const [systemId, setSystemId] = useState(selectedId || systems[0].id);
-  const system = systems.find((s) => s.id === systemId) || systems[0];
-  const [sectionId, setSectionId] = useState(
-    system.sections.find((s) => s.id === selectedSectionId)?.id ||
-      system.sections[0].id,
-  );
-  const section =
-    system.sections.find((a) => a.id === sectionId) || system.sections[0];
-  const [draft, setDraft] = useState({ ...section });
-  const [error, setError] = useState("");
-  const [saved, setSaved] = useState(false);
-  const dialogRef = useRef(null);
-  const dirty = JSON.stringify(draft) !== JSON.stringify(section);
-  useEffect(() => {
-    const d = dialogRef.current;
-    d.showModal();
-    return () => d.close();
-  }, []);
-  function confirmDiscard() {
-    return (
-      !dirty ||
-      window.confirm("Descartar as alterações ainda não salvas desta seção?")
-    );
-  }
-  function close() {
-    if (confirmDiscard()) onClose();
-  }
-  function changeSection(nextSystem, nextSection) {
-    if (!confirmDiscard()) return;
-    setSystemId(nextSystem.id);
-    setSectionId(nextSection.id);
-    setDraft({ ...nextSection });
-    setError("");
-    setSaved(false);
-  }
-  function update(key, value) {
-    setDraft({ ...draft, [key]: value });
-    setSaved(false);
-  }
-  function save(e) {
-    e.preventDefault();
-    if (!draft.title.trim() || !draft.body.trim()) {
-      setError("Preencha o título e o conteúdo da seção.");
-      return;
-    }
-    const editedSection = {
-      ...draft,
-      title: draft.title.trim(),
-      ...(draft.power ? { power: { ...draft.power, effect: draft.body } } : {}),
-    };
-    const next = systems.map((s) =>
-      s.id === system.id
-        ? {
-            ...s,
-            sections: s.sections.map((a) =>
-              a.id === section.id ? editedSection : a,
-            ),
-          }
-        : s,
-    );
-    const persisted = onSave(next);
-    setDraft(editedSection);
-    setError(
-      persisted
-        ? ""
-        : "Alterações apenas nesta aba. Exporte o JSON para guardar uma cópia.",
-    );
-    setSaved(persisted);
-    notify(
-      persisted
-        ? "Seção salva neste navegador. Exporte o JSON para publicar."
-        : "Sem espaço no navegador. Exporte o acervo para guardar suas alterações.",
-    );
-  }
-  function exportContent() {
-    if (dirty) {
-      setError("Salve a seção antes de exportar para incluir suas alterações.");
-      return;
-    }
-    const blob = new Blob([JSON.stringify(systems, null, 2) + "\n"], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "content.json";
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    notify(
-      "Arquivo exportado. Substitua src/content.json no projeto para publicar.",
-    );
-  }
-  async function importContent(e) {
-    const file = e.target.files?.[0];
-    e.target.value = "";
-    if (!file) return;
-    if (!confirmDiscard()) return;
-    if (file.size > 16_000_000) {
-      setError("Use um arquivo JSON de acervo de até 16 MB.");
-      return;
-    }
-    try {
-      const imported = JSON.parse(await file.text());
-      if (!validContent(imported))
-        throw new Error(
-          "Formato inválido. Use um acervo exportado pelo editor, com áreas e fontes.",
-        );
-      if (
-        !imported.some((entry) =>
-          initialContent.some((system) => system.id === entry.id),
-        )
-      )
-        throw new Error(
-          "O arquivo não contém nenhum dos cinco sistemas deste acervo.",
-        );
-      const data = selectSystems(imported);
-      onSave(data);
-      setSystemId(data[0].id);
-      setSectionId(data[0].sections[0].id);
-      setDraft({ ...data[0].sections[0] });
-      setError("");
-      setSaved(false);
-      notify("Acervo importado neste navegador.");
-    } catch (err) {
-      setError(
-        err instanceof SyntaxError
-          ? "Não foi possível ler o JSON. Verifique o formato do arquivo."
-          : err.message,
-      );
-    }
-  }
-  async function importText(e) {
-    const file = e.target.files?.[0];
-    e.target.value = "";
-    if (!file) return;
-    if (file.size > 500_000) {
-      setError("Use um documento de texto de até 500 KB.");
-      return;
-    }
-    try {
-      update("body", await file.text());
-      setError("");
-    } catch {
-      setError("Não foi possível ler o documento.");
-    }
-  }
-  return (
-    <dialog
-      ref={dialogRef}
-      className="editor-dialog"
-      aria-labelledby="editor-title"
-      onCancel={(e) => {
-        e.preventDefault();
-        close();
-      }}
-      onClick={(e) => {
-        if (e.target === dialogRef.current) close();
-      }}
-    >
-      <div className="editor-header">
-        <div>
-          <div className="eyebrow">OFICINA DO ARQUIVO</div>
-          <h2 id="editor-title">Gerenciar conteúdo</h2>
-        </div>
-        <button
-          className="icon-button"
-          onClick={close}
-          aria-label="Fechar editor"
-        >
-          <Icon name="close" />
-        </button>
-      </div>
-      <div className="editor-body">
-        <div className="notice">
-          <Icon name="info" size={19} />
-          <span>
-            <strong>Rascunho local, sem publicação automática.</strong> Salve,
-            exporte o JSON e substitua <code>src/content.json</code> no projeto.
-            O próximo deploy disponibiliza o conteúdo para todos. Não use este
-            editor para guardar segredos.
-          </span>
-        </div>
-        <div className="editor-selectors">
-          <label>
-            Sistema
-            <select
-              aria-label="Sistema"
-              value={system.id}
-              onChange={(e) => {
-                const next = systems.find((s) => s.id === e.target.value);
-                changeSection(next, next.sections[0]);
-              }}
-            >
-              {systems.map((s) => (
-                <option value={s.id} key={s.id}>
-                  {s.name} {s.editionLabel}: {s.subtitle}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Seção
-            <select
-              aria-label="Seção"
-              value={section.id}
-              onChange={(e) =>
-                changeSection(
-                  system,
-                  system.sections.find((a) => a.id === e.target.value),
-                )
-              }
-            >
-              {system.sections.map((a) => (
-                <option key={a.id} value={a.id}>
-                  {a.group} — {a.title}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-        <form onSubmit={save}>
-          <div className="editor-selectors">
-            <label>
-              Área
-              <select
-                aria-label="Área"
-                value={draft.category}
-                onChange={(e) => update("category", e.target.value)}
-              >
-                <option value="lore">Lore</option>
-                <option value="mechanics">Mecânica</option>
-                <option value="sheet">Ficha</option>
-              </select>
-            </label>
-            <label>
-              Categoria interna
-              <input
-                required
-                maxLength={160}
-                value={draft.group}
-                onChange={(e) => update("group", e.target.value)}
-              />
-            </label>
-          </div>
-          <label>
-            Título
-            <input
-              required
-              maxLength={160}
-              value={draft.title}
-              onChange={(e) => update("title", e.target.value)}
-            />
-          </label>
-          <label>
-            Introdução
-            <input
-              maxLength={500}
-              value={draft.intro}
-              onChange={(e) => update("intro", e.target.value)}
-            />
-          </label>
-          <div className="editor-selectors">
-            <label>
-              Edição
-              <input
-                value={draft.edition}
-                maxLength={120}
-                onChange={(e) => update("edition", e.target.value)}
-                placeholder="Ex.: V20"
-              />
-            </label>
-            <label>
-              Fonte / livro e página
-              <input
-                value={draft.source}
-                maxLength={300}
-                onChange={(e) => update("source", e.target.value)}
-                placeholder="Ex.: Livro básico, p. 100"
-              />
-            </label>
-          </div>
-          <label>
-            Conteúdo
-            <textarea
-              aria-label="Conteúdo"
-              required
-              rows={9}
-              value={draft.body}
-              onChange={(e) => update("body", e.target.value)}
-              placeholder="Cole suas informações aqui…"
-            />
-          </label>
-          <label className="file-button text-button">
-            <Icon name="upload" size={16} /> Carregar texto (.txt ou .md)
-            <input
-              type="file"
-              accept=".txt,.md,text/plain,text/markdown"
-              onChange={importText}
-            />
-          </label>
-          {error && (
-            <p className="form-error" role="alert">
-              {error}
-            </p>
-          )}
-          <div className="editor-save">
-            <span aria-live="polite">
-              {dirty
-                ? "Alterações não salvas"
-                : saved
-                  ? "Seção salva neste navegador"
-                  : "Edite uma entrada para começar"}
-            </span>
-            <button className="button button-primary" type="submit">
-              <Icon name={saved && !dirty ? "check" : "edit"} size={16} />{" "}
-              Salvar seção
-            </button>
-          </div>
-        </form>
-      </div>
-      <div className="editor-footer">
-        <label className="file-button button">
-          <Icon name="upload" size={16} /> Importar acervo JSON
-          <input
-            type="file"
-            accept=".json,application/json"
-            onChange={importContent}
-          />
-        </label>
-        <button className="button" onClick={exportContent}>
-          <Icon name="download" size={16} /> Exportar acervo JSON
-        </button>
-      </div>
-    </dialog>
-  );
-}
-
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />

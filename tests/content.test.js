@@ -86,18 +86,103 @@ test("campos das fichas são definições sem valores de personagens e IDs únic
   }
 });
 
-test("guia de Imbuídos permanece separado das entradas H5", () => {
+test("Caçador usa exclusivamente o último básico H5 recebido", () => {
   const hunter = content.find((system) => system.id === "cacador");
-  const legacy = hunter.sections.filter(
-    (section) => section.sourceId === "hunter-legacy",
+  assert.deepEqual(hunter.sources, ["h5-core"]);
+  assert.ok(hunter.sections.every((section) => section.sourceId === "h5-core"));
+  assert.ok(
+    hunter.sections.every((section) => section.edition === "5ª edição"),
   );
-  assert.ok(legacy.length > 0);
-  assert.ok(legacy.every((section) => section.edition.includes("não é 5E")));
-  const pending = sources.filter((source) => source.status === "pendente");
-  assert.deepEqual(pending.map((source) => source.system).sort(), [
-    "cacador",
-    "mago",
-  ]);
+  assert.deepEqual(
+    sources
+      .filter((source) => source.system === "cacador")
+      .map((source) => source.id),
+    ["h5-core"],
+  );
+  assert.deepEqual(
+    sources
+      .filter((source) => source.status === "pendente")
+      .map((source) => source.system),
+    ["mago"],
+  );
+  assert.equal(sourcesById.get("h5-core").pages, 288);
+  for (const kind of ["físicas", "sociais", "mentais"]) {
+    assert.equal(
+      hunter.sections.filter(
+        (section) => section.group === `Habilidades ${kind}`,
+      ).length,
+      9,
+    );
+  }
+  for (const kind of ["físicos", "sociais", "mentais"]) {
+    assert.equal(
+      hunter.sections.filter((section) => section.group === `Atributos ${kind}`)
+        .length,
+      3,
+    );
+  }
+  for (const edge of hunter.sections.filter(
+    (section) => section.power?.branch === "Trunfo",
+  )) {
+    const perks = hunter.sections.filter(
+      (section) =>
+        section.power?.branch === "Distinção" &&
+        section.power.family === edge.power.family,
+    );
+    assert.equal(perks.length, edge.title === "Jóquei de Drones" ? 5 : 4);
+  }
+  assert.equal(
+    hunter.sections.filter((section) => section.group === "Credos").length,
+    5,
+  );
+  assert.equal(
+    hunter.sections.filter((section) => section.group === "Ímpetos e Redenção")
+      .length,
+    7,
+  );
+  assert.equal(
+    hunter.sections.filter((section) => section.power?.branch === "Trunfo")
+      .length,
+    12,
+  );
+  assert.equal(
+    hunter.sections.filter((section) => section.power?.branch === "Distinção")
+      .length,
+    49,
+  );
+  assert.ok(
+    hunter.sections
+      .filter((section) => section.power)
+      .every((section) => section.power.level === null),
+  );
+  const state = hunter.sheet.groups.find(
+    (group) => group.title === "Estado da célula",
+  );
+  assert.deepEqual(
+    state.fields.map((field) => field.id),
+    ["celula-desespero", "celula-perigo"],
+  );
+  assert.equal(state.fields[0].max, 5);
+  assert.ok(
+    hunter.sheet.groups.find((group) => group.title === "Aflição e Redenção")
+      ?.kind === "notes",
+  );
+  assert.ok(
+    !hunter.sheet.groups
+      .flatMap((group) => group.fields)
+      .some((field) => field.id === "trilhas-aflicao"),
+  );
+  assert.match(
+    hunter.sections.find(
+      (section) => section.title === "Dados de Desespero — procedimento",
+    ).body,
+    /não pode rerrolar|não podem rerrolar/,
+  );
+  assert.match(
+    hunter.sections.find((section) => section.title === "Aflição e Redenção")
+      .body,
+    /Não é uma trilha/,
+  );
 });
 
 test("Changeling mantém as 19 Artes e os 95 truques por nível", () => {
@@ -174,7 +259,7 @@ test("poderes têm efeitos individuais, nível e fonte; sistemas pendentes não 
   const expected = {
     vampiro: 575,
     changeling: 95,
-    cacador: 70,
+    cacador: 61,
     mago: 0,
     aparicao: 160,
   };
@@ -195,7 +280,7 @@ test("poderes têm efeitos individuais, nível e fonte; sistemas pendentes não 
         assert.equal(power.level, null);
     }
   }
-  assert.equal(sourcesById.get("h5-core").status, "pendente");
+  assert.equal(sourcesById.get("h5-core").status, "lido");
   assert.ok(
     content
       .find((system) => system.id === "mago")

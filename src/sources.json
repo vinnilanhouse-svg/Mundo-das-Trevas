@@ -108,33 +108,6 @@
     "pages": 19
   },
   {
-    "id": "h5-edges",
-    "title": "TRUNFOS.pdf",
-    "type": "referência de mesa",
-    "status": "lido",
-    "note": "Contém distinções de trunfos e opções expandidas; origem editorial de cada opção não confirmada.",
-    "system": "cacador",
-    "pages": 9
-  },
-  {
-    "id": "h5-sheet",
-    "title": "Base de ficha de Caçador 5E",
-    "type": "estrutura de ficha",
-    "status": "lido",
-    "note": "Campos de ambas as páginas; ignora valores, nomes, equipamentos e escolhas preenchidas.",
-    "system": "cacador",
-    "pages": 2
-  },
-  {
-    "id": "hunter-legacy",
-    "title": "Caçador — O Guia da Revanche",
-    "type": "guia de fã da edição original",
-    "status": "lido",
-    "note": "Imbuídos, Virtudes e poderes da edição original. Não pertence ao sistema de Caçador 5E.",
-    "system": "cacador",
-    "pages": 33
-  },
-  {
     "id": "m20-sheet",
     "title": "Base de ficha Mago 20A",
     "type": "estrutura de ficha",
@@ -163,12 +136,12 @@
   },
   {
     "id": "h5-core",
-    "title": "H5 — Caçador a Revanche.pdf",
+    "title": "H5 — Caçador a Revanche (reduced) (optimized).pdf",
     "type": "livro básico",
-    "status": "pendente",
-    "note": "O PDF original e a versão H5 - Caçador a Revanche_compressed.pdf excederam o limite de transferência de 32 MB. Reenviar em partes menores; este livro ainda não foi lido.",
+    "status": "lido",
+    "note": "Versão otimizada recebida, 28,2 MB e 288 páginas digitalizadas. Consulta por OCR em português, com revisão dos resumos e conferência visual de trechos. Páginas citadas são posições no PDF (a numeração impressa costuma ser uma unidade menor). O acervo apresenta resumos, não uma transcrição integral.",
     "system": "cacador",
-    "pages": null
+    "pages": 288
   },
   {
     "id": "m20-core",

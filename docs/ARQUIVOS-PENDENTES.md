@@ -13,22 +13,25 @@ O arquivo `ilovepdf_compressed.zip` foi aberto e os dois PDFs estão legíveis:
 
 Esses dois livros **não precisam ser reenviados**. O acervo foi ampliado, as fontes passaram para consultadas e as páginas indicam a posição no PDF. Aparição usa a tradução comunitária recebida; Changeling foi consultado no original em inglês, com resumos em português.
 
-## Ainda necessários
+## Caçador 5E recebido
 
-| Sistema    | Arquivo pendente                                                         | O que enviar                                                                                                    |
-| ---------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| Caçador 5E | `H5 - Caçador a Revanche.pdf` e `H5 - Caçador a Revanche_compressed.pdf` | As duas tentativas excederam o limite. Envie o livro em partes de até 32 MB.                                    |
-| Mago 20A   | `Mago 20.pdf` ou `Mago 20_compressed.pdf`                                | Basta uma versão compactada ou dividida em partes de até 32 MB. Ambas as versões anteriores excederam o limite. |
+`H5 - Caçador a Revanche (reduced) (optimized).pdf` foi transferido com sucesso: **28.238.452 bytes e 288 páginas**. O documento é digitalizado; foi consultado por OCR em português, com revisão dos resumos e conferência visual de trechos. Não precisa ser reenviado ou compactado novamente.
 
-Os livros de Mago e Caçador não estão no ZIP recebido. Uma nova tentativa com `H5 - Caçador a Revanche_compressed.pdf` também foi bloqueada por exceder 32 MB; o básico H5 ainda não foi lido. As referências de ficha e TRUNFOS já disponíveis continuam no site, com sua cobertura identificada.
+Por solicitação do usuário, Caçador usa **somente este último PDF**. Todo conteúdo do guia `cacador-a-revanche-o-guia-da-revanche-biblioteca-elfica.pdf`, da referência anterior `TRUNFOS.pdf` e da base de ficha anterior foi removido do acervo e da bibliografia publicada. O formulário foi conferido com as regras do básico e continua vazio.
+
+## Ainda necessário
+
+| Sistema  | Arquivo pendente                          | O que enviar                                                                                              |
+| -------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Mago 20A | `Mago 20.pdf` ou `Mago 20_compressed.pdf` | Basta uma versão compactada ou dividida em partes de até 32 MB. As versões anteriores excederam o limite. |
 
 ## Outros arquivos já acessíveis
 
 - Vampiro 5E: a versão `_compressed.pdf` do Módulo Básico foi consultada.
 - Westhaven 11.0: a versão `_compressed.pdf` foi consultada.
-- Documentos 1–7, `Changeling Artes.pdf`, `TRUNFOS.pdf`, guia legado de Caçador e bases de ficha menores foram transferidos na primeira remessa.
+- Documentos 1–7, `Changeling Artes.pdf` e bases de ficha menores foram transferidos na primeira remessa. As referências antigas de Caçador foram retiradas do site.
 
-`Doc 2.pdf` e páginas digitalizadas do guia de Caçador exigiram OCR. Fontes amadoras, adicionais ou sem edição confirmada mantêm a identificação de origem. Todo Changeling permanece organizado como 20A conforme a escolha da mesa.
+`Doc 2.pdf` e o novo básico H5 exigiram OCR. Fontes amadoras, adicionais ou sem edição confirmada mantêm a identificação de origem. Todo Changeling permanece organizado como 20A conforme a escolha da mesa.
 
 ## Tratamento das fichas e anexos
 

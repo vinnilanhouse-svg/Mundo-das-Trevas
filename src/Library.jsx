@@ -35,110 +35,7 @@ export function SystemLabel({ system }) {
   );
 }
 
-function validatePower(power) {
-  return (
-    power &&
-    typeof power === "object" &&
-    !Array.isArray(power) &&
-    [
-      "family",
-      "branch",
-      "effect",
-      "cost",
-      "roll",
-      "duration",
-      "requirements",
-      "rules",
-      "source",
-      "pages",
-    ].every((key) => typeof power[key] === "string") &&
-    (power.level === null ||
-      (Number.isInteger(power.level) &&
-        power.level >= 1 &&
-        power.level <= 5)) &&
-    sources.some((source) => source.id === power.sourceId) &&
-    power.effect.trim().length > 0
-  );
-}
-
-export function validateLibrary(value) {
-  return (
-    Array.isArray(value) &&
-    value.length > 0 &&
-    value.length <= 100 &&
-    new Set(value.map((s) => s?.id)).size === value.length &&
-    value.every(
-      (s) =>
-        s &&
-        typeof s.id === "string" &&
-        /^[a-z0-9-]+$/.test(s.id) &&
-        [
-          "name",
-          "subtitle",
-          "original",
-          "description",
-          "kind",
-          "year",
-          "theme",
-          "editionLabel",
-          "coverage",
-        ].every((k) => typeof s[k] === "string") &&
-        Array.isArray(s.editions) &&
-        s.editions.length > 0 &&
-        s.editions.every((e) => typeof e === "string") &&
-        Array.isArray(s.sources) &&
-        s.sources.every((id) => sources.some((source) => source.id === id)) &&
-        Array.isArray(s.sections) &&
-        s.sections.length > 0 &&
-        new Set(s.sections.map((a) => a?.id)).size === s.sections.length &&
-        s.sections.every(
-          (a) =>
-            a &&
-            [
-              "id",
-              "title",
-              "intro",
-              "body",
-              "edition",
-              "source",
-              "group",
-              "status",
-            ].every((k) => typeof a[k] === "string") &&
-            /^[a-z0-9-]+$/.test(a.id) &&
-            ["lore", "mechanics", "sheet"].includes(a.category) &&
-            sources.some((source) => source.id === a.sourceId) &&
-            (!a.power || validatePower(a.power)) &&
-            (a.powerFamily === undefined || typeof a.powerFamily === "string"),
-        ) &&
-        s.sheet &&
-        typeof s.sheet.notice === "string" &&
-        Array.isArray(s.sheet.groups) &&
-        s.sheet.groups.length > 0 &&
-        s.sheet.groups.every(
-          (g) =>
-            g &&
-            typeof g.title === "string" &&
-            ["text", "rating", "number", "notes"].includes(g.kind) &&
-            Array.isArray(g.fields) &&
-            g.fields.length > 0 &&
-            g.fields.every(
-              (f) =>
-                f &&
-                typeof f.label === "string" &&
-                typeof f.id === "string" &&
-                /^[a-z0-9-]+$/.test(f.id) &&
-                Number.isInteger(f.max) &&
-                f.max > 0 &&
-                f.max <= 10000,
-            ),
-        ) &&
-        new Set(s.sheet.groups.flatMap((g) => g.fields.map((f) => f.id)))
-          .size === s.sheet.groups.reduce((n, g) => n + g.fields.length, 0),
-    )
-  );
-}
-
-export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
+export function SystemLibrary({ system, route, favorite, onFavorite }) {
   const [query, setQuery] = useState("");
   const [group, setGroup] = useState("all");
   const [powerLevel, setPowerLevel] = useState("all");
@@ -380,9 +277,6 @@ export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
                       </small>
                     </span>
                   </div>
-                  <button className="button" onClick={() => onEdit(article.id)}>
-                    Editar conteúdo
-                  </button>
                 </>
               ) : (
                 <>

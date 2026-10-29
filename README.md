@@ -6,11 +6,11 @@ Acervo em português para cinco sistemas do Mundo das Trevas, em React + Vite, p
 | ------------------------ | ---------------- | -------: |
 | Vampiro: A Máscara       | 5E               |      702 |
 | Changeling: O Sonhar     | 20A              |      260 |
-| Caçador: A Revanche      | 5E               |      124 |
+| Caçador: A Revanche      | 5E               |      186 |
 | Mago: A Ascensão         | 20A              |       24 |
 | Aparição: O Esquecimento | 20A              |      327 |
 
-As **1.437 entradas** incluem resumos, extratos operacionais, índices de referência e campos de ficha e explicações de cobertura. Não representam 1.437 regras completas: há resumos e índices, além de pontos pendentes em Mago e Caçador por falta dos respectivos livros completos.
+As **1.499 entradas** incluem resumos, extratos operacionais, índices de referência e campos de ficha e explicações de cobertura. Não representam 1.499 regras completas: há resumos e índices, além de pontos pendentes em Mago por falta do livro completo.
 
 ## Rodar e validar
 
@@ -27,7 +27,7 @@ npm run build
 npm run preview
 ```
 
-`npm test` verifica sistemas/edições, áreas, referências e limites de páginas, campos vazios das fichas e separação do guia antigo de Caçador e cobertura dos livros recebidos no ZIP. O build separa aplicação, acervo e dependências para permitir cache independente.
+`npm test` verifica sistemas/edições, áreas, referências e limites de páginas, campos vazios das fichas e uso exclusivo do último básico H5, além da cobertura dos livros recebidos no ZIP. O build separa aplicação, acervo e dependências para permitir cache independente.
 
 ## Navegação
 
@@ -41,13 +41,13 @@ Em **Aparição 20A → Mecânica**, o diretório dos 16 Arcanoi abre por padrã
 
 Cada área tem busca em títulos e textos, filtro de categoria, índice de tópicos e links diretos. Exemplo: `#/sistema/changeling/mecanica`. Fontes indicam **a posição da página no PDF**, que pode diferir da página impressa.
 
-Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As referências preservam a origem dos trechos cuja mecânica ainda exige conferência no C20 completo. O guia dos Imbuídos fica identificado como **original/legado**, sem ser apresentado como regra H5.
+Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As referências preservam a origem dos trechos cuja mecânica ainda exige conferência no C20 completo. Caçador usa exclusivamente o último básico H5 otimizado enviado pelo usuário; o guia da Biblioteca Élfica e a referência anterior TRUNFOS foram removidos do acervo e da bibliografia.
 
 ## Documentos e cobertura
 
 - **Vampiro:** Módulo Básico 5E, base de ficha e Westhaven 11.0. A compilação Westhaven é identificada como material de fã; suas opções não são todas do básico.
 - **Changeling:** básico C20 completo (482 páginas), Livro das Artes, documentos 1–7 e base de ficha. O acervo reúne 18 Artes do básico e Fabulomancia como referência adicional, seis Alçadas e 95 truques. Há criação, regras, habilidades, Casas, geografia e índices de Qualidades/Defeitos com fontes do livro.
-- **Caçador:** estrutura da ficha H5, TRUNFOS e guia legado dos Imbuídos, separados. Livro H5 completo pendente.
+- **Caçador:** básico H5 otimizado consultado por OCR (288 páginas). São 186 entradas: cenário, cinco Credos, sete Ímpetos, criação, nove Atributos, 27 Habilidades, Antecedentes, Qualidades/Defeitos, regras, equipamento, ameaças e organizações; 12 Trunfos e 49 Distinções têm efeitos individuais. Ficha vazia baseada no básico; Perigo e Desespero são coletivos e Aflição é condição.
 - **Mago:** estrutura da ficha M20, com grupos de Habilidades e nove Esferas. Lore e efeitos completos não foram extraídos do livro inacessível.
 - **Aparição:** livro 20A completo (517 páginas, tradução comunitária). Inclui lore, criação, habilidades corrigidas, Antecedentes, Legiões, Sombra, 16 Arcanoi, 80 artes Comuns e 80 artes Iniciadas com efeitos individuais. A ficha digital foi conferida com o livro.
 
@@ -55,9 +55,11 @@ Os PDFs, extrações brutas e imagens dos personagens não fazem parte do reposi
 
 Veja [os arquivos que precisam ser reenviados](docs/ARQUIVOS-PENDENTES.md).
 
-## Editar o conteúdo
+## Manutenção do acervo
 
-O catálogo fica em **`src/content.json`** e a bibliografia em **`src/sources.json`**. Cada sistema possui apresentação, `editionLabel`, `editions`, `coverage`, `sources`, `sections` e `sheet`.
+O site público é somente de consulta: não tem editor, botão de adicionar conteúdo nem importação/exportação do acervo. O catálogo publicado é carregado diretamente de `src/content.json`; rascunhos antigos do navegador não substituem o conteúdo atual.
+
+As atualizações são feitas no repositório, em `src/content.json` e `src/sources.json`, e publicadas pelo deploy da Vercel.
 
 Cada entrada de `sections` inclui:
 
@@ -72,22 +74,13 @@ Cada entrada de `sections` inclui:
 
 As entradas individuais de poderes também têm `power`, com `family`, `level` (1–5 ou `null`), `branch`, `effect`, `cost`, `roll`, `duration`, `requirements`, `rules` e sua própria referência de fonte. Uma Arte/Disciplina pode declarar `powerFamily` para exibir as opções por nível logo abaixo da apresentação.
 
-Há **900 entradas individuais de poderes e distinções**: 575 de Vampiro (incluindo rituais, cerimônias, fórmulas e opções ancestrais da compilação), 95 truques C20, 160 artes W20, 35 distinções do arquivo TRUNFOS e 35 poderes do guia legado de Caçador. Alternativas de V5 não são apresentadas como benefícios automáticos de nível; Trunfos não recebem uma escada de níveis inventada. Mago aguarda o livro e não ganhou efeitos supostos.
+Há **891 entradas individuais de poderes e distinções**: 575 de Vampiro (incluindo rituais, cerimônias, fórmulas e opções ancestrais da compilação), 95 truques C20, 160 artes W20, 12 Trunfos básicos H5 e 49 Distinções do mesmo livro. Alternativas de V5 não são apresentadas como benefícios automáticos de nível; Trunfos não recebem uma escada de níveis inventada. Mago aguarda o livro e não ganhou efeitos supostos.
 
 Changeling e Aparição mostram o texto operacional extraído das fontes fornecidas, além do efeito individual. Vampiro utiliza a descrição e os campos textuais recuperáveis da compilação: símbolos gráficos de resultados e condições quantitativas não recuperados devem ser conferidos no PDF; não são substituídos por números inventados.
 
-Os filtros de **nível** e **tipo** se combinam com busca e categoria. A importação de acervo aceita JSON de até **16 MB**, compatível com o arquivo exportado desta versão. Fichas individuais continuam com seu limite separado.
+Os filtros de **nível** e **tipo** se combinam com busca e categoria.
 
-`sheet.groups` define grupos de campos, com tipos `text`, `rating`, `number` e `notes`. A definição contém apenas rótulos e limites de entrada, sem valores de personagens.
-
-O editor permite alterar texto, área, categoria interna, edição e citação; aceita `.txt`/`.md` como **texto simples**, sem interpretar HTML ou Markdown. Para publicar:
-
-1. Edite e clique em **Salvar seção**.
-2. **Exporte o acervo JSON**.
-3. Substitua `src/content.json` pelo arquivo exportado.
-4. Faça commit e push. O próximo deploy publica para todos.
-
-O editor salva apenas no navegador. Não altera o GitHub, não envia PDFs nem publica automaticamente. Não há banco de dados ou autenticação nesta versão. Importações usam o esquema v2 e rejeitam formatos incompatíveis. Os sistemas do acervo importado são limitados aos definidos no catálogo publicado.
+`sheet.groups` define campos de tipo `text`, `rating`, `number` e `notes`. A definição contém apenas rótulos e limites de entrada, sem valores de personagens.
 
 ## Fichas locais
 
@@ -97,11 +90,10 @@ A ficha local não é enviada ao site público e não faz parte da exportação 
 
 Chaves de armazenamento:
 
-- `arquivo-trevas-content-v4`: rascunho do acervo com efeitos por nível.
 - `arquivo-trevas-favorites-v1`: favoritos.
 - `arquivo-trevas-sheet-v1-<sistema>`: ficha local.
 
-As chaves antigas `arquivo-trevas-content-v1`, `arquivo-trevas-content-v2` e `arquivo-trevas-content-v3` não são apagadas, mas não substituem os documentos desta versão. Para voltar ao acervo publicado, remova apenas `arquivo-trevas-content-v4` no armazenamento do navegador. Isso não remove fichas ou favoritos. Fichas antigas recebem novos campos vazios, preservando os valores existentes e chaves legadas para exportação.
+Rascunhos antigos do acervo não são mais carregados. As chaves antigas não são apagadas. Fichas antigas recebem novos campos vazios, preservando valores existentes e chaves legadas para exportação. O antigo campo numérico de Aflição permanece recuperável no JSON; o formulário atual usa uma condição de Aflição e trilhas separadas de Perigo e Desespero.
 
 ## Publicar na Vercel
 
