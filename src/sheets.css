@@ -499,3 +499,38 @@
     padding-top: 1.5mm;
   }
 }
+.character-sheet .sheet-paper .sheet-reference-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #9a9b86;
+  text-underline-offset: 3px;
+}
+.character-sheet .sheet-paper .sheet-reference-link svg {
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: baseline;
+  color: var(--sheet-accent);
+  flex-shrink: 0;
+}
+.character-sheet .sheet-paper .sheet-reference-link:hover {
+  color: var(--sheet-accent);
+  text-decoration-style: solid;
+}
+.sheet-reference-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  margin: 7px 0 4px;
+  font-size: 10px;
+}
+@media print {
+  .sheet-reference-chips,
+  .sheet-reference-link svg {
+    display: none !important;
+  }
+  .character-sheet .sheet-paper .sheet-reference-link {
+    color: black !important;
+    text-decoration: none;
+  }
+}

@@ -55,6 +55,14 @@ Círculos e quadrados são clicáveis, com entrada numérica equivalente acessí
 
 `src/sheet-layout.js` define a organização; `src/SheetPages.jsx` apresenta os campos; `src/sheets.css` cuida do papel, das colunas, do celular e da impressão A4. Os modelos preservam os campos da edição selecionada; não são cópias gráficas exatas dos anexos. Os testes verificam que todo campo aparece uma única vez e que alterações futuras no catálogo não ocultem campos novos.
 
+## Boas-vindas, contato e referências das fichas
+
+O aviso de boas-vindas aparece uma vez por navegador, com registro local em `arquivo-trevas-welcome-v1`. Pode ser fechado pelo botão, pelo X ou pela tecla Escape. A aba **Contato** está no menu lateral e no rodapé, com endereço direto `#/contato` e link de e-mail para `coradi.maddaloni@gmail.com`. O site não envia mensagens automaticamente: o link abre o aplicativo de e-mail do visitante.
+
+Os nomes e títulos visíveis das fichas levam aos tópicos ou às categorias correspondentes do próprio sistema. Exemplo: **Mago → Correspondência** abre sua explicação e seus cinco níveis; **Changeling → Artes** abre a categoria com as 19 Artes. Os campos continuam editáveis e os valores salvos são preservados ao consultar e voltar. Nomes de poderes reconhecidos nas anotações de Artes, Disciplinas, Trunfos e Arcanoi também recebem atalhos, sem alterar o texto digitado. A impressão mantém o formato de ficha, sem os ícones e atalhos adicionais.
+
+As categorias aceitam links diretos como `#/sistema/changeling/mecanica/categoria/Artes`. `src/sheet-references.js` associa os campos aos conteúdos existentes; `src/library-routes.js` monta os endereços e valida a categoria. Quando não há verbete individual, a referência aponta para a categoria ou orientação relacionada, sem criar explicações inexistentes.
+
 ## Documentos e cobertura
 
 - **Vampiro:** Módulo Básico 5E, base de ficha e Westhaven 11.0. A compilação Westhaven é identificada como material de fã; suas opções não são todas do básico.

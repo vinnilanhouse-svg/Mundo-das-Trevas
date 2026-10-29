@@ -1,5 +1,30 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { getSheetLayout } from "./sheet-layout.js";
+import { createSheetReferences } from "./sheet-references.js";
+
+function ReferenceLink({ reference, children }) {
+  if (!reference) return children;
+  return (
+    <a
+      className="sheet-reference-link"
+      href={reference.href}
+      title={`Consultar: ${reference.title}`}
+      onClick={(event) => event.stopPropagation()}
+    >
+      {children}
+      <svg
+        aria-hidden="true"
+        width="10"
+        height="10"
+        viewBox="0 0 12 12"
+        fill="none"
+        stroke="currentColor"
+      >
+        <path d="M3 9 9 3M3 3h6v6" />
+      </svg>
+    </a>
+  );
+}
 
 function SheetField({
   field,
@@ -9,6 +34,8 @@ function SheetField({
   primary,
   hideLabel,
   systemId,
+  reference,
+  noteLinks,
 }) {
   const controlId = `sheet-field-${field.id}`;
   const numeric = field.kind === "rating" || field.kind === "number";
@@ -44,7 +71,11 @@ function SheetField({
         htmlFor={controlId}
         className={hideLabel ? "sheet-visually-hidden" : undefined}
       >
-        {label}
+        {hideLabel ? (
+          label
+        ) : (
+          <ReferenceLink reference={reference}>{label}</ReferenceLink>
+        )}
       </label>
       {numeric ? (
         <div className={`sheet-rating ${round ? "" : "sheet-rating-squares"}`}>
@@ -88,6 +119,18 @@ function SheetField({
           <div className="sheet-print-notes" aria-hidden="true">
             {value || "\u00a0"}
           </div>
+          {noteLinks.length > 0 && (
+            <div
+              className="sheet-reference-chips"
+              aria-label="Referências citadas neste campo"
+            >
+              {noteLinks.map((link) => (
+                <ReferenceLink key={link.href} reference={link}>
+                  {link.title}
+                </ReferenceLink>
+              ))}
+            </div>
+          )}
         </>
       ) : (
         <input
@@ -103,6 +146,7 @@ function SheetField({
 
 export function SheetPages({ system, values, onChange }) {
   const layout = getSheetLayout(system);
+  const references = useMemo(() => createSheetReferences(system), [system]);
   return (
     <div
       className={`sheet-pages sheet-pages-${system.id}`}
@@ -110,7 +154,8 @@ export function SheetPages({ system, values, onChange }) {
     >
       <p className="sheet-mark-help">
         Clique nos círculos e quadrados ou digite o valor ao lado. As marcas
-        mostram o valor registrado; dano e condições ficam nos campos próprios.
+        mostram o valor registrado; dano e condições ficam nos campos próprios.{" "}
+        Os nomes e títulos com seta abrem as explicações no acervo.
       </p>
       {layout.pages.map((page, index) => (
         <section
@@ -131,7 +176,11 @@ export function SheetPages({ system, values, onChange }) {
               className="sheet-section"
               aria-label={section.title}
             >
-              <h4>{section.title}</h4>
+              <h4>
+                <ReferenceLink reference={references.heading(section.title)}>
+                  {section.title}
+                </ReferenceLink>
+              </h4>
               <div
                 className="sheet-section-columns"
                 style={{
@@ -147,7 +196,19 @@ export function SheetPages({ system, values, onChange }) {
                         key={`${block.title}-${i}`}
                         className={`sheet-group${block.compact ? " sheet-block-compact" : ""}`}
                       >
-                        {block.title && <legend>{block.title}</legend>}
+                        {block.title && (
+                          <legend>
+                            <ReferenceLink
+                              reference={references.blockReference(
+                                block.title,
+                                block.fields,
+                                section.title,
+                              )}
+                            >
+                              {block.title}
+                            </ReferenceLink>
+                          </legend>
+                        )}
                         {block.fields.map((field) => (
                           <SheetField
                             key={field.id}
@@ -160,6 +221,16 @@ export function SheetPages({ system, values, onChange }) {
                               Boolean(block.title) && block.fields.length === 1
                             }
                             systemId={system.id}
+                            reference={references.field(
+                              field,
+                              block.title,
+                              section.title,
+                            )}
+                            noteLinks={
+                              field.kind === "notes"
+                                ? references.inNotes(field, values[field.id])
+                                : []
+                            }
                           />
                         ))}
                       </fieldset>

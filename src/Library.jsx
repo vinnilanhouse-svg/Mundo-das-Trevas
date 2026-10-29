@@ -3,6 +3,7 @@ import sources from "./sources.json";
 import { DocumentLinks, DocumentReader, SourceText } from "./Documents.jsx";
 import { documents } from "./document-data.js";
 import { SheetPages } from "./SheetPages.jsx";
+import { routeGroup } from "./library-routes.js";
 
 const categories = [
   {
@@ -52,9 +53,12 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
     ? system.sections.filter((s) => s.category === category.key)
     : [];
   const groups = [...new Set(sections.map((s) => s.group))];
+  const linkedGroup = routeGroup(route, sections);
+  const activeTopicGroup = linkedGroup || topicGroup;
   const filtered = sections.filter(
     (s) =>
-      (group === "all" || s.group === group) &&
+      ((linkedGroup || group) === "all" ||
+        s.group === (linkedGroup || group)) &&
       (powerLevel === "all" ||
         (s.power && String(s.power.level) === powerLevel)) &&
       (powerBranch === "all" || s.power?.branch === powerBranch) &&
@@ -76,7 +80,20 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
     setPowerBranch("all");
     setTopicGroup(null);
   }, [categorySlug, system.id]);
+  useEffect(() => {
+    if (linkedGroup) {
+      setQuery("");
+      setGroup(linkedGroup);
+      setPowerLevel("all");
+      setPowerBranch("all");
+      setTopicGroup(linkedGroup);
+    }
+  }, [linkedGroup]);
+  function leaveLinkedGroup() {
+    if (sectionSlug === "categoria") location.hash = `${base}/${category.id}`;
+  }
   function openGroup(nextGroup) {
+    leaveLinkedGroup();
     setQuery("");
     setGroup(nextGroup);
     setPowerLevel("all");
@@ -188,6 +205,7 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
                 aria-label="Categoria"
                 value={group}
                 onChange={(e) => {
+                  leaveLinkedGroup();
                   setGroup(e.target.value);
                   setTopicGroup(null);
                 }}
@@ -268,7 +286,7 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
               {!filtered.length && <p>Nenhuma entrada com esses filtros.</p>}
             </nav>
             <article className="reading-content library-article">
-              {sectionSlug && !article ? (
+              {sectionSlug && !article && !linkedGroup ? (
                 <>
                   <h2>Tópico não encontrado</h2>
                   <p>Escolha uma entrada do índice desta área.</p>
@@ -302,22 +320,23 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
                     </span>
                   </div>
                 </>
-              ) : topicGroup ? (
+              ) : activeTopicGroup ? (
                 <>
                   <button
                     className="text-button"
                     onClick={() => {
+                      leaveLinkedGroup();
                       setTopicGroup(null);
                       setGroup("all");
                     }}
                   >
                     ← Todas as categorias
                   </button>
-                  <h2>{topicGroup}</h2>
+                  <h2>{activeTopicGroup}</h2>
                   <p>Escolha o tópico que deseja consultar.</p>
                   <div className="topic-summary">
                     {filtered
-                      .filter((section) => section.group === topicGroup)
+                      .filter((section) => section.group === activeTopicGroup)
                       .map((section) => (
                         <a
                           href={`${base}/${category.id}/${section.id}`}

@@ -1,0 +1,155 @@
+.welcome-dialog {
+  width: min(560px, calc(100% - 32px));
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 36px;
+  overflow-y: auto;
+  border: 1px solid #98678d;
+  border-radius: 14px 4px 14px 4px;
+  background:
+    radial-gradient(ellipse at top right, #43244166, transparent 65%), #1d1524;
+  color: #eadfec;
+  box-shadow: 0 24px 100px #0009;
+  --rose: #d9a9cf;
+}
+.welcome-dialog::backdrop {
+  background: #0b0812c9;
+  backdrop-filter: blur(4px);
+}
+.welcome-dialog .welcome-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #80547780;
+  border-radius: 50%;
+  background: #2b1d30;
+  color: #e6cfe7;
+  font-size: 24px;
+}
+.welcome-dialog .welcome-close:hover {
+  background: #56314c;
+}
+.welcome-emblem {
+  display: block;
+  font-size: 40px;
+  line-height: 1;
+  color: #d9a9cf;
+  margin-bottom: 22px;
+}
+.welcome-dialog .eyebrow {
+  color: #d8a9c9;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+.welcome-dialog h2 {
+  font:
+    500 40px/1.05 "Cormorant Garamond",
+    Georgia,
+    serif;
+  margin: 15px 0 23px;
+  color: #f8eafa;
+}
+.welcome-dialog p {
+  color: #d0bbd4;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 13px 0;
+}
+.welcome-dialog strong {
+  color: #f0d8ec;
+}
+.welcome-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 27px;
+}
+.welcome-dialog .button-primary {
+  background: #7b4056;
+  border-color: #b67794;
+  color: #fff1f5;
+}
+.welcome-dialog .button-primary:hover {
+  background: #945069;
+}
+.welcome-dialog .welcome-contact {
+  font-size: 12px;
+  color: #e6b9db;
+  text-underline-offset: 4px;
+}
+.welcome-dialog .welcome-contact:hover {
+  text-decoration: underline;
+}
+.contact-nav-link[aria-current="page"] {
+  color: #efc8e2;
+  background: #332338;
+  border-radius: 4px;
+}
+.contact-page .back-link {
+  margin-bottom: 25px;
+}
+.contact-card {
+  margin: 30px 0;
+  padding: 30px;
+  border: 1px solid #714b7c;
+  border-radius: 12px 4px 12px 4px;
+  background: linear-gradient(120deg, #38203966, #1c1524);
+}
+.contact-card .eyebrow {
+  color: #cda0ca;
+  font-size: 9px;
+}
+.contact-email {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+  color: #f4d6ed;
+  font-size: clamp(18px, 2.4vw, 28px);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.contact-card > p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #c4afcd;
+  max-width: 550px;
+  margin-bottom: 23px;
+}
+.footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 480px) {
+  .welcome-dialog {
+    padding: 29px 23px;
+  }
+  .welcome-dialog h2 {
+    font-size: 34px;
+  }
+  .welcome-dialog p {
+    font-size: 13px;
+  }
+  .welcome-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+  }
+  .contact-page h1 {
+    font-size: 42px;
+  }
+  .contact-card {
+    padding: 23px 20px;
+  }
+}
+@media print {
+  .welcome-dialog {
+    display: none !important;
+  }
+}

@@ -7,6 +7,7 @@ import { ForestAtmosphere } from "./ForestAtmosphere.jsx";
 import { BunkerAtmosphere } from "./BunkerAtmosphere.jsx";
 import { CastleAtmosphere } from "./CastleAtmosphere.jsx";
 import { ArcaneAtmosphere } from "./ArcaneAtmosphere.jsx";
+import { WelcomeNotice, ContactPage } from "./Community.jsx";
 import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
 import "@fontsource/dm-sans/latin-400.css";
@@ -19,6 +20,7 @@ import "./bunker.css";
 import "./castle.css";
 import "./arcane.css";
 import "./sheets.css";
+import "./community.css";
 
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const SYSTEM_THEMES = {
@@ -41,6 +43,7 @@ const paths = {
   menu: "M4 6h16M4 12h16M4 18h16",
   back: "M19 12H5m6-6-6 6 6 6",
   check: "m5 12 4 4L19 6",
+  mail: "M3 5h18v14H3z M3 5l9 7 9-7",
 };
 function Icon({ name, size = 20, ...props }) {
   return (
@@ -134,15 +137,14 @@ function App() {
   const [storageError, setStorageError] = useState(false);
   const searchRef = useRef(null);
   useEffect(() => {
-    let previousHash = location.hash;
     const onHash = () => {
-      const sameArea =
-        previousHash.split("/").slice(0, 4).join("/") ===
-        location.hash.split("/").slice(0, 4).join("/");
-      previousHash = location.hash;
       setRoute(location.hash);
       setMenu(false);
-      if (sameArea && location.hash.split("/")[4]) {
+      if (
+        location.hash.startsWith("#/sistema/") &&
+        location.hash.split("/")[4] &&
+        location.hash.split("/")[3] !== "documentos"
+      ) {
         requestAnimationFrame(() =>
           document
             .querySelector(".library-article")
@@ -153,6 +155,7 @@ function App() {
       }
     };
     window.addEventListener("hashchange", onHash);
+    onHash();
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
   useEffect(() => {
@@ -176,11 +179,14 @@ function App() {
     ? route.split("/")[2]
     : null;
   const selected = systems.find((s) => s.id === selectedId);
+  const contactOpen = route === "#/contato";
   useEffect(() => {
     document.title = selected
       ? `${selected.name} ${selected.editionLabel}: ${selected.subtitle} — Arquivo das Trevas`
-      : "Arquivo das Trevas — Acervo de sistemas";
-  }, [selected]);
+      : contactOpen
+        ? "Contato — Arquivo das Trevas"
+        : "Arquivo das Trevas — Acervo de sistemas";
+  }, [selected, contactOpen]);
   function navigate(nextView) {
     setView(nextView);
     location.hash = "";
@@ -206,6 +212,7 @@ function App() {
   );
   return (
     <div className={`app-shell ${SYSTEM_THEMES[selectedId] || ""}`}>
+      <WelcomeNotice />
       {selectedId === "aparicao" && <CemeteryAtmosphere />}
       {selectedId === "changeling" && <ForestAtmosphere />}
       {selectedId === "cacador" && <BunkerAtmosphere />}
@@ -230,14 +237,20 @@ function App() {
         <div className="sidebar-label">SEU GUIA NA ESCURIDÃO</div>
         <nav className="main-nav" aria-label="Navegação principal">
           <button
-            className={view === "all" && !selectedId ? "active" : ""}
+            className={
+              view === "all" && !selectedId && !contactOpen ? "active" : ""
+            }
             onClick={() => navigate("all")}
           >
             <Icon name="grid" /> Acervo de sistemas{" "}
             <span>{systems.length}</span>
           </button>
           <button
-            className={view === "favorites" && !selectedId ? "active" : ""}
+            className={
+              view === "favorites" && !selectedId && !contactOpen
+                ? "active"
+                : ""
+            }
             onClick={() => navigate("favorites")}
           >
             <Icon name="star" /> Favoritos{" "}
@@ -272,6 +285,13 @@ function App() {
               um lugar para ser guardado.
             </p>
           </div>
+          <a
+            className="about-link contact-nav-link"
+            href="#/contato"
+            aria-current={contactOpen ? "page" : undefined}
+          >
+            <Icon name="mail" size={17} /> Contato
+          </a>
           <button className="about-link" onClick={() => navigate("about")}>
             <Icon name="info" size={17} /> Sobre o projeto
           </button>
@@ -293,11 +313,13 @@ function App() {
             <strong>
               {selected
                 ? `${selected.name} ${selected.editionLabel}`
-                : view === "about"
-                  ? "Sobre o projeto"
-                  : view === "favorites"
-                    ? "Favoritos"
-                    : "Acervo de sistemas"}
+                : contactOpen
+                  ? "Contato"
+                  : view === "about"
+                    ? "Sobre o projeto"
+                    : view === "favorites"
+                      ? "Favoritos"
+                      : "Acervo de sistemas"}
             </strong>
           </div>
           <div className="topbar-actions">
@@ -330,6 +352,8 @@ function App() {
               favorite={favorites.includes(selected.id)}
               onFavorite={() => toggleFavorite(selected.id)}
             />
+          ) : contactOpen ? (
+            <ContactPage onBack={() => navigate("all")} />
           ) : view === "about" ? (
             <About />
           ) : (
@@ -529,6 +553,8 @@ function App() {
             </span>
             <span>
               Projeto de fãs · Sem vínculo oficial com World of Darkness
+              {" · "}
+              <a href="#/contato">Contato</a>
             </span>
           </footer>
         </main>
