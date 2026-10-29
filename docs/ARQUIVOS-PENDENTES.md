@@ -35,7 +35,7 @@ Por solicitação do usuário, Caçador usa **somente este último PDF**. Todo c
 
 ## Tratamento das fichas e anexos
 
-Fichas preenchidas foram usadas somente por seus rótulos e estrutura. Nomes, pontuações, equipamento, antecedentes escolhidos e histórias dos personagens não foram publicados. PDFs inteiros e imagens dos anexos não são adicionados ao site ou ao repositório.
+Fichas preenchidas foram usadas somente por seus rótulos e estrutura. Nomes, pontuações, equipamento, antecedentes escolhidos e histórias dos personagens não foram publicados. A pedido do usuário, os 13 PDFs de conteúdo disponíveis e seus textos completos foram adicionados ao leitor do site (2.207 páginas). Arquivos de fichas preenchidas e suas imagens não foram publicados. Os originais permitem consultar tabelas, símbolos e páginas cujo texto não seja recuperável por extração ou OCR.
 
 A ficha de Aparição foi atualizada para as Habilidades do livro 20A, corrigindo diferenças da base legada. Fichas locais já preenchidas conservam seus valores existentes; novos campos começam vazios. Campos antigos permanecem recuperáveis na exportação JSON.
 

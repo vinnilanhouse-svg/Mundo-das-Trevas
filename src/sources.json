@@ -130,7 +130,7 @@
     "title": "Changeling: The Dreaming — 20th Anniversary Edition",
     "type": "livro básico",
     "status": "lido",
-    "note": "Livro completo em inglês recebido no ZIP compactado. Entradas em português são resumos; páginas indicam a posição no PDF.",
+    "note": "Livro completo em inglês recebido no ZIP compactado. O leitor integral preserva o inglês; as explicações por assunto estão em português. Páginas indicam a posição no PDF.",
     "system": "changeling",
     "pages": 482
   },
@@ -139,7 +139,7 @@
     "title": "H5 — Caçador a Revanche (reduced) (optimized).pdf",
     "type": "livro básico",
     "status": "lido",
-    "note": "Versão otimizada recebida, 28,2 MB e 288 páginas digitalizadas. Consulta por OCR em português, com revisão dos resumos e conferência visual de trechos. Páginas citadas são posições no PDF (a numeração impressa costuma ser uma unidade menor). O acervo apresenta resumos, não uma transcrição integral.",
+    "note": "Versão otimizada recebida, 28,2 MB e 288 páginas digitalizadas. O texto integral foi obtido por OCR e pode conter erros; o PDF original acompanha a leitura para conferência de tabelas, imagens e símbolos. As páginas são posições no PDF, geralmente uma unidade acima da numeração impressa.",
     "system": "cacador",
     "pages": 288
   },

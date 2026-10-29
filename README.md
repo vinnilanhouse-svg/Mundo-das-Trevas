@@ -10,7 +10,7 @@ Acervo em português para cinco sistemas do Mundo das Trevas, em React + Vite, p
 | Mago: A Ascensão         | 20A              |       24 |
 | Aparição: O Esquecimento | 20A              |      327 |
 
-As **1.499 entradas** incluem resumos, extratos operacionais, índices de referência e campos de ficha e explicações de cobertura. Não representam 1.499 regras completas: há resumos e índices, além de pontos pendentes em Mago por falta do livro completo.
+Além do leitor integral de **13 documentos e 2.207 páginas**, as **1.499 entradas** por assunto incluem resumos, extratos operacionais, índices de referência e campos de ficha e explicações de cobertura. Não representam 1.499 regras completas: há resumos e índices, além de pontos pendentes em Mago por falta do livro completo.
 
 ## Rodar e validar
 
@@ -51,7 +51,24 @@ Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As refer
 - **Mago:** estrutura da ficha M20, com grupos de Habilidades e nove Esferas. Lore e efeitos completos não foram extraídos do livro inacessível.
 - **Aparição:** livro 20A completo (517 páginas, tradução comunitária). Inclui lore, criação, habilidades corrigidas, Antecedentes, Legiões, Sombra, 16 Arcanoi, 80 artes Comuns e 80 artes Iniciadas com efeitos individuais. A ficha digital foi conferida com o livro.
 
-Os PDFs, extrações brutas e imagens dos personagens não fazem parte do repositório nem do site. Valores, escolhas e histórias das fichas preenchidas não foram incorporados ao acervo. A estrutura dos formulários foi montada a partir dos rótulos impressos.
+Por solicitação do usuário, os 13 PDFs de conteúdo disponíveis e suas transcrições completas agora fazem parte do site. Fichas preenchidas, valores, escolhas e histórias dos personagens continuam excluídos. A estrutura dos formulários foi montada a partir dos rótulos impressos.
+
+## Leitura integral
+
+| Sistema        | Documentos | Páginas |
+| -------------- | ---------: | ------: |
+| Vampiro 5E     |          2 |     791 |
+| Changeling 20A |          9 |     611 |
+| Caçador 5E     |          1 |     288 |
+| Aparição 20A   |          1 |     517 |
+
+A página do sistema oferece **Textos integrais dos PDFs**. O leitor permite buscar no documento inteiro, escolher qualquer página, navegar pelo sumário digital quando presente e abrir a página original. Cada tópico por assunto também oferece **Ler texto literal da fonte**, ligado às páginas citadas. Exemplo de rota: `#/sistema/cacador/documentos/h5-core/92`.
+
+`src/documents.json` contém os metadados, os sumários, as contagens e os hashes dos originais. `public/documents/` contém um JSON de texto por documento e seu PDF original. Os arquivos são servidos estaticamente pela Vercel; são carregados quando consultados, sem baixar os livros ao abrir a home. As fontes e os hashes são verificados por `tests/documents.test.js`.
+
+O texto extraído não é resumido nem traduzido: C20 integral permanece em inglês. Em Aparição, códigos da fonte do PDF que representavam letras latinas foram decodificados para Unicode legível. Caçador e Doc 2 usam OCR; páginas esparsas de outros documentos também receberam OCR complementar. Cada página indica seu método. A transcrição pode perder diagramação ou reconhecer símbolos e números incorretamente; o original preserva tabelas, imagens e páginas sem texto recuperável. Não se afirma que o OCR foi revisado palavra por palavra.
+
+Os ativos somam aproximadamente 158 MB, principalmente PDFs. Cada PDF é o arquivo recebido, verificado por SHA-256. Não foram incluídos arquivos de fichas preenchidas, duplicatas, `Build Assembly.pdf`, materiais antigos de Caçador ou um livro fictício de Mago.
 
 Veja [os arquivos que precisam ser reenviados](docs/ARQUIVOS-PENDENTES.md).
 

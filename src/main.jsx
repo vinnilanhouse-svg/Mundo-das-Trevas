@@ -532,9 +532,10 @@ function About() {
           <Icon name="book" />
           <h2>Um acervo em construção</h2>
           <p>
-            O acervo reúne resumos, índices e estruturas de ficha dos documentos
-            enviados. Cada entrada indica sua fonte, edição e limitações.
-            Materiais ainda inacessíveis ficam identificados como pendentes.
+            O acervo reúne explicações por assunto, textos integrais dos PDFs e
+            estruturas de ficha. Cada entrada indica sua fonte, edição e
+            limitações. Materiais ainda inacessíveis ficam identificados como
+            pendentes.
           </p>
         </section>
         <section>

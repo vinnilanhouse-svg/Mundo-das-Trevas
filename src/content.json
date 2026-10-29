@@ -17775,7 +17775,7 @@
       }
     ],
     "editionLabel": "5E",
-    "coverage": "Livro básico acessível; Westhaven é uma compilação de fã e aparece identificado à parte.",
+    "coverage": "Livro básico acessível; Westhaven é uma compilação de fã e aparece identificado à parte. Texto integral disponível: 2 documento(s), 791 páginas, com acesso aos PDFs originais. Transcrições por OCR podem conter erros.",
     "sources": ["v5", "westhaven", "v5-sheet"],
     "sheet": {
       "notice": "Modelo manual baseado apenas na estrutura impressa. Todos os campos começam vazios ou zerados; não valida criação, custos, progressão ou regras de dano. ",
@@ -22952,7 +22952,7 @@
       }
     ],
     "editionLabel": "20A",
-    "coverage": "Livro C20 completo consultado, com referências à versão em inglês. Resumos e traduções de mesa permanecem identificados; as opções adicionais do Livro das Artes conservam sua própria fonte.",
+    "coverage": "Livro C20 completo consultado, com referências à versão em inglês. Resumos e traduções de mesa permanecem identificados; as opções adicionais do Livro das Artes conservam sua própria fonte. Texto integral disponível: 9 documento(s), 611 páginas, com acesso aos PDFs originais. Transcrições por OCR podem conter erros.",
     "sources": [
       "c20-arts",
       "c20-sheet",
@@ -26765,7 +26765,7 @@
       }
     ],
     "editionLabel": "5E",
-    "coverage": "Conteúdo baseado exclusivamente no último PDF H5 otimizado: cenário, cinco Credos, sete Ímpetos, criação, regras, doze Trunfos e 49 Distinções, equipamento, ameaças e organizações.",
+    "coverage": "Conteúdo baseado exclusivamente no último PDF H5 otimizado: cenário, cinco Credos, sete Ímpetos, criação, regras, doze Trunfos e 49 Distinções, equipamento, ameaças e organizações. Texto integral disponível: 1 documento(s), 288 páginas, com acesso aos PDFs originais. Transcrições por OCR podem conter erros.",
     "sources": ["h5-core"],
     "sheet": {
       "notice": "Modelo manual e vazio de Caçador 5E. Vitalidade = Vigor + 3; Força de Vontade = Autocontrole + Determinação. Perigo e Desespero pertencem à célula; Aflição é uma condição. O formulário não aplica regras, custos ou dano automaticamente. Valores antigos continuam recuperáveis na exportação JSON.",
@@ -34487,7 +34487,7 @@
       }
     ],
     "editionLabel": "20A",
-    "coverage": "Livro Aparição 20A completo consultado. Lore, criação, recursos, Guildas e Arcanoi foram ampliados; a base digital usa a lista de habilidades do livro 20A, sem dados dos personagens anexados.",
+    "coverage": "Livro Aparição 20A completo consultado. Lore, criação, recursos, Guildas e Arcanoi foram ampliados; a base digital usa a lista de habilidades do livro 20A, sem dados dos personagens anexados. Texto integral disponível: 1 documento(s), 517 páginas, com acesso aos PDFs originais. Transcrições por OCR podem conter erros.",
     "sources": ["w-sheet", "w20-core"],
     "sheet": {
       "notice": "Modelo manual conferido com a ficha e as características do livro Aparição 20A. Campos começam vazios ou zerados; criação, custos, dano e progressão não são calculados automaticamente.",

@@ -1,0 +1,4807 @@
+[
+  {
+    "sourceId": "v5",
+    "system": "vampiro",
+    "title": "Vampiro 5E — Módulo Básico (Galápagos)",
+    "pages": 435,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/v5-36cbd400e183.json",
+    "pdfUrl": "/documents/v5-e9fd8b98fe8b.pdf",
+    "originalSha256": "e9fd8b98fe8bc0ba9d0c639705a263249b01fcbdf1765bf81f43b36f842265be",
+    "outline": [
+      {
+        "level": 1,
+        "title": "1.pdf",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "2.pdf",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "3.pdf",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "4.pdf",
+        "page": 14
+      },
+      {
+        "level": 1,
+        "title": "5.pdf",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "6.pdf",
+        "page": 48
+      },
+      {
+        "level": 1,
+        "title": "7.pdf",
+        "page": 52
+      },
+      {
+        "level": 1,
+        "title": "8.pdf",
+        "page": 81
+      },
+      {
+        "level": 1,
+        "title": "9.pdf",
+        "page": 83
+      },
+      {
+        "level": 1,
+        "title": "10.pdf",
+        "page": 103
+      },
+      {
+        "level": 1,
+        "title": "11.pdf",
+        "page": 112
+      },
+      {
+        "level": 1,
+        "title": "12.pdf",
+        "page": 117
+      },
+      {
+        "level": 1,
+        "title": "13.pdf",
+        "page": 120
+      },
+      {
+        "level": 1,
+        "title": "14.pdf",
+        "page": 137
+      },
+      {
+        "level": 1,
+        "title": "15.pdf",
+        "page": 167
+      },
+      {
+        "level": 1,
+        "title": "16.pdf",
+        "page": 178
+      },
+      {
+        "level": 1,
+        "title": "17.pdf",
+        "page": 183
+      },
+      {
+        "level": 1,
+        "title": "18.pdf",
+        "page": 218
+      },
+      {
+        "level": 1,
+        "title": "19.pdf",
+        "page": 250
+      },
+      {
+        "level": 1,
+        "title": "20.pdf",
+        "page": 306
+      },
+      {
+        "level": 1,
+        "title": "21.pdf",
+        "page": 308
+      },
+      {
+        "level": 1,
+        "title": "22.pdf",
+        "page": 350
+      },
+      {
+        "level": 1,
+        "title": "23.pdf",
+        "page": 356
+      },
+      {
+        "level": 1,
+        "title": "24.pdf",
+        "page": 382
+      },
+      {
+        "level": 1,
+        "title": "25.pdf",
+        "page": 404
+      },
+      {
+        "level": 1,
+        "title": "26.pdf",
+        "page": 416
+      }
+    ],
+    "ocrPages": 0,
+    "emptyPages": 2
+  },
+  {
+    "sourceId": "westhaven",
+    "system": "vampiro",
+    "title": "Westhaven by Night 11.0",
+    "pages": 356,
+    "language": "pt",
+    "method": "mixed",
+    "textUrl": "/documents/westhaven-2dd438b9f37a.json",
+    "pdfUrl": "/documents/westhaven-471ac4f44558.pdf",
+    "originalSha256": "471ac4f4455835b6927777f52b60dce5d7e92798a2bd5baee2bf291fc987bbaa",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Glossário dos amaldiçoados",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "Seitas",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "Conceito central",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Clã e sire",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Atributos",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Habilidades",
+        "page": 36
+      },
+      {
+        "level": 1,
+        "title": "Disciplinas",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Predador",
+        "page": 39
+      },
+      {
+        "level": 1,
+        "title": "Antecedentes, Qualidades e Defeitos ",
+        "page": 46
+      },
+      {
+        "level": 2,
+        "title": "Convicções e Pilares",
+        "page": 93
+      },
+      {
+        "level": 2,
+        "title": "Mar do tempo",
+        "page": 93
+      },
+      {
+        "level": 2,
+        "title": "Custo de traços",
+        "page": 93
+      },
+      {
+        "level": 2,
+        "title": "Animalismo",
+        "page": 96
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 96
+      },
+      {
+        "level": 3,
+        "title": "Famulus enlaçado",
+        "page": 96
+      },
+      {
+        "level": 3,
+        "title": "Sentir a Besta",
+        "page": 96
+      },
+      {
+        "level": 3,
+        "title": "Encoleirar a Besta",
+        "page": 97
+      },
+      {
+        "level": 3,
+        "title": "Magnetismo animal ",
+        "page": 97
+      },
+      {
+        "level": 3,
+        "title": "Rastro fervilhante",
+        "page": 98
+      },
+      {
+        "level": 3,
+        "title": "Emoção da caça",
+        "page": 98
+      },
+      {
+        "level": 3,
+        "title": "Inflamar a Besta",
+        "page": 98
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 99
+      },
+      {
+        "level": 3,
+        "title": "Sussurros selvagens",
+        "page": 99
+      },
+      {
+        "level": 3,
+        "title": "Atavismo",
+        "page": 99
+      },
+      {
+        "level": 3,
+        "title": "Mensageiro animal",
+        "page": 99
+      },
+      {
+        "level": 3,
+        "title": "Rastreando o Sangue",
+        "page": 100
+      },
+      {
+        "level": 3,
+        "title": "Observadores devaneantes",
+        "page": 100
+      },
+      {
+        "level": 3,
+        "title": "Sangue virulento",
+        "page": 100
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 101
+      },
+      {
+        "level": 3,
+        "title": "Suculência animal",
+        "page": 101
+      },
+      {
+        "level": 3,
+        "title": "Subjugar a Besta",
+        "page": 101
+      },
+      {
+        "level": 3,
+        "title": "Enxame não vivo",
+        "page": 101
+      },
+      {
+        "level": 3,
+        "title": "Odor de presa",
+        "page": 102
+      },
+      {
+        "level": 3,
+        "title": "Comando do mensageiro",
+        "page": 102
+      },
+      {
+        "level": 3,
+        "title": "Praga de feras",
+        "page": 102
+      },
+      {
+        "level": 3,
+        "title": "Augúrio",
+        "page": 103
+      },
+      {
+        "level": 3,
+        "title": "Despertar o parasita",
+        "page": 103
+      },
+      {
+        "level": 3,
+        "title": "Libertação selvagem",
+        "page": 104
+      },
+      {
+        "level": 3,
+        "title": "Mordida raivosa",
+        "page": 104
+      },
+      {
+        "level": 3,
+        "title": "Espíritos bestiais",
+        "page": 105
+      },
+      {
+        "level": 3,
+        "title": "Hibernar",
+        "page": 105
+      },
+      {
+        "level": 3,
+        "title": "Comunhão do predador",
+        "page": 105
+      },
+      {
+        "level": 3,
+        "title": "Domínio territorial",
+        "page": 106
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 106
+      },
+      {
+        "level": 3,
+        "title": "Comunhão de espíritos",
+        "page": 106
+      },
+      {
+        "level": 3,
+        "title": "Conduzir o rebanho",
+        "page": 106
+      },
+      {
+        "level": 3,
+        "title": "Diálogo selvagem",
+        "page": 107
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 107
+      },
+      {
+        "level": 3,
+        "title": "Controle animal",
+        "page": 107
+      },
+      {
+        "level": 3,
+        "title": "Expulsar a Besta",
+        "page": 107
+      },
+      {
+        "level": 3,
+        "title": "Caminhada espiritual",
+        "page": 108
+      },
+      {
+        "level": 3,
+        "title": "Rede do domitor",
+        "page": 108
+      },
+      {
+        "level": 3,
+        "title": "Fome inabalável",
+        "page": 108
+      },
+      {
+        "level": 2,
+        "title": "Auspícios",
+        "page": 110
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 110
+      },
+      {
+        "level": 3,
+        "title": "Sentidos aguçados",
+        "page": 110
+      },
+      {
+        "level": 3,
+        "title": "Sentir o invisível",
+        "page": 110
+      },
+      {
+        "level": 3,
+        "title": "Máscara vocal",
+        "page": 111
+      },
+      {
+        "level": 3,
+        "title": "Onicognição",
+        "page": 111
+      },
+      {
+        "level": 3,
+        "title": "Sobrecarga sensorial",
+        "page": 111
+      },
+      {
+        "level": 3,
+        "title": "Manto fantasma",
+        "page": 112
+      },
+      {
+        "level": 3,
+        "title": "Visão arcana",
+        "page": 113
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 113
+      },
+      {
+        "level": 3,
+        "title": "Premonição",
+        "page": 113
+      },
+      {
+        "level": 3,
+        "title": "Panacea",
+        "page": 113
+      },
+      {
+        "level": 3,
+        "title": "Revelar temperamento",
+        "page": 114
+      },
+      {
+        "level": 3,
+        "title": "Perseguição infalível",
+        "page": 114
+      },
+      {
+        "level": 3,
+        "title": "Supervisionar o rebanho ",
+        "page": 114
+      },
+      {
+        "level": 3,
+        "title": "Sagacidade estética",
+        "page": 115
+      },
+      {
+        "level": 3,
+        "title": "Olhos do artista",
+        "page": 115
+      },
+      {
+        "level": 3,
+        "title": "Sonhos do passado",
+        "page": 115
+      },
+      {
+        "level": 3,
+        "title": "Olhos elisianos",
+        "page": 116
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 116
+      },
+      {
+        "level": 3,
+        "title": "Prescrutar a alma",
+        "page": 116
+      },
+      {
+        "level": 3,
+        "title": "Compartilhar os sentidos",
+        "page": 116
+      },
+      {
+        "level": 3,
+        "title": "Os olhos das feras",
+        "page": 117
+      },
+      {
+        "level": 3,
+        "title": "Defeito fatal",
+        "page": 117
+      },
+      {
+        "level": 3,
+        "title": "Haruspício",
+        "page": 118
+      },
+      {
+        "level": 3,
+        "title": "Ler o ambiente",
+        "page": 118
+      },
+      {
+        "level": 3,
+        "title": "Revelar a coleira invisível",
+        "page": 118
+      },
+      {
+        "level": 3,
+        "title": "Reviver sua ruína",
+        "page": 119
+      },
+      {
+        "level": 3,
+        "title": "Drenar a mente",
+        "page": 119
+      },
+      {
+        "level": 3,
+        "title": "Olhos do caos",
+        "page": 119
+      },
+      {
+        "level": 3,
+        "title": "Gentileza do Lete",
+        "page": 119
+      },
+      {
+        "level": 3,
+        "title": "Ritmo do caos",
+        "page": 120
+      },
+      {
+        "level": 3,
+        "title": "Eco da alma",
+        "page": 120
+      },
+      {
+        "level": 3,
+        "title": "Detectar autoridade",
+        "page": 120
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 121
+      },
+      {
+        "level": 3,
+        "title": "Toque do espírito",
+        "page": 121
+      },
+      {
+        "level": 3,
+        "title": "Coração desnudado",
+        "page": 121
+      },
+      {
+        "level": 3,
+        "title": "O que os sonhos podem trazer",
+        "page": 122
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 122
+      },
+      {
+        "level": 3,
+        "title": "Clarividência",
+        "page": 122
+      },
+      {
+        "level": 3,
+        "title": "Possessão",
+        "page": 123
+      },
+      {
+        "level": 3,
+        "title": "Telepatia",
+        "page": 123
+      },
+      {
+        "level": 3,
+        "title": "Aliviando a alma bestial",
+        "page": 124
+      },
+      {
+        "level": 3,
+        "title": "Animea opus",
+        "page": 124
+      },
+      {
+        "level": 3,
+        "title": "Olhos de mil tons",
+        "page": 125
+      },
+      {
+        "level": 2,
+        "title": "Celeridade",
+        "page": 126
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 126
+      },
+      {
+        "level": 3,
+        "title": "Graça felina",
+        "page": 126
+      },
+      {
+        "level": 3,
+        "title": "Reflexos rápidos",
+        "page": 126
+      },
+      {
+        "level": 3,
+        "title": "Velocidade fluente",
+        "page": 127
+      },
+      {
+        "level": 3,
+        "title": "Ler os arredores",
+        "page": 127
+      },
+      {
+        "level": 3,
+        "title": "Instinto de retaliação",
+        "page": 127
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 128
+      },
+      {
+        "level": 3,
+        "title": "Rapidez",
+        "page": 128
+      },
+      {
+        "level": 3,
+        "title": "Apressar o trabalho",
+        "page": 128
+      },
+      {
+        "level": 3,
+        "title": "Feras velozes",
+        "page": 128
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 128
+      },
+      {
+        "level": 3,
+        "title": "Piscadela",
+        "page": 128
+      },
+      {
+        "level": 3,
+        "title": "Travessia",
+        "page": 129
+      },
+      {
+        "level": 3,
+        "title": "Desvio",
+        "page": 129
+      },
+      {
+        "level": 3,
+        "title": "Mil cortes",
+        "page": 129
+      },
+      {
+        "level": 3,
+        "title": "Previsão",
+        "page": 130
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 130
+      },
+      {
+        "level": 3,
+        "title": "Elegância direto da fonte",
+        "page": 130
+      },
+      {
+        "level": 3,
+        "title": "Mira infalível",
+        "page": 130
+      },
+      {
+        "level": 3,
+        "title": "Momentum Borrado",
+        "page": 131
+      },
+      {
+        "level": 3,
+        "title": "Golpe despercebido",
+        "page": 131
+      },
+      {
+        "level": 3,
+        "title": "Mais rápido que a luz",
+        "page": 131
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 131
+      },
+      {
+        "level": 3,
+        "title": "Golpe relâmpago",
+        "page": 131
+      },
+      {
+        "level": 3,
+        "title": "Fração de segundo",
+        "page": 132
+      },
+      {
+        "level": 2,
+        "title": "Dominação",
+        "page": 134
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 134
+      },
+      {
+        "level": 3,
+        "title": "Nublar memória",
+        "page": 134
+      },
+      {
+        "level": 3,
+        "title": "Compelir",
+        "page": 134
+      },
+      {
+        "level": 3,
+        "title": "Devoção servil",
+        "page": 135
+      },
+      {
+        "level": 3,
+        "title": "Presque vu",
+        "page": 135
+      },
+      {
+        "level": 3,
+        "title": "Mentalidade de líder",
+        "page": 135
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 135
+      },
+      {
+        "level": 3,
+        "title": "Mesmerismo",
+        "page": 135
+      },
+      {
+        "level": 3,
+        "title": "Dementação",
+        "page": 136
+      },
+      {
+        "level": 3,
+        "title": "Favor do domitor",
+        "page": 136
+      },
+      {
+        "level": 3,
+        "title": "A voz roubada",
+        "page": 136
+      },
+      {
+        "level": 3,
+        "title": "Obnubilação",
+        "page": 137
+      },
+      {
+        "level": 3,
+        "title": "Coleira de Sangue",
+        "page": 137
+      },
+      {
+        "level": 3,
+        "title": "Voz abissal",
+        "page": 137
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 137
+      },
+      {
+        "level": 3,
+        "title": "A mente esquecida",
+        "page": 137
+      },
+      {
+        "level": 3,
+        "title": "Diretriz submersa",
+        "page": 138
+      },
+      {
+        "level": 3,
+        "title": "Cadeia de comando",
+        "page": 138
+      },
+      {
+        "level": 3,
+        "title": "Escrita de Sangue",
+        "page": 138
+      },
+      {
+        "level": 3,
+        "title": "Comandar a escuridão",
+        "page": 139
+      },
+      {
+        "level": 3,
+        "title": "Paixão",
+        "page": 139
+      },
+      {
+        "level": 3,
+        "title": "Receptáculo terrível",
+        "page": 140
+      },
+      {
+        "level": 3,
+        "title": "Comando dissociativo",
+        "page": 141
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 141
+      },
+      {
+        "level": 3,
+        "title": "Racionalizar",
+        "page": 141
+      },
+      {
+        "level": 3,
+        "title": "Soberania ancestral",
+        "page": 141
+      },
+      {
+        "level": 3,
+        "title": "Tabula rasa",
+        "page": 141
+      },
+      {
+        "level": 3,
+        "title": "Implantar sugestão",
+        "page": 143
+      },
+      {
+        "level": 3,
+        "title": "Mitomania",
+        "page": 143
+      },
+      {
+        "level": 3,
+        "title": "Sussurros da irracionalidade",
+        "page": 143
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 144
+      },
+      {
+        "level": 3,
+        "title": "Manipulação em massa",
+        "page": 144
+      },
+      {
+        "level": 3,
+        "title": "Decreto terminal",
+        "page": 144
+      },
+      {
+        "level": 3,
+        "title": "Chamado do Lete",
+        "page": 144
+      },
+      {
+        "level": 3,
+        "title": "Vitae inerte",
+        "page": 144
+      },
+      {
+        "level": 2,
+        "title": "Fortitude",
+        "page": 146
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 146
+      },
+      {
+        "level": 3,
+        "title": "Resiliência",
+        "page": 146
+      },
+      {
+        "level": 3,
+        "title": "Mente inescrutável",
+        "page": 146
+      },
+      {
+        "level": 3,
+        "title": "Resistência fluente",
+        "page": 146
+      },
+      {
+        "level": 3,
+        "title": "Impassividade",
+        "page": 146
+      },
+      {
+        "level": 3,
+        "title": "Fúria cega",
+        "page": 147
+      },
+      {
+        "level": 3,
+        "title": "Esculpir a ferida",
+        "page": 147
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 147
+      },
+      {
+        "level": 3,
+        "title": "Tenacidade",
+        "page": 147
+      },
+      {
+        "level": 3,
+        "title": "Feras tenazes",
+        "page": 147
+      },
+      {
+        "level": 3,
+        "title": "Obdurar",
+        "page": 147
+      },
+      {
+        "level": 3,
+        "title": "Perseverança da terra",
+        "page": 148
+      },
+      {
+        "level": 3,
+        "title": "Vitae revigorante",
+        "page": 148
+      },
+      {
+        "level": 3,
+        "title": "Autoconfiança",
+        "page": 148
+      },
+      {
+        "level": 3,
+        "title": "Feridas que devoram feridas",
+        "page": 148
+      },
+      {
+        "level": 3,
+        "title": "Retenção de Vitae",
+        "page": 149
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 149
+      },
+      {
+        "level": 3,
+        "title": "Desafio a perdição",
+        "page": 149
+      },
+      {
+        "level": 3,
+        "title": "Fortificar a fachada interior",
+        "page": 150
+      },
+      {
+        "level": 3,
+        "title": "Valeren",
+        "page": 150
+      },
+      {
+        "level": 3,
+        "title": "Selar a mandíbula da Besta",
+        "page": 150
+      },
+      {
+        "level": 3,
+        "title": "Alma calejada",
+        "page": 150
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 151
+      },
+      {
+        "level": 3,
+        "title": "Resistência direto da fonte",
+        "page": 151
+      },
+      {
+        "level": 3,
+        "title": "Estilhaçar",
+        "page": 151
+      },
+      {
+        "level": 3,
+        "title": "Escamas da Górgona",
+        "page": 151
+      },
+      {
+        "level": 3,
+        "title": "Destino compartilhado",
+        "page": 152
+      },
+      {
+        "level": 3,
+        "title": "Camarada édige",
+        "page": 153
+      },
+      {
+        "level": 3,
+        "title": "Gambito do rei",
+        "page": 153
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 153
+      },
+      {
+        "level": 3,
+        "title": "Pele de mármore",
+        "page": 153
+      },
+      {
+        "level": 3,
+        "title": "Poder vindo da dor",
+        "page": 154
+      },
+      {
+        "level": 3,
+        "title": "Escudos de carne",
+        "page": 154
+      },
+      {
+        "level": 2,
+        "title": "Ofuscação",
+        "page": 156
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 156
+      },
+      {
+        "level": 3,
+        "title": "Manto de sombras",
+        "page": 156
+      },
+      {
+        "level": 3,
+        "title": "Silêncio da morte",
+        "page": 156
+      },
+      {
+        "level": 3,
+        "title": "Esconder",
+        "page": 157
+      },
+      {
+        "level": 3,
+        "title": "Máscara de idades",
+        "page": 157
+      },
+      {
+        "level": 3,
+        "title": "Fundir-se à multidão",
+        "page": 157
+      },
+      {
+        "level": 3,
+        "title": "Ignis fatuus",
+        "page": 157
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 158
+      },
+      {
+        "level": 3,
+        "title": "Passagem invisível",
+        "page": 158
+      },
+      {
+        "level": 3,
+        "title": "Quimerismo",
+        "page": 158
+      },
+      {
+        "level": 3,
+        "title": "Ventriloquismo",
+        "page": 159
+      },
+      {
+        "level": 3,
+        "title": "Passagem fantasma",
+        "page": 159
+      },
+      {
+        "level": 3,
+        "title": "Conversa dupla",
+        "page": 159
+      },
+      {
+        "level": 3,
+        "title": "Esconderijo",
+        "page": 159
+      },
+      {
+        "level": 3,
+        "title": "Nota fantasma",
+        "page": 160
+      },
+      {
+        "level": 3,
+        "title": "Falsificação",
+        "page": 160
+      },
+      {
+        "level": 3,
+        "title": "Rio de sonhos",
+        "page": 160
+      },
+      {
+        "level": 3,
+        "title": "Máscara de feras",
+        "page": 161
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 161
+      },
+      {
+        "level": 3,
+        "title": "Fantasma na máquina",
+        "page": 161
+      },
+      {
+        "level": 3,
+        "title": "Máscara de mil faces",
+        "page": 162
+      },
+      {
+        "level": 3,
+        "title": "Fata morgana",
+        "page": 162
+      },
+      {
+        "level": 3,
+        "title": "Labirinto mental",
+        "page": 162
+      },
+      {
+        "level": 3,
+        "title": "Máscara do isolamento",
+        "page": 163
+      },
+      {
+        "level": 3,
+        "title": "Máscara mental",
+        "page": 164
+      },
+      {
+        "level": 3,
+        "title": "Máscara dos que se foram",
+        "page": 164
+      },
+      {
+        "level": 3,
+        "title": "Véu do pecador ",
+        "page": 165
+      },
+      {
+        "level": 3,
+        "title": "Máscara de mil animais",
+        "page": 165
+      },
+      {
+        "level": 3,
+        "title": "Você não vê a porta",
+        "page": 165
+      },
+      {
+        "level": 3,
+        "title": "Trilha do labirinto",
+        "page": 165
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 166
+      },
+      {
+        "level": 3,
+        "title": "Ocultar",
+        "page": 166
+      },
+      {
+        "level": 3,
+        "title": "Desaparecer",
+        "page": 166
+      },
+      {
+        "level": 3,
+        "title": "Isolamento",
+        "page": 166
+      },
+      {
+        "level": 3,
+        "title": "Despertar o pesadelo",
+        "page": 167
+      },
+      {
+        "level": 3,
+        "title": "Debaixo da cama",
+        "page": 168
+      },
+      {
+        "level": 3,
+        "title": "Miragem gêmea",
+        "page": 168
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 169
+      },
+      {
+        "level": 3,
+        "title": "Ocultar o grupo",
+        "page": 169
+      },
+      {
+        "level": 3,
+        "title": "Disfarce do impostor",
+        "page": 169
+      },
+      {
+        "level": 3,
+        "title": "Maya",
+        "page": 170
+      },
+      {
+        "level": 3,
+        "title": "Realidade terrível",
+        "page": 171
+      },
+      {
+        "level": 2,
+        "title": "Potência",
+        "page": 172
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 172
+      },
+      {
+        "level": 3,
+        "title": "Corpo letal",
+        "page": 172
+      },
+      {
+        "level": 3,
+        "title": "Salto vertiginoso",
+        "page": 172
+      },
+      {
+        "level": 3,
+        "title": "Força fluente",
+        "page": 172
+      },
+      {
+        "level": 3,
+        "title": "Cavar",
+        "page": 173
+      },
+      {
+        "level": 3,
+        "title": "Azarão",
+        "page": 173
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 173
+      },
+      {
+        "level": 3,
+        "title": "Poderio",
+        "page": 173
+      },
+      {
+        "level": 3,
+        "title": "Aperto implacável",
+        "page": 174
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 174
+      },
+      {
+        "level": 3,
+        "title": "Alimentação brutal",
+        "page": 174
+      },
+      {
+        "level": 3,
+        "title": "Centelha de fúria",
+        "page": 174
+      },
+      {
+        "level": 3,
+        "title": "Pegada sobrenatural",
+        "page": 175
+      },
+      {
+        "level": 3,
+        "title": "Destruidor",
+        "page": 175
+      },
+      {
+        "level": 3,
+        "title": "Exuberância",
+        "page": 175
+      },
+      {
+        "level": 3,
+        "title": "Bomba de esgoto ",
+        "page": 175
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 176
+      },
+      {
+        "level": 3,
+        "title": "Força direto da fonte",
+        "page": 176
+      },
+      {
+        "level": 3,
+        "title": "Desabar",
+        "page": 176
+      },
+      {
+        "level": 3,
+        "title": "Juggernaut",
+        "page": 176
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 177
+      },
+      {
+        "level": 3,
+        "title": "Terremoto",
+        "page": 177
+      },
+      {
+        "level": 3,
+        "title": "Punho de Caim",
+        "page": 177
+      },
+      {
+        "level": 3,
+        "title": "Martelo sutil",
+        "page": 177
+      },
+      {
+        "level": 2,
+        "title": "Presença",
+        "page": 180
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 180
+      },
+      {
+        "level": 3,
+        "title": "Fascínio",
+        "page": 180
+      },
+      {
+        "level": 3,
+        "title": "Amedrontar",
+        "page": 180
+      },
+      {
+        "level": 3,
+        "title": "Olhos da serpente",
+        "page": 181
+      },
+      {
+        "level": 3,
+        "title": "Coação",
+        "page": 181
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 181
+      },
+      {
+        "level": 3,
+        "title": "Beijo indelével",
+        "page": 181
+      },
+      {
+        "level": 3,
+        "title": "Melpominee",
+        "page": 182
+      },
+      {
+        "level": 3,
+        "title": "Atração do predador",
+        "page": 182
+      },
+      {
+        "level": 3,
+        "title": "Lamúria da morte",
+        "page": 183
+      },
+      {
+        "level": 3,
+        "title": "Ressonância opressiva",
+        "page": 183
+      },
+      {
+        "level": 3,
+        "title": "Cai dentro",
+        "page": 184
+      },
+      {
+        "level": 3,
+        "title": "Bambear os joelhos",
+        "page": 184
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 184
+      },
+      {
+        "level": 3,
+        "title": "Olhar aterrorizante",
+        "page": 184
+      },
+      {
+        "level": 3,
+        "title": "Transe",
+        "page": 184
+      },
+      {
+        "level": 3,
+        "title": "Face do verdadeiro amor",
+        "page": 185
+      },
+      {
+        "level": 3,
+        "title": "Limpar o campo",
+        "page": 185
+      },
+      {
+        "level": 3,
+        "title": "Voz arremeçada",
+        "page": 185
+      },
+      {
+        "level": 3,
+        "title": "Sanguessuga de paixões",
+        "page": 186
+      },
+      {
+        "level": 3,
+        "title": "Exibição envigorante",
+        "page": 187
+      },
+      {
+        "level": 3,
+        "title": "Deleite de Afrodite",
+        "page": 187
+      },
+      {
+        "level": 3,
+        "title": "Elucidar",
+        "page": 188
+      },
+      {
+        "level": 3,
+        "title": "Beijo de lótus",
+        "page": 188
+      },
+      {
+        "level": 3,
+        "title": "Torcer o punhal",
+        "page": 188
+      },
+      {
+        "level": 3,
+        "title": "Alma manchada",
+        "page": 188
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 189
+      },
+      {
+        "level": 3,
+        "title": "Voz irresistível",
+        "page": 189
+      },
+      {
+        "level": 3,
+        "title": "Convocar",
+        "page": 189
+      },
+      {
+        "level": 3,
+        "title": "Magnum opus",
+        "page": 189
+      },
+      {
+        "level": 3,
+        "title": "Cobrir o edifício",
+        "page": 190
+      },
+      {
+        "level": 3,
+        "title": "Wingman",
+        "page": 190
+      },
+      {
+        "level": 3,
+        "title": "Presença fulminante",
+        "page": 190
+      },
+      {
+        "level": 3,
+        "title": "Inflamar desejo",
+        "page": 191
+      },
+      {
+        "level": 3,
+        "title": "De amigo a inimigo",
+        "page": 191
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 192
+      },
+      {
+        "level": 3,
+        "title": "Majestade",
+        "page": 192
+      },
+      {
+        "level": 3,
+        "title": "Magnetismo da estrela",
+        "page": 192
+      },
+      {
+        "level": 2,
+        "title": "Proteanismo",
+        "page": 194
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 194
+      },
+      {
+        "level": 3,
+        "title": "Olhos da Besta ",
+        "page": 194
+      },
+      {
+        "level": 3,
+        "title": "Peso pena",
+        "page": 194
+      },
+      {
+        "level": 3,
+        "title": "Contorcionismo",
+        "page": 195
+      },
+      {
+        "level": 3,
+        "title": "Drenar sangue",
+        "page": 195
+      },
+      {
+        "level": 3,
+        "title": "Rouba-peles",
+        "page": 195
+      },
+      {
+        "level": 3,
+        "title": "Visão cega",
+        "page": 195
+      },
+      {
+        "level": 3,
+        "title": "Troféu do caçador",
+        "page": 196
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 196
+      },
+      {
+        "level": 3,
+        "title": "Armas ferais ",
+        "page": 196
+      },
+      {
+        "level": 3,
+        "title": "Vicissitude",
+        "page": 196
+      },
+      {
+        "level": 3,
+        "title": "Beijo da serpente",
+        "page": 198
+      },
+      {
+        "level": 3,
+        "title": "O gole falso",
+        "page": 198
+      },
+      {
+        "level": 3,
+        "title": "Esfolar",
+        "page": 199
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 199
+      },
+      {
+        "level": 3,
+        "title": "Fusão com a terra",
+        "page": 199
+      },
+      {
+        "level": 3,
+        "title": "Mudança de forma ",
+        "page": 199
+      },
+      {
+        "level": 3,
+        "title": "Modelagem de carne",
+        "page": 199
+      },
+      {
+        "level": 3,
+        "title": "Absorção visceral",
+        "page": 200
+      },
+      {
+        "level": 3,
+        "title": "Máscara da morte",
+        "page": 201
+      },
+      {
+        "level": 3,
+        "title": "Sussurros da carne",
+        "page": 201
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 202
+      },
+      {
+        "level": 3,
+        "title": "Metamorfose",
+        "page": 202
+      },
+      {
+        "level": 3,
+        "title": "Forma hedionda",
+        "page": 202
+      },
+      {
+        "level": 3,
+        "title": "Osmose parasítica ",
+        "page": 202
+      },
+      {
+        "level": 3,
+        "title": "Esboço da bela e da fera",
+        "page": 203
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 203
+      },
+      {
+        "level": 3,
+        "title": "Forma de névoa",
+        "page": 203
+      },
+      {
+        "level": 3,
+        "title": "Coração vagante",
+        "page": 204
+      },
+      {
+        "level": 3,
+        "title": "O coração das trevas",
+        "page": 204
+      },
+      {
+        "level": 3,
+        "title": "Um com a terra",
+        "page": 205
+      },
+      {
+        "level": 3,
+        "title": "Forma de Sangue",
+        "page": 205
+      },
+      {
+        "level": 3,
+        "title": "Mestre das formas",
+        "page": 205
+      },
+      {
+        "level": 3,
+        "title": "Enxame",
+        "page": 206
+      },
+      {
+        "level": 3,
+        "title": "Face da vítima",
+        "page": 207
+      },
+      {
+        "level": 2,
+        "title": "Feitiçaria de Sangue",
+        "page": 208
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 208
+      },
+      {
+        "level": 3,
+        "title": "Vitae corrosivo ",
+        "page": 208
+      },
+      {
+        "level": 3,
+        "title": "Um gosto por sangue ",
+        "page": 208
+      },
+      {
+        "level": 3,
+        "title": "Moldar o sacramento sanguíneo ",
+        "page": 209
+      },
+      {
+        "level": 3,
+        "title": "Feitiçaria koldúnica",
+        "page": 209
+      },
+      {
+        "level": 3,
+        "title": "Mexer o ícor ",
+        "page": 210
+      },
+      {
+        "level": 3,
+        "title": "Ritualista natural",
+        "page": 210
+      },
+      {
+        "level": 3,
+        "title": "Correntes de Morfeu ",
+        "page": 210
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 211
+      },
+      {
+        "level": 3,
+        "title": "Extinguir Vitae",
+        "page": 211
+      },
+      {
+        "level": 3,
+        "title": "Vasculhar segredos",
+        "page": 211
+      },
+      {
+        "level": 3,
+        "title": "Maldição do Sangue",
+        "page": 211
+      },
+      {
+        "level": 3,
+        "title": "Vinculum magnum",
+        "page": 211
+      },
+      {
+        "level": 3,
+        "title": "Dardo de Sangue",
+        "page": 212
+      },
+      {
+        "level": 3,
+        "title": "Ritual arúspice",
+        "page": 212
+      },
+      {
+        "level": 3,
+        "title": "Laço sanguíneo",
+        "page": 212
+      },
+      {
+        "level": 3,
+        "title": "Sopro dos lotófagos ",
+        "page": 212
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 213
+      },
+      {
+        "level": 3,
+        "title": "Sangue potente",
+        "page": 213
+      },
+      {
+        "level": 3,
+        "title": "Picada de escorpião",
+        "page": 213
+      },
+      {
+        "level": 3,
+        "title": "Laço transitivo",
+        "page": 213
+      },
+      {
+        "level": 3,
+        "title": "Ondulações do coração",
+        "page": 214
+      },
+      {
+        "level": 3,
+        "title": "Mundare sanguinem",
+        "page": 214
+      },
+      {
+        "level": 3,
+        "title": "Trombogenicidade",
+        "page": 214
+      },
+      {
+        "level": 3,
+        "title": "Máscara de mil maldições ",
+        "page": 215
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 215
+      },
+      {
+        "level": 3,
+        "title": "Roubo de Vitae",
+        "page": 215
+      },
+      {
+        "level": 3,
+        "title": "Édige de Sangue",
+        "page": 216
+      },
+      {
+        "level": 3,
+        "title": "Vitae fulminante",
+        "page": 216
+      },
+      {
+        "level": 3,
+        "title": "Marionete",
+        "page": 217
+      },
+      {
+        "level": 3,
+        "title": "Sobrecarregar o outro",
+        "page": 217
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 217
+      },
+      {
+        "level": 3,
+        "title": "Carícia de Baal",
+        "page": 217
+      },
+      {
+        "level": 3,
+        "title": "Caldeirão de sangue",
+        "page": 218
+      },
+      {
+        "level": 3,
+        "title": "Reinvidicação de Vitae",
+        "page": 218
+      },
+      {
+        "level": 2,
+        "title": "Rituais",
+        "page": 220
+      },
+      {
+        "level": 3,
+        "title": "Proteção",
+        "page": 220
+      },
+      {
+        "level": 3,
+        "title": "Círculo de proteção",
+        "page": 220
+      },
+      {
+        "level": 4,
+        "title": "Nível 1",
+        "page": 221
+      },
+      {
+        "level": 3,
+        "title": "Caminho do sangue",
+        "page": 221
+      },
+      {
+        "level": 3,
+        "title": "Aderência do inseto",
+        "page": 221
+      },
+      {
+        "level": 3,
+        "title": "Criar pedra de sangue",
+        "page": 221
+      },
+      {
+        "level": 3,
+        "title": "Despertar com o frescor da noite",
+        "page": 221
+      },
+      {
+        "level": 3,
+        "title": "Mensagem sangrenta",
+        "page": 222
+      },
+      {
+        "level": 3,
+        "title": "Proteção da carta",
+        "page": 222
+      },
+      {
+        "level": 3,
+        "title": "Proteção do rebanho",
+        "page": 222
+      },
+      {
+        "level": 3,
+        "title": "Encantar o jardim",
+        "page": 222
+      },
+      {
+        "level": 3,
+        "title": "Abafar o medo",
+        "page": 223
+      },
+      {
+        "level": 3,
+        "title": "Beelzebeatit",
+        "page": 223
+      },
+      {
+        "level": 3,
+        "title": "Enriquecer o sangue",
+        "page": 224
+      },
+      {
+        "level": 3,
+        "title": "Selar a marca",
+        "page": 224
+      },
+      {
+        "level": 3,
+        "title": "Astromancia",
+        "page": 224
+      },
+      {
+        "level": 3,
+        "title": "Amarrar a língua acusadora",
+        "page": 225
+      },
+      {
+        "level": 3,
+        "title": "Sangue apócrifo",
+        "page": 225
+      },
+      {
+        "level": 3,
+        "title": "Sangue em água",
+        "page": 225
+      },
+      {
+        "level": 3,
+        "title": "Revelando a trilha carmesim",
+        "page": 225
+      },
+      {
+        "level": 3,
+        "title": "Preservação",
+        "page": 226
+      },
+      {
+        "level": 3,
+        "title": "Rito de introdução",
+        "page": 227
+      },
+      {
+        "level": 3,
+        "title": "Véu de vida",
+        "page": 227
+      },
+      {
+        "level": 3,
+        "title": "Encantamento do pastor",
+        "page": 228
+      },
+      {
+        "level": 3,
+        "title": "Proteção contra carniçais",
+        "page": 228
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 228
+      },
+      {
+        "level": 3,
+        "title": "Comunicação com o Senhor do membro",
+        "page": 228
+      },
+      {
+        "level": 3,
+        "title": "Olhos de Babel",
+        "page": 228
+      },
+      {
+        "level": 3,
+        "title": "Iluminar o rastro da presa",
+        "page": 229
+      },
+      {
+        "level": 3,
+        "title": "Verdade do sangue",
+        "page": 229
+      },
+      {
+        "level": 3,
+        "title": "Chamar o remanescente da aura",
+        "page": 229
+      },
+      {
+        "level": 3,
+        "title": "Realçar discrasia",
+        "page": 229
+      },
+      {
+        "level": 3,
+        "title": "Mortalha de silêncio",
+        "page": 230
+      },
+      {
+        "level": 3,
+        "title": "Como névoa na água",
+        "page": 230
+      },
+      {
+        "level": 3,
+        "title": "Calix secretus",
+        "page": 230
+      },
+      {
+        "level": 3,
+        "title": "Toque soporífico",
+        "page": 230
+      },
+      {
+        "level": 3,
+        "title": "Mestre artesão",
+        "page": 231
+      },
+      {
+        "level": 3,
+        "title": "Profundesas do pesadelo",
+        "page": 231
+      },
+      {
+        "level": 3,
+        "title": "Aperto elemental",
+        "page": 231
+      },
+      {
+        "level": 3,
+        "title": "Le sang de l’amour",
+        "page": 232
+      },
+      {
+        "level": 3,
+        "title": "Silentia mortis",
+        "page": 233
+      },
+      {
+        "level": 3,
+        "title": "Brilho de Tiamat",
+        "page": 233
+      },
+      {
+        "level": 3,
+        "title": "Jardim de vísceras",
+        "page": 234
+      },
+      {
+        "level": 3,
+        "title": "Cópia de sangue",
+        "page": 234
+      },
+      {
+        "level": 3,
+        "title": "Sabor de sonhos roubados",
+        "page": 235
+      },
+      {
+        "level": 3,
+        "title": "Aroma da sucessão",
+        "page": 235
+      },
+      {
+        "level": 3,
+        "title": "Destilação de sangue",
+        "page": 235
+      },
+      {
+        "level": 3,
+        "title": "Sigilo de autoridade",
+        "page": 235
+      },
+      {
+        "level": 3,
+        "title": "Hidromel de Sangue",
+        "page": 236
+      },
+      {
+        "level": 3,
+        "title": "Crânio de aviso",
+        "page": 236
+      },
+      {
+        "level": 3,
+        "title": "Amuleto do infortúnio",
+        "page": 237
+      },
+      {
+        "level": 3,
+        "title": "Proteção contra espíritos",
+        "page": 237
+      },
+      {
+        "level": 3,
+        "title": "Círculo de proteção contra carniçais",
+        "page": 237
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 237
+      },
+      {
+        "level": 3,
+        "title": "O chamado de Dagon",
+        "page": 237
+      },
+      {
+        "level": 3,
+        "title": "Deflexão da ruína de madeira",
+        "page": 238
+      },
+      {
+        "level": 3,
+        "title": "Essência do ar",
+        "page": 238
+      },
+      {
+        "level": 3,
+        "title": "Andarilho do fogo",
+        "page": 238
+      },
+      {
+        "level": 3,
+        "title": "Um com a lâmina",
+        "page": 238
+      },
+      {
+        "level": 3,
+        "title": "Fogo no sangue",
+        "page": 239
+      },
+      {
+        "level": 3,
+        "title": "Olhos do passado",
+        "page": 240
+      },
+      {
+        "level": 3,
+        "title": "Ilusão da morte pacífica",
+        "page": 240
+      },
+      {
+        "level": 3,
+        "title": "Mente gentil",
+        "page": 240
+      },
+      {
+        "level": 3,
+        "title": "Mudança não prevista",
+        "page": 240
+      },
+      {
+        "level": 3,
+        "title": "Vigia sanguíneo",
+        "page": 240
+      },
+      {
+        "level": 3,
+        "title": "Mãos laminadas",
+        "page": 241
+      },
+      {
+        "level": 3,
+        "title": "Ilusão da perfeição",
+        "page": 241
+      },
+      {
+        "level": 3,
+        "title": "Casa mal-assombrada",
+        "page": 241
+      },
+      {
+        "level": 3,
+        "title": "Sono de Judas",
+        "page": 241
+      },
+      {
+        "level": 3,
+        "title": "Invisibilidade subterrânea",
+        "page": 242
+      },
+      {
+        "level": 3,
+        "title": "Vigor comunal",
+        "page": 242
+      },
+      {
+        "level": 3,
+        "title": "Ruína galvânica",
+        "page": 242
+      },
+      {
+        "level": 3,
+        "title": "Banquete sem sangue",
+        "page": 243
+      },
+      {
+        "level": 3,
+        "title": "Sigilo de Sangue",
+        "page": 243
+      },
+      {
+        "level": 3,
+        "title": "Abrigo elemental",
+        "page": 244
+      },
+      {
+        "level": 3,
+        "title": "Nepente",
+        "page": 244
+      },
+      {
+        "level": 3,
+        "title": "Vendo com os olhos dos Céus",
+        "page": 245
+      },
+      {
+        "level": 3,
+        "title": "Buscando Tiamat",
+        "page": 246
+      },
+      {
+        "level": 3,
+        "title": "Alma do homúnculo",
+        "page": 246
+      },
+      {
+        "level": 3,
+        "title": "Pedra da forma verdadeira",
+        "page": 246
+      },
+      {
+        "level": 3,
+        "title": "Invadir",
+        "page": 247
+      },
+      {
+        "level": 3,
+        "title": "Arúspice viral",
+        "page": 247
+      },
+      {
+        "level": 3,
+        "title": "Crisálida sinistra",
+        "page": 248
+      },
+      {
+        "level": 3,
+        "title": "Voz engarrafada",
+        "page": 248
+      },
+      {
+        "level": 3,
+        "title": "Caixa em forma de coração",
+        "page": 249
+      },
+      {
+        "level": 3,
+        "title": "Carne de toque ardente",
+        "page": 249
+      },
+      {
+        "level": 3,
+        "title": "Vinho feérico",
+        "page": 250
+      },
+      {
+        "level": 3,
+        "title": "Maldição do escorpião",
+        "page": 250
+      },
+      {
+        "level": 3,
+        "title": "Talismã de proteção",
+        "page": 251
+      },
+      {
+        "level": 3,
+        "title": "Proteção contra lupinos",
+        "page": 251
+      },
+      {
+        "level": 3,
+        "title": "Círculo de proteção contra espíritos",
+        "page": 251
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 251
+      },
+      {
+        "level": 3,
+        "title": "Defesa do refúgio sagrado",
+        "page": 251
+      },
+      {
+        "level": 3,
+        "title": "Olhos do falcão noturno",
+        "page": 252
+      },
+      {
+        "level": 3,
+        "title": "Passagem incorpórea",
+        "page": 253
+      },
+      {
+        "level": 3,
+        "title": "Inocência do coração infantil",
+        "page": 253
+      },
+      {
+        "level": 3,
+        "title": "Rasgar a doce terra",
+        "page": 254
+      },
+      {
+        "level": 3,
+        "title": "Maldição proteânica",
+        "page": 254
+      },
+      {
+        "level": 3,
+        "title": "Banquete de cinzas",
+        "page": 254
+      },
+      {
+        "level": 3,
+        "title": "Memória guiada",
+        "page": 254
+      },
+      {
+        "level": 3,
+        "title": "Correntes invisíveis de ligação",
+        "page": 255
+      },
+      {
+        "level": 3,
+        "title": "Compelir o inanimado",
+        "page": 255
+      },
+      {
+        "level": 3,
+        "title": "Consulta egrégora",
+        "page": 256
+      },
+      {
+        "level": 3,
+        "title": "Sustento da terra",
+        "page": 256
+      },
+      {
+        "level": 3,
+        "title": "Cavalgando nos veios da terra",
+        "page": 257
+      },
+      {
+        "level": 3,
+        "title": "Véu da inocência",
+        "page": 257
+      },
+      {
+        "level": 3,
+        "title": "O bálsamo de Bathory",
+        "page": 257
+      },
+      {
+        "level": 3,
+        "title": "Buscar o Vitae reunido",
+        "page": 258
+      },
+      {
+        "level": 3,
+        "title": "Caminhada espelhada",
+        "page": 258
+      },
+      {
+        "level": 3,
+        "title": "Cerveja lunar",
+        "page": 259
+      },
+      {
+        "level": 3,
+        "title": "Familiar do bruxo",
+        "page": 259
+      },
+      {
+        "level": 3,
+        "title": "Proteção contra cainitas",
+        "page": 260
+      },
+      {
+        "level": 3,
+        "title": "Círculo de proteção contra lupinos",
+        "page": 260
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 260
+      },
+      {
+        "level": 3,
+        "title": "Fuga para o verdadeiro santuário",
+        "page": 260
+      },
+      {
+        "level": 3,
+        "title": "Coração de pedra",
+        "page": 260
+      },
+      {
+        "level": 3,
+        "title": "Fuste de extinção tardia",
+        "page": 261
+      },
+      {
+        "level": 3,
+        "title": "Dádiva do Éden",
+        "page": 262
+      },
+      {
+        "level": 3,
+        "title": "Portão simulacro",
+        "page": 262
+      },
+      {
+        "level": 3,
+        "title": "Antebrachia ignium",
+        "page": 263
+      },
+      {
+        "level": 3,
+        "title": "Dominion",
+        "page": 263
+      },
+      {
+        "level": 3,
+        "title": "Ataque elemental",
+        "page": 264
+      },
+      {
+        "level": 3,
+        "title": "Rei pescador",
+        "page": 264
+      },
+      {
+        "level": 3,
+        "title": "Libertação da atrocidade",
+        "page": 265
+      },
+      {
+        "level": 3,
+        "title": "Vigor despertado",
+        "page": 265
+      },
+      {
+        "level": 3,
+        "title": "Fundação da Capela",
+        "page": 266
+      },
+      {
+        "level": 3,
+        "title": "Círculo de proteção contra cainitas",
+        "page": 266
+      },
+      {
+        "level": 4,
+        "title": "Outros Rituais",
+        "page": 266
+      },
+      {
+        "level": 3,
+        "title": "Despertar Aapilu",
+        "page": 266
+      },
+      {
+        "level": 2,
+        "title": "Oblívio",
+        "page": 268
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 268
+      },
+      {
+        "level": 3,
+        "title": "Manto obscuro ",
+        "page": 268
+      },
+      {
+        "level": 3,
+        "title": "Visão de Oblívio ",
+        "page": 268
+      },
+      {
+        "level": 3,
+        "title": "Do pó ao pó ",
+        "page": 269
+      },
+      {
+        "level": 3,
+        "title": "Grilhões que vinculam",
+        "page": 269
+      },
+      {
+        "level": 3,
+        "title": "A mão do morto ",
+        "page": 269
+      },
+      {
+        "level": 3,
+        "title": "Preservação enluarada",
+        "page": 270
+      },
+      {
+        "level": 3,
+        "title": "Ossos em sangue",
+        "page": 270
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 270
+      },
+      {
+        "level": 3,
+        "title": "Projetar sombra ",
+        "page": 270
+      },
+      {
+        "level": 3,
+        "title": "Braços de Ahriman",
+        "page": 271
+      },
+      {
+        "level": 3,
+        "title": "Precognição fatal ",
+        "page": 272
+      },
+      {
+        "level": 3,
+        "title": "Onde a Mortalha afina ",
+        "page": 273
+      },
+      {
+        "level": 3,
+        "title": "Atrair o perverso",
+        "page": 273
+      },
+      {
+        "level": 3,
+        "title": "Troca de almas",
+        "page": 273
+      },
+      {
+        "level": 3,
+        "title": "Mortalha da noite ",
+        "page": 274
+      },
+      {
+        "level": 3,
+        "title": "Halo do amaldiçoado",
+        "page": 274
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 274
+      },
+      {
+        "level": 3,
+        "title": "Perspectiva da sombra ",
+        "page": 274
+      },
+      {
+        "level": 3,
+        "title": "Toque de Oblívio",
+        "page": 275
+      },
+      {
+        "level": 3,
+        "title": "Aura da decadência",
+        "page": 275
+      },
+      {
+        "level": 3,
+        "title": "Banquete de paixões",
+        "page": 276
+      },
+      {
+        "level": 3,
+        "title": "Servo das sombras",
+        "page": 276
+      },
+      {
+        "level": 3,
+        "title": "Mortalha sombria ",
+        "page": 277
+      },
+      {
+        "level": 3,
+        "title": "Medo do inferno",
+        "page": 277
+      },
+      {
+        "level": 3,
+        "title": "Sombras fortificadas",
+        "page": 277
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 278
+      },
+      {
+        "level": 3,
+        "title": "Mortalha estígia ",
+        "page": 278
+      },
+      {
+        "level": 3,
+        "title": "Aperto umbroso",
+        "page": 278
+      },
+      {
+        "level": 3,
+        "title": "Praga necrótica ",
+        "page": 279
+      },
+      {
+        "level": 3,
+        "title": "Profanar o santificado",
+        "page": 279
+      },
+      {
+        "level": 3,
+        "title": "Corpo sombrio ",
+        "page": 280
+      },
+      {
+        "level": 3,
+        "title": "Marca da condenação",
+        "page": 280
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 281
+      },
+      {
+        "level": 3,
+        "title": "Passo sombrio ",
+        "page": 281
+      },
+      {
+        "level": 3,
+        "title": "Avatar tenebroso ",
+        "page": 281
+      },
+      {
+        "level": 3,
+        "title": "Skuld realizada ",
+        "page": 281
+      },
+      {
+        "level": 3,
+        "title": "Espírito em declínio ",
+        "page": 282
+      },
+      {
+        "level": 3,
+        "title": "A escuridão interior",
+        "page": 282
+      },
+      {
+        "level": 3,
+        "title": "Armadura tenebrosa",
+        "page": 283
+      },
+      {
+        "level": 2,
+        "title": "Cerimônias",
+        "page": 284
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 284
+      },
+      {
+        "level": 3,
+        "title": "A dádiva da vida falsa",
+        "page": 284
+      },
+      {
+        "level": 3,
+        "title": "Conjurar espírito",
+        "page": 285
+      },
+      {
+        "level": 3,
+        "title": "A pedra do conhecimento",
+        "page": 285
+      },
+      {
+        "level": 3,
+        "title": "O chamado do viajante",
+        "page": 285
+      },
+      {
+        "level": 3,
+        "title": "Luz dentro das sombras",
+        "page": 286
+      },
+      {
+        "level": 3,
+        "title": "Vela abissal",
+        "page": 286
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 286
+      },
+      {
+        "level": 3,
+        "title": "Despertar o servo homuncular",
+        "page": 286
+      },
+      {
+        "level": 3,
+        "title": "Obrigar espírito",
+        "page": 287
+      },
+      {
+        "level": 3,
+        "title": "Cegar o olho metálico",
+        "page": 288
+      },
+      {
+        "level": 3,
+        "title": "Mandíbula de Ahriman",
+        "page": 288
+      },
+      {
+        "level": 3,
+        "title": "Relíquia cinzenta",
+        "page": 288
+      },
+      {
+        "level": 3,
+        "title": "Servos de Ahriman",
+        "page": 289
+      },
+      {
+        "level": 3,
+        "title": "Transubstanciação da essência",
+        "page": 289
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 290
+      },
+      {
+        "level": 3,
+        "title": "Espírito anfitrião",
+        "page": 290
+      },
+      {
+        "level": 3,
+        "title": "Hordas trôpegas",
+        "page": 290
+      },
+      {
+        "level": 3,
+        "title": "Nome do Pai",
+        "page": 292
+      },
+      {
+        "level": 3,
+        "title": "Fortezza sindonica",
+        "page": 292
+      },
+      {
+        "level": 3,
+        "title": "Remendar a Mortalha",
+        "page": 292
+      },
+      {
+        "level": 3,
+        "title": "Tormento fantasmagórico",
+        "page": 293
+      },
+      {
+        "level": 3,
+        "title": "Sabedoria dos mortos",
+        "page": 293
+      },
+      {
+        "level": 3,
+        "title": "O sono superficial",
+        "page": 294
+      },
+      {
+        "level": 3,
+        "title": "Criar golem de carne",
+        "page": 294
+      },
+      {
+        "level": 3,
+        "title": "Criar veste cadáver",
+        "page": 295
+      },
+      {
+        "level": 3,
+        "title": "Mão da desventura",
+        "page": 296
+      },
+      {
+        "level": 3,
+        "title": "Bebendo o Sangue de Ahriman",
+        "page": 296
+      },
+      {
+        "level": 3,
+        "title": "Proteção desorientadora",
+        "page": 297
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 297
+      },
+      {
+        "level": 3,
+        "title": "Vincular o espírito",
+        "page": 297
+      },
+      {
+        "level": 3,
+        "title": "Rasgar a Mortalha",
+        "page": 298
+      },
+      {
+        "level": 3,
+        "title": "Chocalho da morte",
+        "page": 299
+      },
+      {
+        "level": 3,
+        "title": "Conspurcar bolsa de sangue",
+        "page": 299
+      },
+      {
+        "level": 3,
+        "title": "Vincular à forma mortal",
+        "page": 300
+      },
+      {
+        "level": 3,
+        "title": "Chamando a sombra faminta",
+        "page": 300
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 301
+      },
+      {
+        "level": 3,
+        "title": "Ex nihilo",
+        "page": 301
+      },
+      {
+        "level": 3,
+        "title": "Benção lazarena",
+        "page": 302
+      },
+      {
+        "level": 3,
+        "title": "Poço da contemplação",
+        "page": 303
+      },
+      {
+        "level": 3,
+        "title": "Dom da vida verdadeira",
+        "page": 303
+      },
+      {
+        "level": 3,
+        "title": "Sussurros na escuridão",
+        "page": 304
+      },
+      {
+        "level": 2,
+        "title": "Alquimia sangue-ralo",
+        "page": 306
+      },
+      {
+        "level": 3,
+        "title": "Nível 1",
+        "page": 306
+      },
+      {
+        "level": 3,
+        "title": "Longo alcance",
+        "page": 306
+      },
+      {
+        "level": 3,
+        "title": "Neblina",
+        "page": 307
+      },
+      {
+        "level": 3,
+        "title": "A danação do carcereiro",
+        "page": 307
+      },
+      {
+        "level": 3,
+        "title": "Sombra portátil",
+        "page": 307
+      },
+      {
+        "level": 3,
+        "title": "Língua mercuriana",
+        "page": 307
+      },
+      {
+        "level": 3,
+        "title": "Plug-in",
+        "page": 308
+      },
+      {
+        "level": 3,
+        "title": "Tinta corporal",
+        "page": 308
+      },
+      {
+        "level": 3,
+        "title": "Hora do checkout",
+        "page": 308
+      },
+      {
+        "level": 3,
+        "title": "Elevar",
+        "page": 308
+      },
+      {
+        "level": 3,
+        "title": "Mancha de comida",
+        "page": 310
+      },
+      {
+        "level": 3,
+        "title": "Fala vinda do coração",
+        "page": 310
+      },
+      {
+        "level": 4,
+        "title": "Nível 2",
+        "page": 310
+      },
+      {
+        "level": 3,
+        "title": "Disciplinas (nível 1)",
+        "page": 310
+      },
+      {
+        "level": 3,
+        "title": "Envolver",
+        "page": 310
+      },
+      {
+        "level": 3,
+        "title": "Pimenta flamejante do Red",
+        "page": 311
+      },
+      {
+        "level": 3,
+        "title": "Sangue de mandagloire",
+        "page": 311
+      },
+      {
+        "level": 3,
+        "title": "Espelho de confiança",
+        "page": 311
+      },
+      {
+        "level": 3,
+        "title": "Lista de amigos",
+        "page": 311
+      },
+      {
+        "level": 3,
+        "title": "Torpor avançado",
+        "page": 312
+      },
+      {
+        "level": 3,
+        "title": "Luz negra surpresa",
+        "page": 312
+      },
+      {
+        "level": 3,
+        "title": "Estado azul",
+        "page": 312
+      },
+      {
+        "level": 3,
+        "title": "Farejador",
+        "page": 312
+      },
+      {
+        "level": 4,
+        "title": "Nível 3",
+        "page": 313
+      },
+      {
+        "level": 3,
+        "title": "Disciplinas (nível 2)",
+        "page": 313
+      },
+      {
+        "level": 3,
+        "title": "Defracionar",
+        "page": 313
+      },
+      {
+        "level": 3,
+        "title": "Hieros gamos profano",
+        "page": 313
+      },
+      {
+        "level": 3,
+        "title": "Preparo de Borralho",
+        "page": 314
+      },
+      {
+        "level": 3,
+        "title": "Banho químico de memórias",
+        "page": 314
+      },
+      {
+        "level": 3,
+        "title": "Paralisar a ampulheta",
+        "page": 314
+      },
+      {
+        "level": 3,
+        "title": "Queimadura solar sob demanda",
+        "page": 315
+      },
+      {
+        "level": 3,
+        "title": "Soro antivampírico",
+        "page": 316
+      },
+      {
+        "level": 3,
+        "title": "Fluído congelante",
+        "page": 316
+      },
+      {
+        "level": 3,
+        "title": "Mandagloire",
+        "page": 316
+      },
+      {
+        "level": 3,
+        "title": "Rumor",
+        "page": 317
+      },
+      {
+        "level": 3,
+        "title": "Tanque",
+        "page": 317
+      },
+      {
+        "level": 3,
+        "title": "Pele de diamante",
+        "page": 317
+      },
+      {
+        "level": 3,
+        "title": "Pele de fogo",
+        "page": 317
+      },
+      {
+        "level": 3,
+        "title": "Correntes de hospital",
+        "page": 318
+      },
+      {
+        "level": 3,
+        "title": "Pureza marciana",
+        "page": 318
+      },
+      {
+        "level": 3,
+        "title": "Desmascarar",
+        "page": 318
+      },
+      {
+        "level": 3,
+        "title": "ELSI",
+        "page": 319
+      },
+      {
+        "level": 3,
+        "title": "Trolar o piedoso",
+        "page": 319
+      },
+      {
+        "level": 3,
+        "title": "Sangrar",
+        "page": 319
+      },
+      {
+        "level": 3,
+        "title": "Saraimu",
+        "page": 320
+      },
+      {
+        "level": 4,
+        "title": "Nível 4",
+        "page": 321
+      },
+      {
+        "level": 3,
+        "title": "Disciplinas (nível 3)",
+        "page": 321
+      },
+      {
+        "level": 3,
+        "title": "Ímpeto aéreo",
+        "page": 321
+      },
+      {
+        "level": 3,
+        "title": "Canalização de Disciplina",
+        "page": 322
+      },
+      {
+        "level": 3,
+        "title": "Poço sem fundo",
+        "page": 322
+      },
+      {
+        "level": 3,
+        "title": "Curto circuito",
+        "page": 322
+      },
+      {
+        "level": 3,
+        "title": "Personalidade tóxica",
+        "page": 322
+      },
+      {
+        "level": 3,
+        "title": "Imitação",
+        "page": 323
+      },
+      {
+        "level": 3,
+        "title": "Condutor meio-vivo",
+        "page": 324
+      },
+      {
+        "level": 3,
+        "title": "Estado vermelho",
+        "page": 324
+      },
+      {
+        "level": 3,
+        "title": "Vitae MSG",
+        "page": 324
+      },
+      {
+        "level": 3,
+        "title": "Caixa de suco",
+        "page": 325
+      },
+      {
+        "level": 4,
+        "title": "Nível 5",
+        "page": 325
+      },
+      {
+        "level": 3,
+        "title": "Disciplinas (nível 4)",
+        "page": 325
+      },
+      {
+        "level": 3,
+        "title": "Despertar adormecido",
+        "page": 325
+      },
+      {
+        "level": 3,
+        "title": "Amaranto florescente",
+        "page": 326
+      },
+      {
+        "level": 3,
+        "title": "Momento de clareza",
+        "page": 326
+      },
+      {
+        "level": 3,
+        "title": "Fluxo de Saturno",
+        "page": 326
+      },
+      {
+        "level": 3,
+        "title": "Modo bestial",
+        "page": 327
+      },
+      {
+        "level": 3,
+        "title": "Da bomb",
+        "page": 327
+      },
+      {
+        "level": 2,
+        "title": "Poderes ancestrais",
+        "page": 328
+      },
+      {
+        "level": 3,
+        "title": "Poderes de Ancião",
+        "page": 328
+      },
+      {
+        "level": 3,
+        "title": "Poderes de Matusalém",
+        "page": 329
+      },
+      {
+        "level": 1,
+        "title": "Sociedade vampírica",
+        "page": 347
+      },
+      {
+        "level": 1,
+        "title": "Domínios conhecidos",
+        "page": 350
+      },
+      {
+        "level": 1,
+        "title": "Tabelas para consulta",
+        "page": 354
+      }
+    ],
+    "ocrPages": 2,
+    "emptyPages": 2
+  },
+  {
+    "sourceId": "c20-core",
+    "system": "changeling",
+    "title": "Changeling: The Dreaming — 20th Anniversary Edition",
+    "pages": 482,
+    "language": "en",
+    "method": "mixed",
+    "textUrl": "/documents/c20-core-66ac48be7ea6.json",
+    "pdfUrl": "/documents/c20-core-6aec1aaa84a0.pdf",
+    "originalSha256": "6aec1aaa84a0d516ca44c6a46dad88fa2743e794989d5db4736efec99476d6fe",
+    "outline": [
+      {
+        "level": 1,
+        "title": "Credits",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Dedication",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "Book One: Childling",
+        "page": 12
+      },
+      {
+        "level": 2,
+        "title": "Prelude",
+        "page": 14
+      },
+      {
+        "level": 2,
+        "title": "Introduction",
+        "page": 25
+      },
+      {
+        "level": 3,
+        "title": "What This Book Is",
+        "page": 25
+      },
+      {
+        "level": 3,
+        "title": "Dream Diary:History of the Game",
+        "page": 26
+      },
+      {
+        "level": 3,
+        "title": "Arcadia and the Dreaming",
+        "page": 26
+      },
+      {
+        "level": 3,
+        "title": "Changelings",
+        "page": 27
+      },
+      {
+        "level": 3,
+        "title": "How To Use This Book",
+        "page": 27
+      },
+      {
+        "level": 3,
+        "title": "Lexicon",
+        "page": 27
+      },
+      {
+        "level": 3,
+        "title": "Inspirational Material",
+        "page": 29
+      },
+      {
+        "level": 2,
+        "title": "Chapter One: A World of Darkness",
+        "page": 31
+      },
+      {
+        "level": 3,
+        "title": "Changelings",
+        "page": 32
+      },
+      {
+        "level": 3,
+        "title": "Chimerical Quality",
+        "page": 32
+      },
+      {
+        "level": 3,
+        "title": "Kithain History",
+        "page": 33
+      },
+      {
+        "level": 3,
+        "title": "The Nature of the Fae",
+        "page": 41
+      },
+      {
+        "level": 3,
+        "title": "Places of Glamour",
+        "page": 51
+      },
+      {
+        "level": 3,
+        "title": "The Dreaming",
+        "page": 52
+      },
+      {
+        "level": 3,
+        "title": "The Courts",
+        "page": 56
+      },
+      {
+        "level": 3,
+        "title": "Changeling Society",
+        "page": 62
+      },
+      {
+        "level": 3,
+        "title": "Kingdom of Concordia",
+        "page": 64
+      },
+      {
+        "level": 3,
+        "title": "Bellatierra\n(South America)",
+        "page": 73
+      },
+      {
+        "level": 3,
+        "title": "Albion (England) ",
+        "page": 73
+      },
+      {
+        "level": 3,
+        "title": "Hibernia (Ireland)",
+        "page": 73
+      },
+      {
+        "level": 3,
+        "title": "Caledonia (Scotland)",
+        "page": 74
+      },
+      {
+        "level": 3,
+        "title": "Kingdom of Cymru (Wales)",
+        "page": 75
+      },
+      {
+        "level": 3,
+        "title": "Neustria (France)",
+        "page": 76
+      },
+      {
+        "level": 3,
+        "title": "Iberia (Spain and Portugal)",
+        "page": 77
+      },
+      {
+        "level": 3,
+        "title": "Kingdom of Flowers (The Netherlands)",
+        "page": 77
+      },
+      {
+        "level": 3,
+        "title": "Kingdom of Golden Threads (Belgium and Luxembourg)",
+        "page": 77
+      },
+      {
+        "level": 3,
+        "title": "The Galacian\nConfederation (Eastern and central Europe)",
+        "page": 77
+      },
+      {
+        "level": 3,
+        "title": "The Isle of\nSnowflakes (Iceland)",
+        "page": 78
+      },
+      {
+        "level": 3,
+        "title": "The Kingdom of Dalarna (Norway and Sweden)",
+        "page": 79
+      },
+      {
+        "level": 3,
+        "title": "The Kingdom of Jutland (Denmark)",
+        "page": 79
+      },
+      {
+        "level": 3,
+        "title": "The Hellenic Empire (Greece)",
+        "page": 79
+      },
+      {
+        "level": 3,
+        "title": "Empire of the Firebird (Russia, the Ukraine, and Siberia)",
+        "page": 79
+      },
+      {
+        "level": 3,
+        "title": "Empire of the Caucasus (Turkey and Caspian Sea Basin)",
+        "page": 79
+      },
+      {
+        "level": 3,
+        "title": "Caliphate of Cedars (Eastern Mediterranean)",
+        "page": 79
+      },
+      {
+        "level": 3,
+        "title": "Sultanate of Hejaz (Saudi Arabia)",
+        "page": 79
+      },
+      {
+        "level": 3,
+        "title": "Lands of Ancient Tales (Africa)",
+        "page": 80
+      },
+      {
+        "level": 3,
+        "title": "Land of the Wandering Dream (Australia and New Zealand)",
+        "page": 80
+      },
+      {
+        "level": 3,
+        "title": "Land of Eternal Winter (Antarctica)",
+        "page": 81
+      },
+      {
+        "level": 2,
+        "title": "Chapter Two: The Kithain",
+        "page": 83
+      },
+      {
+        "level": 3,
+        "title": "Seeming",
+        "page": 83
+      },
+      {
+        "level": 4,
+        "title": "Kith",
+        "page": 87
+      },
+      {
+        "level": 5,
+        "title": "Boggans",
+        "page": 88
+      },
+      {
+        "level": 5,
+        "title": "Clurichaun",
+        "page": 90
+      },
+      {
+        "level": 5,
+        "title": "Eshu",
+        "page": 92
+      },
+      {
+        "level": 5,
+        "title": "Nockers",
+        "page": 94
+      },
+      {
+        "level": 5,
+        "title": "Piskies",
+        "page": 96
+      },
+      {
+        "level": 5,
+        "title": "Pooka",
+        "page": 98
+      },
+      {
+        "level": 5,
+        "title": "Redcaps",
+        "page": 100
+      },
+      {
+        "level": 5,
+        "title": "Satyrs",
+        "page": 102
+      },
+      {
+        "level": 5,
+        "title": "Selkies",
+        "page": 104
+      },
+      {
+        "level": 5,
+        "title": "Sidhe (Arcadian)",
+        "page": 106
+      },
+      {
+        "level": 5,
+        "title": "Sidhe (Autumn)",
+        "page": 108
+      },
+      {
+        "level": 5,
+        "title": "Sluagh",
+        "page": 110
+      },
+      {
+        "level": 5,
+        "title": "Trolls",
+        "page": 112
+      },
+      {
+        "level": 4,
+        "title": "Kith Creation",
+        "page": 114
+      },
+      {
+        "level": 3,
+        "title": "Noble Houses",
+        "page": 119
+      },
+      {
+        "level": 4,
+        "title": "House Aesin",
+        "page": 119
+      },
+      {
+        "level": 4,
+        "title": "House Ailil",
+        "page": 120
+      },
+      {
+        "level": 4,
+        "title": "House Balor",
+        "page": 122
+      },
+      {
+        "level": 4,
+        "title": "House Beaumayn",
+        "page": 123
+      },
+      {
+        "level": 4,
+        "title": "House Danaan",
+        "page": 124
+      },
+      {
+        "level": 4,
+        "title": "House Daireann",
+        "page": 126
+      },
+      {
+        "level": 4,
+        "title": "House Dougal",
+        "page": 127
+      },
+      {
+        "level": 4,
+        "title": "House Eiluned",
+        "page": 128
+      },
+      {
+        "level": 4,
+        "title": "House Fiona",
+        "page": 129
+      },
+      {
+        "level": 4,
+        "title": "House Gwydion",
+        "page": 131
+      },
+      {
+        "level": 4,
+        "title": "House Leanhaun",
+        "page": 132
+      },
+      {
+        "level": 4,
+        "title": "House Liam",
+        "page": 133
+      },
+      {
+        "level": 4,
+        "title": "House Scathach",
+        "page": 135
+      },
+      {
+        "level": 4,
+        "title": "House Varich",
+        "page": 136
+      },
+      {
+        "level": 2,
+        "title": "Chapter Three: CharacterCreation & Traits",
+        "page": 139
+      },
+      {
+        "level": 3,
+        "title": "Character Creation Chart ",
+        "page": 148
+      },
+      {
+        "level": 3,
+        "title": "Personality Archetypes: Legacies",
+        "page": 156
+      },
+      {
+        "level": 3,
+        "title": "Attributes",
+        "page": 160
+      },
+      {
+        "level": 3,
+        "title": "Abilities",
+        "page": 162
+      },
+      {
+        "level": 3,
+        "title": "Backgrounds",
+        "page": 168
+      },
+      {
+        "level": 3,
+        "title": "Willpower",
+        "page": 172
+      },
+      {
+        "level": 3,
+        "title": "Glamour",
+        "page": 172
+      },
+      {
+        "level": 3,
+        "title": "Banality",
+        "page": 173
+      },
+      {
+        "level": 3,
+        "title": "Health",
+        "page": 174
+      },
+      {
+        "level": 3,
+        "title": "Experience",
+        "page": 175
+      },
+      {
+        "level": 3,
+        "title": "Merits and Flaws ",
+        "page": 176
+      },
+      {
+        "level": 1,
+        "title": "Book Two: Wilder",
+        "page": 190
+      },
+      {
+        "level": 2,
+        "title": "Chapter Four: Arts and Realms",
+        "page": 193
+      },
+      {
+        "level": 3,
+        "title": "Cantrips",
+        "page": 193
+      },
+      {
+        "level": 3,
+        "title": "Unleashing",
+        "page": 196
+      },
+      {
+        "level": 3,
+        "title": "Arts",
+        "page": 197
+      },
+      {
+        "level": 3,
+        "title": "Contract",
+        "page": 203
+      },
+      {
+        "level": 3,
+        "title": "Realms",
+        "page": 232
+      },
+      {
+        "level": 3,
+        "title": "Seven Dreams Brought to Life",
+        "page": 236
+      },
+      {
+        "level": 2,
+        "title": "Chapter Five: Rules",
+        "page": 241
+      },
+      {
+        "level": 3,
+        "title": "The Golden Rule ",
+        "page": 241
+      },
+      {
+        "level": 3,
+        "title": "Rolling Dice",
+        "page": 242
+      },
+      {
+        "level": 3,
+        "title": "Actions",
+        "page": 243
+      },
+      {
+        "level": 3,
+        "title": "Ratings",
+        "page": 243
+      },
+      {
+        "level": 3,
+        "title": "Difficulties ",
+        "page": 244
+      },
+      {
+        "level": 3,
+        "title": "Automatic Success",
+        "page": 245
+      },
+      {
+        "level": 3,
+        "title": "Complications",
+        "page": 246
+      },
+      {
+        "level": 3,
+        "title": "Time",
+        "page": 248
+      },
+      {
+        "level": 3,
+        "title": "Examples of Rolls",
+        "page": 248
+      },
+      {
+        "level": 2,
+        "title": "Chapter Six: Systems and Drama ",
+        "page": 251
+      },
+      {
+        "level": 3,
+        "title": "Dramatic Systems",
+        "page": 251
+      },
+      {
+        "level": 3,
+        "title": "Tempers",
+        "page": 257
+      },
+      {
+        "level": 3,
+        "title": "Oaths",
+        "page": 264
+      },
+      {
+        "level": 3,
+        "title": "Banality ",
+        "page": 267
+      },
+      {
+        "level": 3,
+        "title": "Nightmare",
+        "page": 274
+      },
+      {
+        "level": 3,
+        "title": "Combat",
+        "page": 275
+      },
+      {
+        "level": 3,
+        "title": "Example of Combat",
+        "page": 288
+      },
+      {
+        "level": 3,
+        "title": "Health",
+        "page": 290
+      },
+      {
+        "level": 3,
+        "title": "Sources of Injury",
+        "page": 291
+      },
+      {
+        "level": 3,
+        "title": "Bedlam",
+        "page": 294
+      },
+      {
+        "level": 1,
+        "title": "Book Three: Grump",
+        "page": 296
+      },
+      {
+        "level": 2,
+        "title": "Chapter Seven: The Dreaming",
+        "page": 299
+      },
+      {
+        "level": 3,
+        "title": "The Dreaming",
+        "page": 299
+      },
+      {
+        "level": 3,
+        "title": "Dream Mechanics",
+        "page": 300
+      },
+      {
+        "level": 3,
+        "title": "The Mists of Forgetfulness",
+        "page": 303
+      },
+      {
+        "level": 3,
+        "title": "Near Dreaming",
+        "page": 304
+      },
+      {
+        "level": 3,
+        "title": "Far Dreaming",
+        "page": 306
+      },
+      {
+        "level": 3,
+        "title": "Deep Dreaming",
+        "page": 306
+      },
+      {
+        "level": 3,
+        "title": "Freeholds",
+        "page": 311
+      },
+      {
+        "level": 3,
+        "title": "Chimera",
+        "page": 315
+      },
+      {
+        "level": 3,
+        "title": "Shaping Dreamstuff",
+        "page": 316
+      },
+      {
+        "level": 3,
+        "title": "The Nature of Chimera",
+        "page": 318
+      },
+      {
+        "level": 3,
+        "title": "Treasures",
+        "page": 323
+      },
+      {
+        "level": 2,
+        "title": "Chapter Eight: Storytelling",
+        "page": 327
+      },
+      {
+        "level": 3,
+        "title": "Setting the Stage",
+        "page": 327
+      },
+      {
+        "level": 3,
+        "title": "Character Creation",
+        "page": 328
+      },
+      {
+        "level": 3,
+        "title": "Story Time",
+        "page": 331
+      },
+      {
+        "level": 3,
+        "title": "The Elements of Story",
+        "page": 334
+      },
+      {
+        "level": 3,
+        "title": "The Prelude",
+        "page": 338
+      },
+      {
+        "level": 3,
+        "title": "Running the Game",
+        "page": 339
+      },
+      {
+        "level": 2,
+        "title": "Chapter Nine: Nightmares & Stranger Things ",
+        "page": 345
+      },
+      {
+        "level": 3,
+        "title": "Prodigals",
+        "page": 345
+      },
+      {
+        "level": 3,
+        "title": "Nightmare Chimera",
+        "page": 356
+      },
+      {
+        "level": 4,
+        "title": "The Dauntain",
+        "page": 359
+      },
+      {
+        "level": 4,
+        "title": "The Harbingersof Autumn",
+        "page": 363
+      },
+      {
+        "level": 4,
+        "title": "Stranger Things",
+        "page": 366
+      },
+      {
+        "level": 3,
+        "title": "Thallain",
+        "page": 368
+      },
+      {
+        "level": 4,
+        "title": "Thallain Kiths",
+        "page": 371
+      },
+      {
+        "level": 4,
+        "title": "Aithu",
+        "page": 371
+      },
+      {
+        "level": 4,
+        "title": "Beasties",
+        "page": 372
+      },
+      {
+        "level": 4,
+        "title": "Bodachs",
+        "page": 373
+      },
+      {
+        "level": 4,
+        "title": "Boggarts",
+        "page": 374
+      },
+      {
+        "level": 4,
+        "title": "Bogies",
+        "page": 374
+      },
+      {
+        "level": 4,
+        "title": "Ghasts",
+        "page": 375
+      },
+      {
+        "level": 4,
+        "title": "Goblins",
+        "page": 376
+      },
+      {
+        "level": 4,
+        "title": "Huaka’i Po",
+        "page": 376
+      },
+      {
+        "level": 4,
+        "title": "Kelpies",
+        "page": 377
+      },
+      {
+        "level": 4,
+        "title": "Lurks",
+        "page": 377
+      },
+      {
+        "level": 4,
+        "title": "Mandragoras",
+        "page": 378
+      },
+      {
+        "level": 4,
+        "title": "Merrow",
+        "page": 379
+      },
+      {
+        "level": 4,
+        "title": "Nasties",
+        "page": 379
+      },
+      {
+        "level": 4,
+        "title": "Night Hags",
+        "page": 380
+      },
+      {
+        "level": 4,
+        "title": "Ogres",
+        "page": 380
+      },
+      {
+        "level": 4,
+        "title": "Sevartal",
+        "page": 381
+      },
+      {
+        "level": 4,
+        "title": "Skinwalkers",
+        "page": 381
+      },
+      {
+        "level": 4,
+        "title": "Spriggan",
+        "page": 382
+      },
+      {
+        "level": 4,
+        "title": "Weeping Wights",
+        "page": 383
+      },
+      {
+        "level": 3,
+        "title": "Dark-kin",
+        "page": 383
+      },
+      {
+        "level": 4,
+        "title": "Denizen Creation",
+        "page": 385
+      },
+      {
+        "level": 4,
+        "title": "Acheri",
+        "page": 386
+      },
+      {
+        "level": 4,
+        "title": "Aonides",
+        "page": 387
+      },
+      {
+        "level": 4,
+        "title": "Fir-bholg",
+        "page": 387
+      },
+      {
+        "level": 4,
+        "title": "Fuath",
+        "page": 388
+      },
+      {
+        "level": 4,
+        "title": "Keremet",
+        "page": 388
+      },
+      {
+        "level": 4,
+        "title": "Moiræ",
+        "page": 390
+      },
+      {
+        "level": 4,
+        "title": "Naraka",
+        "page": 390
+      },
+      {
+        "level": 1,
+        "title": "Appendix I: Gallain",
+        "page": 392
+      },
+      {
+        "level": 2,
+        "title": "Other Kiths",
+        "page": 446
+      },
+      {
+        "level": 3,
+        "title": "Ghille Dhu",
+        "page": 446
+      },
+      {
+        "level": 3,
+        "title": "Korred",
+        "page": 447
+      },
+      {
+        "level": 3,
+        "title": "Merfolk",
+        "page": 448
+      },
+      {
+        "level": 3,
+        "title": "Morganed",
+        "page": 449
+      },
+      {
+        "level": 3,
+        "title": "Oba",
+        "page": 450
+      },
+      {
+        "level": 3,
+        "title": "River Hags",
+        "page": 450
+      },
+      {
+        "level": 3,
+        "title": "Wichtel",
+        "page": 451
+      },
+      {
+        "level": 3,
+        "title": "Wolpertinger",
+        "page": 452
+      },
+      {
+        "level": 2,
+        "title": "Inanimae",
+        "page": 437
+      },
+      {
+        "level": 3,
+        "title": "Anchors",
+        "page": 437
+      },
+      {
+        "level": 3,
+        "title": "Court",
+        "page": 438
+      },
+      {
+        "level": 3,
+        "title": "Husks",
+        "page": 439
+      },
+      {
+        "level": 3,
+        "title": "Glamour",
+        "page": 439
+      },
+      {
+        "level": 3,
+        "title": "Somnolence",
+        "page": 440
+      },
+      {
+        "level": 3,
+        "title": "Phyla",
+        "page": 440
+      },
+      {
+        "level": 3,
+        "title": "Glomes",
+        "page": 440
+      },
+      {
+        "level": 3,
+        "title": "Kuberas",
+        "page": 441
+      },
+      {
+        "level": 3,
+        "title": "Ondines",
+        "page": 442
+      },
+      {
+        "level": 3,
+        "title": "Parosemes",
+        "page": 442
+      },
+      {
+        "level": 3,
+        "title": "Solimonds",
+        "page": 443
+      },
+      {
+        "level": 3,
+        "title": "Mannikins",
+        "page": 443
+      },
+      {
+        "level": 3,
+        "title": "Character Creation",
+        "page": 444
+      },
+      {
+        "level": 3,
+        "title": "Slivers",
+        "page": 445
+      },
+      {
+        "level": 2,
+        "title": "Hsien",
+        "page": 421
+      },
+      {
+        "level": 3,
+        "title": "History",
+        "page": 421
+      },
+      {
+        "level": 3,
+        "title": "Creating a Hsien Character ",
+        "page": 422
+      },
+      {
+        "level": 3,
+        "title": "New Traits",
+        "page": 424
+      },
+      {
+        "level": 3,
+        "title": "Fu Hsi ",
+        "page": 425
+      },
+      {
+        "level": 3,
+        "title": "Hanumen",
+        "page": 426
+      },
+      {
+        "level": 3,
+        "title": "Heng Po ",
+        "page": 427
+      },
+      {
+        "level": 3,
+        "title": "Nyan",
+        "page": 427
+      },
+      {
+        "level": 3,
+        "title": "Tanuki ",
+        "page": 427
+      },
+      {
+        "level": 3,
+        "title": "Chu-ih-yu ",
+        "page": 428
+      },
+      {
+        "level": 3,
+        "title": "Chu Jung",
+        "page": 428
+      },
+      {
+        "level": 3,
+        "title": "Hou-Chi",
+        "page": 429
+      },
+      {
+        "level": 3,
+        "title": "Komuko",
+        "page": 429
+      },
+      {
+        "level": 3,
+        "title": "Suijen ",
+        "page": 430
+      },
+      {
+        "level": 3,
+        "title": "Wu Tan",
+        "page": 430
+      },
+      {
+        "level": 3,
+        "title": "Nei Tan ",
+        "page": 435
+      },
+      {
+        "level": 2,
+        "title": "Menehune",
+        "page": 411
+      },
+      {
+        "level": 3,
+        "title": "History",
+        "page": 411
+      },
+      {
+        "level": 3,
+        "title": "Character Creation",
+        "page": 414
+      },
+      {
+        "level": 3,
+        "title": "Ali’i",
+        "page": 415
+      },
+      {
+        "level": 3,
+        "title": "Kahuna",
+        "page": 415
+      },
+      {
+        "level": 3,
+        "title": "Hana",
+        "page": 416
+      },
+      {
+        "level": 3,
+        "title": "Kokua",
+        "page": 416
+      },
+      {
+        "level": 3,
+        "title": "Glamour and Banality",
+        "page": 418
+      },
+      {
+        "level": 3,
+        "title": "The Spirit World",
+        "page": 419
+      },
+      {
+        "level": 2,
+        "title": "Nunnehi",
+        "page": 393
+      },
+      {
+        "level": 3,
+        "title": "Canotili",
+        "page": 397
+      },
+      {
+        "level": 3,
+        "title": "Inuas",
+        "page": 398
+      },
+      {
+        "level": 3,
+        "title": "Kachinas",
+        "page": 399
+      },
+      {
+        "level": 3,
+        "title": "May-may-gwya-shi",
+        "page": 399
+      },
+      {
+        "level": 3,
+        "title": "Nanehi",
+        "page": 400
+      },
+      {
+        "level": 3,
+        "title": "Nümüzo’ho",
+        "page": 400
+      },
+      {
+        "level": 3,
+        "title": "Pu’gwis",
+        "page": 401
+      },
+      {
+        "level": 3,
+        "title": "Rock Giants",
+        "page": 402
+      },
+      {
+        "level": 3,
+        "title": "Surems",
+        "page": 402
+      },
+      {
+        "level": 3,
+        "title": "Tunghat",
+        "page": 403
+      },
+      {
+        "level": 3,
+        "title": "Water Babies",
+        "page": 403
+      },
+      {
+        "level": 3,
+        "title": "Yunwi Amai’yine’hi",
+        "page": 404
+      },
+      {
+        "level": 3,
+        "title": "Yunwi Tsunsdi",
+        "page": 405
+      },
+      {
+        "level": 3,
+        "title": "Legacies",
+        "page": 405
+      },
+      {
+        "level": 1,
+        "title": "Appendix II: The Enchanted",
+        "page": 454
+      },
+      {
+        "level": 2,
+        "title": "The Kinain and the Enchanted",
+        "page": 454
+      }
+    ],
+    "ocrPages": 5,
+    "emptyPages": 7
+  },
+  {
+    "sourceId": "c20-arts",
+    "system": "changeling",
+    "title": "Changeling Artes — Livro das Artes",
+    "pages": 51,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/c20-arts-c097c61a2d7d.json",
+    "pdfUrl": "/documents/c20-arts-17cf7c0c5504.pdf",
+    "originalSha256": "17cf7c0c5504536f45d9e5a429cb984361600d210ed75e5f078710baaf2d39c6",
+    "outline": [],
+    "ocrPages": 0,
+    "emptyPages": 2
+  },
+  {
+    "sourceId": "c-kith",
+    "system": "changeling",
+    "title": "doc 1.pdf — Kith",
+    "pages": 27,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/c-kith-14a9a3ed5d04.json",
+    "pdfUrl": "/documents/c-kith-7965a29992e5.pdf",
+    "originalSha256": "7965a29992e54a00cbef9a0d5f507f9ac971a2bb4df07fbe92c57773e20f36cb",
+    "outline": [],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "c-kith-ocr",
+    "system": "changeling",
+    "title": "Doc 2.pdf — Os Kith",
+    "pages": 10,
+    "language": "pt",
+    "method": "ocr",
+    "textUrl": "/documents/c-kith-ocr-0ed339481cde.json",
+    "pdfUrl": "/documents/c-kith-ocr-d58495ddf99b.pdf",
+    "originalSha256": "d58495ddf99b5c819ebb4dce15e965c031a1ab1141736f08121fadc6c14dd652",
+    "outline": [],
+    "ocrPages": 10,
+    "emptyPages": 1
+  },
+  {
+    "sourceId": "c-houses",
+    "system": "changeling",
+    "title": "doc 3.pdf — Casas",
+    "pages": 5,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/c-houses-97a388f9f100.json",
+    "pdfUrl": "/documents/c-houses-6afcceee3307.pdf",
+    "originalSha256": "6afcceee3307d865bd3c97173d0ba6675bd4031ae331238ab98605faf02a531e",
+    "outline": [],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "c-courts",
+    "system": "changeling",
+    "title": "doc 4.pdf — Sociedade e Cortes",
+    "pages": 4,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/c-courts-76d8de1a42f9.json",
+    "pdfUrl": "/documents/c-courts-f6d5d60e8f8d.pdf",
+    "originalSha256": "f6d5d60e8f8d0035deefc637b6c6be259a13870ea640a642007f653b805beb78",
+    "outline": [],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "c-legacies",
+    "system": "changeling",
+    "title": "doc 5.pdf — Legados",
+    "pages": 8,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/c-legacies-a2e54edcd639.json",
+    "pdfUrl": "/documents/c-legacies-2c4f37c9f9c4.pdf",
+    "originalSha256": "2c4f37c9f9c473ed4582779db2d1d8ec3d94ba979df680ac467fefad6f7f74fa",
+    "outline": [],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "c-backgrounds",
+    "system": "changeling",
+    "title": "doc 6.pdf — Antecedentes",
+    "pages": 5,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/c-backgrounds-80355c7e53e9.json",
+    "pdfUrl": "/documents/c-backgrounds-60e494005309.pdf",
+    "originalSha256": "60e4940053091327dadf7b093f795de4da6d455a5c8d484e83f9a9f4624a2e74",
+    "outline": [],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "c-merits",
+    "system": "changeling",
+    "title": "doc 7.pdf — Qualidades e Defeitos",
+    "pages": 19,
+    "language": "pt",
+    "method": "native",
+    "textUrl": "/documents/c-merits-a44b7e770ae2.json",
+    "pdfUrl": "/documents/c-merits-5deb760fe305.pdf",
+    "originalSha256": "5deb760fe3051cdc95583fe1bceda3c579002aae467a5cd4f559c9ba48a7ae92",
+    "outline": [],
+    "ocrPages": 0,
+    "emptyPages": 0
+  },
+  {
+    "sourceId": "h5-core",
+    "system": "cacador",
+    "title": "H5 — Caçador a Revanche (reduced) (optimized).pdf",
+    "pages": 288,
+    "language": "pt",
+    "method": "ocr",
+    "textUrl": "/documents/h5-core-8774cc1a033a.json",
+    "pdfUrl": "/documents/h5-core-79b40d45ef0e.pdf",
+    "originalSha256": "79b40d45ef0e80faf7b8a5d015dc6ff09973ee90e9e268230d3cb84026ece082",
+    "outline": [],
+    "ocrPages": 288,
+    "emptyPages": 13
+  },
+  {
+    "sourceId": "w20-core",
+    "system": "aparicao",
+    "title": "Aparição: O Oblívio — Edição de 20º Aniversário",
+    "pages": 517,
+    "language": "pt",
+    "method": "mixed",
+    "textUrl": "/documents/w20-core-cb70d3accd6f.json",
+    "pdfUrl": "/documents/w20-core-d0a40e7bb865.pdf",
+    "originalSha256": "d0a40e7bb865686450c07d2a4a084a8d2de7065148e4a90ef716207327a97b96",
+    "outline": [],
+    "ocrPages": 3,
+    "emptyPages": 19
+  }
+]

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import sources from "./sources.json";
+import { DocumentLinks, DocumentReader, SourceText } from "./Documents.jsx";
+import { documents } from "./document-data.js";
 
 const categories = [
   {
@@ -99,6 +101,11 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
           <strong>Cobertura das fontes.</strong> {system.coverage}
         </span>
       </div>
+      {categorySlug && categorySlug !== "documentos" && (
+        <a className="button document-home-link" href={`${base}/documentos`}>
+          Ler textos integrais dos PDFs →
+        </a>
+      )}
       {!categorySlug ? (
         <>
           <div className="area-grid">
@@ -116,8 +123,11 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
               </a>
             ))}
           </div>
+          <DocumentLinks system={system} />
           <SourceList system={system} />
         </>
+      ) : categorySlug === "documentos" ? (
+        <DocumentReader system={system} route={route} />
       ) : !category ? (
         <div className="empty-state">
           <h2>Área não encontrada</h2>
@@ -268,6 +278,7 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
                     article={article}
                     base={base}
                   />
+                  <SourceText article={article} system={system} />
                   <div className="source">
                     <span>
                       <strong>Fonte:</strong> {article.source}
@@ -474,8 +485,8 @@ function SourceList({ system }) {
       <summary>Fontes, edições e materiais pendentes ({items.length})</summary>
       <p>
         As páginas indicadas são posições no PDF, que podem diferir da numeração
-        impressa. Textos são resumos e índices; os PDFs completos e os
-        personagens preenchidos não são publicados.
+        impressa. As explicações por assunto acompanham o texto integral dos
+        documentos disponíveis. Fichas preenchidas não são publicadas.
       </p>
       {items.map((s) => (
         <div className="source-row" key={s.id}>
@@ -486,6 +497,11 @@ function SourceList({ system }) {
               {s.pages ? ` · ${s.pages} páginas` : ""}
             </small>
             <p>{s.note}</p>
+            {documents.some((item) => item.sourceId === s.id) && (
+              <a href={`#/sistema/${system.id}/documentos/${s.id}/1`}>
+                Ler texto integral e consultar original →
+              </a>
+            )}
           </div>
           <span
             className={
