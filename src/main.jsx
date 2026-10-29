@@ -439,7 +439,7 @@ function App() {
                     <span /> UM ACERVO PARA QUEM ATRAVESSA A NOITE
                   </div>
                   <h1>
-                    Cinco caminhos.
+                    Muitas histórias.
                     <br className="mobile-hero-break" /> Um Mundo das Trevas.
                   </h1>
                   <p>
