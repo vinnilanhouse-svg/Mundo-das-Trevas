@@ -314,12 +314,6 @@ function App() {
             <span className="draft-indicator">
               <i /> Em construção
             </span>
-            <button
-              className="button button-small"
-              onClick={() => setEditor(true)}
-            >
-              <Icon name="edit" size={15} /> Gerenciar conteúdo
-            </button>
           </div>
         </header>
         <main id="main-content">
