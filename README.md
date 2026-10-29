@@ -39,6 +39,8 @@ Na home, o cartão abre uma página do sistema. Nela, o visitante escolhe:
 
 Em **Aparição 20A → Mecânica**, o diretório dos 16 Arcanoi abre por padrão. Cada cartão oferece links para os cinco níveis e suas artes Comuns/Iniciadas; abrir o nome do Arcanos mostra os dez efeitos agrupados por nível, e cada poder leva ao sistema e à fonte. O botão **Consultar os 16 Arcanoi** retorna ao diretório.
 
+Os cartões em **Escolha um tópico** são botões: abrem a categoria, filtram o índice e exibem links para cada entrada. Funcionam por clique e teclado, com opção de voltar a todas as categorias.
+
 Cada área tem busca em títulos e textos, filtro de categoria, índice de tópicos e links diretos. Exemplo: `#/sistema/changeling/mecanica`. Fontes indicam **a posição da página no PDF**, que pode diferir da página impressa.
 
 Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As referências preservam a origem dos trechos cuja mecânica ainda exige conferência no C20 completo. Caçador usa exclusivamente o último básico H5 otimizado enviado pelo usuário; o guia da Biblioteca Élfica e a referência anterior TRUNFOS foram removidos do acervo e da bibliografia.
@@ -62,11 +64,11 @@ Por solicitação do usuário, os 13 PDFs de conteúdo disponíveis e suas trans
 | Caçador 5E     |          1 |     288 |
 | Aparição 20A   |          1 |     517 |
 
-A página do sistema oferece **Textos integrais dos PDFs**. O leitor permite buscar no documento inteiro, escolher qualquer página, navegar pelo sumário digital quando presente e abrir a página original. Cada tópico por assunto também oferece **Ler texto literal da fonte**, ligado às páginas citadas. Exemplo de rota: `#/sistema/cacador/documentos/h5-core/92`.
+A página do sistema oferece **Textos integrais dos PDFs**. O leitor permite buscar no documento inteiro, escolher qualquer página, navegar pelo sumário digital quando presente e abrir a página original. Tópicos de fontes em português oferecem **Ler texto literal da fonte**, ligado às páginas citadas. Os 143 tópicos com fonte C20 em inglês oferecem **Ler citação em português**: um trecho traduzido do assunto, com página e opção de comparar o original. As traduções estão identificadas como não oficiais; o leitor integral preserva o idioma do arquivo. Exemplo de rota: `#/sistema/cacador/documentos/h5-core/92`.
 
 `src/documents.json` contém os metadados, os sumários, as contagens e os hashes dos originais. `public/documents/` contém um JSON de texto por documento e seu PDF original. Os arquivos são servidos estaticamente pela Vercel; são carregados quando consultados, sem baixar os livros ao abrir a home. As fontes e os hashes são verificados por `tests/documents.test.js`.
 
-O texto extraído não é resumido nem traduzido: C20 integral permanece em inglês. Em Aparição, códigos da fonte do PDF que representavam letras latinas foram decodificados para Unicode legível. Caçador e Doc 2 usam OCR; páginas esparsas de outros documentos também receberam OCR complementar. Cada página indica seu método. A transcrição pode perder diagramação ou reconhecer símbolos e números incorretamente; o original preserva tabelas, imagens e páginas sem texto recuperável. Não se afirma que o OCR foi revisado palavra por palavra.
+O texto do leitor integral não é resumido nem traduzido: C20 integral permanece em inglês. As citações selecionadas dos tópicos são traduzidas em `src/translated-citations.json`, que mantém também o trecho original e a página. `tests/citations.test.js` verifica a cobertura de todos os tópicos com fonte inglesa e confirma que cada original existe na página citada. Essa camada de citações traduzidas não é uma tradução integral do livro. Em Aparição, códigos da fonte do PDF que representavam letras latinas foram decodificados para Unicode legível. Caçador e Doc 2 usam OCR; páginas esparsas de outros documentos também receberam OCR complementar. Cada página indica seu método. A transcrição pode perder diagramação ou reconhecer símbolos e números incorretamente; o original preserva tabelas, imagens e páginas sem texto recuperável. Não se afirma que o OCR foi revisado palavra por palavra.
 
 Os ativos somam aproximadamente 158 MB, principalmente PDFs. Cada PDF é o arquivo recebido, verificado por SHA-256. Não foram incluídos arquivos de fichas preenchidas, duplicatas, `Build Assembly.pdf`, materiais antigos de Caçador ou um livro fictício de Mago.
 

@@ -42,6 +42,7 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
   const [group, setGroup] = useState("all");
   const [powerLevel, setPowerLevel] = useState("all");
   const [powerBranch, setPowerBranch] = useState("all");
+  const [topicGroup, setTopicGroup] = useState(null);
   const base = `#/sistema/${system.id}`;
   const categorySlug = route.split("/")[3];
   const sectionSlug = route.split("/")[4];
@@ -72,7 +73,15 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
     setGroup("all");
     setPowerLevel("all");
     setPowerBranch("all");
+    setTopicGroup(null);
   }, [categorySlug, system.id]);
+  function openGroup(nextGroup) {
+    setQuery("");
+    setGroup(nextGroup);
+    setPowerLevel("all");
+    setPowerBranch("all");
+    setTopicGroup(nextGroup);
+  }
   return (
     <div className={`detail-page ${system.kind}`}>
       <a className="back-link" href={categorySlug ? base : "#"}>
@@ -177,7 +186,10 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
               <select
                 aria-label="Categoria"
                 value={group}
-                onChange={(e) => setGroup(e.target.value)}
+                onChange={(e) => {
+                  setGroup(e.target.value);
+                  setTopicGroup(null);
+                }}
               >
                 <option value="all">Todas as categorias</option>
                 {groups.map((g) => (
@@ -289,6 +301,33 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
                     </span>
                   </div>
                 </>
+              ) : topicGroup ? (
+                <>
+                  <button
+                    className="text-button"
+                    onClick={() => {
+                      setTopicGroup(null);
+                      setGroup("all");
+                    }}
+                  >
+                    ← Todas as categorias
+                  </button>
+                  <h2>{topicGroup}</h2>
+                  <p>Escolha o tópico que deseja consultar.</p>
+                  <div className="topic-summary">
+                    {filtered
+                      .filter((section) => section.group === topicGroup)
+                      .map((section) => (
+                        <a
+                          href={`${base}/${category.id}/${section.id}`}
+                          key={section.id}
+                        >
+                          <strong>{section.title}</strong>
+                          <span>Abrir tópico →</span>
+                        </a>
+                      ))}
+                  </div>
+                </>
               ) : (
                 <>
                   <div className="eyebrow">CONSULTA ORGANIZADA</div>
@@ -300,13 +339,17 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
                   </p>
                   <div className="topic-summary">
                     {groups.map((g) => (
-                      <div key={g}>
+                      <button
+                        type="button"
+                        key={g}
+                        onClick={() => openGroup(g)}
+                      >
                         <strong>{g}</strong>
                         <span>
                           {sections.filter((s) => s.group === g).length}{" "}
                           entradas
                         </span>
-                      </div>
+                      </button>
                     ))}
                   </div>
                 </>

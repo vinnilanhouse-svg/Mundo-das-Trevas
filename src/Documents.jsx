@@ -5,6 +5,7 @@ import {
   citedPages,
   searchPages,
 } from "./document-data.js";
+import translatedCitations from "./translated-citations.json";
 
 function useDocument(sourceId, enabled = true) {
   const [state, setState] = useState({ sourceId: null });
@@ -329,6 +330,19 @@ export function SourceText({ article, system }) {
     (item) => item.sourceId === article.sourceId && item.system === system.id,
   );
   if (!document) return null;
+  if (document.language === "en") {
+    const citation = translatedCitations.find(
+      (item) => item.id === article.id && item.sourceId === document.sourceId,
+    );
+    return (
+      <TranslatedSourceText
+        key={`${article.sourceId}-${article.id}`}
+        citation={citation}
+        document={document}
+        system={system}
+      />
+    );
+  }
   return (
     <CitedText
       key={`${article.sourceId}-${article.id}`}
@@ -336,6 +350,42 @@ export function SourceText({ article, system }) {
       document={document}
       system={system}
     />
+  );
+}
+
+function TranslatedSourceText({ citation, document, system }) {
+  return (
+    <details className="source-transcription translated-citation">
+      <summary>Ler citação em português</summary>
+      {citation ? (
+        <>
+          <p>
+            Tradução do trecho citado. A referência abaixo identifica a página
+            do PDF original; esta não é uma tradução oficial.
+          </p>
+          <blockquote lang="pt-BR">{citation.translation}</blockquote>
+          <p className="citation-attribution">
+            Changeling: O Sonhar — Edição de 20º Aniversário · PDF p.{" "}
+            {citation.page}
+          </p>
+          <details className="citation-original">
+            <summary>Comparar com o trecho original em inglês</summary>
+            <blockquote lang="en">{citation.original}</blockquote>
+          </details>
+          <a
+            className="button"
+            href={`#/sistema/${system.id}/documentos/${document.sourceId}/${citation.page}`}
+          >
+            Consultar página no documento original →
+          </a>
+        </>
+      ) : (
+        <p>
+          Este trecho ainda não tem tradução. O documento original continua
+          disponível no leitor integral.
+        </p>
+      )}
+    </details>
   );
 }
 

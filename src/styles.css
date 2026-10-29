@@ -1744,11 +1744,27 @@ main {
   gap: 10px;
   margin-top: 25px;
 }
-.topic-summary > div {
+.topic-summary > button,
+.topic-summary > a {
   border: 1px solid #42294c;
   border-radius: 5px;
   padding: 13px;
   background: #1c1322;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.topic-summary > button:hover,
+.topic-summary > a:hover {
+  border-color: #a87dbb;
+  background: #291c31;
+}
+.topic-summary > button:focus-visible,
+.topic-summary > a:focus-visible {
+  outline: 2px solid #e7c6fa;
+  outline-offset: 3px;
 }
 .topic-summary strong {
   display: block;
@@ -2508,6 +2524,26 @@ main {
 }
 .source-transcription > .button {
   margin-top: 12px;
+}
+.translated-citation blockquote {
+  margin: 20px 0;
+  padding: 12px 18px;
+  border-left: 3px solid #a87dbb;
+  font-size: 15px;
+  line-height: 1.85;
+  color: #e9deef;
+  overflow-wrap: anywhere;
+}
+.citation-original {
+  margin: 20px 0;
+}
+.citation-original > summary {
+  cursor: pointer;
+  color: #c7adcf;
+}
+.citation-attribution {
+  font-size: 12px;
+  color: #baa8c3;
 }
 @media (max-width: 760px) {
   .document-link {
