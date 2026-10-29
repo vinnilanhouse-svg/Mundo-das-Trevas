@@ -18,6 +18,7 @@ import "./forest.css";
 import "./bunker.css";
 import "./castle.css";
 import "./arcane.css";
+import "./sheets.css";
 
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const SYSTEM_THEMES = {

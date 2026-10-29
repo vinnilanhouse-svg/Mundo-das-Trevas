@@ -47,6 +47,14 @@ Cada área tem busca em títulos e textos, filtro de categoria, índice de tópi
 
 Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As referências preservam a origem dos trechos cuja mecânica ainda exige conferência no C20 completo. Caçador usa exclusivamente o último básico H5 otimizado enviado pelo usuário; o guia da Biblioteca Élfica e a referência anterior TRUNFOS foram removidos do acervo e da bibliografia.
 
+## Fichas digitais
+
+As fichas têm duas folhas organizadas a partir dos formulários recebidos, com cabeçalho, Atributos e Habilidades em três colunas e posições próprias por sistema. V5 e H5 colocam Vitalidade e Força de Vontade entre Atributos e Habilidades; M20 separa as nove Esferas em três colunas; C20 reúne Artes, Alçadas e Temperamentos; W20 tem uma folha da Psique e outra para Sombra e complementos. No celular, as colunas se empilham na mesma ordem.
+
+Círculos e quadrados são clicáveis, com entrada numérica equivalente acessível pelo teclado. Os campos continuam manuais: não calculam criação, dano ou custos. Campos com limites acima da trilha desenhada preservam o valor completo na entrada numérica. Os IDs, limites e formato JSON `arquivo-trevas-sheet-v1` foram mantidos, inclusive chaves antigas de fichas salvas. Nenhum valor de personagem dos PDFs foi importado. O texto completo das anotações entra na impressão, mesmo quando é maior que a caixa exibida na tela.
+
+`src/sheet-layout.js` define a organização; `src/SheetPages.jsx` apresenta os campos; `src/sheets.css` cuida do papel, das colunas, do celular e da impressão A4. Os modelos preservam os campos da edição selecionada; não são cópias gráficas exatas dos anexos. Os testes verificam que todo campo aparece uma única vez e que alterações futuras no catálogo não ocultem campos novos.
+
 ## Documentos e cobertura
 
 - **Vampiro:** Módulo Básico 5E, base de ficha e Westhaven 11.0. A compilação Westhaven é identificada como material de fã; suas opções não são todas do básico.

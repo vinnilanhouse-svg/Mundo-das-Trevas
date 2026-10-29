@@ -1,0 +1,501 @@
+/* Paper layouts follow the forms while the surrounding site keeps its system theme. */
+.sheet-pages {
+  container-type: inline-size;
+}
+.character-sheet .sheet-mark-help {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 10px 0 22px;
+  color: inherit;
+}
+.character-sheet .sheet-paper {
+  color-scheme: light;
+  background: #fcfaf4;
+  color: #2b302b;
+  border: 1px solid #c9c5b8;
+  outline: 1px solid #c9c5b8;
+  outline-offset: -8px;
+  padding: 30px 26px 18px;
+  margin: 22px auto;
+  max-width: 1100px;
+  box-shadow: 0 12px 35px #0003;
+  --rose: var(--sheet-accent);
+}
+.sheet-paper .sheet-paper-header {
+  text-align: center;
+  border-bottom: 2px solid var(--sheet-accent);
+  padding-bottom: 15px;
+  margin-bottom: 17px;
+}
+.sheet-paper .sheet-paper-header > span {
+  font-size: 8px;
+  letter-spacing: 0.23em;
+  color: #62665c;
+}
+.sheet-paper .sheet-paper-header h3 {
+  font:
+    600 clamp(35px, 4vw, 53px)/1.1 "Cormorant Garamond",
+    Georgia,
+    serif;
+  color: var(--sheet-accent);
+  letter-spacing: 0.02em;
+  margin: 7px 0 4px;
+}
+.sheet-paper .sheet-paper-header p {
+  color: #4e554a;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sheet-paper .sheet-paper-header p span {
+  color: var(--sheet-accent);
+  margin: 0 7px;
+}
+.sheet-section {
+  margin: 16px 0 0;
+}
+.sheet-paper .sheet-section > h4 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px;
+  color: var(--sheet-accent);
+  font:
+    600 23px/1.2 "Cormorant Garamond",
+    Georgia,
+    serif;
+  text-align: center;
+}
+.sheet-paper .sheet-section > h4::before,
+.sheet-paper .sheet-section > h4::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--sheet-accent);
+  opacity: 0.6;
+}
+.sheet-section-columns {
+  display: grid;
+  grid-template-columns: var(--sheet-template);
+  gap: 18px;
+  align-items: start;
+}
+.sheet-column {
+  min-width: 0;
+  display: grid;
+  gap: 12px;
+}
+.character-sheet .sheet-paper .sheet-group {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  min-width: 0;
+  margin: 0;
+  background: transparent;
+}
+.character-sheet .sheet-paper .sheet-group legend {
+  padding: 0 0 6px;
+  width: 100%;
+  text-align: center;
+  color: #3b473b;
+  font:
+    600 19px/1.2 "Cormorant Garamond",
+    Georgia,
+    serif;
+}
+.character-sheet .sheet-paper .sheet-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 29px;
+  padding: 3px 0;
+  min-width: 0;
+}
+.character-sheet .sheet-paper .sheet-field > label {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  font-size: 11px;
+  color: #303d33;
+  line-height: 1.45;
+  margin: 0;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.character-sheet .sheet-paper .sheet-field-text {
+  border-bottom: 1px solid #aaa994;
+}
+.character-sheet .sheet-paper .sheet-field-text > label {
+  flex: 0 1 auto;
+  font-weight: 500;
+}
+.character-sheet .sheet-paper .sheet-field-text input {
+  flex: 1;
+  width: 0;
+  min-width: 30px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  color: #24352c;
+  font-size: 12px;
+}
+.character-sheet .sheet-paper .sheet-field-notes {
+  display: block;
+}
+.character-sheet .sheet-paper .sheet-field-notes > label {
+  margin: 0 0 5px;
+  font-size: 10px;
+}
+.character-sheet .sheet-paper .sheet-field-notes textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 0 4px;
+  border: 1px solid #c2c3b4;
+  border-radius: 0;
+  background: repeating-linear-gradient(
+    transparent 0 24px,
+    #b8bcab80 24px 25px
+  );
+  color: #24352c;
+  font:
+    12px/25px "DM Sans",
+    sans-serif;
+  resize: vertical;
+}
+.character-sheet .sheet-paper .sheet-field-compact textarea {
+  min-height: 50px;
+}
+.sheet-rating {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  max-width: 64%;
+}
+.sheet-marks {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  max-width: 150px;
+  justify-content: center;
+}
+.character-sheet .sheet-paper .sheet-marks button {
+  display: block;
+  background: transparent;
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  border: 1px solid #59614f;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+}
+.character-sheet .sheet-paper .sheet-marks .is-marked {
+  background: var(--sheet-accent);
+  border-color: var(--sheet-accent);
+}
+.character-sheet .sheet-paper .sheet-marks button:hover {
+  box-shadow: 0 0 0 2px #8b92723d;
+}
+.character-sheet .sheet-paper .sheet-rating-squares .sheet-marks button {
+  border-radius: 0;
+}
+.character-sheet .sheet-paper .sheet-rating input[type="number"] {
+  width: 34px;
+  min-width: 34px;
+  padding: 3px 1px;
+  border: 0;
+  border-bottom: 1px solid #a4aa93;
+  border-radius: 0;
+  background: transparent;
+  color: #24352c;
+  text-align: center;
+  font-size: 12px;
+  appearance: textfield;
+}
+.character-sheet .sheet-paper .sheet-rating input::-webkit-inner-spin-button,
+.character-sheet .sheet-paper .sheet-rating input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.character-sheet .sheet-paper :is(input, textarea):focus-visible {
+  outline: 2px solid var(--sheet-accent);
+  outline-offset: 2px;
+  background-color: #fffdf5;
+}
+.sheet-paper .sheet-paper-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 9px;
+  border-top: 1px solid #b7bdab;
+  font-size: 8px;
+  color: #5e6758;
+}
+.sheet-pages-cacador .sheet-paper {
+  border-top: 5px solid var(--sheet-accent);
+}
+.sheet-pages-cacador .sheet-paper-header h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+.sheet-pages-changeling .sheet-paper {
+  border-color: #8c9c6e;
+  outline-color: #c0a873;
+  border-radius: 12px 3px 12px 3px;
+}
+.sheet-pages-changeling .sheet-section > h4::before,
+.sheet-pages-changeling .sheet-section > h4::after {
+  height: 3px;
+  background: linear-gradient(90deg, #bd86ae, #c4a565, #79a488);
+}
+.sheet-pages-mago .sheet-paper {
+  outline-color: #b49a6d;
+}
+.sheet-pages-aparicao .sheet-paper {
+  border-color: #779382;
+}
+@container (max-width: 680px) {
+  .sheet-section-columns {
+    gap: 12px;
+  }
+  .character-sheet .sheet-paper {
+    padding: 25px 20px 18px;
+  }
+  .sheet-marks {
+    gap: 2px;
+  }
+  .character-sheet .sheet-paper .sheet-marks button {
+    width: 10px;
+    height: 10px;
+    flex-basis: 10px;
+  }
+  .character-sheet .sheet-paper .sheet-rating input[type="number"] {
+    width: 27px;
+    min-width: 27px;
+  }
+  .sheet-rating {
+    gap: 3px;
+  }
+}
+@container (max-width: 540px) {
+  .sheet-section-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .sheet-column {
+    gap: 14px;
+  }
+  .sheet-paper .sheet-section > h4 {
+    font-size: 24px;
+  }
+  .character-sheet .sheet-paper .sheet-group legend {
+    text-align: left;
+    border-bottom: 1px solid #bcc3ac;
+    margin-bottom: 6px;
+  }
+  .character-sheet .sheet-paper .sheet-field {
+    min-height: 34px;
+  }
+  .character-sheet .sheet-paper .sheet-field > label {
+    font-size: 12px;
+  }
+  .character-sheet .sheet-paper .sheet-marks button {
+    width: 14px;
+    height: 14px;
+    flex-basis: 14px;
+  }
+  .sheet-marks {
+    gap: 3px;
+  }
+  .sheet-paper .sheet-paper-footer {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+.character-sheet .sheet-paper:first-of-type .sheet-field-notes textarea {
+  min-height: 75px;
+}
+.sheet-print-notes {
+  display: none;
+}
+.character-sheet .sheet-paper .sheet-field > label.sheet-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.character-sheet .sheet-paper .sheet-field:has(> label.sheet-visually-hidden) {
+  justify-content: center;
+}
+.detail-page:has(.sheet-pages) .library-hero {
+  min-height: 0;
+  padding: 22px 28px;
+}
+.detail-page:has(.sheet-pages) .library-hero h1 {
+  font-size: 42px;
+  margin: 10px 0;
+}
+.detail-page:has(.sheet-pages) .library-hero h1 > span {
+  font-size: 10px;
+  margin-top: 8px;
+}
+.detail-page:has(.sheet-pages) .library-hero p {
+  display: none;
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+  .character-sheet .sheet-mark-help {
+    display: none;
+  }
+  .character-sheet .sheet-paper {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 5mm 5mm 4mm;
+    background: white !important;
+    color: black !important;
+    box-shadow: none;
+    border: 1px solid #777;
+    outline-color: #aaa;
+    break-before: page;
+  }
+  .character-sheet .sheet-paper:first-of-type {
+    break-before: auto;
+  }
+  .sheet-section-columns {
+    grid-template-columns: var(--sheet-template) !important;
+    gap: 4mm;
+  }
+  .character-sheet .sheet-paper .sheet-group {
+    break-inside: avoid;
+  }
+  .sheet-section {
+    margin-top: 3mm;
+  }
+  .sheet-paper .sheet-section > h4 {
+    font-size: 15pt;
+    margin-bottom: 1.5mm;
+    break-after: avoid;
+  }
+  .character-sheet .sheet-paper .sheet-group legend {
+    text-align: center;
+    font-size: 11pt;
+    padding-bottom: 1mm;
+    line-height: 1.1;
+  }
+  .character-sheet .sheet-paper .sheet-field {
+    min-height: 4.5mm;
+    padding: 0.5mm 0;
+    gap: 1.5mm;
+  }
+  .character-sheet .sheet-paper .sheet-field > label {
+    font-size: 7.5pt;
+    line-height: 1.2;
+  }
+  .character-sheet .sheet-paper .sheet-field-notes textarea {
+    min-height: 23mm;
+    line-height: 5mm;
+    font-size: 8pt;
+    background: white !important;
+    display: none;
+  }
+  .character-sheet .sheet-paper .sheet-field-compact textarea {
+    min-height: 10mm;
+  }
+  .character-sheet .sheet-paper .sheet-marks button {
+    width: 2.2mm;
+    height: 2.2mm;
+    flex-basis: 2.2mm;
+    border-color: #222;
+    print-color-adjust: exact;
+  }
+  .character-sheet .sheet-paper .sheet-marks .is-marked {
+    background: #222 !important;
+  }
+  .sheet-marks {
+    max-width: 35mm;
+    gap: 0.5mm;
+  }
+  .character-sheet .sheet-paper .sheet-rating input[type="number"] {
+    width: 7mm;
+    min-width: 7mm;
+    font-size: 7.5pt;
+    background: white !important;
+    padding: 0;
+    line-height: 1.2;
+  }
+  .sheet-paper .sheet-paper-footer {
+    flex-direction: row;
+    font-size: 6pt;
+    margin-top: 3mm;
+    padding-top: 1.5mm;
+  }
+  .sheet-paper .sheet-paper-header {
+    padding-bottom: 2mm;
+    margin-bottom: 2mm;
+  }
+  .sheet-paper .sheet-paper-header h3 {
+    font-size: 26pt;
+    margin: 3px 0;
+  }
+  .sheet-paper .sheet-paper-header p {
+    font-size: 7pt;
+  }
+  .sheet-paper :is(h3, h4, legend, label) {
+    color: black !important;
+  }
+  .character-sheet > summary,
+  .character-sheet > .sheet-notice {
+    display: none !important;
+  }
+  .character-sheet .sheet-paper .sheet-print-notes {
+    display: block;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    min-height: 18mm;
+    border: 1px solid #aaa;
+    padding: 1mm;
+    font-size: 8pt;
+    line-height: 1.6;
+    color: black;
+  }
+  .character-sheet .sheet-paper:first-of-type .sheet-print-notes {
+    min-height: 12mm;
+  }
+  .character-sheet .sheet-paper .sheet-field-compact .sheet-print-notes {
+    min-height: 8mm;
+  }
+  html,
+  body,
+  .app-shell {
+    background: white !important;
+  }
+  .character-sheet .sheet-paper .sheet-field-text input {
+    padding: 0;
+    font-size: 8pt;
+    line-height: 1.2;
+  }
+  .sheet-pages-changeling .sheet-paper:first-of-type .sheet-column {
+    gap: 2mm;
+  }
+  .sheet-pages-changeling .sheet-paper:first-of-type .sheet-print-notes {
+    min-height: 10mm;
+  }
+  .sheet-paper .sheet-paper-footer {
+    margin-top: 3mm;
+    padding-top: 1.5mm;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import sources from "./sources.json";
 import { DocumentLinks, DocumentReader, SourceText } from "./Documents.jsx";
 import { documents } from "./document-data.js";
+import { SheetPages } from "./SheetPages.jsx";
 
 const categories = [
   {
@@ -727,52 +728,7 @@ function CharacterSheet({ system }) {
       <p className="sheet-message" role="status">
         {message || "Ficha vazia. Preencha manualmente os campos desejados."}
       </p>
-      <div className="sheet-grid">
-        {system.sheet.groups.map((g) => (
-          <fieldset
-            key={g.title}
-            className={`sheet-group ${g.kind === "notes" ? "sheet-group-wide" : ""}`}
-          >
-            <legend>{g.title}</legend>
-            {g.fields.map((f) => (
-              <label key={f.id}>
-                <span>{f.label}</span>
-                {g.kind === "notes" ? (
-                  <textarea
-                    rows={3}
-                    maxLength={20000}
-                    value={values[f.id]}
-                    onChange={(e) => change(f.id, e.target.value)}
-                  />
-                ) : g.kind === "rating" || g.kind === "number" ? (
-                  <input
-                    type="number"
-                    min={0}
-                    max={f.max}
-                    step={1}
-                    value={values[f.id]}
-                    onChange={(e) => {
-                      const n = e.target.valueAsNumber;
-                      change(
-                        f.id,
-                        Number.isNaN(n)
-                          ? 0
-                          : Math.min(f.max, Math.max(0, Math.trunc(n))),
-                      );
-                    }}
-                  />
-                ) : (
-                  <input
-                    value={values[f.id]}
-                    maxLength={500}
-                    onChange={(e) => change(f.id, e.target.value)}
-                  />
-                )}
-              </label>
-            ))}
-          </fieldset>
-        ))}
-      </div>
+      <SheetPages system={system} values={values} onChange={change} />
     </details>
   );
 }
