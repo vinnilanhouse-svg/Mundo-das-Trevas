@@ -15,12 +15,12 @@ Esses dois livros **não precisam ser reenviados**. O acervo foi ampliado, as fo
 
 ## Ainda necessários
 
-| Sistema    | Arquivo pendente                          | O que enviar                                                                                                    |
-| ---------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Caçador 5E | `H5 - Caçador a Revanche.pdf`             | Uma versão compactada ou partes de até 32 MB.                                                                   |
-| Mago 20A   | `Mago 20.pdf` ou `Mago 20_compressed.pdf` | Basta uma versão compactada ou dividida em partes de até 32 MB. Ambas as versões anteriores excederam o limite. |
+| Sistema    | Arquivo pendente                                                         | O que enviar                                                                                                    |
+| ---------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Caçador 5E | `H5 - Caçador a Revanche.pdf` e `H5 - Caçador a Revanche_compressed.pdf` | As duas tentativas excederam o limite. Envie o livro em partes de até 32 MB.                                    |
+| Mago 20A   | `Mago 20.pdf` ou `Mago 20_compressed.pdf`                                | Basta uma versão compactada ou dividida em partes de até 32 MB. Ambas as versões anteriores excederam o limite. |
 
-Os livros de Mago e Caçador não estão no ZIP recebido. As referências de ficha e TRUNFOS já disponíveis continuam no site, com sua cobertura identificada.
+Os livros de Mago e Caçador não estão no ZIP recebido. Uma nova tentativa com `H5 - Caçador a Revanche_compressed.pdf` também foi bloqueada por exceder 32 MB; o básico H5 ainda não foi lido. As referências de ficha e TRUNFOS já disponíveis continuam no site, com sua cobertura identificada.
 
 ## Outros arquivos já acessíveis
 

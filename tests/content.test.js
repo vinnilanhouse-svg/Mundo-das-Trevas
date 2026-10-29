@@ -140,13 +140,15 @@ test("livros recebidos no ZIP têm referências ativas e artes W20 completas por
     const entries = wraith.sections.filter(
       (section) => section.group === group,
     );
-    assert.equal(entries.length, 6);
-    assert.deepEqual(
-      entries
-        .filter((section) => /^[1-5] ·/.test(section.title))
-        .map((section) => section.title[0]),
-      ["1", "2", "3", "4", "5"],
-    );
+    assert.equal(entries.length, 11);
+    for (const branch of ["Comum", "Iniciada"]) {
+      assert.deepEqual(
+        entries
+          .filter((section) => section.power?.branch === branch)
+          .map((section) => section.power.level),
+        [1, 2, 3, 4, 5],
+      );
+    }
     assert.ok(
       entries.some((section) => section.title === "Artes Iniciadas — índice"),
     );
@@ -165,5 +167,71 @@ test("livros recebidos no ZIP têm referências ativas e artes W20 completas por
   assert.ok(skills.Conhecimentos.includes("Tecnologia"));
   assert.ok(
     wraith.sections.every((section) => section.sourceId === "w20-core"),
+  );
+});
+
+test("poderes têm efeitos individuais, nível e fonte; sistemas pendentes não são inventados", () => {
+  const expected = {
+    vampiro: 575,
+    changeling: 95,
+    cacador: 70,
+    mago: 0,
+    aparicao: 160,
+  };
+  for (const system of content) {
+    const powers = system.sections.filter((section) => section.power);
+    assert.equal(powers.length, expected[system.id]);
+    for (const section of powers) {
+      const power = section.power;
+      assert.ok(power.level === null || [1, 2, 3, 4, 5].includes(power.level));
+      assert.ok(power.effect.length >= 20);
+      assert.equal(section.body, power.effect);
+      assert.ok(power.family && power.branch && power.source && power.pages);
+      assert.equal(sourcesById.get(power.sourceId).status, "lido");
+      assert.doesNotMatch(power.effect, /\[símbolo do PDF\]/);
+      if (system.id === "changeling" || system.id === "aparicao")
+        assert.ok(power.rules.length > 100);
+      if (power.branch === "Poder ancestral" || power.branch === "Distinção")
+        assert.equal(power.level, null);
+    }
+  }
+  assert.equal(sourcesById.get("h5-core").status, "pendente");
+  assert.ok(
+    content
+      .find((system) => system.id === "mago")
+      .sections.every((section) => !section.power),
+  );
+});
+
+test("progressões distinguem alternativas de V5, duas trilhas de W20 e os cinco níveis de Talecraft", () => {
+  const c20 = content.find((system) => system.id === "changeling");
+  const tale = c20.sections.filter(
+    (section) => section.power?.family === "Fabulomancia",
+  );
+  assert.deepEqual(
+    tale.map((section) => section.power.level),
+    [1, 2, 3, 4, 5],
+  );
+  assert.ok(tale.every((section) => section.power.rules.includes("Sistema")));
+  const timeDilation = c20.sections.find(
+    (section) =>
+      section.power?.family === "Cronos" && section.power.level === 5,
+  );
+  assert.match(timeDilation.body, /envelhecer/);
+  const vampire = content.find((system) => system.id === "vampiro");
+  const animalism = vampire.sections.filter(
+    (section) => section.power?.family === "Animalismo",
+  );
+  assert.deepEqual(
+    [...new Set(animalism.map((section) => section.power.level))].sort(),
+    [1, 2, 3, 4, 5],
+  );
+  assert.ok(
+    animalism.filter((section) => section.power.level === 1).length > 1,
+  );
+  assert.ok(
+    vampire.sections
+      .filter((section) => section.power?.branch === "Fórmula")
+      .every((section) => section.power.family === "Alquimia Sangue-Ralo"),
   );
 });

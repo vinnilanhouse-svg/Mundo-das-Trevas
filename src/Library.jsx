@@ -35,6 +35,32 @@ export function SystemLabel({ system }) {
   );
 }
 
+function validatePower(power) {
+  return (
+    power &&
+    typeof power === "object" &&
+    !Array.isArray(power) &&
+    [
+      "family",
+      "branch",
+      "effect",
+      "cost",
+      "roll",
+      "duration",
+      "requirements",
+      "rules",
+      "source",
+      "pages",
+    ].every((key) => typeof power[key] === "string") &&
+    (power.level === null ||
+      (Number.isInteger(power.level) &&
+        power.level >= 1 &&
+        power.level <= 5)) &&
+    sources.some((source) => source.id === power.sourceId) &&
+    power.effect.trim().length > 0
+  );
+}
+
 export function validateLibrary(value) {
   return (
     Array.isArray(value) &&
@@ -80,7 +106,9 @@ export function validateLibrary(value) {
             ].every((k) => typeof a[k] === "string") &&
             /^[a-z0-9-]+$/.test(a.id) &&
             ["lore", "mechanics", "sheet"].includes(a.category) &&
-            sources.some((source) => source.id === a.sourceId),
+            sources.some((source) => source.id === a.sourceId) &&
+            (!a.power || validatePower(a.power)) &&
+            (a.powerFamily === undefined || typeof a.powerFamily === "string"),
         ) &&
         s.sheet &&
         typeof s.sheet.notice === "string" &&
@@ -113,6 +141,8 @@ export function validateLibrary(value) {
 export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
   const [query, setQuery] = useState("");
   const [group, setGroup] = useState("all");
+  const [powerLevel, setPowerLevel] = useState("all");
+  const [powerBranch, setPowerBranch] = useState("all");
   const base = `#/sistema/${system.id}`;
   const categorySlug = route.split("/")[3];
   const sectionSlug = route.split("/")[4];
@@ -124,14 +154,19 @@ export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
   const filtered = sections.filter(
     (s) =>
       (group === "all" || s.group === group) &&
-      normalize(`${s.title} ${s.body} ${s.group} ${s.edition}`).includes(
-        normalize(query),
-      ),
+      (powerLevel === "all" ||
+        (s.power && String(s.power.level) === powerLevel)) &&
+      (powerBranch === "all" || s.power?.branch === powerBranch) &&
+      normalize(
+        `${s.title} ${s.body} ${s.group} ${s.edition} ${s.power?.rules || ""}`,
+      ).includes(normalize(query)),
   );
   const article = sections.find((s) => s.id === sectionSlug);
   useEffect(() => {
     setQuery("");
     setGroup("all");
+    setPowerLevel("all");
+    setPowerBranch("all");
   }, [categorySlug, system.id]);
   return (
     <div className={`detail-page ${system.kind}`}>
@@ -230,6 +265,45 @@ export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
               </select>
             </label>
           </div>
+          {sections.some((s) => s.power) && (
+            <div className="power-filters">
+              <label>
+                Nível
+                <select
+                  aria-label="Filtrar poderes por nível"
+                  value={powerLevel}
+                  onChange={(e) => setPowerLevel(e.target.value)}
+                >
+                  <option value="all">Todos os níveis e tópicos</option>
+                  {[1, 2, 3, 4, 5].map((level) => (
+                    <option key={level} value={String(level)}>
+                      Nível {level}
+                    </option>
+                  ))}
+                  <option value="null">Sem nível numérico</option>
+                </select>
+              </label>
+              <label>
+                Tipo de poder
+                <select
+                  aria-label="Filtrar por tipo de poder"
+                  value={powerBranch}
+                  onChange={(e) => setPowerBranch(e.target.value)}
+                >
+                  <option value="all">Todos os tipos</option>
+                  {[
+                    ...new Set(
+                      sections
+                        .filter((s) => s.power)
+                        .map((s) => s.power.branch),
+                    ),
+                  ].map((branch) => (
+                    <option key={branch}>{branch}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+          )}
           <div className="results-label" role="status">
             {filtered.length} entradas encontradas nesta área
           </div>
@@ -274,6 +348,12 @@ export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
                     <span>{article.status}</span>
                   </div>
                   <div className="article-body">{article.body}</div>
+                  {article.power && <PowerDetails power={article.power} />}
+                  <PowerProgression
+                    system={system}
+                    article={article}
+                    base={base}
+                  />
                   <div className="source">
                     <span>
                       <strong>Fonte:</strong> {article.source}
@@ -317,6 +397,95 @@ export function SystemLibrary({ system, route, favorite, onFavorite, onEdit }) {
     </div>
   );
 }
+function PowerDetails({ power }) {
+  const rows = [
+    ["Nível", power.level ?? "Sem escala numérica"],
+    ["Tipo", power.branch],
+    ["Custo", power.cost],
+    ["Teste / parada", power.roll],
+    ["Duração", power.duration],
+    ["Requisitos / amálgama", power.requirements],
+  ].filter(([, value]) => value !== "");
+  return (
+    <section className="power-details" aria-label="Como usar este poder">
+      <h3>Como funciona</h3>
+      <dl>
+        {rows.map(([label, value]) => (
+          <div key={label}>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+      {power.rules && (
+        <details className="power-rules" open>
+          <summary>Sistema e condições da fonte</summary>
+          <div className="article-body">{power.rules}</div>
+        </details>
+      )}
+      {power.referenceNote && (
+        <p className="power-note">{power.referenceNote}</p>
+      )}
+      <p className="power-citation">Referência do efeito: {power.source}</p>
+    </section>
+  );
+}
+function PowerProgression({ system, article, base }) {
+  const family = article.power?.family || article.powerFamily;
+  if (!family) return null;
+  const related = system.sections.filter(
+    (s) => s.power && normalize(s.power.family) === normalize(family),
+  );
+  if (!related.length) return null;
+  const levels = [...new Set(related.map((s) => s.power.level))].sort(
+    (a, b) => (a ?? 99) - (b ?? 99),
+  );
+  return (
+    <section
+      className="power-progression"
+      aria-label={`Efeitos por nível de ${family}`}
+    >
+      <h3>
+        {levels.every((level) => level === null)
+          ? "Opções e distinções"
+          : "O que cada nível faz"}{" "}
+        — {family}
+      </h3>
+      {system.id === "vampiro" && (
+        <p>
+          Em V5, o nível libera opções de poderes. A personagem escolhe o que
+          aprende; não recebe automaticamente todos os poderes listados no
+          nível.
+        </p>
+      )}
+      {levels.map((level) => (
+        <details
+          key={level ?? "none"}
+          open={related.length <= 10 || article.power?.level === level}
+        >
+          <summary>
+            {level === null ? "Opções sem nível numérico" : `Nível ${level}`} ·{" "}
+            {related.filter((s) => s.power.level === level).length} opções
+          </summary>
+          <div>
+            {related
+              .filter((s) => s.power.level === level)
+              .map((s) => (
+                <div className="power-choice" key={s.id}>
+                  <a href={`${base}/mecanica/${s.id}`}>{s.title}</a>
+                  <span className="power-branch">
+                    {s.power.branch} · {s.edition}
+                  </span>
+                  <p>{s.power.effect}</p>
+                </div>
+              ))}
+          </div>
+        </details>
+      ))}
+    </section>
+  );
+}
+
 function SourceList({ system }) {
   const items = sources.filter((s) => system.sources.includes(s.id));
   return (

@@ -9,7 +9,7 @@ import "@fontsource/dm-sans/latin-500.css";
 import "@fontsource/dm-sans/latin-600.css";
 import "./styles.css";
 
-const CONTENT_KEY = "arquivo-trevas-content-v3";
+const CONTENT_KEY = "arquivo-trevas-content-v4";
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const paths = {
   grid: "M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z",
@@ -193,6 +193,7 @@ function App() {
     );
   }
   function saveContent(next) {
+    let persisted = true;
     try {
       localStorage.setItem(CONTENT_KEY, JSON.stringify(next));
     } catch {
@@ -200,8 +201,10 @@ function App() {
         "Não foi possível salvar. Exporte uma cópia antes de fechar a página.",
       );
       setStorageError(true);
+      persisted = false;
     }
     setSystems(next);
+    return persisted;
   }
   const normalize = (s) =>
     s
@@ -282,7 +285,7 @@ function App() {
           <button className="about-link" onClick={() => navigate("about")}>
             <Icon name="info" size={17} /> Sobre o projeto
           </button>
-          <span className="version">ACERVO INDEPENDENTE · V.0.3</span>
+          <span className="version">ACERVO INDEPENDENTE · V.0.4</span>
         </div>
       </aside>
       <div className="workspace">
@@ -682,20 +685,34 @@ function ContentEditor({
       setError("Preencha o título e o conteúdo da seção.");
       return;
     }
+    const editedSection = {
+      ...draft,
+      title: draft.title.trim(),
+      ...(draft.power ? { power: { ...draft.power, effect: draft.body } } : {}),
+    };
     const next = systems.map((s) =>
       s.id === system.id
         ? {
             ...s,
             sections: s.sections.map((a) =>
-              a.id === section.id ? { ...draft, title: draft.title.trim() } : a,
+              a.id === section.id ? editedSection : a,
             ),
           }
         : s,
     );
-    onSave(next);
-    setError("");
-    setSaved(true);
-    notify("Seção salva neste navegador. Exporte o JSON para publicar.");
+    const persisted = onSave(next);
+    setDraft(editedSection);
+    setError(
+      persisted
+        ? ""
+        : "Alterações apenas nesta aba. Exporte o JSON para guardar uma cópia.",
+    );
+    setSaved(persisted);
+    notify(
+      persisted
+        ? "Seção salva neste navegador. Exporte o JSON para publicar."
+        : "Sem espaço no navegador. Exporte o acervo para guardar suas alterações.",
+    );
   }
   function exportContent() {
     if (dirty) {
@@ -720,8 +737,8 @@ function ContentEditor({
     e.target.value = "";
     if (!file) return;
     if (!confirmDiscard()) return;
-    if (file.size > 2_000_000) {
-      setError("Use um arquivo JSON de até 2 MB.");
+    if (file.size > 16_000_000) {
+      setError("Use um arquivo JSON de acervo de até 16 MB.");
       return;
     }
     try {
