@@ -1,0 +1,484 @@
+/* Mago: original arcane seals and celestial geometry, isolated from the other systems. */
+.theme-mago {
+  --bg: #190e2c;
+  --panel: #241638;
+  --line: #78579b;
+  --muted: #ae98c5;
+  --rose: #c8a4f4;
+  --accent: #bb8ff0;
+  --color: #b6a2cb;
+  --tint: #3d2c4f;
+  color: #e9dff6;
+  background: var(--bg);
+  isolation: isolate;
+}
+.theme-mago .mage {
+  --color: #cba6f6;
+  --tint: #452566;
+}
+.arcane-atmosphere {
+  position: fixed;
+  inset: 0 0 0 250px;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #433156;
+  contain: strict;
+}
+.arcane-distance,
+.arcane-foreground {
+  position: absolute;
+  inset: -20px -20px -150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 62% center;
+}
+.arcane-distance {
+  background-image: url("/images/arcane-distance.svg");
+  transform: translate3d(0, var(--arcane-far, 0px), 0);
+}
+.arcane-foreground {
+  background-image: url("/images/arcane-foreground.svg");
+  transform: translate3d(0, var(--arcane-near, 0px), 0);
+}
+.arcane-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 75% 45%, #bd8dfa2b, transparent 57%),
+    radial-gradient(ellipse at 15% 90%, #7653ce1a, transparent 45%);
+  animation: arcane-aura 18s ease-in-out infinite alternate;
+}
+.arcane-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #130d29ba, transparent 68%, #140a2930),
+    linear-gradient(0deg, #110921b8, transparent 64%);
+}
+@keyframes arcane-aura {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.theme-mago .workspace {
+  position: relative;
+  z-index: 1;
+}
+.theme-mago .sidebar {
+  background: #180d2a;
+  border-color: #5f3e7f;
+}
+.theme-mago .topbar {
+  background: #1c1033ed;
+  border-color: #895caa73;
+}
+.theme-mago .brand-mark,
+.theme-mago .tiny-star {
+  color: #b6a2cb;
+}
+.theme-mago :is(.sidebar-label, .version, .slash) {
+  color: #9e84ba;
+}
+.theme-mago
+  :is(
+    .main-nav button,
+    .system-nav a,
+    .about-link,
+    .sidebar-note,
+    .breadcrumb,
+    .draft-indicator
+  ) {
+  color: #b8a5cc;
+}
+.theme-mago
+  :is(.system-nav a.selected, .system-nav a:hover, .main-nav button:hover) {
+  background: #3b2b4d;
+  color: #ece7f2;
+}
+.theme-mago .main-nav button > span {
+  background: #3b2b4c;
+  color: #d3c7e0;
+}
+.theme-mago .breadcrumb strong {
+  color: #e0d7e9;
+}
+.theme-mago .draft-indicator i {
+  background: #ad97c5;
+  box-shadow: 0 0 10px #b5a0cb44;
+}
+.theme-mago .back-link {
+  color: #cec0dc;
+  text-shadow: 0 1px 6px #1a1222;
+}
+.theme-mago .library-hero {
+  min-height: 360px;
+  padding: 40px;
+  border-color: #bc8ce475;
+  border-radius: 14px 3px 14px 3px;
+  background: linear-gradient(
+    90deg,
+    #211036f2,
+    #321747bd 40%,
+    #4b2a6b29 74%,
+    #5632700a
+  );
+  box-shadow:
+    inset 0 1px #e5caff33,
+    0 20px 60px #0f071b42;
+  position: relative;
+}
+.theme-mago .library-hero > div {
+  max-width: 600px;
+}
+.theme-mago .library-hero h1 {
+  font-size: clamp(76px, 7.5vw, 108px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: #eedaff;
+  text-shadow: 0 0 34px #a576dd44;
+  margin: 22px 0;
+}
+.theme-mago .library-hero h1 > span {
+  color: #cda8ee;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  margin-top: 18px;
+}
+.theme-mago .library-hero p {
+  max-width: 390px;
+  color: #c6b7d7;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.theme-mago .edition-badge {
+  border-color: #ad97c570;
+  color: #d6cbe2;
+  background: #2e213b80;
+}
+.theme-mago .library-hero h1 .edition-badge {
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  vertical-align: 0.35em;
+  margin-left: 6px;
+  color: #e1c4ff;
+  border-color: #a170cf;
+  background: #4c276aa8;
+}
+.theme-mago
+  :is(
+    .eyebrow,
+    .text-button,
+    .detail-tools,
+    .library-heading,
+    .library-index h3,
+    .topic-summary strong
+  ) {
+  color: #c3b3d5;
+}
+.theme-mago
+  :is(
+    .notice,
+    .area-card,
+    .source-list,
+    .character-sheet,
+    .arcanoi-card,
+    .power-details,
+    .power-progression,
+    .document-outline,
+    .source-transcription,
+    .document-link,
+    .document-results > a
+  ) {
+  background: #23192deb;
+  border-color: #78579b73;
+}
+.theme-mago .notice {
+  color: #c5b6d6;
+  line-height: 1.8;
+}
+.theme-mago .area-grid {
+  gap: 18px;
+}
+.theme-mago .area-card {
+  border-radius: 10px 3px 10px 3px;
+  padding: 28px 25px;
+  box-shadow:
+    inset 0 1px #dbcceb0a,
+    0 8px 30px #150e1c26;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+  border-top: 2px solid #a17ad0;
+  background: #241637f0;
+}
+.theme-mago .area-card:hover {
+  background: #43255df5;
+  border-color: #c09aeb;
+  transform: translateY(-3px);
+}
+.theme-mago
+  :is(
+    .area-card h2,
+    .library-article h2,
+    .arcanoi-directory > h3,
+    .arcanoi-card h4,
+    .document-catalog h2,
+    .document-reader h2,
+    .character-sheet > summary,
+    .power-details h3,
+    .power-progression h3
+  ) {
+  color: #eae4f0;
+}
+.theme-mago
+  :is(
+    .area-card h2 > span,
+    .area-card .eyebrow,
+    .area-card small,
+    .sheet-group legend,
+    .source-transcription > summary,
+    .document-outline summary
+  ) {
+  color: #bfaed2;
+}
+.theme-mago
+  :is(
+    .area-card p,
+    .library-article .article-body,
+    .reading-intro,
+    .arcanoi-card > p,
+    .arcanoi-directory > p,
+    .power-progression > p,
+    .power-choice p,
+    .power-details dd,
+    .sheet-notice,
+    .document-catalog > p,
+    .document-reader > p
+  ) {
+  color: #d0c3de;
+}
+.theme-mago :is(.button, .topic-summary > button, .topic-summary > a) {
+  background: #30233df2;
+  border-color: #7e5ba380;
+  color: #dacfe5;
+}
+.theme-mago
+  :is(.button:hover, .topic-summary > button:hover, .topic-summary > a:hover) {
+  background: #412f54;
+  border-color: #b09bc6;
+}
+.theme-mago
+  :is(
+    .area-tabs,
+    .library-index h3,
+    .arcanoi-card li,
+    .sheet-group,
+    .power-progression details,
+    .power-choice,
+    .source-row
+  ) {
+  border-color: #72539373;
+}
+.theme-mago
+  :is(
+    .area-tabs a,
+    .library-index a,
+    .library-index a small,
+    .source,
+    .source small,
+    .source-row p,
+    .source-row small,
+    .source-row a,
+    .topic-summary span,
+    .document-link span,
+    .document-method,
+    .document-outline small,
+    .document-results span,
+    .arcanoi-card > span,
+    .arcanoi-card li small,
+    .sheet-message,
+    .power-branch
+  ) {
+  color: #b9a6cd;
+}
+.theme-mago
+  :is(
+    .area-tabs a[aria-current="page"],
+    .area-tabs a:hover,
+    .library-index a[aria-current="page"],
+    .library-index a:hover
+  ) {
+  color: #ede7f4;
+  background: #3b2b4d;
+  border-color: #b39ec9;
+  box-shadow: none;
+}
+.theme-mago .library-layout {
+  background: #23192ded;
+  padding: 24px;
+  border: 1px solid #73549466;
+  border-radius: 3px;
+}
+.theme-mago .library-index {
+  scrollbar-color: #9072b0 transparent;
+}
+.theme-mago
+  :is(
+    .library-filters label,
+    .power-filters label,
+    .document-controls label,
+    .document-search,
+    .source-transcription label,
+    .sheet-group label,
+    .power-details dt,
+    .arcanoi-card li > strong,
+    .arcanoi-card li > a
+  ) {
+  color: #d3c7df;
+}
+.theme-mago :is(input, select, textarea, .document-text) {
+  background: #1f1628f5;
+  border-color: #755597;
+  color: #e4dcec;
+}
+.theme-mago input::placeholder {
+  color: #a68ec0;
+}
+.theme-mago :is(.article-meta span, .status-read, .status-pending) {
+  background: #3a2a4c;
+  color: #d8cce5;
+  border-color: #815fa5;
+}
+.theme-mago
+  :is(
+    .detail-tools > span,
+    .results-label,
+    .article-meta,
+    .source-transcription > p,
+    .source-list > p,
+    .power-note,
+    .power-citation
+  ) {
+  color: #baa8ce;
+}
+.theme-mago
+  :is(
+    .notice strong,
+    .source-list > summary,
+    .source-row strong,
+    .power-rules summary,
+    .power-choice > a,
+    .power-progression > details > summary,
+    .footer-diamond
+  ) {
+  color: #dacee6;
+}
+.theme-mago .footer {
+  color: #beadd1;
+  border-color: #8160a566;
+  background: #22192cb3;
+  padding: 20px;
+}
+.theme-mago ::selection {
+  background: #715292;
+  color: #fff;
+}
+@media (max-width: 1200px) {
+  .arcane-atmosphere {
+    left: 220px;
+  }
+}
+@media (max-width: 760px) {
+  .arcane-atmosphere {
+    left: 0;
+  }
+  .arcane-distance,
+  .arcane-foreground {
+    background-position: 68% center;
+  }
+  .theme-mago .library-hero {
+    min-height: 340px;
+    padding: 28px 22px;
+    background: linear-gradient(90deg, #211036ed, #2c1644cf 65%, #3b1c5599);
+  }
+  .theme-mago .library-hero h1 {
+    font-size: clamp(64px, 12vw, 82px);
+  }
+  .theme-mago .library-hero .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .theme-mago .library-hero p {
+    font-size: 13px;
+  }
+  .theme-mago .library-hero h1 .edition-badge {
+    font-size: 13px;
+  }
+  .theme-mago .library-layout {
+    padding: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arcane-glow {
+    animation: none;
+  }
+  .arcane-distance,
+  .arcane-foreground {
+    transform: none;
+  }
+  .theme-mago .area-card {
+    transition: none;
+  }
+  .theme-mago .area-card:hover {
+    transform: none;
+  }
+}
+@media print {
+  .arcane-atmosphere {
+    display: none !important;
+  }
+  .theme-mago {
+    background: white;
+    color: black;
+  }
+  .theme-mago .character-sheet,
+  .theme-mago .character-sheet :is(input, select, textarea) {
+    background: white !important;
+    color: black !important;
+  }
+  .theme-mago
+    :is(
+      .sheet-notice,
+      .sheet-group legend,
+      .sheet-group label,
+      .document-text
+    ) {
+    color: black !important;
+  }
+  .theme-mago .document-text {
+    background: white !important;
+    border-color: #ccc;
+  }
+}
+.theme-mago .library-hero .eyebrow {
+  color: #d5b3ff;
+}
+.theme-mago .power-progression > details {
+  background: #28183d;
+}
+.theme-mago :is(.power-details dl > div, .power-rules) {
+  border-color: #805b9e80;
+}
+.theme-mago :is(.document-reader a, .source-transcription a) {
+  color: #d6b4f5;
+}
+.theme-mago
+  :is(.system-nav a.selected, .system-nav a:hover, .main-nav button:hover) {
+  background: #4a2d67;
+  color: #f1dfff;
+}

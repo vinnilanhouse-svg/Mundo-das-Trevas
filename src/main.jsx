@@ -6,6 +6,7 @@ import { CemeteryAtmosphere } from "./CemeteryAtmosphere.jsx";
 import { ForestAtmosphere } from "./ForestAtmosphere.jsx";
 import { BunkerAtmosphere } from "./BunkerAtmosphere.jsx";
 import { CastleAtmosphere } from "./CastleAtmosphere.jsx";
+import { ArcaneAtmosphere } from "./ArcaneAtmosphere.jsx";
 import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
 import "@fontsource/dm-sans/latin-400.css";
@@ -16,6 +17,7 @@ import "./cemetery.css";
 import "./forest.css";
 import "./bunker.css";
 import "./castle.css";
+import "./arcane.css";
 
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const SYSTEM_THEMES = {
@@ -23,6 +25,7 @@ const SYSTEM_THEMES = {
   changeling: "theme-changeling",
   cacador: "theme-cacador",
   vampiro: "theme-vampiro",
+  mago: "theme-mago",
 };
 const paths = {
   grid: "M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z",
@@ -206,6 +209,7 @@ function App() {
       {selectedId === "changeling" && <ForestAtmosphere />}
       {selectedId === "cacador" && <BunkerAtmosphere />}
       {selectedId === "vampiro" && <CastleAtmosphere />}
+      {selectedId === "mago" && <ArcaneAtmosphere />}
       {menu && (
         <button
           className="sidebar-scrim"
