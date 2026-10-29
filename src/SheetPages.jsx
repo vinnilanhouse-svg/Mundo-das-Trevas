@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { getSheetLayout } from "./sheet-layout.js";
 import { createSheetReferences } from "./sheet-references.js";
+import { SheetEmblem } from "./SheetEmblem.jsx";
 
 function ReferenceLink({ reference, children }) {
   if (!reference) return children;
@@ -164,6 +165,12 @@ export function SheetPages({ system, values, onChange }) {
           aria-label={`Folha ${index + 1}: ${page.title}`}
         >
           <header className="sheet-paper-header">
+            <div className="sheet-header-scene" aria-hidden="true" />
+            <SheetEmblem systemId={system.id} />
+            <span className="sheet-folio" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")} /{" "}
+              {String(layout.pages.length).padStart(2, "0")}
+            </span>
             <span>FICHA DE PERSONAGEM · {system.editionLabel}</span>
             <h3>{system.name}</h3>
             <p>

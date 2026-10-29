@@ -967,7 +967,7 @@
 .portal-theme :is(.sheet-message, .sheet-mark-help) {
   color: #b8cbd4;
 }
-/* Paper stays light, like the real sheets, with the cinematic shell around it. */
+/* Base paper styling; sheet-themes.css supplies the individual screen themes. */
 .portal-theme .character-sheet .sheet-paper {
   box-shadow: 0 20px 60px #0006;
   outline-offset: -8px;
