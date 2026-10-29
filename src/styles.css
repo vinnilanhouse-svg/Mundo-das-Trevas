@@ -2167,6 +2167,38 @@ main {
   color: #d6bfdc;
   overflow-wrap: anywhere;
 }
+.roll-notes {
+  margin-top: 20px;
+  border-top: 1px solid currentColor;
+  padding-top: 15px;
+  overflow-wrap: anywhere;
+}
+.roll-notes h4 {
+  margin: 0 0 12px;
+  color: inherit;
+  font-size: 15px;
+}
+.roll-note {
+  margin: 0 0 16px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.roll-note p {
+  margin: 0 0 8px;
+  white-space: pre-line;
+}
+.roll-note small {
+  display: block;
+  font-size: 11px;
+}
+.roll-note a,
+.roll-emphasis {
+  color: inherit;
+}
+.roll-note a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .power-rules {
   margin-top: 20px;
   border-top: 1px solid #54335f;

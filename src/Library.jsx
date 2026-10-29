@@ -4,6 +4,7 @@ import { DocumentLinks, DocumentReader, SourceText } from "./Documents.jsx";
 import { documents } from "./document-data.js";
 import { SheetPages } from "./SheetPages.jsx";
 import { routeGroup } from "./library-routes.js";
+import { RollText, RollNotes, searchableRules } from "./rolls.jsx";
 
 const categories = [
   {
@@ -63,7 +64,7 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
         (s.power && String(s.power.level) === powerLevel)) &&
       (powerBranch === "all" || s.power?.branch === powerBranch) &&
       normalize(
-        `${s.title} ${s.body} ${s.group} ${s.edition} ${s.power?.rules || ""}`,
+        `${s.title} ${s.body} ${s.group} ${s.edition} ${searchableRules(s.power)}`,
       ).includes(normalize(query)),
   );
   const arcanoiDirectory =
@@ -299,7 +300,9 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
                     <span>{article.edition}</span>
                     <span>{article.status}</span>
                   </div>
-                  <div className="article-body">{article.body}</div>
+                  <div className="article-body">
+                    <RollText text={article.body} />
+                  </div>
                   {arcanoiDirectory && article.id === arcanoiDirectory.id && (
                     <ArcanoiDirectory system={system} base={base} />
                   )}
@@ -458,14 +461,19 @@ function PowerDetails({ power }) {
         {rows.map(([label, value]) => (
           <div key={label}>
             <dt>{label}</dt>
-            <dd>{value}</dd>
+            <dd>
+              <RollText text={String(value)} />
+            </dd>
           </div>
         ))}
       </dl>
+      <RollNotes power={power} />
       {power.rules && (
         <details className="power-rules" open>
-          <summary>Sistema e condições da fonte</summary>
-          <div className="article-body">{power.rules}</div>
+          <summary>Testes, condições e resultados na fonte</summary>
+          <div className="article-body">
+            <RollText text={power.rules} />
+          </div>
         </details>
       )}
       {power.referenceNote && (
