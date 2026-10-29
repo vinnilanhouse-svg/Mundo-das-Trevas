@@ -98,7 +98,7 @@ export function getSheetLayout(system) {
       skills(),
       band("Disciplinas", each("Disciplinas")),
       band("Sangue e condição", [
-        group("Sangue"),
+        group("Sangue", "Fome"),
         block("Humanidade", ["condicao-humanidade"]),
         group("Dano e condições"),
       ]),

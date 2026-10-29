@@ -67,6 +67,7 @@ function SheetField({
   return (
     <div
       className={`sheet-field sheet-field-${field.kind}${compact ? " sheet-field-compact" : ""}`}
+      data-field-id={field.id}
     >
       <label
         htmlFor={controlId}
@@ -89,6 +90,7 @@ function SheetField({
                   tabIndex={-1}
                   className={value > index ? "is-marked" : ""}
                   data-value={index + 1}
+                  style={{ "--mark-index": index }}
                   title={`Marcar ${index + 1}; clicar novamente para zerar`}
                   onClick={() =>
                     onChange(field.id, value === index + 1 ? 0 : index + 1)
@@ -174,11 +176,9 @@ export function SheetPages({ system, values, onChange }) {
             <span>FICHA DE PERSONAGEM · {system.editionLabel}</span>
             <h3>
               {system.name}
-              {system.id === "changeling" && (
-                <small className="sheet-title-edition">
-                  {system.editionLabel}
-                </small>
-              )}
+              <small className="sheet-title-edition">
+                {system.editionLabel}
+              </small>
             </h3>
             <p>
               {system.subtitle} <span>·</span> {page.title}
@@ -208,7 +208,7 @@ export function SheetPages({ system, values, onChange }) {
                     {column.map((block, i) => (
                       <fieldset
                         key={`${block.title}-${i}`}
-                        className={`sheet-group${block.compact ? " sheet-block-compact" : ""}`}
+                        className={`sheet-group${block.compact ? " sheet-block-compact" : ""}${system.id === "vampiro" && block.fields.some((f) => ["sangue-fome", "condicao-humanidade"].includes(f.id)) ? " sheet-cathedral-resource" : ""}${system.id === "mago" && block.fields.some((f) => f.id === "recursos-magicos-quintessencia") ? " sheet-astral-resources" : ""}`}
                       >
                         {block.title && (
                           <legend>

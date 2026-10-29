@@ -1,0 +1,652 @@
+/* Selected concepts. Only the screen changes; the original A4 forms remain printable. */
+@media screen {
+  .sheet-pages-vampiro {
+    --sheet-surface: #080f16;
+    --sheet-panel: #101f29;
+    --sheet-ink: #e7edf2;
+    --sheet-muted: #adbdcc;
+    --sheet-ui-accent: #ff5468;
+    --sheet-rule: #9b344b;
+    --sheet-rule-soft: #4c687b70;
+    --sheet-input: #09151f;
+    --sheet-focus: #192e3c;
+    --sheet-scene: url("/images/sheets/vampiro-neon-header.webp");
+  }
+  .sheet-pages-cacador {
+    --sheet-surface: #efe7d8;
+    --sheet-panel: #f6f1e6;
+    --sheet-ink: #302a24;
+    --sheet-muted: #685b4c;
+    --sheet-ui-accent: #9b3b16;
+    --sheet-rule: #9b7856;
+    --sheet-rule-soft: #92755550;
+    --sheet-input: #fffdf7;
+    --sheet-focus: #ffffff;
+    --sheet-scene: url("/images/sheets/cacador-archive-header.webp");
+  }
+  .sheet-pages-mago {
+    --sheet-surface: #0d1227;
+    --sheet-panel: #171e38;
+    --sheet-ink: #f1e9df;
+    --sheet-muted: #c1bad4;
+    --sheet-ui-accent: #e1c795;
+    --sheet-rule: #a18b63;
+    --sheet-rule-soft: #b8a17a50;
+    --sheet-input: #10162c;
+    --sheet-focus: #252b4d;
+    --sheet-scene: url("/images/sheets/mago-astral-header.webp");
+  }
+  .sheet-pages-aparicao {
+    --sheet-surface: #071d20;
+    --sheet-panel: #102d30;
+    --sheet-ink: #ede7d5;
+    --sheet-muted: #b0c8c2;
+    --sheet-ui-accent: #d8bd82;
+    --sheet-rule: #a58953;
+    --sheet-rule-soft: #aa915a60;
+    --sheet-input: #0b2529;
+    --sheet-focus: #224346;
+    --sheet-scene: url("/images/sheets/aparicao-sea-header.webp");
+  }
+  .portal-theme
+    :is(
+      .sheet-pages-vampiro,
+      .sheet-pages-cacador,
+      .sheet-pages-mago,
+      .sheet-pages-aparicao
+    )
+    .sheet-paper
+    .sheet-paper-header {
+    height: 285px;
+    padding: 36px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    border-radius: 3px;
+    border-color: var(--sheet-rule);
+    text-align: center;
+  }
+  .portal-theme
+    :is(
+      .sheet-pages-vampiro,
+      .sheet-pages-cacador,
+      .sheet-pages-mago,
+      .sheet-pages-aparicao
+    )
+    .sheet-header-scene {
+    opacity: 1;
+    background-position: center;
+  }
+  .portal-theme
+    :is(
+      .sheet-pages-vampiro,
+      .sheet-pages-cacador,
+      .sheet-pages-mago,
+      .sheet-pages-aparicao
+    )
+    .sheet-paper-header::after {
+    background: linear-gradient(
+      0deg,
+      #030711eb,
+      #03071170 38%,
+      transparent 80%
+    );
+  }
+  .portal-theme
+    :is(
+      .sheet-pages-vampiro,
+      .sheet-pages-cacador,
+      .sheet-pages-mago,
+      .sheet-pages-aparicao
+    )
+    .sheet-paper-header
+    .sheet-emblem {
+    width: 40px;
+    height: 40px;
+    top: 16px;
+    left: 18px;
+    color: #e3d2ae;
+    filter: drop-shadow(0 2px 4px #000);
+  }
+  .portal-theme
+    :is(
+      .sheet-pages-vampiro,
+      .sheet-pages-cacador,
+      .sheet-pages-mago,
+      .sheet-pages-aparicao
+    )
+    .sheet-paper-header
+    > span,
+  .portal-theme
+    :is(
+      .sheet-pages-vampiro,
+      .sheet-pages-cacador,
+      .sheet-pages-mago,
+      .sheet-pages-aparicao
+    )
+    .sheet-paper-header
+    p {
+    color: #eee5d6;
+    text-shadow: 0 2px 5px #000;
+  }
+  .portal-theme
+    :is(
+      .sheet-pages-vampiro,
+      .sheet-pages-cacador,
+      .sheet-pages-mago,
+      .sheet-pages-aparicao
+    )
+    .sheet-title-edition {
+    display: inline-block;
+    font: inherit;
+    color: var(--sheet-ui-accent);
+    margin-left: 0.18em;
+  }
+  /* Noites de Neon: cold urban panels and crimson accents. */
+  .portal-theme .sheet-pages-vampiro .sheet-paper {
+    border: 1px solid #aa263e;
+    border-radius: 3px;
+    background:
+      linear-gradient(125deg, #15263555, transparent 45%), var(--sheet-surface);
+    box-shadow:
+      0 20px 60px #0008,
+      0 0 20px #c51b3014;
+  }
+  .portal-theme .sheet-pages-vampiro .sheet-paper-header {
+    align-items: start;
+    border-left: 3px solid #fa2943;
+  }
+  .portal-theme .sheet-pages-vampiro .sheet-paper-header h3 {
+    font:
+      600 clamp(34px, 4.4vw, 59px)/1.05 "DM Sans",
+      sans-serif;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #f2f4f6;
+    text-shadow: 0 2px 8px #000;
+  }
+  .portal-theme .sheet-pages-vampiro .sheet-section > h4 {
+    font:
+      600 15px/1.5 "DM Sans",
+      sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #e1e9f0;
+    padding: 9px 12px;
+    border-left: 3px solid #f3334f;
+    background: linear-gradient(90deg, #172b3b, transparent);
+    text-align: left;
+  }
+  .portal-theme .sheet-pages-vampiro .sheet-section > h4::before {
+    display: none;
+  }
+  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-group {
+    border-radius: 7px 2px;
+    border-top: 1px solid #536b7e;
+    background: linear-gradient(140deg, #122430, #08121b);
+  }
+  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-group legend {
+    font:
+      600 13px/1.5 "DM Sans",
+      sans-serif;
+    color: #e2eaf1;
+    letter-spacing: 0.07em;
+  }
+  /* The two cathedral panels deliberately retain their ivory/gold treatment. */
+  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-cathedral-resource {
+    color-scheme: light;
+    color: #442b28;
+    background: linear-gradient(125deg, #fcf5e3, #e7dcc6);
+    border: 3px double #a98547;
+    border-radius: 18px 18px 4px 4px;
+    padding: 10px 13px 12px;
+  }
+  .portal-theme
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-cathedral-resource
+    legend {
+    font:
+      600 24px/1.3 "Cormorant Garamond",
+      Georgia,
+      serif;
+    background: #391423;
+    color: #e5c580;
+    border: 1px solid #b28a43;
+    padding: 3px 16px;
+    border-radius: 12px 12px 2px 2px;
+  }
+  .portal-theme
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-cathedral-resource::after {
+    content: "";
+    display: block;
+    height: 105px;
+    background: url("/images/sheets/fome-medallion.svg") center / contain
+      no-repeat;
+    margin: 10px auto 0;
+  }
+  .portal-theme
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-cathedral-resource:has(
+      [data-field-id="condicao-humanidade"]
+    )::after {
+    background-image: url("/images/sheets/humanidade-medallion.svg");
+  }
+  .portal-theme
+    .sheet-pages-vampiro
+    .sheet-cathedral-resource
+    .sheet-field
+    > label {
+    color: #442b28;
+  }
+  .portal-theme .sheet-pages-vampiro .sheet-cathedral-resource .sheet-rating {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+  .portal-theme
+    .sheet-pages-vampiro
+    .sheet-cathedral-resource
+    .sheet-marks
+    button {
+    background: #fff9ed;
+    border-color: #90733f;
+    border-radius: 1px;
+  }
+  .portal-theme
+    .sheet-pages-vampiro
+    .sheet-cathedral-resource
+    .sheet-marks
+    .is-marked {
+    background: #8c2438;
+    border-color: #8c2438;
+    box-shadow: inset 0 0 0 2px #f8ecd6;
+  }
+  .portal-theme
+    .sheet-pages-vampiro
+    .sheet-cathedral-resource
+    .sheet-rating
+    input[type="number"] {
+    color: #442b28;
+    background: #fffaf0;
+    border-color: #b09a75;
+  }
+  /* Arquivo da Caçada: ivory case-file paper and burnt-orange index tabs. */
+  .portal-theme .sheet-pages-cacador .sheet-paper {
+    color-scheme: light;
+    border: 1px solid #af8b62;
+    border-top: 5px solid #b95a2b;
+    border-radius: 4px 12px 5px 3px;
+    background:
+      repeating-linear-gradient(0deg, #8c653c04 0 1px, transparent 1px 5px),
+      radial-gradient(ellipse at top right, #e0ceb1, transparent 65%),
+      var(--sheet-surface);
+    box-shadow:
+      0 25px 60px #0006,
+      5px 6px 0 #b7a184,
+      8px 9px 0 #4c4235;
+  }
+  .portal-theme .sheet-pages-cacador .sheet-paper-header {
+    align-items: start;
+    border: 0;
+    border-radius: 2px;
+  }
+  .portal-theme .sheet-pages-cacador .sheet-paper-header::before {
+    display: none;
+  }
+  .portal-theme .sheet-pages-cacador .sheet-paper-header::after {
+    background:
+      linear-gradient(90deg, #060b10b8, transparent 85%),
+      linear-gradient(0deg, #080b108c, transparent 65%);
+  }
+  .portal-theme .sheet-pages-cacador .sheet-paper-header h3 {
+    color: #fff6e6;
+    font-size: clamp(30px, 4vw, 53px);
+    letter-spacing: -0.025em;
+    text-shadow: 0 2px 5px #000;
+  }
+  .portal-theme .sheet-pages-cacador .sheet-paper-header .sheet-title-edition {
+    color: #ff9a59;
+  }
+  .portal-theme .sheet-pages-cacador .sheet-section > h4 {
+    color: #fdf3df;
+    background: linear-gradient(
+      105deg,
+      #a74218 0,
+      #a74218 65%,
+      transparent 65.2%
+    );
+    padding: 7px 14px;
+    font:
+      600 14px/1.5 "DM Sans",
+      sans-serif;
+    letter-spacing: 0.07em;
+    border-bottom: 1px solid #9b7856;
+  }
+  .portal-theme .sheet-pages-cacador .sheet-section > h4::after {
+    display: none;
+  }
+  .portal-theme .sheet-pages-cacador .sheet-paper .sheet-group {
+    background: #fffaf05c;
+    border-radius: 2px;
+    border-color: #9d81634d;
+  }
+  .portal-theme .sheet-pages-cacador .sheet-paper .sheet-group legend {
+    color: #703615;
+    font-weight: 600;
+  }
+  .portal-theme .sheet-pages-cacador .sheet-paper .sheet-field-text input {
+    border-color: #baa88f;
+  }
+  /* Observatório Astral: midnight blue, brass orbits and constellations. */
+  .portal-theme .sheet-pages-mago .sheet-paper {
+    border: 1px solid #b09a70;
+    border-radius: 5px;
+    background:
+      radial-gradient(circle at 10% 20%, #b3a3e822 0 1px, transparent 2px) 0 0 /
+        97px 131px,
+      radial-gradient(ellipse at top right, #4d397c50, transparent 50%),
+      var(--sheet-surface);
+  }
+  .portal-theme .sheet-pages-mago .sheet-paper::before {
+    border-color: #b8a17a60;
+  }
+  .portal-theme .sheet-pages-mago .sheet-paper-header h3 {
+    color: #f0d6a9;
+    font-size: clamp(43px, 5.4vw, 76px);
+    text-shadow: 0 2px 9px #000;
+  }
+  .portal-theme .sheet-pages-mago .sheet-section > h4 {
+    color: #e3c999;
+  }
+  .portal-theme .sheet-pages-mago .sheet-section > h4::before,
+  .portal-theme .sheet-pages-mago .sheet-section > h4::after {
+    height: 1px;
+    border: 0;
+    background: linear-gradient(90deg, transparent, #b49d70);
+  }
+  .portal-theme .sheet-pages-mago .sheet-paper .sheet-group {
+    border-radius: 2px;
+    background: linear-gradient(120deg, #1d2445a6, #0e142a);
+  }
+  .portal-theme
+    .sheet-pages-mago
+    .sheet-section[aria-label="Esferas"]
+    .sheet-group {
+    background:
+      url("/images/sheets/astral-chart.svg") center / 180px no-repeat,
+      #121a31;
+    background-blend-mode: soft-light;
+  }
+  .portal-theme .sheet-pages-mago .sheet-paper .sheet-astral-resources {
+    background: radial-gradient(ellipse, #39305d88, transparent), #0f162b;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-field {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    margin-block: 12px 22px;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-field > label {
+    color: #e4cba1;
+    font-size: 13px;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-rating {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 10px;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks {
+    position: relative;
+    display: block;
+    width: 180px;
+    height: 180px;
+    max-width: 100%;
+    background: url("/images/sheets/astral-chart.svg") center / 100% no-repeat;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks button {
+    position: absolute;
+    left: calc(50% - 6px);
+    top: calc(50% - 6px);
+    transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
+      translateX(78px);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border-color: #d3b886;
+  }
+  /* Mar de Sombras: black-green sea, bronze chains and funerary ornaments. */
+  .portal-theme .sheet-pages-aparicao .sheet-paper {
+    border: 2px solid #a78b52;
+    border-radius: 8px;
+    padding-inline: 38px;
+    background:
+      radial-gradient(ellipse at top, #27646333, transparent 60%),
+      linear-gradient(160deg, #092528, #06171d);
+  }
+  .portal-theme .sheet-pages-aparicao .sheet-paper::before {
+    inset: 10px 6px;
+    border: 0;
+    border-radius: 0;
+    background:
+      url("/images/sheets/bronze-chain.svg") left top / 20px 80px repeat-y,
+      url("/images/sheets/bronze-chain.svg") right top / 20px 80px repeat-y;
+  }
+  .portal-theme .sheet-pages-aparicao .sheet-paper-header {
+    border-radius: 18px 18px 2px 2px;
+  }
+  .portal-theme .sheet-pages-aparicao .sheet-paper-header h3 {
+    color: #edddb8;
+    letter-spacing: 0.045em;
+  }
+  .portal-theme .sheet-pages-aparicao .sheet-section > h4 {
+    color: #ddc792;
+  }
+  .portal-theme .sheet-pages-aparicao .sheet-section > h4::before,
+  .portal-theme .sheet-pages-aparicao .sheet-section > h4::after {
+    background: linear-gradient(90deg, transparent, #b79b63);
+  }
+  .portal-theme .sheet-pages-aparicao .sheet-paper .sheet-group {
+    background: linear-gradient(135deg, #163b3b, #0a2429);
+    border-radius: 10px 3px;
+    border-color: #a5895366;
+  }
+  .portal-theme .sheet-pages-aparicao .sheet-paper .sheet-group legend {
+    color: #ddc792;
+  }
+  .portal-theme .sheet-pages-aparicao .sheet-paper .sheet-field-text input {
+    background: #204344;
+    border-color: #5e817244;
+  }
+  @container (max-width:700px) {
+    .portal-theme
+      :is(
+        .sheet-pages-vampiro,
+        .sheet-pages-cacador,
+        .sheet-pages-mago,
+        .sheet-pages-aparicao
+      )
+      .sheet-paper
+      .sheet-paper-header {
+      height: 245px;
+      padding: 50px 15px 23px;
+    }
+    .portal-theme .sheet-pages-aparicao .sheet-paper {
+      padding-inline: 28px;
+    }
+    .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks {
+      width: 160px;
+      height: 160px;
+    }
+    .portal-theme
+      .sheet-pages-mago
+      .sheet-astral-resources
+      .sheet-marks
+      button {
+      transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
+        translateX(67px);
+    }
+  }
+  @container (max-width:540px) {
+    .portal-theme
+      :is(
+        .sheet-pages-vampiro,
+        .sheet-pages-cacador,
+        .sheet-pages-mago,
+        .sheet-pages-aparicao
+      )
+      .sheet-paper
+      .sheet-paper-header {
+      height: 225px;
+    }
+    .portal-theme
+      :is(
+        .sheet-pages-vampiro,
+        .sheet-pages-cacador,
+        .sheet-pages-mago,
+        .sheet-pages-aparicao
+      )
+      .sheet-paper-header
+      h3 {
+      font-size: 34px;
+      overflow-wrap: anywhere;
+    }
+    .portal-theme .sheet-pages-vampiro .sheet-section > h4 {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+    }
+    .portal-theme .sheet-pages-cacador .sheet-section > h4 {
+      background: #a74218;
+      font-size: 12px;
+    }
+    .portal-theme .sheet-pages-aparicao .sheet-paper {
+      padding-inline: 22px;
+    }
+    .portal-theme .sheet-pages-aparicao .sheet-paper::before {
+      inset-inline: 2px;
+      background-size: 15px 60px;
+    }
+    .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks {
+      width: 180px;
+      height: 180px;
+    }
+    .portal-theme
+      .sheet-pages-mago
+      .sheet-astral-resources
+      .sheet-marks
+      button {
+      transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
+        translateX(78px);
+    }
+  }
+}
+@media print {
+  .sheet-title-edition {
+    display: none !important;
+  }
+}
+@media screen {
+  .portal-theme
+    :is(.sheet-pages-vampiro, .sheet-pages-cacador)
+    .sheet-paper
+    .sheet-paper-header {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-marks button {
+    border-color: #829cae;
+  }
+  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-marks .is-marked {
+    border-color: #ff5468;
+  }
+  .portal-theme .sheet-pages-mago .sheet-paper .sheet-astral-resources {
+    position: relative;
+    min-height: 345px;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-field {
+    position: static;
+    display: block;
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-field > label {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .portal-theme
+    .sheet-pages-mago
+    .sheet-astral-resources
+    .sheet-field:last-child
+    > label {
+    top: 275px;
+    color: #c9b4ec;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-rating {
+    display: contents;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks {
+    position: absolute;
+    top: 75px;
+    left: calc(50% - 90px);
+    width: 180px;
+    height: 180px;
+  }
+  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks button {
+    transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
+      translateX(78px);
+  }
+  .portal-theme
+    .sheet-pages-mago
+    .sheet-astral-resources
+    .sheet-field:last-child
+    .sheet-marks {
+    background: none;
+    width: 132px;
+    height: 132px;
+    left: calc(50% - 66px);
+    top: 99px;
+  }
+  .portal-theme
+    .sheet-pages-mago
+    .sheet-astral-resources
+    .sheet-field:last-child
+    .sheet-marks
+    button {
+    transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
+      translateX(54px);
+    border-color: #bba1e5;
+  }
+  .portal-theme
+    .sheet-pages-mago
+    .sheet-astral-resources
+    .sheet-field:last-child
+    .sheet-marks
+    .is-marked {
+    background: #bba1e5;
+  }
+  .portal-theme
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-astral-resources
+    input[type="number"] {
+    position: absolute;
+    top: 46px;
+    left: calc(50% - 20px);
+  }
+  .portal-theme
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-astral-resources
+    .sheet-field:last-child
+    input[type="number"] {
+    top: 299px;
+  }
+}
