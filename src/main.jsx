@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import initialContent from "./content.json";
 import { SystemLibrary, SystemLabel } from "./Library.jsx";
+import { ArchiveSearch } from "./ArchiveSearch.jsx";
 import { PortalAtmosphere } from "./PortalAtmosphere.jsx";
 import { WelcomeNotice, ContactPage } from "./Community.jsx";
 import "@fontsource/cormorant-garamond/latin-500.css";
@@ -125,12 +126,10 @@ function App() {
     ),
   );
   const [route, setRoute] = useState(location.hash);
-  const [query, setQuery] = useState("");
   const [edition, setEdition] = useState("Todas as edições");
   const [view, setView] = useState("all");
   const [menu, setMenu] = useState(false);
   const [storageError, setStorageError] = useState(false);
-  const searchRef = useRef(null);
   useEffect(() => {
     const onHash = () => {
       setRoute(location.hash);
@@ -160,16 +159,6 @@ function App() {
       setStorageError(true);
     }
   }, [favorites]);
-  useEffect(() => {
-    const handler = (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
-        e.preventDefault();
-        searchRef.current?.focus();
-      }
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, []);
   const selectedId = route.startsWith("#/sistema/")
     ? route.split("/")[2]
     : null;
@@ -192,18 +181,10 @@ function App() {
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
     );
   }
-  const normalize = (s) =>
-    s
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase();
   const filtered = systems.filter(
-    (s) =>
-      (view !== "favorites" || favorites.includes(s.id)) &&
-      (edition === "Todas as edições" || s.editions.includes(edition)) &&
-      normalize(
-        `${s.name} ${s.editionLabel} ${s.subtitle} ${s.original} ${s.theme}`,
-      ).includes(normalize(query)),
+    (system) =>
+      (view !== "favorites" || favorites.includes(system.id)) &&
+      (edition === "Todas as edições" || system.editions.includes(edition)),
   );
   return (
     <div
@@ -281,20 +262,11 @@ function App() {
             Contato
           </a>
         </nav>
-        <label className="portal-search">
-          <Icon name="search" size={18} />
-          <input
-            ref={searchRef}
-            value={query}
-            onChange={(event) => {
-              setQuery(event.target.value);
-              if (selected || contactOpen || view !== "all") navigate("all");
-            }}
-            placeholder="Buscar no acervo…"
-            aria-label="Buscar um sistema ou tema"
-          />
-          <kbd>Ctrl K</kbd>
-        </label>
+        <ArchiveSearch
+          systems={systems}
+          systemId={selected?.id}
+          route={route}
+        />
         <button
           className={`icon-button portal-favorites ${view === "favorites" && !selected ? "is-favorite" : ""}`}
           onClick={() => navigate("favorites")}
@@ -585,12 +557,11 @@ function App() {
                   <p>
                     {view === "favorites" && !favorites.length
                       ? "Use a estrela nos cartões para guardar seus sistemas favoritos."
-                      : "Tente outro nome ou remova os filtros de edição."}
+                      : "Tente outra edição ou remova o filtro."}
                   </p>
                   <button
                     className="button"
                     onClick={() => {
-                      setQuery("");
                       setEdition("Todas as edições");
                       if (!favorites.length) setView("all");
                     }}

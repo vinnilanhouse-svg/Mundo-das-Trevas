@@ -1534,3 +1534,208 @@
     inset: 0;
   }
 }
+/* Content search: five direct destinations, scoped to the current world. */
+.archive-search {
+  position: relative;
+}
+.archive-search > svg {
+  flex-shrink: 0;
+}
+.archive-search input::-webkit-search-cancel-button {
+  display: none;
+}
+.archive-search-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.archive-search-clear {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid #607d8b66;
+  border-radius: 50%;
+  background: #1e3340;
+  color: #e1e9eb;
+  font-size: 19px;
+  line-height: 1;
+}
+.archive-search-clear:hover {
+  background: #304c5c;
+}
+.archive-search-panel {
+  position: absolute;
+  z-index: 60;
+  right: 0;
+  top: calc(100% + 12px);
+  width: min(530px, calc(100vw - 40px));
+  max-height: min(680px, 74dvh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #526f80;
+  border-radius: 7px;
+  background: #0b1824fa;
+  color: #d9e4e8;
+  box-shadow: 0 24px 70px #000a;
+  backdrop-filter: blur(18px);
+  scrollbar-width: thin;
+  scrollbar-color: #456574 #0b1824;
+}
+.archive-search-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 19px 20px 0;
+}
+.archive-search-heading > span {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #acbdc9;
+}
+.archive-search-heading > strong {
+  color: var(--portal-accent);
+  font-size: 11px;
+  font-weight: 500;
+}
+.archive-search-count {
+  font-size: 11px;
+  line-height: 1.7;
+  padding: 10px 20px 14px;
+  color: #a5bac7;
+  overflow-wrap: anywhere;
+}
+.archive-search-panel ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.archive-search-panel li {
+  border-top: 1px solid #435c6b66;
+}
+.archive-search-result {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 7px;
+  padding: 12px 20px;
+  transition: background 0.15s;
+}
+.archive-search-result:hover,
+.archive-search-result:focus-visible {
+  background: #1b3545;
+  outline: 2px solid #a5c4d5;
+  outline-offset: -2px;
+}
+.archive-search-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #9eb4c1;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.archive-search-system {
+  padding: 3px 7px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  color: #d1dee2;
+  font-size: 9px;
+}
+.archive-search-system[data-system="vampiro"] {
+  color: #ee9299;
+}
+.archive-search-system[data-system="changeling"] {
+  color: #b4d6a6;
+}
+.archive-search-system[data-system="cacador"] {
+  color: #e9bc7d;
+}
+.archive-search-system[data-system="mago"] {
+  color: #c6acf3;
+}
+.archive-search-system[data-system="aparicao"] {
+  color: #b0ccc0;
+}
+.archive-search-result > strong {
+  font:
+    500 22px/1.1 "Cormorant Garamond",
+    Georgia,
+    serif;
+  color: #f4ebdb;
+  overflow-wrap: anywhere;
+}
+
+.archive-search-excerpt {
+  color: #a4bac8;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.archive-search-empty {
+  padding: 0 20px 20px;
+  font-size: 12px;
+  color: #a6bdcb;
+  line-height: 1.8;
+}
+.archive-search-help {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  border-top: 1px solid #435c6b66;
+  padding: 12px 20px;
+  font-size: 10px;
+  color: #9eb3bf;
+}
+.archive-search-help button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 5px 0;
+  background: transparent;
+  color: #d0dde3;
+  font-size: 11px;
+}
+.archive-search-help kbd {
+  display: inline-block;
+  font-size: 9px;
+}
+@media (max-width: 650px) {
+  .archive-search-panel {
+    width: 100%;
+    max-height: 65dvh;
+    top: calc(100% + 9px);
+  }
+  .archive-search-result {
+    padding: 15px;
+  }
+  .archive-search-heading {
+    padding: 16px 15px 0;
+  }
+  .archive-search-count {
+    padding-inline: 15px;
+  }
+  .archive-search-excerpt {
+    font-size: 12px;
+  }
+  .archive-search-help {
+    padding-inline: 15px;
+  }
+  .archive-search-help > span {
+    display: none;
+  }
+}
