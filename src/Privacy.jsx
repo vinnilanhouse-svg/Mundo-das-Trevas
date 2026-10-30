@@ -1,4 +1,7 @@
 import React, {
+  Component,
+  lazy,
+  Suspense,
   createContext,
   useContext,
   useEffect,
@@ -21,6 +24,18 @@ import {
 import { createAnalyticsRoutes } from "./analytics-routes.js";
 
 const PrivacyContext = createContext(null);
+const ConsentAnalytics = lazy(() => import("./ConsentAnalytics.jsx"));
+
+// Analytics and its lazy chunk may be blocked without affecting the archive.
+class AnalyticsBoundary extends Component {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    return this.state.failed ? null : this.props.children;
+  }
+}
 const initialChoice = () => {
   try {
     return readPrivacyChoice(window.localStorage);
@@ -85,31 +100,6 @@ export function PrivacyProvider({ systems, children }) {
     };
   }, [choice]);
 
-  useEffect(() => {
-    if (!import.meta.env.PROD || !trackingPermitted) return;
-    let active = true;
-    let stop;
-    import("./analytics-runtime.js")
-      .then(({ startAnalytics }) =>
-        startAnalytics({
-          routes,
-          getChoice: () => current.current,
-          isActive: () => active,
-        }),
-      )
-      .then((cleanup) => {
-        if (active) stop = cleanup;
-        else cleanup();
-      })
-      .catch(() => {
-        // Blocking metrics or a temporary SDK failure never blocks the archive.
-      });
-    return () => {
-      active = false;
-      stop?.();
-    };
-  }, [trackingPermitted, routes]);
-
   const saveChoice = (analytics) => {
     const withdrawing = current.current?.analytics === true && !analytics;
     const next = createPrivacyChoice(analytics);
@@ -136,6 +126,13 @@ export function PrivacyProvider({ systems, children }) {
       value={{ choice, settingsOpen, setSettingsOpen, saveChoice, saved }}
     >
       {children}
+      {import.meta.env.PROD && trackingPermitted && (
+        <AnalyticsBoundary>
+          <Suspense fallback={null}>
+            <ConsentAnalytics routes={routes} choiceRef={current} />
+          </Suspense>
+        </AnalyticsBoundary>
+      )}
     </PrivacyContext.Provider>
   );
 }
