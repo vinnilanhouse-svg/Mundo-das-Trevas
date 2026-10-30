@@ -2,6 +2,25 @@ import React, { useMemo } from "react";
 import { getSheetLayout } from "./sheet-layout.js";
 import { createSheetReferences } from "./sheet-references.js";
 import { SheetEmblem } from "./SheetEmblem.jsx";
+import { SheetGlyph, SheetAstralScale } from "./SheetGlyph.jsx";
+
+function blockClassName(systemId, block) {
+  const classes = ["sheet-group"];
+  if (block.compact) classes.push("sheet-block-compact");
+  if (
+    systemId === "vampiro" &&
+    block.fields.some((f) =>
+      ["sangue-fome", "condicao-humanidade"].includes(f.id),
+    )
+  )
+    classes.push("sheet-cathedral-resource");
+  if (
+    systemId === "mago" &&
+    block.fields.some((f) => f.id === "recursos-magicos-quintessencia")
+  )
+    classes.push("sheet-astral-resources");
+  return classes.join(" ");
+}
 
 function ReferenceLink({ reference, children }) {
   if (!reference) return children;
@@ -73,6 +92,9 @@ function SheetField({
         htmlFor={controlId}
         className={hideLabel ? "sheet-visually-hidden" : undefined}
       >
+        {systemId === "mago" && field.id.startsWith("esferas-") && (
+          <SheetGlyph name={label} />
+        )}
         {hideLabel ? (
           label
         ) : (
@@ -149,10 +171,11 @@ function SheetField({
 
 export function SheetPages({ system, values, onChange }) {
   const layout = getSheetLayout(system);
+  const illustrated = system.id !== "changeling";
   const references = useMemo(() => createSheetReferences(system), [system]);
   return (
     <div
-      className={`sheet-pages sheet-pages-${system.id}`}
+      className={`sheet-pages sheet-pages-${system.id}${illustrated ? " sheet-illustrated" : ""}`}
       style={{ "--sheet-accent": layout.accent }}
     >
       <p className="sheet-mark-help">
@@ -166,6 +189,9 @@ export function SheetPages({ system, values, onChange }) {
           className="sheet-paper"
           aria-label={`Folha ${index + 1}: ${page.title}`}
         >
+          {illustrated && (
+            <div className="sheet-art-border" aria-hidden="true" />
+          )}
           <header className="sheet-paper-header">
             <div className="sheet-header-scene" aria-hidden="true" />
             <SheetEmblem systemId={system.id} />
@@ -175,7 +201,7 @@ export function SheetPages({ system, values, onChange }) {
             </span>
             <span>FICHA DE PERSONAGEM · {system.editionLabel}</span>
             <h3>
-              {system.name}
+              <span className="sheet-title-name">{system.name}</span>
               <small className="sheet-title-edition">
                 {system.editionLabel}
               </small>
@@ -191,6 +217,9 @@ export function SheetPages({ system, values, onChange }) {
               aria-label={section.title}
             >
               <h4>
+                {illustrated && (
+                  <SheetGlyph name={section.title} systemId={system.id} />
+                )}
                 <ReferenceLink reference={references.heading(section.title)}>
                   {section.title}
                 </ReferenceLink>
@@ -208,10 +237,16 @@ export function SheetPages({ system, values, onChange }) {
                     {column.map((block, i) => (
                       <fieldset
                         key={`${block.title}-${i}`}
-                        className={`sheet-group${block.compact ? " sheet-block-compact" : ""}${system.id === "vampiro" && block.fields.some((f) => ["sangue-fome", "condicao-humanidade"].includes(f.id)) ? " sheet-cathedral-resource" : ""}${system.id === "mago" && block.fields.some((f) => f.id === "recursos-magicos-quintessencia") ? " sheet-astral-resources" : ""}`}
+                        className={blockClassName(system.id, block)}
                       >
                         {block.title && (
                           <legend>
+                            {illustrated && (
+                              <SheetGlyph
+                                name={block.title}
+                                systemId={system.id}
+                              />
+                            )}
                             <ReferenceLink
                               reference={references.blockReference(
                                 block.title,
@@ -223,6 +258,11 @@ export function SheetPages({ system, values, onChange }) {
                             </ReferenceLink>
                           </legend>
                         )}
+                        {illustrated &&
+                          system.id === "mago" &&
+                          block.fields.some(
+                            (f) => f.id === "recursos-magicos-quintessencia",
+                          ) && <SheetAstralScale />}
                         {block.fields.map((field) => (
                           <SheetField
                             key={field.id}
@@ -254,6 +294,13 @@ export function SheetPages({ system, values, onChange }) {
               </div>
             </section>
           ))}
+          {illustrated && (
+            <div className="sheet-art-ending" aria-hidden="true">
+              <SheetGlyph
+                name={system.id === "aparicao" ? "Grilhões" : "Esferas"}
+              />
+            </div>
+          )}
           {system.id === "changeling" && (
             <div className="sheet-stained-footer" aria-hidden="true" />
           )}

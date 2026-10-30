@@ -1,652 +1,1753 @@
-/* Selected concepts. Only the screen changes; the original A4 forms remain printable. */
+/* Illustrated character sheets. All ornament and screen sizing stay out of the A4 forms. */
+.sheet-glyph,
+.sheet-wheel-scale,
+.sheet-art-border,
+.sheet-art-ending {
+  display: none;
+}
 @media screen {
   .sheet-pages-vampiro {
-    --sheet-surface: #080f16;
-    --sheet-panel: #101f29;
-    --sheet-ink: #e7edf2;
-    --sheet-muted: #adbdcc;
-    --sheet-ui-accent: #ff5468;
-    --sheet-rule: #9b344b;
-    --sheet-rule-soft: #4c687b70;
+    --sheet-surface: #060e15;
+    --sheet-panel: #0c1c27;
+    --sheet-ink: #e9eef1;
+    --sheet-muted: #a8bdc9;
+    --sheet-ui-accent: #ff3c59;
+    --sheet-rule: #536f80;
+    --sheet-rule-soft: #48617366;
     --sheet-input: #09151f;
-    --sheet-focus: #192e3c;
+    --sheet-focus: #1a2e3c;
+    --sheet-mark-ink: #071119;
     --sheet-scene: url("/images/sheets/vampiro-neon-header.webp");
+    --sheet-body-font: "DM Sans", sans-serif;
   }
   .sheet-pages-cacador {
-    --sheet-surface: #efe7d8;
-    --sheet-panel: #f6f1e6;
-    --sheet-ink: #302a24;
-    --sheet-muted: #685b4c;
-    --sheet-ui-accent: #9b3b16;
-    --sheet-rule: #9b7856;
-    --sheet-rule-soft: #92755550;
-    --sheet-input: #fffdf7;
-    --sheet-focus: #ffffff;
+    --sheet-surface: #eee4d2;
+    --sheet-panel: #f6f0e5;
+    --sheet-ink: #2c2924;
+    --sheet-muted: #73654f;
+    --sheet-ui-accent: #a83d12;
+    --sheet-rule: #96866d;
+    --sheet-rule-soft: #8a7a5b59;
+    --sheet-input: #faf9f4;
+    --sheet-focus: #fffefa;
+    --sheet-mark-ink: #fff9ed;
     --sheet-scene: url("/images/sheets/cacador-archive-header.webp");
+    --sheet-body-font: Georgia, serif;
   }
   .sheet-pages-mago {
-    --sheet-surface: #0d1227;
-    --sheet-panel: #171e38;
-    --sheet-ink: #f1e9df;
-    --sheet-muted: #c1bad4;
-    --sheet-ui-accent: #e1c795;
-    --sheet-rule: #a18b63;
-    --sheet-rule-soft: #b8a17a50;
-    --sheet-input: #10162c;
-    --sheet-focus: #252b4d;
+    --sheet-surface: #0b1024;
+    --sheet-panel: #121a31;
+    --sheet-ink: #eee9df;
+    --sheet-muted: #bdb8ce;
+    --sheet-ui-accent: #e1c694;
+    --sheet-rule: #a78e5f;
+    --sheet-rule-soft: #b69d695c;
+    --sheet-input: #171d35;
+    --sheet-focus: #292944;
+    --sheet-mark-ink: #101627;
     --sheet-scene: url("/images/sheets/mago-astral-header.webp");
+    --sheet-body-font: Georgia, serif;
   }
   .sheet-pages-aparicao {
-    --sheet-surface: #071d20;
-    --sheet-panel: #102d30;
-    --sheet-ink: #ede7d5;
-    --sheet-muted: #b0c8c2;
-    --sheet-ui-accent: #d8bd82;
-    --sheet-rule: #a58953;
-    --sheet-rule-soft: #aa915a60;
-    --sheet-input: #0b2529;
-    --sheet-focus: #224346;
+    --sheet-surface: #05191d;
+    --sheet-panel: #092b2f;
+    --sheet-ink: #eee7d4;
+    --sheet-muted: #b1c4bb;
+    --sheet-ui-accent: #dfc58b;
+    --sheet-rule: #ab8d51;
+    --sheet-rule-soft: #b89a5b70;
+    --sheet-input: #1b3b3d;
+    --sheet-focus: #2c4b4a;
+    --sheet-mark-ink: #082023;
     --sheet-scene: url("/images/sheets/aparicao-sea-header.webp");
+    --sheet-body-font: Georgia, serif;
   }
-  .portal-theme
-    :is(
-      .sheet-pages-vampiro,
-      .sheet-pages-cacador,
-      .sheet-pages-mago,
-      .sheet-pages-aparicao
-    )
-    .sheet-paper
-    .sheet-paper-header {
-    height: 285px;
-    padding: 36px 28px 28px;
+  .portal-theme .character-sheet:has(.sheet-illustrated) {
+    background: linear-gradient(130deg, #0c1620a6, #0c16205c);
+    border-color: #52606b59;
+    padding: 24px 14px;
+  }
+  .portal-theme .character-sheet .sheet-illustrated .sheet-paper {
+    position: relative;
+    padding: 22px 40px 26px;
+    max-width: 1120px;
+    border: 1px solid var(--sheet-rule);
+    border-radius: 3px;
+    margin: 28px auto 48px;
+    box-shadow: 0 30px 90px #0009;
+    background: var(--sheet-surface);
+    outline: none;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper::before {
+    display: none;
+  }
+  .portal-theme .sheet-illustrated .sheet-art-border {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper .sheet-paper-header {
+    height: 250px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
-    border-radius: 3px;
-    border-color: var(--sheet-rule);
+    padding: 30px 24px;
+    margin: -21px -17px 18px;
+    border: 0;
+    border-bottom: 1px solid var(--sheet-rule);
+    border-radius: 0;
+    background: var(--sheet-surface);
     text-align: center;
   }
-  .portal-theme
-    :is(
-      .sheet-pages-vampiro,
-      .sheet-pages-cacador,
-      .sheet-pages-mago,
-      .sheet-pages-aparicao
-    )
-    .sheet-header-scene {
+  .portal-theme .sheet-illustrated .sheet-paper-header .sheet-header-scene {
+    background: var(--sheet-scene) center / cover no-repeat;
     opacity: 1;
-    background-position: center;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper-header::after {
+    background:
+      linear-gradient(90deg, #03091644, transparent 45%, #03091622),
+      linear-gradient(0deg, var(--sheet-surface), transparent 35%);
   }
   .portal-theme
-    :is(
-      .sheet-pages-vampiro,
-      .sheet-pages-cacador,
-      .sheet-pages-mago,
-      .sheet-pages-aparicao
-    )
-    .sheet-paper-header::after {
-    background: linear-gradient(
-      0deg,
-      #030711eb,
-      #03071170 38%,
-      transparent 80%
-    );
-  }
-  .portal-theme
-    :is(
-      .sheet-pages-vampiro,
-      .sheet-pages-cacador,
-      .sheet-pages-mago,
-      .sheet-pages-aparicao
-    )
+    .sheet-illustrated
     .sheet-paper-header
-    .sheet-emblem {
+    > span:not(.sheet-folio) {
+    color: #d8d3c5;
+    font:
+      500 9px/1.5 "DM Sans",
+      sans-serif;
+    letter-spacing: 0.25em;
+    text-shadow: 0 1px 4px #000;
+    margin-top: 26px;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper-header > .sheet-folio {
+    color: var(--sheet-ui-accent);
+    font:
+      500 10px/1.5 "DM Sans",
+      sans-serif;
+    top: 19px;
+    right: 23px;
+    letter-spacing: 0.15em;
+    text-shadow: 0 1px 4px #000;
+    opacity: 1;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper-header .sheet-emblem {
+    display: none;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper-header h3 {
+    font:
+      500 80px/1 "Cormorant Garamond",
+      Georgia,
+      serif;
+    letter-spacing: 0.015em;
+    color: #f2dfb5;
+    text-transform: uppercase;
+    margin: 8px 0 10px;
+    text-shadow: 0 2px 10px #000;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper-header .sheet-title-edition {
+    font: inherit;
+    margin-left: 0.14em;
+    color: inherit;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper-header p {
+    color: #f3e8d0;
+    font:
+      16px/1.5 Georgia,
+      serif;
+    letter-spacing: 0.035em;
+    text-transform: none;
+    text-shadow: 0 2px 5px #000;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper .sheet-section {
+    position: relative;
+    margin: 14px 0 0;
+    padding: 0 15px 15px;
+    border: 1px solid var(--sheet-rule-soft);
+    border-radius: 3px;
+    background: linear-gradient(135deg, #111b2d66, transparent);
+  }
+  .portal-theme .sheet-illustrated .sheet-paper .sheet-section > h4 {
+    font:
+      600 23px/1.2 "Cormorant Garamond",
+      Georgia,
+      serif;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-align: left;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    margin: 0 0 10px;
+    color: var(--sheet-ui-accent);
+    border-bottom: 1px solid var(--sheet-rule-soft);
+  }
+  .portal-theme .sheet-illustrated .sheet-section > h4::before,
+  .portal-theme .sheet-illustrated .sheet-section > h4::after {
+    display: none;
+  }
+  .portal-theme .sheet-illustrated .sheet-paper .sheet-reference-link {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 0;
+  }
+  .portal-theme
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-reference-link
+    > svg:not(.sheet-glyph) {
+    width: 8px;
+    height: 8px;
+    opacity: 0.3;
+    margin-left: 2px;
+    vertical-align: super;
+  }
+  .portal-theme
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-reference-link:is(:hover, :focus-visible) {
+    color: var(--sheet-ui-accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .portal-theme
+    .sheet-illustrated
+    .sheet-reference-link:is(:hover, :focus-visible)
+    > svg {
+    opacity: 1;
+  }
+  .portal-theme .sheet-illustrated .sheet-section-columns {
+    gap: 16px;
+  }
+  .portal-theme .sheet-illustrated .sheet-column {
+    gap: 16px;
+  }
+  .portal-theme .sheet-illustrated .sheet-glyph {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    flex: 0 0 23px;
+    color: var(--sheet-ui-accent);
+    vertical-align: middle;
+  }
+  .portal-theme .character-sheet .sheet-illustrated .sheet-paper .sheet-group {
+    padding: 10px 12px;
+    border: 1px solid var(--sheet-rule-soft);
+    border-radius: 3px;
+    background: linear-gradient(120deg, var(--sheet-panel), transparent 200%);
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-group
+    legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: auto;
+    max-width: 100%;
+    padding: 3px 8px;
+    margin: 0;
+    border: 0;
+    text-align: center;
+    font:
+      600 20px/1.25 "Cormorant Garamond",
+      Georgia,
+      serif;
+    letter-spacing: 0.035em;
+    color: var(--sheet-ui-accent);
+  }
+  .portal-theme .character-sheet .sheet-illustrated .sheet-paper .sheet-field {
+    min-height: 36px;
+    padding: 5px 0;
+    gap: 8px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-field
+    > label {
+    font: 14px/1.5 var(--sheet-body-font);
+    color: var(--sheet-ink);
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-field-text {
+    border: 0;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-field-text
+    input {
+    font: 14px/1.4 var(--sheet-body-font);
+    color: var(--sheet-ink);
+    background: var(--sheet-input);
+    padding: 7px 8px;
+    border: 1px solid var(--sheet-rule-soft);
+    border-radius: 2px;
+    box-shadow: inset 0 2px 5px #0002;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-field-notes
+    > label {
+    color: var(--sheet-muted);
+    margin: 0 0 7px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-field-notes
+    textarea {
+    font: 14px/27px var(--sheet-body-font);
+    color: var(--sheet-ink);
+    min-height: 115px;
+    padding: 6px 9px;
+    background:
+      repeating-linear-gradient(
+        transparent 0 26px,
+        var(--sheet-rule-soft) 26px 27px
+      ),
+      var(--sheet-input);
+    border: 1px solid var(--sheet-rule-soft);
+    border-radius: 2px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper:first-of-type
+    .sheet-field-notes
+    textarea {
+    min-height: 90px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-field-compact
+    textarea {
+    min-height: 70px;
+  }
+  .portal-theme .character-sheet .sheet-illustrated .sheet-paper .sheet-rating {
+    gap: 6px;
+    max-width: 64%;
+  }
+  .portal-theme .character-sheet .sheet-illustrated .sheet-paper .sheet-marks {
+    gap: 4px;
+    max-width: 240px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-marks
+    button {
+    width: 15px;
+    height: 15px;
+    flex-basis: 15px;
+    background: transparent;
+    border: 1px solid var(--sheet-rule);
+    box-shadow: inset 0 1px 2px #0003;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-marks
+    .is-marked {
+    background: var(--sheet-ui-accent);
+    border-color: var(--sheet-ui-accent);
+    box-shadow: inset 0 0 0 2px var(--sheet-panel);
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-rating
+    input[type="number"] {
+    width: 30px;
+    min-width: 30px;
+    font:
+      12px/1.4 "DM Sans",
+      sans-serif;
+    color: var(--sheet-muted);
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--sheet-rule-soft);
+    padding: 3px 1px;
+    border-radius: 0;
+  }
+  .portal-theme
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-section[aria-label="Identidade"]
+    .sheet-group {
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+  .portal-theme
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-section[aria-label="Identidade"]
+    .sheet-field-text
+    > label {
+    min-width: 68px;
+  }
+  .portal-theme .sheet-illustrated .sheet-art-ending {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 18px;
+    height: 88px;
+    margin: 20px -12px -8px;
+    color: var(--sheet-ui-accent);
+    background: linear-gradient(90deg, transparent, #b69d6940, transparent)
+      center / 100% 1px no-repeat;
+  }
+  .portal-theme .sheet-illustrated .sheet-art-ending .sheet-glyph {
     width: 40px;
     height: 40px;
-    top: 16px;
-    left: 18px;
-    color: #e3d2ae;
-    filter: drop-shadow(0 2px 4px #000);
+    padding: 7px;
+    flex-basis: 40px;
+    border: 1px solid var(--sheet-rule-soft);
+    border-radius: 50%;
+    background: var(--sheet-surface);
+  }
+  .portal-theme .sheet-illustrated .sheet-paper-footer {
+    padding-top: 12px;
+    margin-top: 15px;
+    color: var(--sheet-muted);
+    font:
+      10px/1.5 "DM Sans",
+      sans-serif;
+  }
+
+  .portal-theme
+    .character-sheet
+    .sheet-illustrated
+    .sheet-paper
+    .sheet-field:has(> label.sheet-visually-hidden)
+    .sheet-rating {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+  /* Noites de Neon: angular section frames and condensed urban typography. */
+  .portal-theme .character-sheet .sheet-pages-vampiro .sheet-paper {
+    background:
+      radial-gradient(ellipse at top, #12273488, transparent 55%), #060e15;
+    border: 1px solid #762535;
+    padding-inline: 24px;
+  }
+  .portal-theme .character-sheet .sheet-pages-vampiro .sheet-art-border {
+    border: 16px solid transparent;
+    border-image: url("/images/sheets/neon-panel.svg") 20 / 18px / 0 stretch;
   }
   .portal-theme
-    :is(
-      .sheet-pages-vampiro,
-      .sheet-pages-cacador,
-      .sheet-pages-mago,
-      .sheet-pages-aparicao
-    )
-    .sheet-paper-header
-    > span,
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-paper-header {
+    align-items: flex-start;
+    text-align: left;
+    height: 220px;
+    margin: -8px -10px 20px;
+    padding: 22px 28px;
+  }
   .portal-theme
-    :is(
-      .sheet-pages-vampiro,
-      .sheet-pages-cacador,
-      .sheet-pages-mago,
-      .sheet-pages-aparicao
-    )
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper-header::after {
+    background:
+      linear-gradient(90deg, #030a12e6, transparent 82%),
+      linear-gradient(0deg, #060e15, transparent 40%);
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
     .sheet-paper-header
-    p {
-    color: #eee5d6;
+    > span:not(.sheet-folio) {
+    margin-top: 0;
+  }
+  .portal-theme .character-sheet .sheet-pages-vampiro .sheet-paper-header h3 {
+    font:
+      700 92px/0.95 "Barlow Condensed",
+      sans-serif;
+    letter-spacing: -0.025em;
+    color: #e9edef;
     text-shadow: 0 2px 5px #000;
   }
   .portal-theme
-    :is(
-      .sheet-pages-vampiro,
-      .sheet-pages-cacador,
-      .sheet-pages-mago,
-      .sheet-pages-aparicao
-    )
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper-header
     .sheet-title-edition {
-    display: inline-block;
-    font: inherit;
-    color: var(--sheet-ui-accent);
-    margin-left: 0.18em;
+    color: #ff304e;
   }
-  /* Noites de Neon: cold urban panels and crimson accents. */
-  .portal-theme .sheet-pages-vampiro .sheet-paper {
-    border: 1px solid #aa263e;
-    border-radius: 3px;
-    background:
-      linear-gradient(125deg, #15263555, transparent 45%), var(--sheet-surface);
-    box-shadow:
-      0 20px 60px #0008,
-      0 0 20px #c51b3014;
-  }
-  .portal-theme .sheet-pages-vampiro .sheet-paper-header {
-    align-items: start;
-    border-left: 3px solid #fa2943;
-  }
-  .portal-theme .sheet-pages-vampiro .sheet-paper-header h3 {
+  .portal-theme .character-sheet .sheet-pages-vampiro .sheet-paper-header p {
     font:
-      600 clamp(34px, 4.4vw, 59px)/1.05 "DM Sans",
-      sans-serif;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    color: #f2f4f6;
-    text-shadow: 0 2px 8px #000;
-  }
-  .portal-theme .sheet-pages-vampiro .sheet-section > h4 {
-    font:
-      600 15px/1.5 "DM Sans",
+      600 19px/1.4 "Barlow Condensed",
       sans-serif;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: #e1e9f0;
-    padding: 9px 12px;
-    border-left: 3px solid #f3334f;
-    background: linear-gradient(90deg, #172b3b, transparent);
-    text-align: left;
-  }
-  .portal-theme .sheet-pages-vampiro .sheet-section > h4::before {
-    display: none;
-  }
-  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-group {
-    border-radius: 7px 2px;
-    border-top: 1px solid #536b7e;
-    background: linear-gradient(140deg, #122430, #08121b);
-  }
-  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-group legend {
-    font:
-      600 13px/1.5 "DM Sans",
-      sans-serif;
-    color: #e2eaf1;
-    letter-spacing: 0.07em;
-  }
-  /* The two cathedral panels deliberately retain their ivory/gold treatment. */
-  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-cathedral-resource {
-    color-scheme: light;
-    color: #442b28;
-    background: linear-gradient(125deg, #fcf5e3, #e7dcc6);
-    border: 3px double #a98547;
-    border-radius: 18px 18px 4px 4px;
-    padding: 10px 13px 12px;
+    letter-spacing: 0.2em;
+    color: #e5e8ed;
   }
   .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-section {
+    border: 12px solid transparent;
+    border-image: url("/images/sheets/neon-panel.svg") 20 / 15px / 0 stretch;
+    padding: 0 9px 10px;
+    background: linear-gradient(140deg, #10202c88, #050e17);
+    margin-top: 12px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-section
+    > h4 {
+    font:
+      600 20px/1.2 "Barlow Condensed",
+      sans-serif;
+    letter-spacing: 0.15em;
+    color: #dfe8ef;
+    padding: 5px 0 12px;
+    border-bottom-color: #385568;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-group {
+    border-color: #375566;
+    border-radius: 8px 3px;
+    background: linear-gradient(120deg, #10212c, #06111a);
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-group
+    legend {
+    font:
+      600 19px/1.2 "Barlow Condensed",
+      sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    color: #e2e8ed;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-field
+    > label {
+    font-size: 13px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-marks
+    button {
+    border-color: #9bb3c1;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-marks
+    .is-marked {
+    border-color: #ff3c59;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-cathedral-resource {
+    color-scheme: light;
+    background: radial-gradient(ellipse at center, #fff8e8, #e4d5b7);
+    border: 4px double #b49450;
+    border-radius: 22px 22px 4px 4px;
+    padding: 8px 10px 12px;
+    box-shadow:
+      inset 0 0 0 3px #fbebc9,
+      inset 0 0 20px #b1894c33;
+  }
+  .portal-theme
+    .character-sheet
     .sheet-pages-vampiro
     .sheet-paper
     .sheet-cathedral-resource
     legend {
+    background: linear-gradient(#4a1727, #200b16);
+    color: #ebcf8d;
     font:
-      600 24px/1.3 "Cormorant Garamond",
+      600 25px/1.2 "Cormorant Garamond",
       Georgia,
       serif;
-    background: #391423;
-    color: #e5c580;
-    border: 1px solid #b28a43;
-    padding: 3px 16px;
-    border-radius: 12px 12px 2px 2px;
+    padding: 6px 13px;
+    border: 3px double #b59454;
+    border-radius: 14px 14px 1px 1px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
   .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-cathedral-resource
+    legend
+    .sheet-glyph {
+    display: none;
+  }
+  .portal-theme
+    .character-sheet
     .sheet-pages-vampiro
     .sheet-paper
     .sheet-cathedral-resource::after {
     content: "";
     display: block;
-    height: 105px;
-    background: url("/images/sheets/fome-medallion.svg") center / contain
-      no-repeat;
+    height: 142px;
     margin: 10px auto 0;
+    background: url("/images/sheets/fome-jewel.webp") center / contain no-repeat;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-vampiro
     .sheet-paper
     .sheet-cathedral-resource:has(
       [data-field-id="condicao-humanidade"]
     )::after {
-    background-image: url("/images/sheets/humanidade-medallion.svg");
+    background-image: url("/images/sheets/humanidade-jewel.webp");
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-vampiro
+    .sheet-paper
     .sheet-cathedral-resource
-    .sheet-field
-    > label {
-    color: #442b28;
-  }
-  .portal-theme .sheet-pages-vampiro .sheet-cathedral-resource .sheet-rating {
+    .sheet-rating {
     max-width: 100%;
     width: 100%;
     justify-content: center;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-vampiro
+    .sheet-paper
+    .sheet-cathedral-resource
+    .sheet-marks {
+    gap: 4px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-vampiro
+    .sheet-paper
     .sheet-cathedral-resource
     .sheet-marks
     button {
-    background: #fff9ed;
-    border-color: #90733f;
-    border-radius: 1px;
+    width: 18px;
+    height: 22px;
+    flex-basis: 18px;
+    border-radius: 0;
+    border: 1px solid #8d733e;
+    background: #fff8e8;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-vampiro
+    .sheet-paper
     .sheet-cathedral-resource
     .sheet-marks
     .is-marked {
-    background: #8c2438;
-    border-color: #8c2438;
-    box-shadow: inset 0 0 0 2px #f8ecd6;
+    background: #811e34;
+    border-color: #811e34;
+    box-shadow: inset 0 0 0 2px #f7eacb;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-vampiro
+    .sheet-paper
     .sheet-cathedral-resource
     .sheet-rating
-    input[type="number"] {
-    color: #442b28;
-    background: #fffaf0;
-    border-color: #b09a75;
+    input {
+    color: #543620;
+    border-color: #a58950;
   }
-  /* Arquivo da Caçada: ivory case-file paper and burnt-orange index tabs. */
-  .portal-theme .sheet-pages-cacador .sheet-paper {
+  .portal-theme .character-sheet .sheet-pages-vampiro .sheet-art-ending {
+    height: 44px;
+  }
+
+  /* Arquivo da Caçada: loose case-file pages, torn photograph and printed orange tabs. */
+  .portal-theme .character-sheet .sheet-pages-cacador .sheet-paper {
     color-scheme: light;
-    border: 1px solid #af8b62;
-    border-top: 5px solid #b95a2b;
-    border-radius: 4px 12px 5px 3px;
+    border: 1px solid #b49d76;
+    border-radius: 5px 12px 6px 3px;
+    padding: 20px 32px 30px;
     background:
-      repeating-linear-gradient(0deg, #8c653c04 0 1px, transparent 1px 5px),
-      radial-gradient(ellipse at top right, #e0ceb1, transparent 65%),
-      var(--sheet-surface);
+      radial-gradient(ellipse at center, #fffdf066, #b99c5b20),
+      url("/images/sheets/paper-grain.svg") center / 256px repeat;
     box-shadow:
-      0 25px 60px #0006,
-      5px 6px 0 #b7a184,
-      8px 9px 0 #4c4235;
+      0 28px 70px #0008,
+      5px 6px 0 #cfbd9c,
+      9px 11px 0 #76664e;
   }
-  .portal-theme .sheet-pages-cacador .sheet-paper-header {
-    align-items: start;
-    border: 0;
-    border-radius: 2px;
-  }
-  .portal-theme .sheet-pages-cacador .sheet-paper-header::before {
-    display: none;
-  }
-  .portal-theme .sheet-pages-cacador .sheet-paper-header::after {
-    background:
-      linear-gradient(90deg, #060b10b8, transparent 85%),
-      linear-gradient(0deg, #080b108c, transparent 65%);
-  }
-  .portal-theme .sheet-pages-cacador .sheet-paper-header h3 {
-    color: #fff6e6;
-    font-size: clamp(30px, 4vw, 53px);
-    letter-spacing: -0.025em;
-    text-shadow: 0 2px 5px #000;
-  }
-  .portal-theme .sheet-pages-cacador .sheet-paper-header .sheet-title-edition {
-    color: #ff9a59;
-  }
-  .portal-theme .sheet-pages-cacador .sheet-section > h4 {
-    color: #fdf3df;
-    background: linear-gradient(
-      105deg,
-      #a74218 0,
-      #a74218 65%,
-      transparent 65.2%
-    );
-    padding: 7px 14px;
-    font:
-      600 14px/1.5 "DM Sans",
-      sans-serif;
-    letter-spacing: 0.07em;
-    border-bottom: 1px solid #9b7856;
-  }
-  .portal-theme .sheet-pages-cacador .sheet-section > h4::after {
-    display: none;
-  }
-  .portal-theme .sheet-pages-cacador .sheet-paper .sheet-group {
-    background: #fffaf05c;
-    border-radius: 2px;
-    border-color: #9d81634d;
-  }
-  .portal-theme .sheet-pages-cacador .sheet-paper .sheet-group legend {
-    color: #703615;
-    font-weight: 600;
-  }
-  .portal-theme .sheet-pages-cacador .sheet-paper .sheet-field-text input {
-    border-color: #baa88f;
-  }
-  /* Observatório Astral: midnight blue, brass orbits and constellations. */
-  .portal-theme .sheet-pages-mago .sheet-paper {
-    border: 1px solid #b09a70;
-    border-radius: 5px;
-    background:
-      radial-gradient(circle at 10% 20%, #b3a3e822 0 1px, transparent 2px) 0 0 /
-        97px 131px,
-      radial-gradient(ellipse at top right, #4d397c50, transparent 50%),
-      var(--sheet-surface);
-  }
-  .portal-theme .sheet-pages-mago .sheet-paper::before {
-    border-color: #b8a17a60;
-  }
-  .portal-theme .sheet-pages-mago .sheet-paper-header h3 {
-    color: #f0d6a9;
-    font-size: clamp(43px, 5.4vw, 76px);
-    text-shadow: 0 2px 9px #000;
-  }
-  .portal-theme .sheet-pages-mago .sheet-section > h4 {
-    color: #e3c999;
-  }
-  .portal-theme .sheet-pages-mago .sheet-section > h4::before,
-  .portal-theme .sheet-pages-mago .sheet-section > h4::after {
-    height: 1px;
-    border: 0;
-    background: linear-gradient(90deg, transparent, #b49d70);
-  }
-  .portal-theme .sheet-pages-mago .sheet-paper .sheet-group {
-    border-radius: 2px;
-    background: linear-gradient(120deg, #1d2445a6, #0e142a);
+  .portal-theme .character-sheet .sheet-pages-cacador .sheet-art-border {
+    inset: 9px;
+    border: 1px solid #a68e6944;
+    border-radius: 2px 8px 2px 2px;
   }
   .portal-theme
-    .sheet-pages-mago
-    .sheet-section[aria-label="Esferas"]
-    .sheet-group {
-    background:
-      url("/images/sheets/astral-chart.svg") center / 180px no-repeat,
-      #121a31;
-    background-blend-mode: soft-light;
-  }
-  .portal-theme .sheet-pages-mago .sheet-paper .sheet-astral-resources {
-    background: radial-gradient(ellipse, #39305d88, transparent), #0f162b;
-  }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-field {
-    display: grid;
-    justify-items: center;
-    gap: 10px;
-    margin-block: 12px 22px;
-  }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-field > label {
-    color: #e4cba1;
-    font-size: 13px;
-  }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-rating {
-    flex-direction: column;
-    max-width: 100%;
-    gap: 10px;
-  }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks {
-    position: relative;
-    display: block;
-    width: 180px;
-    height: 180px;
-    max-width: 100%;
-    background: url("/images/sheets/astral-chart.svg") center / 100% no-repeat;
-  }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks button {
-    position: absolute;
-    left: calc(50% - 6px);
-    top: calc(50% - 6px);
-    transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
-      translateX(78px);
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border-color: #d3b886;
-  }
-  /* Mar de Sombras: black-green sea, bronze chains and funerary ornaments. */
-  .portal-theme .sheet-pages-aparicao .sheet-paper {
-    border: 2px solid #a78b52;
-    border-radius: 8px;
-    padding-inline: 38px;
-    background:
-      radial-gradient(ellipse at top, #27646333, transparent 60%),
-      linear-gradient(160deg, #092528, #06171d);
-  }
-  .portal-theme .sheet-pages-aparicao .sheet-paper::before {
-    inset: 10px 6px;
-    border: 0;
-    border-radius: 0;
-    background:
-      url("/images/sheets/bronze-chain.svg") left top / 20px 80px repeat-y,
-      url("/images/sheets/bronze-chain.svg") right top / 20px 80px repeat-y;
-  }
-  .portal-theme .sheet-pages-aparicao .sheet-paper-header {
-    border-radius: 18px 18px 2px 2px;
-  }
-  .portal-theme .sheet-pages-aparicao .sheet-paper-header h3 {
-    color: #edddb8;
-    letter-spacing: 0.045em;
-  }
-  .portal-theme .sheet-pages-aparicao .sheet-section > h4 {
-    color: #ddc792;
-  }
-  .portal-theme .sheet-pages-aparicao .sheet-section > h4::before,
-  .portal-theme .sheet-pages-aparicao .sheet-section > h4::after {
-    background: linear-gradient(90deg, transparent, #b79b63);
-  }
-  .portal-theme .sheet-pages-aparicao .sheet-paper .sheet-group {
-    background: linear-gradient(135deg, #163b3b, #0a2429);
-    border-radius: 10px 3px;
-    border-color: #a5895366;
-  }
-  .portal-theme .sheet-pages-aparicao .sheet-paper .sheet-group legend {
-    color: #ddc792;
-  }
-  .portal-theme .sheet-pages-aparicao .sheet-paper .sheet-field-text input {
-    background: #204344;
-    border-color: #5e817244;
-  }
-  @container (max-width:700px) {
-    .portal-theme
-      :is(
-        .sheet-pages-vampiro,
-        .sheet-pages-cacador,
-        .sheet-pages-mago,
-        .sheet-pages-aparicao
-      )
-      .sheet-paper
-      .sheet-paper-header {
-      height: 245px;
-      padding: 50px 15px 23px;
-    }
-    .portal-theme .sheet-pages-aparicao .sheet-paper {
-      padding-inline: 28px;
-    }
-    .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks {
-      width: 160px;
-      height: 160px;
-    }
-    .portal-theme
-      .sheet-pages-mago
-      .sheet-astral-resources
-      .sheet-marks
-      button {
-      transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
-        translateX(67px);
-    }
-  }
-  @container (max-width:540px) {
-    .portal-theme
-      :is(
-        .sheet-pages-vampiro,
-        .sheet-pages-cacador,
-        .sheet-pages-mago,
-        .sheet-pages-aparicao
-      )
-      .sheet-paper
-      .sheet-paper-header {
-      height: 225px;
-    }
-    .portal-theme
-      :is(
-        .sheet-pages-vampiro,
-        .sheet-pages-cacador,
-        .sheet-pages-mago,
-        .sheet-pages-aparicao
-      )
-      .sheet-paper-header
-      h3 {
-      font-size: 34px;
-      overflow-wrap: anywhere;
-    }
-    .portal-theme .sheet-pages-vampiro .sheet-section > h4 {
-      font-size: 13px;
-      letter-spacing: 0.06em;
-    }
-    .portal-theme .sheet-pages-cacador .sheet-section > h4 {
-      background: #a74218;
-      font-size: 12px;
-    }
-    .portal-theme .sheet-pages-aparicao .sheet-paper {
-      padding-inline: 22px;
-    }
-    .portal-theme .sheet-pages-aparicao .sheet-paper::before {
-      inset-inline: 2px;
-      background-size: 15px 60px;
-    }
-    .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks {
-      width: 180px;
-      height: 180px;
-    }
-    .portal-theme
-      .sheet-pages-mago
-      .sheet-astral-resources
-      .sheet-marks
-      button {
-      transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
-        translateX(78px);
-    }
-  }
-}
-@media print {
-  .sheet-title-edition {
-    display: none !important;
-  }
-}
-@media screen {
-  .portal-theme
-    :is(.sheet-pages-vampiro, .sheet-pages-cacador)
+    .character-sheet
+    .sheet-pages-cacador
     .sheet-paper
     .sheet-paper-header {
+    margin: -13px -25px 18px;
+    height: 240px;
+    padding: 28px 35px;
     align-items: flex-start;
     text-align: left;
+    clip-path: polygon(
+      0 2%,
+      3% 0,
+      8% 1%,
+      14% 0,
+      20% 2%,
+      29% 0,
+      37% 1%,
+      45% 0,
+      52% 2%,
+      59% 0,
+      68% 1%,
+      77% 0,
+      84% 2%,
+      92% 0,
+      100% 1%,
+      100% 98%,
+      95% 100%,
+      88% 98%,
+      79% 100%,
+      71% 99%,
+      62% 100%,
+      53% 98%,
+      46% 100%,
+      35% 99%,
+      27% 100%,
+      18% 98%,
+      11% 100%,
+      3% 99%,
+      0 100%
+    );
   }
-  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-marks button {
-    border-color: #829cae;
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper-header::after {
+    background: linear-gradient(90deg, #020609b3, transparent 85%);
   }
-  .portal-theme .sheet-pages-vampiro .sheet-paper .sheet-marks .is-marked {
-    border-color: #ff5468;
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper-header::before {
+    display: none;
   }
-  .portal-theme .sheet-pages-mago .sheet-paper .sheet-astral-resources {
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper-header
+    > span:not(.sheet-folio) {
+    margin-top: 0;
+  }
+  .portal-theme .character-sheet .sheet-pages-cacador .sheet-paper-header h3 {
+    font:
+      700 82px/1 "Barlow Condensed",
+      sans-serif;
+    color: #eee7d5;
+    letter-spacing: 0.015em;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper-header
+    .sheet-title-edition {
+    color: #f0712e;
+  }
+  .portal-theme .character-sheet .sheet-pages-cacador .sheet-paper-header p {
+    background: #e2c99b;
+    color: #342a20;
+    padding: 6px 12px;
+    font:
+      600 15px/1.4 Georgia,
+      serif;
+    text-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper-header
+    p
+    span {
+    color: #9e3b16;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper
+    .sheet-section {
+    background: #fffdf55c;
+    border: 1px solid #ac997b44;
+    border-radius: 3px;
+    padding: 0 14px 16px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper
+    .sheet-section
+    > h4 {
     position: relative;
-    min-height: 345px;
+    gap: 8px;
+    color: #211f1a;
+    font:
+      700 20px/1.2 "Barlow Condensed",
+      sans-serif;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid #8d7d65;
+    padding: 12px 0;
   }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-field {
-    position: static;
+  .portal-theme .character-sheet .sheet-pages-cacador .sheet-section > h4 > a,
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-section
+    > h4
+    > .sheet-glyph {
+    position: relative;
+    z-index: 1;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper
+    .sheet-section
+    > h4::before {
+    content: "";
     display: block;
-    margin: 0;
-    padding: 0;
-    min-height: 0;
+    position: absolute;
+    inset: 5px auto 5px -14px;
+    width: 42%;
+    min-width: 130px;
+    height: auto;
+    background: linear-gradient(110deg, #dc5a1e, #c04b18);
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%);
   }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-field > label {
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-section
+    > h4
+    > .sheet-glyph {
+    color: #322a1f;
+    width: 19px;
+    flex-basis: 19px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper
+    .sheet-group {
+    background: transparent;
+    border: 0;
+    border-right: 1px solid #ad9d8344;
+    border-radius: 0;
+    padding: 5px 10px 7px 0;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-column:last-child
+    > .sheet-group {
+    border-right: 0;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper
+    .sheet-group
+    legend {
+    width: 100%;
+    justify-content: flex-start;
+    font:
+      700 19px/1.3 "Barlow Condensed",
+      sans-serif;
+    text-transform: uppercase;
+    color: #343027;
+    letter-spacing: 0.04em;
+    padding: 0 0 8px;
+    border-bottom: 1px solid #b0a18988;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-group
+    legend
+    .sheet-glyph {
+    display: none;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper
+    .sheet-field-text
+    input {
+    background: linear-gradient(#e6e7e4, #f6f5ed);
+    border: 1px solid #a9aa9f;
+    box-shadow: inset 0 1px 2px #0001;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper
+    .sheet-field-notes
+    textarea {
+    background:
+      repeating-linear-gradient(transparent 0 26px, #b2a79355 26px 27px),
+      linear-gradient(#e9e9e1, #f7f5ec);
+    border-color: #aaa798;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-paper
+    .sheet-marks
+    button {
+    border-color: #676653;
+  }
+  .portal-theme .character-sheet .sheet-pages-cacador .sheet-art-ending {
+    height: 58px;
+    justify-content: flex-end;
+    margin-inline: 0;
+    background: none;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-art-ending::before {
+    content: "ARQUIVO DA CAÇADA";
+    position: absolute;
+    left: 3px;
+    top: 15px;
+    border: 2px solid #9c451f99;
+    color: #9c451fbb;
+    padding: 4px 8px;
+    font:
+      600 17px/1 "Barlow Condensed",
+      sans-serif;
+    transform: rotate(-5deg);
+    letter-spacing: 0.09em;
+  }
+  .portal-theme .character-sheet .sheet-pages-cacador .sheet-art-ending::after {
+    content: "A caçada continua.";
+    font:
+      italic 16px/1.4 Georgia,
+      serif;
+    color: #655137;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-cacador
+    .sheet-art-ending
+    .sheet-glyph {
+    display: none;
+  }
+
+  /* Observatório Astral: illustrated brass borders, constellations and individual sphere seals. */
+  .portal-theme .character-sheet .sheet-pages-mago .sheet-paper {
+    border: 1px solid #796743;
+    padding-inline: 48px;
+    background:
+      radial-gradient(ellipse at top right, #45317744, transparent 55%),
+      radial-gradient(circle at 13% 18%, #e8d5b777 0 1px, transparent 2px) 0 0 /
+        161px 193px,
+      #090e20;
+  }
+  .portal-theme .character-sheet .sheet-pages-mago .sheet-art-border {
+    border: 36px solid transparent;
+    border-image: url("/images/sheets/astral-frame.webp") 22% / 74px / 0 round;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-paper-header {
+    margin-inline: -24px;
+    height: 265px;
+  }
+  .portal-theme .character-sheet .sheet-pages-mago .sheet-paper .sheet-section {
+    border-color: #c6aa6e88;
+    border-radius: 1px;
+    background: linear-gradient(120deg, #101a30ee, #080d20dd);
+    box-shadow:
+      inset 0 0 0 3px #0a1124,
+      inset 0 0 0 4px #a78e5f2e;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-section
+    > h4
+    .sheet-glyph {
+    border: 1px solid #b69d6977;
+    border-radius: 50%;
+    padding: 3px;
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+  .portal-theme .character-sheet .sheet-pages-mago .sheet-paper .sheet-group {
+    background: linear-gradient(140deg, #171d33, #090e20);
+    border-color: #b5a27b40;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-group
+    legend {
+    font-size: 21px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-section[aria-label="Esferas"]
+    .sheet-group {
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-section[aria-label="Esferas"]
+    .sheet-field {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0 12px 53px;
+    min-height: 80px;
+    gap: 5px;
+    border-bottom: 1px solid #a78e5f44;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-section[aria-label="Esferas"]
+    .sheet-field
+    > label {
+    font-size: 14px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-field
+    > label
+    > .sheet-glyph {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 21px);
+    width: 43px;
+    height: 43px;
+    padding: 8px;
+    border: 1px solid #c1a574;
+    border-radius: 50%;
+    box-shadow:
+      inset 0 0 0 3px #0a1326,
+      inset 0 0 0 4px #b6a06b66,
+      0 0 15px #bba0e011;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-section[aria-label="Esferas"]
+    .sheet-rating {
+    max-width: 100%;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-section[aria-label="Esferas"]
+    .sheet-rating
+    input {
+    width: 25px;
+    min-width: 25px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-astral-resources {
+    position: relative;
+    min-height: 425px;
+    background: radial-gradient(ellipse, #48376e55, transparent), #0a1025;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-astral-resources
+    .sheet-field {
+    position: static;
+    min-height: 0;
+    padding: 0;
+    display: block;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-astral-resources
+    .sheet-field
+    > label {
     position: absolute;
     top: 22px;
     left: 0;
     width: 100%;
     text-align: center;
+    color: #e0c391;
+    font-size: 13px;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-mago
+    .sheet-paper
     .sheet-astral-resources
     .sheet-field:last-child
     > label {
-    top: 275px;
-    color: #c9b4ec;
-  }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-rating {
-    display: contents;
-  }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks {
-    position: absolute;
-    top: 75px;
-    left: calc(50% - 90px);
-    width: 180px;
-    height: 180px;
-  }
-  .portal-theme .sheet-pages-mago .sheet-astral-resources .sheet-marks button {
-    transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
-      translateX(78px);
+    top: 294px;
+    color: #cdb8f1;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-mago
+    .sheet-paper
+    .sheet-astral-resources
+    .sheet-rating {
+    display: contents;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-astral-resources
+    .sheet-marks {
+    display: block;
+    position: absolute;
+    left: calc(50% - 90px);
+    top: 90px;
+    width: 180px;
+    height: 180px;
+    max-width: none;
+    background: url("/images/sheets/astral-chart.svg") center / 100% no-repeat;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
+    .sheet-astral-resources
+    .sheet-marks
+    button {
+    position: absolute;
+    left: calc(50% - 6px);
+    top: calc(50% - 6px);
+    width: 12px;
+    height: 12px;
+    transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
+      translateX(78px);
+    border-color: #d4ba83;
+    border-radius: 50%;
+    background: #0e152b;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-mago
+    .sheet-paper
     .sheet-astral-resources
     .sheet-field:last-child
     .sheet-marks {
-    background: none;
+    top: 114px;
+    left: calc(50% - 66px);
     width: 132px;
     height: 132px;
-    left: calc(50% - 66px);
-    top: 99px;
+    background: none;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-mago
+    .sheet-paper
     .sheet-astral-resources
     .sheet-field:last-child
     .sheet-marks
     button {
     transform: rotate(calc((var(--mark-index) * 18deg) - 90deg))
       translateX(54px);
-    border-color: #bba1e5;
+    border-color: #ba9de3;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-mago
+    .sheet-paper
     .sheet-astral-resources
     .sheet-field:last-child
     .sheet-marks
     .is-marked {
-    background: #bba1e5;
+    background: #c3a8ef;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-mago
     .sheet-paper
     .sheet-astral-resources
     input[type="number"] {
     position: absolute;
-    top: 46px;
-    left: calc(50% - 20px);
+    top: 45px;
+    left: calc(50% - 17px);
+    width: 34px;
+    min-width: 34px;
   }
   .portal-theme
+    .character-sheet
     .sheet-pages-mago
     .sheet-paper
     .sheet-astral-resources
     .sheet-field:last-child
     input[type="number"] {
-    top: 299px;
+    top: 319px;
+  }
+  .portal-theme .character-sheet .sheet-pages-mago .sheet-wheel-scale {
+    display: block;
+    position: absolute;
+    width: 214px;
+    height: 214px;
+    left: calc(50% - 107px);
+    top: 73px;
+    pointer-events: none;
+    fill: #cbb487;
+    font:
+      10px Georgia,
+      serif;
+  }
+  .portal-theme .character-sheet .sheet-pages-mago .sheet-art-ending {
+    height: 85px;
+    background:
+      linear-gradient(0deg, #090e20cc, #090e2066),
+      var(--sheet-scene) center 90% / cover no-repeat;
+    border-block: 1px solid #b49a6455;
+  }
+
+  /* Mar de Sombras: hammered bronze, sea-green ink and sculpted chain corners. */
+  .portal-theme .character-sheet .sheet-pages-aparicao .sheet-paper {
+    padding-inline: 44px;
+    border-color: #987a43;
+    background:
+      radial-gradient(ellipse at top, #28575a50, transparent 50%),
+      linear-gradient(140deg, #08292e, #04161a);
+  }
+  .portal-theme .character-sheet .sheet-pages-aparicao .sheet-art-border {
+    border: 38px solid transparent;
+    border-image: url("/images/sheets/wraith-frame.webp") 22% / 74px / 0 round;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-aparicao
+    .sheet-paper
+    .sheet-paper-header {
+    height: 260px;
+    margin-inline: -20px;
+  }
+  .portal-theme .character-sheet .sheet-pages-aparicao .sheet-paper-header h3 {
+    font-size: 73px;
+    color: #eee0b8;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-aparicao
+    .sheet-paper
+    .sheet-section {
+    border: 3px double #a78b4e9c;
+    border-radius: 16px 3px;
+    background: linear-gradient(120deg, #08282be6, #04191ded);
+    box-shadow: inset 0 0 20px #0002;
+    padding-inline: 12px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-aparicao
+    .sheet-paper
+    .sheet-section
+    > h4 {
+    justify-content: center;
+    padding: 7px 0;
+    font-size: 24px;
+    letter-spacing: 0.06em;
+    color: #e2c88f;
+    border-color: #96783c80;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-aparicao
+    .sheet-section
+    > h4
+    > .sheet-glyph {
+    display: none;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-aparicao
+    .sheet-paper
+    .sheet-group {
+    border: 0;
+    background: linear-gradient(100deg, #0e303366, transparent);
+    padding: 8px 9px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-aparicao
+    .sheet-paper
+    .sheet-group
+    legend {
+    justify-content: flex-start;
+    width: 100%;
+    font:
+      600 21px/1.2 "Cormorant Garamond",
+      Georgia,
+      serif;
+    text-transform: uppercase;
+    padding: 5px 0 9px;
+    border-bottom: 1px solid #a5895355;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-aparicao
+    .sheet-group
+    legend
+    .sheet-glyph {
+    width: 26px;
+    flex-basis: 26px;
+    height: 26px;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-aparicao
+    .sheet-paper
+    .sheet-marks
+    button {
+    border-color: #d6cdb5;
+  }
+  .portal-theme .character-sheet .sheet-pages-aparicao .sheet-art-ending {
+    background:
+      linear-gradient(#04191d33, #04191d33),
+      var(--sheet-scene) center 75% / cover no-repeat;
+    height: 105px;
+    border-block: 1px solid #a5895380;
+  }
+  .portal-theme
+    .character-sheet
+    .sheet-pages-aparicao
+    .sheet-art-ending
+    .sheet-glyph {
+    background: #09282cdd;
+    color: #e2c88f;
+  }
+
+  @container (max-width:850px) {
+    .portal-theme .character-sheet .sheet-illustrated .sheet-paper {
+      padding-inline: 28px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-group {
+      padding-inline: 9px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-marks
+      button {
+      width: 12px;
+      height: 12px;
+      flex-basis: 12px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-marks {
+      gap: 3px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-field
+      > label {
+      font-size: 13px;
+    }
+    .portal-theme .sheet-illustrated .sheet-section-columns {
+      gap: 12px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-mago
+      .sheet-paper
+      .sheet-section[aria-label="Esferas"]
+      .sheet-field {
+      padding-left: 43px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-mago
+      .sheet-field
+      > label
+      > .sheet-glyph {
+      width: 35px;
+      height: 35px;
+      padding: 6px;
+      left: 0;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-mago
+      .sheet-paper
+      .sheet-astral-resources {
+      min-height: 425px;
+    }
+    .portal-theme .character-sheet .sheet-pages-mago .sheet-wheel-scale {
+      width: 190px;
+      height: 190px;
+      left: calc(50% - 95px);
+      top: 85px;
+    }
+  }
+  @container (max-width:700px) {
+    .portal-theme .sheet-illustrated .sheet-section-columns {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+    .portal-theme .sheet-illustrated .sheet-paper .sheet-paper-header {
+      height: 235px;
+      padding-inline: 18px;
+      margin-inline: -10px;
+    }
+    .portal-theme .sheet-illustrated .sheet-paper-header h3 {
+      font-size: 60px;
+    }
+    .portal-theme .character-sheet .sheet-pages-vampiro .sheet-paper-header h3 {
+      font-size: 76px;
+    }
+    .portal-theme .character-sheet .sheet-pages-cacador .sheet-paper-header h3 {
+      font-size: 70px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-group {
+      padding: 10px 12px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-field
+      > label {
+      font-size: 14px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-marks
+      button {
+      width: 16px;
+      height: 16px;
+      flex-basis: 16px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-mago
+      .sheet-paper
+      .sheet-astral-resources {
+      max-width: none;
+    }
+    .portal-theme .character-sheet .sheet-pages-mago .sheet-wheel-scale {
+      width: 214px;
+      height: 214px;
+      left: calc(50% - 107px);
+      top: 73px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-cacador
+      .sheet-paper
+      .sheet-group {
+      border-right: 0;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-cacador
+      .sheet-art-ending::after {
+      font-size: 13px;
+    }
+  }
+  @container (max-width:440px) {
+    .portal-theme .character-sheet .sheet-illustrated .sheet-paper {
+      padding: 15px 21px 22px;
+    }
+    .portal-theme .sheet-illustrated .sheet-art-border {
+      border-image-width: 22px;
+    }
+    .portal-theme .sheet-illustrated .sheet-paper .sheet-paper-header {
+      margin: -10px -5px 15px;
+      height: 220px;
+      padding: 22px 10px;
+    }
+    .portal-theme .sheet-illustrated .sheet-paper-header h3 {
+      font-size: 40px;
+    }
+    .portal-theme .sheet-illustrated .sheet-paper-header p {
+      font-size: 12px;
+    }
+    .portal-theme
+      .sheet-illustrated
+      .sheet-paper-header
+      > span:not(.sheet-folio) {
+      font-size: 7px;
+      letter-spacing: 0.12em;
+    }
+    .portal-theme .sheet-illustrated .sheet-paper-header > .sheet-folio {
+      top: 9px;
+      right: 8px;
+      font-size: 8px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-vampiro
+      .sheet-paper
+      .sheet-paper-header {
+      height: 200px;
+      padding-left: 15px;
+    }
+    .portal-theme .character-sheet .sheet-pages-vampiro .sheet-paper-header h3 {
+      font-size: 54px;
+    }
+    .portal-theme .character-sheet .sheet-pages-cacador .sheet-paper-header h3 {
+      font-size: 52px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-vampiro
+      .sheet-paper
+      .sheet-section {
+      padding-inline: 5px;
+      border-width: 8px;
+      border-image-width: 12px;
+    }
+    .portal-theme .sheet-illustrated .sheet-paper .sheet-section {
+      padding-inline: 9px;
+    }
+    .portal-theme .sheet-illustrated .sheet-paper .sheet-section > h4 {
+      font-size: 20px;
+      letter-spacing: 0.03em;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-vampiro
+      .sheet-paper
+      .sheet-section
+      > h4 {
+      font-size: 17px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-cacador
+      .sheet-paper
+      .sheet-section
+      > h4::before {
+      left: -9px;
+      width: 75%;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-group {
+      padding-inline: 7px;
+    }
+    .portal-theme
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-section[aria-label="Identidade"]
+      .sheet-field-text {
+      display: block;
+    }
+    .portal-theme
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-section[aria-label="Identidade"]
+      .sheet-field-text
+      input {
+      display: block;
+      width: 100%;
+      margin-top: 4px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-mago
+      .sheet-paper
+      .sheet-group
+      legend {
+      font-size: 19px;
+    }
+    .portal-theme .character-sheet .sheet-pages-mago .sheet-wheel-scale {
+      width: 200px;
+      height: 200px;
+      left: calc(50% - 100px);
+      top: 80px;
+    }
+    .portal-theme .character-sheet .sheet-pages-cacador .sheet-art-ending {
+      justify-content: center;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-cacador
+      .sheet-art-ending::after {
+      display: none;
+    }
+    .portal-theme .sheet-illustrated .sheet-paper-footer {
+      font-size: 9px;
+    }
+  }
+  @container (max-width:700px) {
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-paper-header
+      h3 {
+      font-size: 60px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-vampiro
+      .sheet-paper
+      .sheet-paper-header
+      h3 {
+      font-size: 76px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-cacador
+      .sheet-paper
+      .sheet-paper-header
+      h3 {
+      font-size: 70px;
+    }
+  }
+  @container (max-width:440px) {
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-art-border {
+      border-image-width: 22px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-illustrated
+      .sheet-paper
+      .sheet-paper-header
+      h3 {
+      font-size: clamp(30px, 10.5cqw, 42px);
+      line-height: 1.05;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-vampiro
+      .sheet-paper
+      .sheet-paper-header
+      h3 {
+      font-size: clamp(42px, 16cqw, 54px);
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-cacador
+      .sheet-paper
+      .sheet-paper-header
+      h3 {
+      font-size: clamp(40px, 15cqw, 52px);
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-cacador
+      .sheet-paper
+      .sheet-section
+      > h4 {
+      font-size: 18px;
+    }
+    .portal-theme
+      .character-sheet
+      .sheet-pages-cacador
+      .sheet-paper
+      .sheet-section
+      > h4::before {
+      width: calc(100% + 18px);
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .portal-theme .sheet-illustrated .sheet-paper :is(input, textarea) {
+      transition:
+        border-color 0.15s,
+        background-color 0.15s;
+    }
+  }
+}
+@media print {
+  .sheet-title-edition,
+  .sheet-glyph,
+  .sheet-wheel-scale,
+  .sheet-art-border,
+  .sheet-art-ending {
+    display: none !important;
   }
 }

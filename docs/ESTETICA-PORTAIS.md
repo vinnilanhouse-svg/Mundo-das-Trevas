@@ -35,6 +35,16 @@ A navegação superior preserva busca, favoritos e contato, além de oferecer se
 - **Caçador 5E — Arquivo da Caçada (opção 2):** papel claro, abas laranja, fotos, mapas e evidências no cabeçalho.
 - **Changeling 20A:** mantém o Vitral do Sonhar já aplicado.
 
-Os quatro novos cabeçalhos WebP em `public/images/sheets/` medem 1500 × 500, somam cerca de 805 KiB e não contêm textos nem campos incorporados. Correntes, mapa astral e medalhões são SVGs próprios. Títulos, edição, referências e controles são HTML. As imagens são decorativas.
+Os quatro novos cabeçalhos WebP em `public/images/sheets/` medem 1500 × 500, somam cerca de 805 KiB e não contêm textos nem campos incorporados. As molduras astral e marítima e os medalhões de Fome/Humanidade são ilustrações WebP com transparência. O mapa astral, os ícones e a moldura angular são SVGs próprios. Títulos, edição, referências e controles são HTML. As imagens são decorativas.
 
-Os campos, limites, chaves de armazenamento, importação/exportação JSON e links do acervo permanecem compatíveis com as fichas anteriores. A variante de tela não altera a impressão A4 clara: duas folhas por sistema e anotações extensas preservadas. Verificações em navegador cobrem os cinco sistemas, larguras 320/390/768/1440, persistência, arquivos antigos, marcas e teclado; os novos marcadores de Fome/Humanidade e as duas trilhas astrais também foram acionados diretamente.
+Os campos, limites, chaves de armazenamento, importação/exportação JSON e links do acervo permanecem compatíveis com as fichas anteriores. A variante de tela não altera a impressão A4 clara: duas folhas por sistema e anotações extensas preservadas. Verificações em navegador cobrem os cinco sistemas, larguras 320/390/768/1024/1440, persistência, arquivos antigos, marcas e teclado; os novos marcadores de Fome/Humanidade e as duas trilhas astrais também foram acionados diretamente.
+
+### Acabamento das fichas
+
+A implementação usa molduras e painéis em toda a ficha, além dos cabeçalhos. Vampiro tem títulos em Barlow Condensed, recortes carmesim e medalhões ilustrados nos dois painéis de marfim; Caçador usa papel texturizado, fotografia com borda irregular, abas laranja e divisórias de dossiê; Mago tem moldura astral ilustrada, selos individuais nas nove Esferas e escala numerada ao redor das reservas; Aparição tem correntes de bronze, adornos marítimos e molduras funerárias. Os campos têm tipografia maior, marcas mais legíveis e foco visível. As setas dos links ficam discretas até a interação, preservando seus destinos.
+
+`src/SheetGlyph.jsx` fornece ícones decorativos próprios, inclusive âncora/tridente para Aparição e símbolos para cada Esfera. Nenhum ícone ou desenho substitui um campo. A fonte Barlow Condensed é hospedada no próprio site. Os quatro WebP adicionais somam aproximadamente 326 KiB; os cabeçalhos anteriores são reaproveitados.
+
+Em telas com contêiner de até 700 px, as colunas empilham para manter rótulos e controles legíveis. Abaixo de 440 px, os títulos e as molduras reduzem de tamanho. Os adornos não recebem cliques. Na impressão, a decoração e a escala astral ficam ocultas, e os campos continuam no formato A4 original. Changeling conserva o Vitral do Sonhar.
+
+Validação do acabamento: 41 testes; compilação de produção; cinco sistemas em 320, 390, 768, 1024 e 1440 px sem controles fora da folha; cliques em atributos, Fome, Humanidade e ambos os anéis de Mago; teclado; valores antigos, recarga e JSON; Vida → explicação da Esfera; cinco fichas em duas páginas A4 quando vazias e anotações extensas impressas por inteiro.
