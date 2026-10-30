@@ -5,6 +5,12 @@ import { SystemLibrary, SystemLabel } from "./Library.jsx";
 import { ArchiveSearch } from "./ArchiveSearch.jsx";
 import { PortalAtmosphere } from "./PortalAtmosphere.jsx";
 import { WelcomeNotice, ContactPage } from "./Community.jsx";
+import {
+  PrivacyProvider,
+  PrivacyNotices,
+  PrivacyPage,
+  usePrivacy,
+} from "./Privacy.jsx";
 import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
 import "@fontsource/dm-sans/latin-400.css";
@@ -19,6 +25,7 @@ import "./portals.css";
 import "./sheet-themes.css";
 import "./changeling-stained.css";
 import "./selected-sheet-themes.css";
+import "./privacy.css";
 
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const SYSTEM_THEMES = {
@@ -123,6 +130,7 @@ function load(key, fallback, validator = () => true) {
 }
 function App() {
   const systems = initialContent;
+  const { choice, settingsOpen, setSettingsOpen } = usePrivacy();
   const [favorites, setFavorites] = useState(() =>
     load(
       FAVORITES_KEY,
@@ -169,13 +177,16 @@ function App() {
     : null;
   const selected = systems.find((s) => s.id === selectedId);
   const contactOpen = route === "#/contato";
+  const privacyOpen = route === "#/privacidade";
   useEffect(() => {
     document.title = selected
       ? `${selected.name} ${selected.editionLabel}: ${selected.subtitle} — Arquivo das Trevas`
-      : contactOpen
-        ? "Contato — Arquivo das Trevas"
-        : "Arquivo das Trevas — Acervo de sistemas";
-  }, [selected, contactOpen]);
+      : privacyOpen
+        ? "Privacidade — Arquivo das Trevas"
+        : contactOpen
+          ? "Contato — Arquivo das Trevas"
+          : "Arquivo das Trevas — Acervo de sistemas";
+  }, [selected, contactOpen, privacyOpen]);
   function navigate(nextView) {
     setView(nextView);
     location.hash = "";
@@ -195,7 +206,8 @@ function App() {
     <div
       className={`app-shell portal-theme ${SYSTEM_THEMES[selectedId] || ""}`}
     >
-      <WelcomeNotice />
+      <WelcomeNotice paused={!choice || settingsOpen || privacyOpen} />
+      <PrivacyNotices hideBanner={privacyOpen} />
       <PortalAtmosphere systemId={selected?.id} />
       <a
         className="skip-link"
@@ -225,7 +237,9 @@ function App() {
         <nav className="portal-navigation" aria-label="Navegação principal">
           <button
             className={
-              !selected && !contactOpen && view === "all" ? "current" : ""
+              !selected && !contactOpen && !privacyOpen && view === "all"
+                ? "current"
+                : ""
             }
             onClick={() => navigate("all")}
           >
@@ -406,6 +420,8 @@ function App() {
             />
           ) : contactOpen ? (
             <ContactPage onBack={() => navigate("all")} />
+          ) : privacyOpen ? (
+            <PrivacyPage onBack={() => navigate("all")} />
           ) : view === "about" ? (
             <About />
           ) : (
@@ -638,6 +654,15 @@ function App() {
               {" · "}
               <a href="#/contato">Contato</a>
               {" · "}
+              <a href="#/privacidade">Privacidade</a>
+              {" · "}
+              <button
+                className="footer-about"
+                onClick={() => setSettingsOpen(true)}
+              >
+                Preferências de privacidade
+              </button>
+              {" · "}
               <button
                 className="footer-about"
                 onClick={() => navigate("about")}
@@ -696,6 +721,8 @@ function About() {
 }
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <PrivacyProvider systems={initialContent}>
+      <App />
+    </PrivacyProvider>
   </React.StrictMode>,
 );

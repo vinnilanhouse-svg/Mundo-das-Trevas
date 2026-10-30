@@ -5,6 +5,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
+          if (id.includes("/node_modules/@vercel/analytics/"))
+            return "analytics-vendor";
           if (id.includes("/node_modules/")) return "vendor";
           if (id.endsWith("/src/content.json")) return "acervo";
         },

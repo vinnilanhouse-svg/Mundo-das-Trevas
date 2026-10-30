@@ -11,12 +11,12 @@ function shouldWelcome() {
   }
 }
 
-export function WelcomeNotice() {
+export function WelcomeNotice({ paused = false }) {
   const [visible, setVisible] = useState(shouldWelcome);
   const dialog = useRef(null);
 
   useEffect(() => {
-    if (!visible) return;
+    if (!visible || paused) return;
     const element = dialog.current;
     const previousFocus = document.activeElement;
     const previousOverflow = document.body.style.overflow;
@@ -33,9 +33,9 @@ export function WelcomeNotice() {
       document.body.style.overflow = previousOverflow;
       if (previousFocus?.isConnected) previousFocus.focus();
     };
-  }, [visible]);
+  }, [visible, paused]);
 
-  if (!visible) return null;
+  if (!visible || paused) return null;
   const dismiss = () => setVisible(false);
   return (
     <dialog

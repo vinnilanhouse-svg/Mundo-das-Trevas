@@ -133,6 +133,14 @@ Chaves de armazenamento:
 
 Rascunhos antigos do acervo não são mais carregados. As chaves antigas não são apagadas. Fichas antigas recebem novos campos vazios, preservando valores existentes e chaves legadas para exportação. O antigo campo numérico de Aflição permanece recuperável no JSON; o formulário atual usa uma condição de Aflição e trilhas separadas de Perigo e Desespero.
 
+## Privacidade e audiência
+
+O rodapé oferece **Privacidade** e **Preferências de privacidade**. A política identifica **Elemental Corp.** e o e-mail de contato. O visitante pode aceitar ou recusar as estatísticas opcionais e mudar a decisão depois. O acervo não usa cookies de rastreamento; suas fichas e favoritos permanecem no navegador. A preferência dura até 180 dias ou uma mudança relevante da política.
+
+O Vercel Web Analytics só é carregado após autorização. As rotas internas do acervo são reconhecidas, e o envio se limita a páginas públicas conhecidas. Fichas preenchidas, arquivos importados e termos de busca não entram nas estatísticas.
+
+Para ver a audiência, é necessário habilitar **Web Analytics** no projeto da Vercel e publicar a versão atual após essa ativação. O painel é privado da conta responsável pela hospedagem. Não há token para colocar no código. Consulte [as instruções de ativação e operação](docs/PRIVACIDADE-E-ESTATISTICAS.md).
+
 ## Publicar na Vercel
 
 Importe o repositório e use:
