@@ -5,6 +5,7 @@ import { SystemLibrary, SystemLabel } from "./Library.jsx";
 import { ArchiveSearch } from "./ArchiveSearch.jsx";
 import { PortalAtmosphere } from "./PortalAtmosphere.jsx";
 import { WelcomeNotice, ContactPage } from "./Community.jsx";
+import { BrandMark } from "./BrandMark.jsx";
 import {
   PrivacyProvider,
   PrivacyNotices,
@@ -26,6 +27,7 @@ import "./sheet-themes.css";
 import "./changeling-stained.css";
 import "./selected-sheet-themes.css";
 import "./privacy.css";
+import "./brand.css";
 
 const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const SYSTEM_THEMES = {
@@ -228,7 +230,7 @@ function App() {
           onClick={() => navigate("all")}
         >
           <span className="brand-mark">
-            <Sigil />
+            <BrandMark />
           </span>
           <span>
             Arquivo<span className="brand-bottom">das Trevas</span>
@@ -323,7 +325,7 @@ function App() {
         </button>
         <a className="brand" href="#" onClick={() => navigate("all")}>
           <span className="brand-mark">
-            <Sigil />
+            <BrandMark />
           </span>
           <span>
             ARQUIVO<span className="brand-bottom">DAS TREVAS</span>

@@ -10,6 +10,7 @@ import React, {
   useState,
 } from "react";
 import { CONTACT_EMAIL } from "./Community.jsx";
+import { BrandMark } from "./BrandMark.jsx";
 import { documents } from "./document-data.js";
 import {
   CONSENT_KEY,
@@ -296,6 +297,13 @@ export function PrivacyPage({ onBack }) {
       <div className="eyebrow">TRANSPARÊNCIA E CONTROLE</div>
       <h1 id="privacy-title">Privacidade e proteção de dados</h1>
       <p className="privacy-date">Atualizada em {PRIVACY_UPDATED}</p>
+      <div className="privacy-controller">
+        <BrandMark />
+        <div>
+          <div className="eyebrow">RESPONSÁVEL PELO SITE</div>
+          <strong>{PRIVACY_CONTROLLER}</strong>
+        </div>
+      </div>
       <p>
         Esta política explica como o Arquivo das Trevas trata informações
         durante sua visita. O responsável pelas decisões sobre esse tratamento é{" "}

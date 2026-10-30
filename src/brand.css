@@ -1,0 +1,59 @@
+.elemental-mark {
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.brand-mark .elemental-mark {
+  width: 58px;
+  height: 58px;
+  max-width: none;
+}
+.welcome-emblem .elemental-mark {
+  width: 58px;
+  height: 58px;
+}
+.privacy-controller {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  margin: 0 0 25px;
+  border: 1px solid #69818d66;
+  border-radius: 5px;
+  background: linear-gradient(120deg, #13232b, #0b171f);
+}
+.privacy-controller .elemental-mark {
+  width: 76px;
+  height: 76px;
+}
+.privacy-controller .eyebrow {
+  color: #acbbb9;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  margin-bottom: 8px;
+}
+.privacy-controller strong {
+  display: block;
+  color: #f0e7d7;
+  font:
+    500 28px/1.2 "Cormorant Garamond",
+    Georgia,
+    serif;
+}
+@media (max-width: 650px) {
+  .brand-mark .elemental-mark {
+    width: 50px;
+    height: 50px;
+  }
+  .privacy-controller {
+    padding: 15px;
+    gap: 12px;
+  }
+  .privacy-controller .elemental-mark {
+    width: 58px;
+    height: 58px;
+  }
+  .privacy-controller strong {
+    font-size: 25px;
+  }
+}

@@ -48,3 +48,9 @@ A implementação usa molduras e painéis em toda a ficha, além dos cabeçalhos
 Em telas com contêiner de até 700 px, as colunas empilham para manter rótulos e controles legíveis. Abaixo de 440 px, os títulos e as molduras reduzem de tamanho. Os adornos não recebem cliques. Na impressão, a decoração e a escala astral ficam ocultas, e os campos continuam no formato A4 original. Changeling conserva o Vitral do Sonhar.
 
 Validação do acabamento: 41 testes; compilação de produção; cinco sistemas em 320, 390, 768, 1024 e 1440 px sem controles fora da folha; cliques em atributos, Fome, Humanidade e ambos os anéis de Mago; teclado; valores antigos, recarga e JSON; Vida → explicação da Esfera; cinco fichas em duas páginas A4 quando vazias e anotações extensas impressas por inteiro.
+
+## Marca do site
+
+A marca fornecida para Elemental Corp. substitui o antigo símbolo do cabeçalho, do menu móvel e do aviso de boas-vindas. A mesma imagem aparece na identificação do responsável na política de privacidade. `src/BrandMark.jsx` centraliza o uso de `/images/brand/elemental-corp.webp`, preparado em 512 × 512 com transparência e cerca de 42 KiB. `src/brand.css` define seus tamanhos. A marca aparece ao lado de texto identificador e tem alternativa vazia para evitar nomes duplicados no leitor de tela.
+
+O favicon incorpora uma versão pequena da marca sobre fundo preto em PNG de 64 × 64, com URL versionada para atualizar o ícone em cache. Os símbolos próprios dos cinco sistemas continuam nos cartões e nas fichas. Conferidos carregamento, navegação e ausência de transbordamento em 320, 390, 768 e 1440 px, além do menu móvel, aviso de boas-vindas e impressão A4.
