@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { BrandMark } from "./BrandMark.jsx";
+import { SiteMark } from "./BrandMark.jsx";
 
 export const CONTACT_EMAIL = "coradi.maddaloni@gmail.com";
 const WELCOME_KEY = "arquivo-trevas-welcome-v1";
@@ -61,7 +61,7 @@ export function WelcomeNotice({ paused = false }) {
         <span aria-hidden="true">×</span>
       </button>
       <span className="welcome-emblem" aria-hidden="true">
-        <BrandMark />
+        <SiteMark />
       </span>
       <div className="eyebrow">DE FÃ PARA FÃ</div>
       <h2 id="welcome-title">Bem-vindo ao Arquivo das Trevas</h2>

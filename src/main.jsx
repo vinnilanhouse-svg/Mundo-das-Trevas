@@ -5,7 +5,7 @@ import { SystemLibrary, SystemLabel } from "./Library.jsx";
 import { ArchiveSearch } from "./ArchiveSearch.jsx";
 import { PortalAtmosphere } from "./PortalAtmosphere.jsx";
 import { WelcomeNotice, ContactPage } from "./Community.jsx";
-import { BrandMark } from "./BrandMark.jsx";
+import { SiteMark } from "./BrandMark.jsx";
 import {
   PrivacyProvider,
   PrivacyNotices,
@@ -230,7 +230,7 @@ function App() {
           onClick={() => navigate("all")}
         >
           <span className="brand-mark">
-            <BrandMark />
+            <SiteMark />
           </span>
           <span>
             Arquivo<span className="brand-bottom">das Trevas</span>
@@ -325,7 +325,7 @@ function App() {
         </button>
         <a className="brand" href="#" onClick={() => navigate("all")}>
           <span className="brand-mark">
-            <BrandMark />
+            <SiteMark />
           </span>
           <span>
             ARQUIVO<span className="brand-bottom">DAS TREVAS</span>
