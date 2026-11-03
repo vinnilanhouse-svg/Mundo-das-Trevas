@@ -5,13 +5,11 @@ import React, {
   createContext,
   useContext,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
 import { CONTACT_EMAIL } from "./Community.jsx";
 import { BrandMark } from "./BrandMark.jsx";
-import { documents } from "./document-data.js";
 import {
   CONSENT_KEY,
   PRIVACY_CONTROLLER,
@@ -22,7 +20,6 @@ import {
   storePrivacyChoice,
   validPrivacyChoice,
 } from "./privacy.js";
-import { createAnalyticsRoutes } from "./analytics-routes.js";
 
 const PrivacyContext = createContext(null);
 const ConsentAnalytics = lazy(() => import("./ConsentAnalytics.jsx"));
@@ -45,16 +42,12 @@ const initialChoice = () => {
   }
 };
 
-export function PrivacyProvider({ systems, children }) {
+export function PrivacyProvider({ children }) {
   const [choice, setChoice] = useState(initialChoice);
   const current = useRef(choice);
   const trackingPermitted = analyticsAllowed(choice);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [saved, setSaved] = useState("");
-  const routes = useMemo(
-    () => createAnalyticsRoutes(systems, documents),
-    [systems],
-  );
 
   useEffect(() => {
     let timer;
@@ -130,7 +123,7 @@ export function PrivacyProvider({ systems, children }) {
       {import.meta.env.PROD && trackingPermitted && (
         <AnalyticsBoundary>
           <Suspense fallback={null}>
-            <ConsentAnalytics routes={routes} choiceRef={current} />
+            <ConsentAnalytics choiceRef={current} />
           </Suspense>
         </AnalyticsBoundary>
       )}
@@ -353,8 +346,41 @@ export function PrivacyPage({ onBack }) {
                   <br />
                   <code>arquivo-trevas-favorites-v1</code>
                 </td>
-                <td>Guardar os sistemas escolhidos.</td>
+                <td>
+                  Manter compatibilidade com os sistemas favoritados
+                  anteriormente.
+                </td>
                 <td>Até você remover os favoritos ou limpar os dados.</td>
+              </tr>
+              <tr>
+                <td>
+                  Favoritos e coleções
+                  <br />
+                  <code>arquivo-trevas-library-v1</code>
+                </td>
+                <td>
+                  Guardar referências públicas escolhidas e organizar coleções
+                  com os nomes definidos por você, somente neste navegador.
+                </td>
+                <td>
+                  Até você remover os itens, excluir as coleções ou limpar os
+                  dados do site.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Histórico de consulta
+                  <br />
+                  <code>arquivo-trevas-recent-v1</code>
+                </td>
+                <td>
+                  Retomar as últimas 40 referências consultadas, com data e hora
+                  da visita. Não inclui termos de busca nem valores de fichas.
+                </td>
+                <td>
+                  Até você limpar o histórico ou os dados do site; visitas mais
+                  antigas saem ao atingir o limite.
+                </td>
               </tr>
               <tr>
                 <td>

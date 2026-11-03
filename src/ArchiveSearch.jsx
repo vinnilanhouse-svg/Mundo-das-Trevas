@@ -1,5 +1,7 @@
 import React, { useEffect, useId, useMemo, useRef, useState } from "react";
-import { createArchiveIndex, searchArchive } from "./archive-search.js";
+import { queryArchive } from "./archive-search.js";
+import { useSearchIndex } from "./archive-data.js";
+import { searchHref } from "./search-routes.js";
 
 export function ArchiveSearch({ systems, systemId, route }) {
   const [query, setQuery] = useState("");
@@ -12,10 +14,10 @@ export function ArchiveSearch({ systems, systemId, route }) {
   const scope = system
     ? `${system.name} ${system.editionLabel}`
     : "Todos os sistemas";
-  const index = useMemo(() => createArchiveIndex(systems), [systems]);
-  const results = useMemo(
-    () => searchArchive(index, query, { systemId: system?.id }),
-    [index, query, system?.id],
+  const state = useSearchIndex(Boolean(query.trim()), system?.id || null);
+  const { items: results, total } = useMemo(
+    () => queryArchive(state.index, query, { systemId: system?.id, limit: 5 }),
+    [state.index, query, system?.id],
   );
   const visible = open && Boolean(query.trim());
 
@@ -57,9 +59,9 @@ export function ArchiveSearch({ systems, systemId, route }) {
       requestAnimationFrame(() => links.current[position]?.focus());
     } else if (event.key === "Enter") {
       event.preventDefault();
-      if (results[0]) {
+      if (query.trim()) {
         setOpen(false);
-        location.hash = results[0].href;
+        location.hash = searchHref(query, { systemId: system?.id });
       }
     }
   }
@@ -121,7 +123,7 @@ export function ArchiveSearch({ systems, systemId, route }) {
       />
       <span className="archive-search-sr" id={`${id}-scope`}>
         Pesquisa em {scope}. Até cinco resultados. Use as setas para navegar,
-        Enter para abrir e Escape para fechar.
+        Enter para ver todos e Escape para fechar.
       </span>
       {query ? (
         <button
@@ -144,9 +146,13 @@ export function ArchiveSearch({ systems, systemId, route }) {
             <strong>{scope}</strong>
           </div>
           <p className="archive-search-count" role="status">
-            {results.length
-              ? `${results.length} ${results.length === 1 ? "resultado" : "resultados"}`
-              : `Nenhum resultado para “${query}”.`}
+            {state.loading
+              ? "Buscando no acervo…"
+              : state.error
+                ? state.error
+                : results.length
+                  ? `${results.length} de ${total} ${total === 1 ? "resultado" : "resultados"}`
+                  : `Nenhum resultado para “${query}”.`}
           </p>
           {results.length ? (
             <nav aria-label="Resultados da busca">
@@ -187,7 +193,7 @@ export function ArchiveSearch({ systems, systemId, route }) {
                 ))}
               </ol>
             </nav>
-          ) : (
+          ) : !state.loading && !state.error ? (
             <p className="archive-search-empty">
               Tente outro termo
               {system
@@ -195,9 +201,21 @@ export function ArchiveSearch({ systems, systemId, route }) {
                 : " ou uma expressão mais curta"}
               .
             </p>
+          ) : null}
+          {state.error && (
+            <button className="text-button" onClick={state.retry}>
+              Tentar novamente
+            </button>
           )}
+          <a
+            className="archive-search-all"
+            href={searchHref(query, { systemId: system?.id })}
+            onClick={() => setOpen(false)}
+          >
+            Ver todos os resultados →
+          </a>
           <div className="archive-search-help">
-            ↑ ↓ navegar <span>Enter abrir</span>
+            ↑ ↓ navegar <span>Enter buscar</span>
             <button onClick={close}>
               Fechar <kbd>Esc</kbd>
             </button>

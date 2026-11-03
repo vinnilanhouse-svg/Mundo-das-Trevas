@@ -1,8 +1,14 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { analyticsAllowed } from "./privacy.js";
+import { createAnalyticsRoutes } from "./analytics-routes.js";
+import catalog from "./generated/catalog.json";
+import publishedHashes from "./generated/analytics-routes.json";
+import { documents } from "./document-data.js";
 
-export default function ConsentAnalytics({ routes, choiceRef }) {
+const routes = createAnalyticsRoutes(catalog, documents, publishedHashes);
+
+export default function ConsentAnalytics({ choiceRef }) {
   const [path, setPath] = useState(() => routes.pathFor(location.hash));
   const beforeSend = useCallback(
     (event) =>

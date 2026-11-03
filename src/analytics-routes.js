@@ -1,13 +1,19 @@
 import { articleHref, groupHref } from "./library-routes.js";
 
 // Only public, known routes can enter statistics. No search strings or arbitrary hashes.
-export function createAnalyticsRoutes(systems, documents = []) {
+export function createAnalyticsRoutes(
+  systems,
+  documents = [],
+  publishedHashes = [],
+) {
   const routes = new Map([
     ["", "/"],
     ["#", "/"],
     ["#/", "/"],
     ["#/contato", "/contato"],
     ["#/privacidade", "/privacidade"],
+    ["#/favoritos", "/favoritos"],
+    ["#/recentes", "/recentes"],
   ]);
   const canonical = new Set();
   const add = (hash, path = hash.slice(1)) => {
@@ -19,11 +25,12 @@ export function createAnalyticsRoutes(systems, documents = []) {
     add(base);
     for (const area of ["lore", "mecanica", "ficha", "documentos"])
       add(`${base}/${area}`);
-    for (const entry of system.sections) {
+    for (const entry of system.sections || []) {
       add(articleHref(system.id, entry));
       add(groupHref(system.id, entry.category, entry.group));
     }
   }
+  for (const hash of publishedHashes) add(hash);
   for (const path of routes.values()) canonical.add(path);
   const books = new Map(
     documents.map((book) => [

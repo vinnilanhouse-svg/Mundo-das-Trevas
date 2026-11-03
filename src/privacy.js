@@ -2,7 +2,7 @@ export const PRIVACY_VERSION = "2026-10-30.1";
 export const CONSENT_KEY = "arquivo-trevas-privacy-v1";
 export const CONSENT_LIFETIME = 180 * 24 * 60 * 60 * 1000;
 export const PRIVACY_CONTROLLER = "Elemental Corp.";
-export const PRIVACY_UPDATED = "30 de outubro de 2026";
+export const PRIVACY_UPDATED = "3 de novembro de 2026";
 
 export function createPrivacyChoice(analytics, now = Date.now()) {
   return {

@@ -27,7 +27,7 @@ npm run build
 npm run preview
 ```
 
-`npm test` verifica sistemas/edições, áreas, referências e limites de páginas, campos vazios das fichas e uso exclusivo do último básico H5, além da cobertura dos livros recebidos no ZIP. O build separa aplicação, acervo e dependências para permitir cache independente.
+`npm test` verifica sistemas/edições, áreas, referências e limites de páginas, campos vazios das fichas e uso exclusivo do último básico H5, além da cobertura dos livros recebidos no ZIP. O build gera um catálogo leve e arquivos independentes por sistema e escopo de busca. A home não baixa os textos dos cinco sistemas; o código do leitor e das fichas também é carregado por demanda.
 
 ## Navegação
 
@@ -46,6 +46,16 @@ Os cartões em **Escolha um tópico** são botões: abrem a categoria, filtram o
 Cada área tem busca em títulos e textos, filtro de categoria, índice de tópicos e links diretos. Exemplo: `#/sistema/changeling/mecanica`. Fontes indicam **a posição da página no PDF**, que pode diferir da página impressa. Nas partes de Mago, as referências, a seleção de página e o leitor também mostram a numeração correspondente do livro. As capas podem não apresentar número impresso.
 
 Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As referências preservam a origem dos trechos cuja mecânica ainda exige conferência no C20 completo. Caçador usa exclusivamente o último básico H5 otimizado enviado pelo usuário; o guia da Biblioteca Élfica e a referência anterior TRUNFOS foram removidos do acervo e da bibliografia.
+
+## Busca, favoritos e histórico
+
+O cabeçalho oferece cinco resultados rápidos e “Ver todos os resultados”. A página completa tem filtros por sistema, área, categoria e edição, com 20 resultados por página. Enter no campo do cabeçalho também abre a lista completa. A busca iniciada dentro de um sistema mantém esse escopo.
+
+A estrela abre **Favoritos e coleções**: salve sistemas, tópicos, poderes e páginas do leitor e organize-os em uma ou mais coleções pessoais. Favoritos antigos são preservados. A home e o rodapé dão acesso a **Vistos recentemente**, com as últimas 40 consultas e opção de limpar. Tudo fica no navegador, sem conta; as fichas mantêm seu armazenamento atual.
+
+Os poderes mostram uma ficha de consulta com efeito, nível, teste, custo, resistência e duração, além da resolução completa e das referências. Campos não explicitados nunca são tratados como gratuitos ou automáticos.
+
+Veja [o funcionamento e a manutenção dessas ferramentas](docs/CONSULTA-E-FAVORITOS.md).
 
 ## Fichas digitais
 
@@ -95,7 +105,7 @@ Veja [os arquivos que precisam ser reenviados](docs/ARQUIVOS-PENDENTES.md).
 
 ## Manutenção do acervo
 
-O site público é somente de consulta: não tem editor, botão de adicionar conteúdo nem importação/exportação do acervo. O catálogo publicado é carregado diretamente de `src/content.json`; rascunhos antigos do navegador não substituem o conteúdo atual.
+O site público é somente de consulta: não tem editor, botão de adicionar conteúdo nem importação/exportação do acervo. O catálogo publicado é gerado a partir de `src/content.json`, com conteúdo completo separado por sistema; rascunhos antigos do navegador não substituem o conteúdo atual.
 
 As atualizações são feitas no repositório, em `src/content.json` e `src/sources.json`, e publicadas pelo deploy da Vercel.
 
@@ -112,7 +122,7 @@ Cada entrada de `sections` inclui:
 
 As entradas individuais de poderes também têm `power`, com `family`, `level` (1–5 ou `null`), `branch`, `effect`, `cost`, `roll`, `duration`, `requirements`, `rules` e sua própria referência de fonte. Uma Arte/Disciplina pode declarar `powerFamily` para exibir as opções por nível logo abaixo da apresentação.
 
-Há **891 entradas individuais de poderes e distinções**: 575 de Vampiro (incluindo rituais, cerimônias, fórmulas e opções ancestrais da compilação), 95 truques C20, 160 artes W20, 12 Trunfos básicos H5 e 49 Distinções do mesmo livro. Alternativas de V5 não são apresentadas como benefícios automáticos de nível; Trunfos não recebem uma escada de níveis inventada. Mago aguarda o livro e não ganhou efeitos supostos.
+Há **951 entradas individuais de poderes e distinções**: 575 de Vampiro (incluindo rituais, cerimônias, fórmulas e opções ancestrais da compilação), 95 truques C20, 160 artes W20, 12 Trunfos básicos H5, 49 Distinções do mesmo livro e 60 graduações de Mago. Alternativas de V5 não são apresentadas como benefícios automáticos de nível; Trunfos não recebem uma escada de níveis inventada. As graduações de Mago usam as partes do livro já recebidas e preservam suas referências.
 
 Changeling e Aparição mostram o texto operacional extraído das fontes fornecidas, além do efeito individual. Vampiro utiliza a descrição e os campos textuais recuperáveis da compilação: símbolos gráficos de resultados e condições quantitativas não recuperados devem ser conferidos no PDF; não são substituídos por números inventados.
 

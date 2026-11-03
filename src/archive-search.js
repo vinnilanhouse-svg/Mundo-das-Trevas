@@ -15,13 +15,19 @@ const flat = (text) =>
     .trim();
 
 function entry(values) {
+  const { text, aliases, ...metadata } = values;
   return {
-    ...values,
+    ...metadata,
+    excerpt:
+      values.excerpt.length > 280
+        ? `${values.excerpt.slice(0, 277).replace(/\s+\S*$/, "")}…`
+        : values.excerpt,
     titleText: normalizeSearch(values.title),
     contextText: normalizeSearch(
       `${values.systemName} ${values.category} ${values.group || ""} ${values.aliases || ""}`,
     ),
-    bodyText: normalizeSearch(values.text),
+    // Ranking uses individual body words, so store repeated words only once.
+    bodyText: [...new Set(normalizeSearch(text).split(" "))].join(" "),
   };
 }
 
@@ -29,7 +35,11 @@ function entry(values) {
 export function createArchiveIndex(systems) {
   return systems.flatMap((system) => {
     const systemName = `${system.name} ${system.editionLabel}`;
-    const common = { systemId: system.id, systemName };
+    const common = {
+      systemId: system.id,
+      systemName,
+      editionLabel: system.editionLabel,
+    };
     const groups = new Map();
     const articles = system.sections.map((section) => {
       const key = `${section.category}/${section.group}`;
@@ -44,6 +54,7 @@ export function createArchiveIndex(systems) {
         power?.cost,
         power?.duration,
         power?.requirements,
+        power?.resistance,
         power?.rules,
         ...(power?.rollNotes || []).map((note) => note.text),
       ]
@@ -55,6 +66,7 @@ export function createArchiveIndex(systems) {
         kind: "article",
         title: section.title,
         category: areaNames[section.category],
+        area: section.category,
         group: section.group,
         href: articleHref(system.id, section),
         excerpt: flat(section.body),
@@ -69,6 +81,7 @@ export function createArchiveIndex(systems) {
         kind: "group",
         title: group,
         category: areaNames[category],
+        area: category,
         group,
         href: groupHref(system.id, category, group),
         excerpt: `${sections.length} ${sections.length === 1 ? "tópico organizado" : "tópicos organizados"}. Consulte o índice de ${group}.`,
@@ -84,6 +97,7 @@ export function createArchiveIndex(systems) {
         kind: "system",
         title: systemName,
         category: "Sistema",
+        area: "system",
         href: `#/sistema/${system.id}`,
         excerpt: system.description,
         text: `${system.subtitle} ${system.original} ${system.theme}`,
@@ -132,11 +146,33 @@ export function searchArchive(
   query,
   { systemId = null, limit = 5 } = {},
 ) {
+  if (!Number.isFinite(limit) || limit <= 0) return [];
+  return queryArchive(index, query, {
+    systemId,
+    limit: Math.min(5, Math.floor(limit)),
+  }).items;
+}
+
+export function queryArchive(
+  index,
+  query,
+  {
+    systemId = null,
+    area = null,
+    edition = null,
+    group = null,
+    offset = 0,
+    limit = 20,
+  } = {},
+) {
   const phrase = normalizeSearch(query);
-  if (!phrase || !Number.isFinite(limit) || limit <= 0) return [];
+  if (!phrase) return { items: [], total: 0 };
   const tokens = [...new Set(phrase.split(" "))];
-  return index
+  const results = index
     .filter((item) => !systemId || item.systemId === systemId)
+    .filter((item) => !area || item.area === area)
+    .filter((item) => !edition || item.editionLabel === edition)
+    .filter((item) => !group || item.group === group)
     .map((item) => ({ ...item, score: relevance(item, phrase, tokens) }))
     .filter((item) => item.score > 0)
     .sort(
@@ -144,6 +180,8 @@ export function searchArchive(
         b.score - a.score ||
         a.title.localeCompare(b.title, "pt-BR") ||
         a.id.localeCompare(b.id),
-    )
-    .slice(0, Math.min(5, Math.floor(limit)));
+    );
+  const start = Number.isFinite(offset) ? Math.max(0, Math.floor(offset)) : 0;
+  const size = Number.isFinite(limit) ? Math.max(0, Math.floor(limit)) : 20;
+  return { items: results.slice(start, start + size), total: results.length };
 }

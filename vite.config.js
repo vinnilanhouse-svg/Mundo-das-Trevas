@@ -8,7 +8,6 @@ export default defineConfig({
           if (id.includes("/node_modules/@vercel/analytics/"))
             return "analytics-vendor";
           if (id.includes("/node_modules/")) return "vendor";
-          if (id.endsWith("/src/content.json")) return "acervo";
         },
       },
     },

@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import initialContent from "./content.json";
-import { SystemLibrary, SystemLabel } from "./Library.jsx";
+import { catalog } from "./archive-data.js";
+import { SystemView } from "./SystemView.jsx";
+import { SystemLabel } from "./SystemLabel.jsx";
+import { SearchPage } from "./SearchPage.jsx";
+import {
+  PersonalArchiveProvider,
+  usePersonalArchive,
+  FavoritesPage,
+  RecentSection,
+} from "./PersonalArchive.jsx";
+import { systemReference } from "./personal-archive.js";
+import { parseSearchRoute } from "./search-routes.js";
 import { ArchiveSearch } from "./ArchiveSearch.jsx";
 import { PortalAtmosphere } from "./PortalAtmosphere.jsx";
 import { WelcomeNotice, ContactPage } from "./Community.jsx";
@@ -28,8 +38,8 @@ import "./changeling-stained.css";
 import "./selected-sheet-themes.css";
 import "./privacy.css";
 import "./brand.css";
+import "./archive-tools.css";
 
-const FAVORITES_KEY = "arquivo-trevas-favorites-v1";
 const SYSTEM_THEMES = {
   aparicao: "theme-aparicao",
   changeling: "theme-changeling",
@@ -122,29 +132,17 @@ function Sigil({ kind = "vampire", className = "" }) {
     </svg>
   );
 }
-function load(key, fallback, validator = () => true) {
-  try {
-    const data = JSON.parse(localStorage.getItem(key));
-    return validator(data) ? data : fallback;
-  } catch {
-    return fallback;
-  }
-}
 function App() {
-  const systems = initialContent;
+  const systems = catalog;
   const { choice, settingsOpen, setSettingsOpen } = usePrivacy();
-  const [favorites, setFavorites] = useState(() =>
-    load(
-      FAVORITES_KEY,
-      [],
-      (x) => Array.isArray(x) && x.every((id) => typeof id === "string"),
-    ),
-  );
+  const { library, storageError, toggle } = usePersonalArchive();
+  const favorites = library.items
+    .filter((item) => item.kind === "system")
+    .map((item) => item.systemId);
   const [route, setRoute] = useState(location.hash);
   const [edition, setEdition] = useState("Todas as edições");
   const [view, setView] = useState("all");
   const [menu, setMenu] = useState(false);
-  const [storageError, setStorageError] = useState(false);
   useEffect(() => {
     const onHash = () => {
       setRoute(location.hash);
@@ -167,42 +165,52 @@ function App() {
     onHash();
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
-  useEffect(() => {
-    try {
-      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
-    } catch {
-      setStorageError(true);
-    }
-  }, [favorites]);
   const selectedId = route.startsWith("#/sistema/")
     ? route.split("/")[2]
     : null;
   const selected = systems.find((s) => s.id === selectedId);
   const contactOpen = route === "#/contato";
   const privacyOpen = route === "#/privacidade";
+  const favoritesOpen = route === "#/favoritos";
+  const recentOpen = route === "#/recentes";
+  const searchOpen = route === "#/busca" || route.startsWith("#/busca?");
+  const searchSystemId = searchOpen
+    ? parseSearchRoute(route, systems).systemId
+    : null;
   useEffect(() => {
     document.title = selected
       ? `${selected.name} ${selected.editionLabel}: ${selected.subtitle} — Arquivo das Trevas`
-      : privacyOpen
-        ? "Privacidade — Arquivo das Trevas"
-        : contactOpen
-          ? "Contato — Arquivo das Trevas"
-          : "Arquivo das Trevas — Acervo de sistemas";
-  }, [selected, contactOpen, privacyOpen]);
+      : searchOpen
+        ? "Busca — Arquivo das Trevas"
+        : favoritesOpen
+          ? "Favoritos e coleções — Arquivo das Trevas"
+          : recentOpen
+            ? "Vistos recentemente — Arquivo das Trevas"
+            : privacyOpen
+              ? "Privacidade — Arquivo das Trevas"
+              : contactOpen
+                ? "Contato — Arquivo das Trevas"
+                : "Arquivo das Trevas — Acervo de sistemas";
+  }, [
+    selected,
+    contactOpen,
+    privacyOpen,
+    searchOpen,
+    favoritesOpen,
+    recentOpen,
+  ]);
   function navigate(nextView) {
-    setView(nextView);
-    location.hash = "";
+    setView(nextView === "about" ? "about" : "all");
+    location.hash = nextView === "favorites" ? "#/favoritos" : "";
     setMenu(false);
   }
   function toggleFavorite(id) {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
-    );
+    const system = systems.find((item) => item.id === id);
+    if (system) toggle(systemReference(system));
   }
   const filtered = systems.filter(
     (system) =>
-      (view !== "favorites" || favorites.includes(system.id)) &&
-      (edition === "Todas as edições" || system.editions.includes(edition)),
+      edition === "Todas as edições" || system.editions.includes(edition),
   );
   return (
     <div
@@ -239,7 +247,13 @@ function App() {
         <nav className="portal-navigation" aria-label="Navegação principal">
           <button
             className={
-              !selected && !contactOpen && !privacyOpen && view === "all"
+              !selected &&
+              !contactOpen &&
+              !privacyOpen &&
+              !searchOpen &&
+              !favoritesOpen &&
+              !recentOpen &&
+              view === "all"
                 ? "current"
                 : ""
             }
@@ -285,11 +299,11 @@ function App() {
         </nav>
         <ArchiveSearch
           systems={systems}
-          systemId={selected?.id}
+          systemId={selected?.id || searchSystemId}
           route={route}
         />
         <button
-          className={`icon-button portal-favorites ${view === "favorites" && !selected ? "is-favorite" : ""}`}
+          className={`icon-button portal-favorites ${favoritesOpen ? "is-favorite" : ""}`}
           onClick={() => navigate("favorites")}
           aria-label="Ver favoritos"
           title="Seus favoritos"
@@ -335,7 +349,15 @@ function App() {
         <nav className="main-nav" aria-label="Navegação principal">
           <button
             className={
-              view === "all" && !selectedId && !contactOpen ? "active" : ""
+              view === "all" &&
+              !selectedId &&
+              !contactOpen &&
+              !privacyOpen &&
+              !searchOpen &&
+              !favoritesOpen &&
+              !recentOpen
+                ? "active"
+                : ""
             }
             onClick={() => navigate("all")}
           >
@@ -343,21 +365,14 @@ function App() {
             <span>{systems.length}</span>
           </button>
           <button
-            className={
-              view === "favorites" && !selectedId && !contactOpen
-                ? "active"
-                : ""
-            }
+            className={favoritesOpen ? "active" : ""}
             onClick={() => navigate("favorites")}
           >
-            <Icon name="star" /> Favoritos{" "}
-            <span>
-              {
-                favorites.filter((id) => systems.some((s) => s.id === id))
-                  .length
-              }
-            </span>
+            <Icon name="star" /> Favoritos <span>{library.items.length}</span>
           </button>
+          <a className={recentOpen ? "active" : ""} href="#/recentes">
+            <Icon name="book" /> Vistos recentemente
+          </a>
         </nav>
         <div className="sidebar-label system-label">EXPLORE OS SISTEMAS</div>
         <nav className="system-nav" aria-label="Sistemas de RPG">
@@ -399,7 +414,8 @@ function App() {
         <main id="main-content" tabIndex={-1}>
           {storageError && (
             <div className="notice" role="alert">
-              O armazenamento do navegador está indisponível. Seus favoritos
+              O navegador não permitiu salvar seus favoritos, coleções ou
+              histórico. Você pode continuar usando o acervo, mas esses dados
               podem não ser mantidos ao fechar a página.
             </div>
           )}
@@ -413,13 +429,13 @@ function App() {
               </button>
             </div>
           ) : selected ? (
-            <SystemLibrary
-              key={selected.id}
-              system={selected}
-              route={route}
-              favorite={favorites.includes(selected.id)}
-              onFavorite={() => toggleFavorite(selected.id)}
-            />
+            <SystemView key={selected.id} system={selected} route={route} />
+          ) : searchOpen ? (
+            <SearchPage route={route} />
+          ) : favoritesOpen ? (
+            <FavoritesPage />
+          ) : recentOpen ? (
+            <RecentSection full />
           ) : contactOpen ? (
             <ContactPage onBack={() => navigate("all")} />
           ) : privacyOpen ? (
@@ -450,7 +466,7 @@ function App() {
                     <span>
                       {systems
                         .reduce(
-                          (count, system) => count + system.sections.length,
+                          (count, system) => count + system.sectionCount,
                           0,
                         )
                         .toLocaleString("pt-BR")}{" "}
@@ -464,19 +480,8 @@ function App() {
                   <div>
                     <div className="eyebrow muted">ESCOLHA SEU PORTAL</div>
                     <h2>
-                      {view === "favorites"
-                        ? "Seus arquivos favoritos"
-                        : "Do outro lado"}
-                      <span>
-                        {" "}
-                        /{" "}
-                        {String(
-                          view === "favorites"
-                            ? systems.filter((s) => favorites.includes(s.id))
-                                .length
-                            : systems.length,
-                        ).padStart(2, "0")}
-                      </span>
+                      Do outro lado
+                      <span> / {String(systems.length).padStart(2, "0")}</span>
                     </h2>
                   </div>
                   <span className="collection-note">
@@ -568,25 +573,14 @@ function App() {
                 </section>
               ) : (
                 <div className="empty-state">
-                  <Icon
-                    name={view === "favorites" ? "star" : "search"}
-                    size={34}
-                  />
-                  <h3>
-                    {view === "favorites" && !favorites.length
-                      ? "Seu acervo pessoal começa aqui"
-                      : "Nenhum sistema por aqui"}
-                  </h3>
-                  <p>
-                    {view === "favorites" && !favorites.length
-                      ? "Use a estrela nos cartões para guardar seus sistemas favoritos."
-                      : "Tente outra edição ou remova o filtro."}
-                  </p>
+                  <Icon name="search" size={34} />
+                  <h3>Nenhum sistema por aqui</h3>
+                  <p>Tente outra edição ou remova o filtro.</p>
                   <button
                     className="button"
                     onClick={() => {
                       setEdition("Todas as edições");
-                      if (!favorites.length) setView("all");
+                      setView("all");
                     }}
                   >
                     Explorar todos os sistemas
@@ -644,6 +638,7 @@ function App() {
                   </details>
                 ))}
               </section>
+              <RecentSection />
             </>
           )}
           <footer className="footer">
@@ -655,6 +650,8 @@ function App() {
               Projeto de fãs · Sem vínculo oficial com World of Darkness
               {" · "}
               <a href="#/contato">Contato</a>
+              {" · "}
+              <a href="#/recentes">Vistos recentemente</a>
               {" · "}
               <a href="#/privacidade">Privacidade</a>
               {" · "}
@@ -723,8 +720,10 @@ function About() {
 }
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <PrivacyProvider systems={initialContent}>
-      <App />
+    <PrivacyProvider>
+      <PersonalArchiveProvider>
+        <App />
+      </PersonalArchiveProvider>
     </PrivacyProvider>
   </React.StrictMode>,
 );

@@ -3,8 +3,12 @@ import sources from "./sources.json";
 import { DocumentLinks, DocumentReader, SourceText } from "./Documents.jsx";
 import { documents } from "./document-data.js";
 import { SheetPages } from "./SheetPages.jsx";
-import { routeGroup } from "./library-routes.js";
-import { RollText, RollNotes, searchableRules } from "./rolls.jsx";
+import { routeGroup, groupHref } from "./library-routes.js";
+import { RollText, searchableRules } from "./rolls.jsx";
+import { SystemLabel } from "./SystemLabel.jsx";
+import { PowerDetails, PowerQuickFacts } from "./PowerDetails.jsx";
+import { FavoriteControl, usePersonalArchive } from "./PersonalArchive.jsx";
+import { referenceForRoute } from "./personal-archive.js";
 
 const categories = [
   {
@@ -31,16 +35,21 @@ const normalize = (value) =>
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
-export function SystemLabel({ system }) {
-  return (
-    <>
-      {system.name}{" "}
-      <small className="edition-badge">{system.editionLabel}</small>
-    </>
-  );
-}
-
-export function SystemLibrary({ system, route, favorite, onFavorite }) {
+export function SystemLibrary({ system, route }) {
+  const { recordVisit } = usePersonalArchive();
+  const reference = referenceForRoute(system, route, documents);
+  useEffect(() => {
+    const entry = referenceForRoute(system, route, documents);
+    if (entry) recordVisit(entry);
+    if (route.split("/")[4] && route.split("/")[3] !== "documentos") {
+      const frame = requestAnimationFrame(() =>
+        document
+          .querySelector(".library-article")
+          ?.scrollIntoView({ block: "start" }),
+      );
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [system, route, recordVisit]);
   const [query, setQuery] = useState("");
   const [group, setGroup] = useState("all");
   const [powerLevel, setPowerLevel] = useState("all");
@@ -94,12 +103,7 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
     if (sectionSlug === "categoria") location.hash = `${base}/${category.id}`;
   }
   function openGroup(nextGroup) {
-    leaveLinkedGroup();
-    setQuery("");
-    setGroup(nextGroup);
-    setPowerLevel("all");
-    setPowerBranch("all");
-    setTopicGroup(nextGroup);
+    location.hash = groupHref(system.id, category.key, nextGroup);
   }
   return (
     <div className={`detail-page ${system.kind}`}>
@@ -120,9 +124,7 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
         <span>
           {system.sections.length} entradas · {system.editions.join(", ")}
         </span>
-        <button className="text-button" onClick={onFavorite}>
-          {favorite ? "★ Remover dos favoritos" : "☆ Salvar nos favoritos"}
-        </button>
+        {!article && reference && <FavoriteControl entry={reference} />}
       </div>
       <div className="notice">
         <span>
@@ -296,13 +298,17 @@ export function SystemLibrary({ system, route, favorite, onFavorite }) {
                 <>
                   <div className="eyebrow">{article.group}</div>
                   <h2>{article.title}</h2>
+                  {reference && <FavoriteControl entry={reference} />}
                   <div className="article-meta">
                     <span>{article.edition}</span>
                     <span>{article.status}</span>
                   </div>
-                  <div className="article-body">
-                    <RollText text={article.body} />
-                  </div>
+                  {(!article.power ||
+                    article.body !== article.power.effect) && (
+                    <div className="article-body">
+                      <RollText text={article.body} />
+                    </div>
+                  )}
                   {arcanoiDirectory && article.id === arcanoiDirectory.id && (
                     <ArcanoiDirectory system={system} base={base} />
                   )}
@@ -445,44 +451,6 @@ function ArcanoiDirectory({ system, base }) {
   );
 }
 
-function PowerDetails({ power }) {
-  const rows = [
-    ["Nível", power.level ?? "Sem escala numérica"],
-    ["Tipo", power.branch],
-    ["Custo", power.cost],
-    ["Teste / parada", power.roll],
-    ["Duração", power.duration],
-    ["Requisitos / amálgama", power.requirements],
-  ].filter(([, value]) => value !== "");
-  return (
-    <section className="power-details" aria-label="Como usar este poder">
-      <h3>Como funciona</h3>
-      <dl>
-        {rows.map(([label, value]) => (
-          <div key={label}>
-            <dt>{label}</dt>
-            <dd>
-              <RollText text={String(value)} />
-            </dd>
-          </div>
-        ))}
-      </dl>
-      <RollNotes power={power} />
-      {power.rules && (
-        <details className="power-rules" open>
-          <summary>Testes, condições e resultados na fonte</summary>
-          <div className="article-body">
-            <RollText text={power.rules} />
-          </div>
-        </details>
-      )}
-      {power.referenceNote && (
-        <p className="power-note">{power.referenceNote}</p>
-      )}
-      <p className="power-citation">Referência do efeito: {power.source}</p>
-    </section>
-  );
-}
 function PowerProgression({ system, article, base }) {
   const family = article.power?.family || article.powerFamily;
   if (!family) return null;
@@ -548,6 +516,7 @@ function PowerProgression({ system, article, base }) {
                     · {s.edition}
                   </span>
                   <p>{s.power.effect}</p>
+                  <PowerQuickFacts power={s.power} />
                 </div>
               ))}
           </div>
