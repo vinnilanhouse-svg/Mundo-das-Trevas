@@ -50,6 +50,18 @@ export function SystemLibrary({ system, route }) {
       return () => cancelAnimationFrame(frame);
     }
   }, [system, route, recordVisit]);
+  const [indexOpen, setIndexOpen] = useState(
+    () => !window.matchMedia("(max-width: 950px)").matches,
+  );
+  useEffect(() => {
+    const mobile = window.matchMedia("(max-width: 950px)");
+    const resize = () => setIndexOpen(!mobile.matches);
+    mobile.addEventListener("change", resize);
+    return () => mobile.removeEventListener("change", resize);
+  }, []);
+  useEffect(() => {
+    if (window.matchMedia("(max-width: 950px)").matches) setIndexOpen(false);
+  }, [route]);
   const [query, setQuery] = useState("");
   const [group, setGroup] = useState("all");
   const [powerLevel, setPowerLevel] = useState("all");
@@ -80,9 +92,7 @@ export function SystemLibrary({ system, route }) {
     system.id === "aparicao"
       ? system.sections.find((s) => s.id === "mechanics-arcanoi-arcanoi")
       : null;
-  const article =
-    sections.find((s) => s.id === sectionSlug) ||
-    (!sectionSlug && category?.key === "mechanics" ? arcanoiDirectory : null);
+  const article = sections.find((s) => s.id === sectionSlug);
   useEffect(() => {
     setQuery("");
     setGroup("all");
@@ -106,7 +116,9 @@ export function SystemLibrary({ system, route }) {
     location.hash = groupHref(system.id, category.key, nextGroup);
   }
   return (
-    <div className={`detail-page ${system.kind}`}>
+    <div
+      className={`detail-page ${system.kind} ${category?.key === "mechanics" ? "library-mechanics-page" : ""}`}
+    >
       <a className="back-link" href={categorySlug ? base : "#"}>
         ← {categorySlug ? "Voltar às áreas do sistema" : "Voltar ao acervo"}
       </a>
@@ -126,12 +138,14 @@ export function SystemLibrary({ system, route }) {
         </span>
         {!article && reference && <FavoriteControl entry={reference} />}
       </div>
-      <div className="notice">
-        <span>
-          <strong>Cobertura das fontes.</strong> {system.coverage}
-        </span>
-      </div>
-      {categorySlug && categorySlug !== "documentos" && (
+      {!category && (
+        <div className="notice">
+          <span>
+            <strong>Cobertura das fontes.</strong> {system.coverage}
+          </span>
+        </div>
+      )}
+      {categorySlug && !category && categorySlug !== "documentos" && (
         <a className="button document-home-link" href={`${base}/documentos`}>
           Ler textos integrais dos PDFs →
         </a>
@@ -191,103 +205,114 @@ export function SystemLibrary({ system, route }) {
               Consultar os 16 Arcanoi →
             </a>
           )}
-          <div className="library-filters">
-            <label>
-              Buscar nesta área
-              <input
-                aria-label="Buscar nesta área"
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Ex.: antecedentes, Força de Vontade, Glamour…"
-              />
-            </label>
-            <label>
-              Categoria
-              <select
-                aria-label="Categoria"
-                value={group}
-                onChange={(e) => {
-                  leaveLinkedGroup();
-                  setGroup(e.target.value);
-                  setTopicGroup(null);
-                }}
-              >
-                <option value="all">Todas as categorias</option>
-                {groups.map((g) => (
-                  <option key={g}>{g}</option>
-                ))}
-              </select>
-            </label>
-          </div>
-          {sections.some((s) => s.power) && (
-            <div className="power-filters">
-              <label>
-                Nível
-                <select
-                  aria-label="Filtrar poderes por nível"
-                  value={powerLevel}
-                  onChange={(e) => setPowerLevel(e.target.value)}
-                >
-                  <option value="all">Todos os níveis e tópicos</option>
-                  {[1, 2, 3, 4, 5].map((level) => (
-                    <option key={level} value={String(level)}>
-                      Nível {level}
-                    </option>
-                  ))}
-                  <option value="null">Sem nível numérico</option>
-                </select>
-              </label>
-              <label>
-                Tipo de poder
-                <select
-                  aria-label="Filtrar por tipo de poder"
-                  value={powerBranch}
-                  onChange={(e) => setPowerBranch(e.target.value)}
-                >
-                  <option value="all">Todos os tipos</option>
-                  {[
-                    ...new Set(
-                      sections
-                        .filter((s) => s.power)
-                        .map((s) => s.power.branch),
-                    ),
-                  ].map((branch) => (
-                    <option key={branch}>{branch}</option>
-                  ))}
-                </select>
-              </label>
-            </div>
-          )}
-          <div className="results-label" role="status">
-            {filtered.length} entradas encontradas nesta área
-          </div>
           <div className="library-layout">
-            <nav className="library-index" aria-label="Tópicos da área">
-              {groups
-                .filter((g) => group === "all" || g === group)
-                .map((g) => {
-                  const items = filtered.filter((s) => s.group === g);
-                  return items.length ? (
-                    <section key={g}>
-                      <h3>{g}</h3>
-                      {items.map((s) => (
-                        <a
-                          href={`${base}/${category.id}/${s.id}`}
-                          key={s.id}
-                          aria-current={
-                            article?.id === s.id ? "page" : undefined
-                          }
-                        >
-                          {s.title}
-                          <small>{s.edition}</small>
-                        </a>
+            <details
+              className="library-index-panel"
+              open={indexOpen}
+              onToggle={(event) => setIndexOpen(event.currentTarget.open)}
+            >
+              <summary>
+                Índice e filtros <span>{filtered.length} entradas</span>
+              </summary>
+              <div className="library-index-tools">
+                <div className="library-filters">
+                  <label>
+                    Buscar nesta área
+                    <input
+                      aria-label="Buscar nesta área"
+                      type="search"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      placeholder="Ex.: antecedentes, Força de Vontade, Glamour…"
+                    />
+                  </label>
+                  <label>
+                    Categoria
+                    <select
+                      aria-label="Categoria"
+                      value={group}
+                      onChange={(e) => {
+                        leaveLinkedGroup();
+                        setGroup(e.target.value);
+                        setTopicGroup(null);
+                      }}
+                    >
+                      <option value="all">Todas as categorias</option>
+                      {groups.map((g) => (
+                        <option key={g}>{g}</option>
                       ))}
-                    </section>
-                  ) : null;
-                })}
-              {!filtered.length && <p>Nenhuma entrada com esses filtros.</p>}
-            </nav>
+                    </select>
+                  </label>
+                </div>
+                {sections.some((s) => s.power) && (
+                  <div className="power-filters">
+                    <label>
+                      Nível
+                      <select
+                        aria-label="Filtrar poderes por nível"
+                        value={powerLevel}
+                        onChange={(e) => setPowerLevel(e.target.value)}
+                      >
+                        <option value="all">Todos os níveis e tópicos</option>
+                        {[1, 2, 3, 4, 5].map((level) => (
+                          <option key={level} value={String(level)}>
+                            Nível {level}
+                          </option>
+                        ))}
+                        <option value="null">Sem nível numérico</option>
+                      </select>
+                    </label>
+                    <label>
+                      Tipo de poder
+                      <select
+                        aria-label="Filtrar por tipo de poder"
+                        value={powerBranch}
+                        onChange={(e) => setPowerBranch(e.target.value)}
+                      >
+                        <option value="all">Todos os tipos</option>
+                        {[
+                          ...new Set(
+                            sections
+                              .filter((s) => s.power)
+                              .map((s) => s.power.branch),
+                          ),
+                        ].map((branch) => (
+                          <option key={branch}>{branch}</option>
+                        ))}
+                      </select>
+                    </label>
+                  </div>
+                )}
+                <div className="results-label" role="status">
+                  {filtered.length} entradas encontradas nesta área
+                </div>
+              </div>
+              <nav className="library-index" aria-label="Tópicos da área">
+                {groups
+                  .filter((g) => group === "all" || g === group)
+                  .map((g) => {
+                    const items = filtered.filter((s) => s.group === g);
+                    return items.length ? (
+                      <section key={g}>
+                        <h3>{g}</h3>
+                        {items.map((s) => (
+                          <a
+                            href={`${base}/${category.id}/${s.id}`}
+                            key={s.id}
+                            aria-current={
+                              article?.id === s.id ? "page" : undefined
+                            }
+                          >
+                            {s.title}
+                            <small>{s.edition}</small>
+                          </a>
+                        ))}
+                      </section>
+                    ) : null;
+                  })}
+                {!filtered.length && <p>Nenhuma entrada com esses filtros.</p>}
+              </nav>
+            </details>
             <article className="reading-content library-article">
               {sectionSlug && !article && !linkedGroup ? (
                 <>
@@ -384,6 +409,19 @@ export function SystemLibrary({ system, route }) {
                 </>
               )}
             </article>
+          </div>
+          <div className="library-source-tools">
+            <a
+              className="button document-home-link"
+              href={`${base}/documentos`}
+            >
+              Ler textos integrais dos PDFs →
+            </a>
+            <div className="notice">
+              <span>
+                <strong>Cobertura das fontes.</strong> {system.coverage}
+              </span>
+            </div>
           </div>
           <SourceList system={system} />
         </>

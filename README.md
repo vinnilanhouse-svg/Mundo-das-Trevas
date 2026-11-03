@@ -39,9 +39,9 @@ Na home, o cartão abre uma página do sistema. Nela, o visitante escolhe:
 
 Em **Mago 20A → Mecânica**, os tópicos **Esferas** e **Esferas opcionais** abrem os nomes; cada nome mostra o que os níveis 1–5 permitem fazer e leva às explicações e ao texto literal das páginas citadas. Graduações são permissões para construir Efeitos; custos e duração dependem da conjuração. As variantes opcionais substituem suas correspondentes quando adotadas pela mesa.
 
-Em **Aparição 20A → Mecânica**, o diretório dos 16 Arcanoi abre por padrão. Cada cartão oferece links para os cinco níveis e suas artes Comuns/Iniciadas; abrir o nome do Arcanos mostra os dez efeitos agrupados por nível, e cada poder leva ao sistema e à fonte. O botão **Consultar os 16 Arcanoi** retorna ao diretório.
+Em **Aparição 20A → Mecânica**, as categorias aparecem primeiro, com um atalho direto para o diretório dos 16 Arcanoi. Cada cartão oferece links para os cinco níveis e suas artes Comuns/Iniciadas; abrir o nome do Arcanos mostra os dez efeitos agrupados por nível, e cada poder leva ao sistema e à fonte. O botão **Consultar os 16 Arcanoi** retorna ao diretório.
 
-Os cartões em **Escolha um tópico** são botões: abrem a categoria, filtram o índice e exibem links para cada entrada. Funcionam por clique e teclado, com opção de voltar a todas as categorias.
+Os cartões em **Escolha um tópico** são botões: abrem a categoria, filtram o índice e exibem links para cada entrada. Funcionam por clique e teclado, com opção de voltar a todas as categorias. No celular, as categorias de Mecânica aparecem antes das informações longas; o índice e seus filtros são recolhíveis.
 
 Cada área tem busca em títulos e textos, filtro de categoria, índice de tópicos e links diretos. Exemplo: `#/sistema/changeling/mecanica`. Fontes indicam **a posição da página no PDF**, que pode diferir da página impressa. Nas partes de Mago, as referências, a seleção de página e o leitor também mostram a numeração correspondente do livro. As capas podem não apresentar número impresso.
 
@@ -49,7 +49,7 @@ Todo Changeling é organizado como **20A**, conforme a escolha da mesa. As refer
 
 ## Busca, favoritos e histórico
 
-O cabeçalho oferece cinco resultados rápidos e “Ver todos os resultados”. A página completa tem filtros por sistema, área, categoria e edição, com 20 resultados por página. Enter no campo do cabeçalho também abre a lista completa. A busca iniciada dentro de um sistema mantém esse escopo.
+O cabeçalho oferece cinco resultados rápidos e “Ver todos os resultados”. A página completa tem filtros por sistema, área, categoria e edição, com 20 resultados por página. Enter no campo do cabeçalho também abre a lista completa. A busca iniciada dentro de um sistema mantém esse escopo. Perguntas comuns são reduzidas aos termos relevantes; edições incompatíveis com o sistema são ajustadas, e “Limpar filtros” mantém a palavra pesquisada.
 
 A estrela abre **Favoritos e coleções**: salve sistemas, tópicos, poderes e páginas do leitor e organize-os em uma ou mais coleções pessoais. Favoritos antigos são preservados. A home e o rodapé dão acesso a **Vistos recentemente**, com as últimas 40 consultas e opção de limpar. Tudo fica no navegador, sem conta; as fichas mantêm seu armazenamento atual.
 

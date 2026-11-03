@@ -30,9 +30,16 @@ O índice evita repetir palavras do corpo de uma entrada, preservando o ranking 
 
 Os termos da busca e os nomes de coleções não são enviados às estatísticas. As páginas de favoritos/histórico podem ser contadas por seus endereços genéricos; o conteúdo pessoal continua local. Nenhum novo evento de conteúdo privado foi adicionado.
 
-
 ## Verificação desta implementação
 
-Foram aprovados 56 testes automatizados e a compilação de produção. A navegação foi conferida em Chromium nas larguras 320, 390, 768 e 1440 px: sugestões, página completa, paginação, filtros combinados, escopo por sistema, migração dos favoritos, coleções, exclusão sem perder itens, sincronização entre abas, persistência de uma ficha antiga e limpeza do histórico após recarga. Os cinco formulários conservaram seus 354 campos e duas páginas A4 quando vazios.
+Foram aprovados 60 testes automatizados e a compilação de produção. A navegação foi conferida em Chromium nas larguras 320, 390, 768 e 1440 px: sugestões, página completa, paginação, filtros combinados, escopo por sistema, migração dos favoritos, coleções, exclusão sem perder itens, sincronização entre abas, persistência de uma ficha antiga e limpeza do histórico após recarga. Os cinco formulários conservaram seus 354 campos e duas páginas A4 quando vazios.
 
 A inspeção de rede confirmou ausência de requisições de conteúdo/índices na home e carregamento de um único sistema/índice no escopo individual. Falhas de rede foram simuladas para testar a nova tentativa, assim como armazenamento bloqueado para conferir ações em memória. Uma simulação do coletor de estatísticas validou consentimento, rotas, descarte de buscas e nomes de coleções e retirada do aceite sem apagar dados locais; não comprova ingestão real no painel Vercel.
+
+## Navegação em Mecânica e por teclado
+
+As áreas de Mecânica abrem com as categorias. A descrição de cobertura e o acesso aos PDFs ficam abaixo do conteúdo, junto das fontes. No celular, o cabeçalho de Mecânica é compacto e o índice e seus filtros ficam em “Índice e filtros”, recolhido inicialmente; abrir uma entrada volta a recolhê-lo. No computador, índice e filtros permanecem abertos ao lado do conteúdo. Aparição mantém o atalho “Consultar os 16 Arcanoi” para seu diretório completo.
+
+O menu móvel usa um diálogo modal nativo. Abrir o menu foca o botão de fechar; Tab e Shift+Tab circulam pelos controles do menu. Escape, o botão de fechar e o clique no fundo fecham o menu, restaurando o foco ao botão que o abriu. A rolagem do conteúdo ao fundo fica bloqueada enquanto o menu está aberto. Ao aumentar a janela para a navegação de computador, o menu fecha e o foco segue para a navegação visível.
+
+As correções de usabilidade foram verificadas nos cinco sistemas e nas quatro larguras. Em Changeling a 390 × 844 px, a primeira categoria de Mecânica passou de aproximadamente 1.823 px para 705 px do topo. Os testes no navegador confirmaram ajuste de Mago/5E para 20A, limpeza dos filtros sem apagar o termo, perguntas sobre Fome com a regra de Vampiro em primeiro lugar, abertura e recolhimento do índice, atalhos de Arcanoi e impressão de duas páginas A4 por ficha. No menu foram conferidos Tab, Shift+Tab, Escape, retorno de foco, clique no fundo, navegação, redimensionamento e restauração da rolagem. A primeira visita continua permitindo recusar estatísticas e fechar as boas-vindas.

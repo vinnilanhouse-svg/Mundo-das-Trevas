@@ -560,3 +560,158 @@
     display: none !important;
   }
 }
+
+/* Topics stay close to the entrance; the full index remains available. */
+.library-index-panel {
+  min-width: 0;
+}
+.library-index-panel > summary {
+  cursor: pointer;
+  padding: 15px 18px;
+  border: 1px solid #435e6e;
+  border-radius: 4px;
+  background: #112531;
+  color: var(--portal-accent);
+  font-size: 12px;
+}
+.library-index-panel > summary > span {
+  margin-left: 12px;
+  color: #a9becb;
+  font-size: 10px;
+}
+.library-index-tools {
+  border: 1px solid #40536180;
+  border-radius: 4px 4px 0 0;
+  padding: 18px;
+  background: #0a1621f0;
+}
+.library-index-tools .library-filters {
+  grid-template-columns: 1fr;
+  margin: 0 0 15px;
+}
+.library-index-tools .power-filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 0 12px;
+}
+.library-index-tools select {
+  width: 100%;
+  min-width: 0;
+}
+.library-index-tools .results-label {
+  margin: 0;
+  padding: 6px 0 0;
+  font-size: 10px;
+}
+.portal-theme .library-index-panel .library-index {
+  max-height: 50vh;
+  border-radius: 0 0 4px 4px;
+}
+.library-source-tools {
+  margin: 28px 0;
+}
+.search-filter-tools {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin: -14px 0 24px;
+}
+.search-filter-tools p {
+  color: #c6d6df;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+.search-filter-tools .text-button {
+  min-height: 44px;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+.search-filter-tools .text-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.portal-theme dialog.sidebar {
+  margin: 0;
+  max-width: none;
+  max-height: none;
+  height: 100dvh;
+}
+.portal-theme dialog.sidebar:not([open]) {
+  display: none;
+}
+.portal-theme dialog.sidebar::backdrop {
+  background: #03070cbb;
+  backdrop-filter: blur(5px);
+}
+@media (min-width: 951px) {
+  .library-index-panel > summary {
+    display: none;
+  }
+}
+@media (max-width: 950px) {
+  .portal-theme .library-index-panel .library-index {
+    max-height: 290px;
+  }
+  .library-index-panel {
+    margin-bottom: 0;
+  }
+  .portal-theme .library-layout {
+    margin-top: 14px;
+  }
+  .portal-theme .library-mechanics-page .library-hero {
+    min-height: 0;
+    padding: 18px 20px;
+  }
+  .portal-theme .library-mechanics-page .library-hero .eyebrow,
+  .portal-theme .library-mechanics-page .library-hero p {
+    display: none;
+  }
+  .portal-theme .library-mechanics-page .library-hero h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+  .portal-theme .library-mechanics-page .library-hero h1 > span {
+    font-size: 10px;
+    margin-top: 9px;
+  }
+  .portal-theme .library-mechanics-page .detail-tools {
+    padding: 9px 0;
+    gap: 8px;
+  }
+  .portal-theme .library-mechanics-page .library-heading {
+    font-size: 26px;
+    margin: 15px 0;
+  }
+  .portal-theme .library-mechanics-page .reading-intro {
+    display: none;
+  }
+  .portal-theme .library-mechanics-page .library-article > .eyebrow {
+    margin-bottom: 8px;
+  }
+  .portal-theme .library-mechanics-page .library-article h2 {
+    font-size: 30px;
+    margin: 10px 0 18px;
+  }
+  .portal-theme .library-mechanics-page .library-article {
+    padding: 20px 18px;
+  }
+}
+@media (max-width: 550px) {
+  .search-filter-tools {
+    align-items: start;
+  }
+  .search-filter-tools p {
+    font-size: 11px;
+  }
+}
+@media print {
+  .library-source-tools,
+  .library-index-panel {
+    display: none !important;
+  }
+  dialog.sidebar::backdrop {
+    display: none !important;
+  }
+}

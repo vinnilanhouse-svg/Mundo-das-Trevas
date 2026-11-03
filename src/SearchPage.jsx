@@ -1,12 +1,33 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { catalog, useSearchIndex } from "./archive-data.js";
 import { queryArchive } from "./archive-search.js";
-import { parseSearchRoute, searchHref } from "./search-routes.js";
+import {
+  parseSearchRoute,
+  searchHref,
+  searchEditions,
+  compatibleSearchEdition,
+} from "./search-routes.js";
 import { FavoriteControl } from "./PersonalArchive.jsx";
 const PAGE_SIZE = 20;
 export function SearchPage({ route }) {
   const filters = useMemo(() => parseSearchRoute(route, catalog), [route]);
   const [draft, setDraft] = useState(filters.query);
+  const [filterNotice, setFilterNotice] = useState("");
+  useEffect(() => {
+    const params = new URLSearchParams(route.slice(route.indexOf("?") + 1));
+    const requested = params.get("edicao");
+    if (requested && requested !== filters.edition && filters.systemId) {
+      setFilterNotice(
+        `A edição foi ajustada para ${filters.edition || "as disponíveis"} neste sistema.`,
+      );
+      history.replaceState(
+        history.state,
+        "",
+        searchHref(filters.query, filters),
+      );
+      window.dispatchEvent(new HashChangeEvent("hashchange"));
+    }
+  }, [route, filters]);
   useEffect(() => setDraft(filters.query), [filters.query]);
   const state = useSearchIndex(
     Boolean(filters.query.trim()),
@@ -46,11 +67,22 @@ export function SearchPage({ route }) {
     ),
   ].sort((a, b) => a.localeCompare(b, "pt-BR"));
   const change = (values) => {
-    location.hash = searchHref(filters.query, {
+    const next = {
       ...filters,
       page: 1,
       ...values,
-    });
+    };
+    const edition = compatibleSearchEdition(
+      catalog,
+      next.systemId,
+      next.edition,
+    );
+    setFilterNotice(
+      edition !== next.edition
+        ? `A edição foi ajustada para ${edition || "as disponíveis"} neste sistema.`
+        : "",
+    );
+    location.hash = searchHref(filters.query, { ...next, edition });
   };
   return (
     <section className="search-page" aria-labelledby="search-page-title">
@@ -126,13 +158,11 @@ export function SearchPage({ route }) {
             }
           >
             <option value="">Todas as edições</option>
-            {[...new Set(catalog.map((system) => system.editionLabel))].map(
-              (edition) => (
-                <option key={edition} value={edition}>
-                  {edition}
-                </option>
-              ),
-            )}
+            {searchEditions(catalog, filters.systemId).map((edition) => (
+              <option key={edition} value={edition}>
+                {edition}
+              </option>
+            ))}
           </select>
         </label>
         <label>
@@ -150,6 +180,25 @@ export function SearchPage({ route }) {
             ))}
           </select>
         </label>
+      </div>
+      <div className="search-filter-tools">
+        <p role="status">{filterNotice}</p>
+        <button
+          className="text-button"
+          type="button"
+          disabled={
+            !filters.systemId &&
+            !filters.area &&
+            !filters.edition &&
+            !filters.group
+          }
+          onClick={() => {
+            setFilterNotice("");
+            location.hash = searchHref(filters.query);
+          }}
+        >
+          Limpar filtros
+        </button>
       </div>
       {!filters.query.trim() ? (
         <p className="personal-empty">

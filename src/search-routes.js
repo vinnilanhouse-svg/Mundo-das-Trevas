@@ -12,7 +12,10 @@ export function searchHref(
   return `#/busca?${params}`;
 }
 export function parseSearchRoute(route, systems) {
-  const params = new URLSearchParams(route.split("?")[1] || "");
+  const marker = route.indexOf("?");
+  const params = new URLSearchParams(
+    marker >= 0 ? route.slice(marker + 1) : "",
+  );
   const id = params.get("sistema") || "";
   const area = params.get("area") || "";
   const edition = params.get("edicao") || "";
@@ -21,10 +24,30 @@ export function parseSearchRoute(route, systems) {
     query: (params.get("q") || "").slice(0, 200),
     systemId: systems.some((system) => system.id === id) ? id : "",
     area: ["lore", "mechanics", "sheet", "system"].includes(area) ? area : "",
-    edition: systems.some((system) => system.editionLabel === edition)
-      ? edition
-      : "",
+    edition: compatibleSearchEdition(systems, id, edition),
     group: (params.get("categoria") || "").slice(0, 150),
     page: Number.isSafeInteger(number) && number > 0 ? number : 1,
   };
+}
+
+export function searchEditions(systems, systemId = "") {
+  const selected = systems.filter(
+    (system) => !systemId || system.id === systemId,
+  );
+  return [
+    ...new Set(
+      (selected.length ? selected : systems).map(
+        (system) => system.editionLabel,
+      ),
+    ),
+  ];
+}
+
+export function compatibleSearchEdition(systems, systemId, edition) {
+  const available = searchEditions(systems, systemId);
+  if (!edition || available.includes(edition)) return edition || "";
+  return systems.some((system) => system.id === systemId) &&
+    available.length === 1
+    ? available[0]
+    : "";
 }

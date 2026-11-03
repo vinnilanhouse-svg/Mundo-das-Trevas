@@ -1,12 +1,11 @@
 import { articleHref, groupHref } from "./library-routes.js";
 
-export const normalizeSearch = (value) =>
-  String(value || "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
+import {
+  normalizeSearch,
+  interpretSearchQuery,
+  searchTitleTerms,
+} from "./search-query.js";
+export { normalizeSearch } from "./search-query.js";
 
 const areaNames = { lore: "Lore", mechanics: "Mecânica", sheet: "Ficha" };
 const flat = (text) =>
@@ -23,6 +22,7 @@ function entry(values) {
         ? `${values.excerpt.slice(0, 277).replace(/\s+\S*$/, "")}…`
         : values.excerpt,
     titleText: normalizeSearch(values.title),
+    titleTerms: searchTitleTerms(values.title),
     contextText: normalizeSearch(
       `${values.systemName} ${values.category} ${values.group || ""} ${values.aliases || ""}`,
     ),
@@ -64,6 +64,7 @@ export function createArchiveIndex(systems) {
         ...common,
         id: `${system.id}/article/${section.id}`,
         kind: "article",
+        transcription: /texto integral/i.test(section.group),
         title: section.title,
         category: areaNames[section.category],
         area: section.category,
@@ -117,28 +118,48 @@ function hasWord(text, token) {
   );
 }
 
-function relevance(item, phrase, tokens) {
-  // Every keyword must occur. Titles and indexes precede incidental mentions in long rules.
+function relevance(item, query) {
+  const allText = `${item.titleText} ${item.contextText} ${item.bodyText}`;
   if (
-    !tokens.every((token) =>
-      `${item.titleText} ${item.contextText} ${item.bodyText}`.includes(token),
+    !query.terms.every((term) =>
+      term.alternatives.some((word) => allText.includes(word)),
     )
   )
     return 0;
+  const titleTerms = item.titleTerms || searchTitleTerms(item.title);
   let score = 0;
-  if (item.titleText === phrase) score += 1000;
-  else if (item.titleText.startsWith(phrase)) score += 500;
-  else if (item.titleText.includes(phrase)) score += 350;
-  if (tokens.every((token) => item.titleText.includes(token))) score += 200;
-  for (const token of tokens) {
-    if (hasWord(item.titleText, token)) score += 80;
-    else if (item.titleText.includes(token)) score += 35;
-    if (hasWord(item.contextText, token)) score += 12;
-    if (hasWord(item.bodyText, token)) score += 2;
+  if (item.titleText === query.original || titleTerms === query.phrase)
+    score += 1000;
+  else if (
+    item.titleText.startsWith(query.original) ||
+    titleTerms.startsWith(query.phrase)
+  )
+    score += 500;
+  else if (
+    item.titleText.includes(query.original) ||
+    titleTerms.includes(query.phrase)
+  )
+    score += 350;
+  if (
+    query.terms.every((term) =>
+      term.alternatives.some((word) => item.titleText.includes(word)),
+    )
+  )
+    score += 200;
+  for (const term of query.terms) {
+    if (term.alternatives.some((word) => hasWord(item.titleText, word)))
+      score += 80;
+    else if (term.alternatives.some((word) => item.titleText.includes(word)))
+      score += 35;
+    if (term.alternatives.some((word) => hasWord(item.contextText, word)))
+      score += 12;
+    if (term.alternatives.some((word) => hasWord(item.bodyText, word)))
+      score += 2;
   }
   if (item.kind === "group") score += 15;
   if (item.kind === "system") score += 8;
-  return score;
+  // Keep literal pages searchable while favoring organized explanations.
+  return item.transcription ? score * 0.65 : score;
 }
 
 export function searchArchive(
@@ -165,15 +186,14 @@ export function queryArchive(
     limit = 20,
   } = {},
 ) {
-  const phrase = normalizeSearch(query);
-  if (!phrase) return { items: [], total: 0 };
-  const tokens = [...new Set(phrase.split(" "))];
+  const interpreted = interpretSearchQuery(query);
+  if (!interpreted.terms.length) return { items: [], total: 0 };
   const results = index
     .filter((item) => !systemId || item.systemId === systemId)
     .filter((item) => !area || item.area === area)
     .filter((item) => !edition || item.editionLabel === edition)
     .filter((item) => !group || item.group === group)
-    .map((item) => ({ ...item, score: relevance(item, phrase, tokens) }))
+    .map((item) => ({ ...item, score: relevance(item, interpreted) }))
     .filter((item) => item.score > 0)
     .sort(
       (a, b) =>

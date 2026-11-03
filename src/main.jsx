@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { catalog } from "./archive-data.js";
 import { SystemView } from "./SystemView.jsx";
@@ -16,6 +16,7 @@ import { ArchiveSearch } from "./ArchiveSearch.jsx";
 import { PortalAtmosphere } from "./PortalAtmosphere.jsx";
 import { WelcomeNotice, ContactPage } from "./Community.jsx";
 import { SiteMark } from "./BrandMark.jsx";
+import { NavigationDrawer } from "./NavigationDrawer.jsx";
 import {
   PrivacyProvider,
   PrivacyNotices,
@@ -143,6 +144,8 @@ function App() {
   const [edition, setEdition] = useState("Todas as edições");
   const [view, setView] = useState("all");
   const [menu, setMenu] = useState(false);
+  const menuTrigger = useRef(null);
+  const closeMenu = useCallback(() => setMenu(false), []);
   useEffect(() => {
     const onHash = () => {
       setRoute(location.hash);
@@ -311,24 +314,21 @@ function App() {
           <Icon name="star" />
         </button>
         <button
+          ref={menuTrigger}
           className="mobile-menu icon-button"
           aria-label="Abrir navegação"
           aria-expanded={menu}
+          aria-haspopup="dialog"
+          aria-controls="site-navigation"
           onClick={() => setMenu(true)}
         >
           <Icon name="menu" />
         </button>
       </header>
-      {menu && (
-        <button
-          className="sidebar-scrim"
-          aria-label="Fechar navegação"
-          onClick={() => setMenu(false)}
-        />
-      )}
-      <aside
-        className={`sidebar ${menu ? "is-open" : ""}`}
-        aria-label="Menu de navegação"
+      <NavigationDrawer
+        open={menu}
+        onClose={closeMenu}
+        triggerRef={menuTrigger}
       >
         <button
           className="drawer-close icon-button"
@@ -409,7 +409,7 @@ function App() {
           </button>
           <span className="version">ACERVO INDEPENDENTE · V.0.4</span>
         </div>
-      </aside>
+      </NavigationDrawer>
       <div className="workspace">
         <main id="main-content" tabIndex={-1}>
           {storageError && (
