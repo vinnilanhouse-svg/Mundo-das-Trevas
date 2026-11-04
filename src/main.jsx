@@ -276,26 +276,6 @@ function App() {
           >
             Sistemas
           </button>
-          <details className="portal-document-menu">
-            <summary>Documentos</summary>
-            <div>
-              <span>ESCOLHA UM SISTEMA</span>
-              {systems.map((system) => (
-                <a
-                  key={system.id}
-                  href={`#/sistema/${system.id}/documentos`}
-                  onClick={(event) =>
-                    event.currentTarget
-                      .closest("details")
-                      .removeAttribute("open")
-                  }
-                >
-                  <SystemLabel system={system} />
-                  <Icon name="arrow" size={15} />
-                </a>
-              ))}
-            </div>
-          </details>
           <a href="#/contato" className={contactOpen ? "current" : ""}>
             Contato
           </a>
@@ -694,10 +674,9 @@ function About() {
           <Icon name="book" />
           <h2>Um acervo em construção</h2>
           <p>
-            O acervo reúne explicações por assunto, textos integrais dos PDFs e
-            estruturas de ficha. Cada entrada indica sua fonte, edição e
-            limitações. Materiais ainda inacessíveis ficam identificados como
-            pendentes.
+            O acervo reúne histórias, regras, poderes e estruturas de ficha,
+            organizados por sistema e edição para facilitar a consulta durante
+            suas crônicas.
           </p>
         </section>
         <section>

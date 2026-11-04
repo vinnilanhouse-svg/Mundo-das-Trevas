@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import sources from "./sources.json";
-import { DocumentLinks, DocumentReader, SourceText } from "./Documents.jsx";
+import { DocumentReader, SourceText } from "./Documents.jsx";
 import { documents } from "./document-data.js";
 import { SheetPages } from "./SheetPages.jsx";
 import { routeGroup, groupHref } from "./library-routes.js";
@@ -139,18 +139,6 @@ export function SystemLibrary({ system, route }) {
         </span>
         {!article && reference && <FavoriteControl entry={reference} />}
       </div>
-      {!category && (
-        <div className="notice">
-          <span>
-            <strong>Cobertura das fontes.</strong> {system.coverage}
-          </span>
-        </div>
-      )}
-      {categorySlug && !category && categorySlug !== "documentos" && (
-        <a className="button document-home-link" href={`${base}/documentos`}>
-          Ler textos integrais dos PDFs →
-        </a>
-      )}
       {!categorySlug ? (
         <>
           <div className="area-grid">
@@ -168,8 +156,6 @@ export function SystemLibrary({ system, route }) {
               </a>
             ))}
           </div>
-          <DocumentLinks system={system} />
-          <SourceList system={system} />
         </>
       ) : categorySlug === "documentos" ? (
         <DocumentReader system={system} route={route} />
@@ -416,20 +402,6 @@ export function SystemLibrary({ system, route }) {
               )}
             </article>
           </div>
-          <div className="library-source-tools">
-            <a
-              className="button document-home-link"
-              href={`${base}/documentos`}
-            >
-              Ler textos integrais dos PDFs →
-            </a>
-            <div className="notice">
-              <span>
-                <strong>Cobertura das fontes.</strong> {system.coverage}
-              </span>
-            </div>
-          </div>
-          <SourceList system={system} />
         </>
       )}
     </div>
@@ -570,45 +542,6 @@ function PowerProgression({ system, article, base }) {
   );
 }
 
-function SourceList({ system }) {
-  const items = sources.filter((s) => system.sources.includes(s.id));
-  return (
-    <details className="source-list">
-      <summary>Fontes, edições e materiais pendentes ({items.length})</summary>
-      <p>
-        As páginas indicadas são posições no PDF, que podem diferir da numeração
-        impressa. As explicações por assunto acompanham o texto integral dos
-        documentos disponíveis. Fichas preenchidas não são publicadas.
-      </p>
-      {items.map((s) => (
-        <div className="source-row" key={s.id}>
-          <div>
-            <strong>{s.title}</strong>
-            <small>
-              {s.type}
-              {s.pages ? ` · ${s.pages} páginas` : ""}
-            </small>
-            <p>{s.note}</p>
-            {documents.some((item) => item.sourceId === s.id) && (
-              <a href={`#/sistema/${system.id}/documentos/${s.id}/1`}>
-                Ler texto integral e consultar original →
-              </a>
-            )}
-          </div>
-          <span
-            className={
-              s.status === "pendente" ? "status-pending" : "status-read"
-            }
-          >
-            {s.status === "pendente"
-              ? s.pendingLabel || "Pendente: dividir PDF"
-              : "Consultado"}
-          </span>
-        </div>
-      ))}
-    </details>
-  );
-}
 function emptySheet(system) {
   return Object.fromEntries(
     system.sheet.groups.flatMap((g) =>

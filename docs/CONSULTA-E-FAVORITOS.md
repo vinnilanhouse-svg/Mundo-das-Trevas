@@ -38,7 +38,7 @@ A inspeção de rede confirmou ausência de requisições de conteúdo/índices 
 
 ## Navegação em Mecânica e por teclado
 
-As áreas de Mecânica abrem com as categorias. A descrição de cobertura e o acesso aos PDFs ficam abaixo do conteúdo, junto das fontes. No celular, o cabeçalho de Mecânica é compacto e o índice e seus filtros ficam em “Índice e filtros”, recolhido inicialmente; abrir uma entrada volta a recolhê-lo. No computador, índice e filtros permanecem abertos ao lado do conteúdo. Aparição mantém o atalho “Consultar os 16 Arcanoi” para seu diretório completo.
+As áreas de Mecânica abrem com as categorias. O catálogo de documentos, as listas de fontes, os avisos de cobertura e os atalhos gerais aos PDFs ficam ocultos na navegação dos sistemas. No celular, o cabeçalho de Mecânica é compacto e o índice e seus filtros ficam em “Índice e filtros”, recolhido inicialmente; abrir uma entrada volta a recolhê-lo. No computador, índice e filtros permanecem abertos ao lado do conteúdo. Aparição mantém o atalho “Consultar os 16 Arcanoi” para seu diretório completo.
 
 O menu móvel usa um diálogo modal nativo. Abrir o menu foca o botão de fechar; Tab e Shift+Tab circulam pelos controles do menu. Escape, o botão de fechar e o clique no fundo fecham o menu, restaurando o foco ao botão que o abriu. A rolagem do conteúdo ao fundo fica bloqueada enquanto o menu está aberto. Ao aumentar a janela para a navegação de computador, o menu fecha e o foco segue para a navegação visível.
 
