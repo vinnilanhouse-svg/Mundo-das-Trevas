@@ -9,6 +9,7 @@ import { SystemLabel } from "./SystemLabel.jsx";
 import { PowerDetails, PowerQuickFacts } from "./PowerDetails.jsx";
 import { FavoriteControl, usePersonalArchive } from "./PersonalArchive.jsx";
 import { referenceForRoute } from "./personal-archive.js";
+import { ExperienceCosts } from "./ExperienceCosts.jsx";
 
 const categories = [
   {
@@ -196,7 +197,12 @@ export function SystemLibrary({ system, route }) {
           <h2 className="library-heading">
             {category.name} — <SystemLabel system={system} />
           </h2>
-          {category.key === "sheet" && <CharacterSheet system={system} />}
+          {category.key === "sheet" && (
+            <>
+              <ExperienceCosts system={system} />
+              <CharacterSheet system={system} />
+            </>
+          )}
           {category.key === "mechanics" && arcanoiDirectory && (
             <a
               className="button arcanoi-home-link"
