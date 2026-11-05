@@ -59,7 +59,7 @@ Veja [o funcionamento e a manutenção dessas ferramentas](docs/CONSULTA-E-FAVOR
 
 ## Fichas digitais
 
-As páginas das fichas de **Mago 20A** e **Changeling 20A** mostram uma tabela recolhível de custos de XP, seguindo as imagens fornecidas para a mesa. Os novos traços têm custo fixo; os multiplicadores usam o valor atual. Em Changeling, Reino também aparece identificado como Alçada. O asterisco de Antecedentes de Mago é preservado sem inventar a observação ausente. As tabelas são referências visuais e ficam fora da impressão dos formulários A4.
+As páginas das cinco fichas mostram tabelas recolhíveis de custos de XP, seguindo as imagens fornecidas para a mesa e a estética de cada sistema. Vampiro 5E e Caçador 5E usam o novo nível nos aumentos indicados; Mago 20A, Changeling 20A e Aparição 20A usam o valor atual. Rituais e fórmulas de Vampiro usam seus próprios níveis; Vantagens de V5/H5 custam 3 XP por ponto. Paixões, Grilhões e Antecedentes de Aparição têm custo especial e exigem permissão do Narrador. Em Changeling, Reino também aparece identificado como Alçada. O asterisco de Antecedentes de Mago é preservado sem inventar a observação ausente. As tabelas são referências visuais e ficam fora da impressão dos formulários A4.
 
 As fichas têm duas folhas organizadas a partir dos formulários recebidos, com cabeçalho, Atributos e Habilidades em três colunas e posições próprias por sistema. V5 e H5 colocam Vitalidade e Força de Vontade entre Atributos e Habilidades; M20 separa as nove Esferas em três colunas; C20 reúne Artes, Alçadas e Temperamentos; W20 tem uma folha da Psique e outra para Sombra e complementos. No celular, as colunas se empilham na mesma ordem.
 

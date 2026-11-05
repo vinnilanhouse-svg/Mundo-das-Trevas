@@ -25,6 +25,36 @@
   background:
     radial-gradient(ellipse at top right, #d9e6bc88, transparent 65%), #f6f2e5;
 }
+.experience-costs-vampiro {
+  --xp-ink: #f5e6ea;
+  --xp-muted: #cfb1bd;
+  --xp-accent: #ef9aab;
+  --xp-line: #ce789944;
+  --xp-row: #da799510;
+  --xp-badge: #c94e6b2b;
+  background:
+    radial-gradient(ellipse at top right, #56203444, transparent 65%), #1b121c;
+}
+.experience-costs-cacador {
+  --xp-ink: #3b2c1f;
+  --xp-muted: #71593d;
+  --xp-accent: #8b441b;
+  --xp-line: #8d6c3944;
+  --xp-row: #b6934910;
+  --xp-badge: #b0692020;
+  background:
+    radial-gradient(ellipse at top right, #dec39466, transparent 65%), #f2e6cf;
+}
+.experience-costs-aparicao {
+  --xp-ink: #deeee7;
+  --xp-muted: #a5bfb5;
+  --xp-accent: #d0b37e;
+  --xp-line: #7fa99440;
+  --xp-row: #85bda60f;
+  --xp-badge: #d0b37e18;
+  background:
+    radial-gradient(ellipse at top right, #315f5840, transparent 65%), #102023;
+}
 .experience-costs > summary {
   display: flex;
   align-items: center;
@@ -161,6 +191,14 @@
 .experience-costs-fixed small {
   font-size: 9px;
   letter-spacing: 0.06em;
+}
+.experience-costs-special {
+  min-width: 0;
+  font-size: 14px;
+}
+.experience-costs-label {
+  color: var(--xp-ink);
+  font-size: 13px;
 }
 .experience-costs-multiplier {
   display: inline-flex;
